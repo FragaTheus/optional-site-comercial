@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Reveal } from '../../../../../shared/directives/reveal';
 
-// Mostra como a Optional estrutura sistemas, em quatro imagens abstratas que dividem o conteúdo da página.
+// Abordagem da Optional em quatro cards (organização, personalização, engenharia, integração); as imagens abstratas existentes são o fundo dos cards e o texto carrega o argumento.
 @Component({
   selector: 'app-showcase-section',
   imports: [Reveal],
@@ -9,10 +9,10 @@ import { Reveal } from '../../../../../shared/directives/reveal';
 })
 export class ShowcaseSectionComponent {
   // Atributos
-  protected readonly images = [
-    { src: 'home-img/optional_abstrato_01_camadas.png', layout: 'md:col-span-7 md:mt-section-s', caption: 'Camadas: dados e processos organizados em níveis.' },
-    { src: 'home-img/optional_abstrato_02_arco.png', layout: 'md:col-span-5', caption: 'Arco: do primeiro contato ao sistema completo.' },
-    { src: 'home-img/optional_abstrato_03_planos.png', layout: 'md:col-span-5', caption: 'Planos: módulos que se encaixam e crescem com o negócio.' },
-    { src: 'home-img/optional_abstrato_04_diagonais.png', layout: 'md:col-span-7', caption: 'Diagonais: integrações que conectam as ferramentas da operação.' },
+  protected readonly cards = [
+    { src: 'home-img/optional_abstrato_01_camadas.png', layout: 'md:col-span-7 md:mt-section-s', label: 'Organização', title: 'Dados e processos em camadas', text: 'Informação organizada por nível, para que cada área acesse o que precisa e nada dependa da memória de alguém.' },
+    { src: 'home-img/optional_abstrato_02_arco.png', layout: 'md:col-span-5', label: 'Personalização', title: 'Um desenho para o seu fluxo', text: 'O sistema acompanha o caminho que o seu trabalho já percorre, e não o contrário.' },
+    { src: 'home-img/optional_abstrato_03_planos.png', layout: 'md:col-span-5', label: 'Engenharia', title: 'Módulos que se encaixam', text: 'Cada parte é construída como módulo: novas funcionalidades entram sem refazer o que já funciona.' },
+    { src: 'home-img/optional_abstrato_04_diagonais.png', layout: 'md:col-span-7', label: 'Integração', title: 'Ferramentas que conversam', text: 'Os sistemas que a empresa já usa passam a trocar dados entre si, sem cópia manual no meio.' },
   ];
 }

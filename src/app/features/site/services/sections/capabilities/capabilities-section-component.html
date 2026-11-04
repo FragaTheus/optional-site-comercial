@@ -1,0 +1,14 @@
+<!-- Seção escura: título à esquerda, capacidades em duas colunas à direita -->
+<section id="funcionalidades" class="surface-dark scroll-mt-16 py-section-m">
+  <div class="site-container site-grid gap-y-8">
+    <h2 appReveal="lines" class="text-5xl md:col-span-5">Funcionalidades e <strong>capacidades</strong></h2>
+    <ul data-stagger=":scope > li" class="grid gap-x-gutter gap-y-10 md:col-span-7 md:col-start-6 sm:grid-cols-2">
+      @for (item of service().capabilities; track item.name) {
+        <li class="border-t border-paper/15 pt-6">
+          <h3 class="text-2xl"><strong>{{ item.name }}</strong></h3>
+          <p class="mt-3 text-lg">{{ item.text }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

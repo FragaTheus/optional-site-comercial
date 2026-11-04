@@ -5,6 +5,8 @@ description: Escreve copy comercial e SEO semântico em português para o site d
 
 # Optional — Copywriting comercial e SEO
 
+> **Obrigatório:** leia `docs/copyright.md` antes de escrever ou revisar qualquer texto. Ele é a fonte de verdade e define duas estratégias distintas: **A — Homepage** (narrativa editorial progressiva, seções encadeadas) e **B — Páginas satélites** (SEO e intenção de busca, sem storytelling). Em conflito com este arquivo, prevalece `docs/copyright.md`.
+
 A Optional é uma empresa de desenvolvimento de software e infraestrutura digital para empresas. Não é agência de marketing nem portfólio pessoal. Mensagem central: soluções sob medida, conforme a realidade de cada empresa.
 
 ## Tom de voz
@@ -21,7 +23,8 @@ Direto, confiante, incisivo, profissional, específico, orientado a problemas re
 
 ## Estrutura de persuasão
 
-Problema → Consequência → Solução → Evidência → Ação.
+- **Homepage (A):** Posicionamento → Objeções → Soluções → Abordagem → Evidências → Conversão; cada seção desenvolve a anterior.
+- **Satélites (B):** Intenção de busca → Explicação → Aplicações → Funcionalidades → Diferenciais → Dúvidas → CTA; sem storytelling.
 
 ## Posicionamento por serviço
 

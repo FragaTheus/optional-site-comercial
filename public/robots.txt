@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://optional-site-comercial-eyx6.vercel.app/sitemap.xml
