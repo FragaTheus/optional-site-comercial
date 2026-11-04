@@ -1,5 +1,5 @@
 {
-  "name": "option-site",
+  "name": "optional-site",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:option-site": "node dist/option-site/server/server.mjs"
+    "serve:ssr:optional-site": "node dist/optional-site/server/server.mjs"
   },
   "private": true,
   "packageManager": "npm@11.20.0",
@@ -21,6 +21,7 @@
     "@angular/router": "^22.2.0",
     "@angular/ssr": "^22.2.5",
     "express": "^5.1.0",
+    "gsap": "^3.15.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

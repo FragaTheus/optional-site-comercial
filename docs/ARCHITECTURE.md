@@ -1,8 +1,8 @@
-# Arquitetura — Option
+# Arquitetura — Optional
 
 ## Estado atual (verificado na inspeção)
 
-Angular 22.2 e Tailwind CSS 4.3 (v4, CSS-first), com SSR + prerendering habilitados (`RenderMode.Prerender` em `**`). Implementados: `core/` (`seo.ts`, `site.config.ts`), `layouts/main-layout`, `features/site/home`. **Não implementados**: páginas de serviços, `features/concepts`, sitemap. Pendentes em `site.config.ts`: `CONTACT_URL` (canal de contato) e `SITE_URL` (domínio; sem ele não há canonical/og:url).
+Angular 22.2 e Tailwind CSS 4.3 (v4, CSS-first), com SSR + prerendering habilitados (`RenderMode.Prerender` em `**`). Implementados: `core/` (`seo.ts`, `site.config.ts`, `gsap.ts`), `shared/directives/reveal.ts`, `layouts/main-layout`, `features/site/home`. **Não implementados**: páginas de serviços, `features/concepts`, sitemap. Pendentes em `site.config.ts`: `CONTACT_URL` (canal de contato) e `SITE_URL` (domínio; sem ele não há canonical/og:url).
 
 ## Estrutura Angular pretendida
 
@@ -21,6 +21,8 @@ src/app/
 ```
 
 ## features/site
+
+Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio em `sections/` (`<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/`.
 
 Homepage, páginas satélites de serviços (CRM, ERP/gestão, automações, landing pages, sites comerciais), projetos e cases, conteúdo comercial, SEO, metadados, CTAs. Páginas indexáveis e otimizadas.
 

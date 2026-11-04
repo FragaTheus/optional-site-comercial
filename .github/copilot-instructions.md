@@ -1,13 +1,14 @@
-# Instruções do Copilot — Option
+# Instruções do Copilot — Optional
 
-Option: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestão, automações e integrações, landing pages, sites comerciais). Não é agência de marketing nem portfólio pessoal. Sem promessas de vendas/faturamento, sem resultados, números ou depoimentos inventados.
+Optional: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestão, automações e integrações, landing pages, sites comerciais). Não é agência de marketing nem portfólio pessoal. Sem promessas de vendas/faturamento, sem resultados, números ou depoimentos inventados.
 
-Leia antes de trabalhar: `README.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `option-web-design`, `option-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Option prevalecem sobre sugestões das skills externas.
+Leia antes de trabalhar: `README.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `optional-web-design`, `optional-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Optional prevalecem sobre sugestões das skills externas.
 
 ## Estado do projeto
 Angular 22 + Tailwind 4 (confirme em `package.json`). Existem: MainLayout e Home. Não implemente CRM, dashboard, autenticação ou área interna sem pedido explícito.
 
 ## Arquitetura
+**Páginas divididas em componentes (obrigatório):** cada página é um componente de página (`<nome>-page-component.ts/.html`) que só compõe seções, define SEO e orquestra animações; cada seção é um componente em `sections/` (`<nome>-section-component.ts/.html`). Nunca deixe todas as seções em um arquivo. Ex.: `features/site/home/home-page-component.*` + `features/site/home/sections/`.
 Features em `src/app/`: `core/`, `layouts/main-layout/`, `shared/components/`, `features/site/` (público, indexável, SEO) e `features/concepts/` (`/concept/:slug`, layout próprio, `noindex`, fora do sitemap e da navegação; sem dados confidenciais; não bloquear no robots.txt). Header, footer e drawer (`<dialog>`) vivem só no MainLayout, com `RouterOutlet`. Não reorganize código funcional sem necessidade; evite abstrações prematuras.
 
 ## Tailwind / CSS (obrigatório; alvo v4)
@@ -18,12 +19,12 @@ Features em `src/app/`: `core/`, `layouts/main-layout/`, `shared/components/`, `
 - Tipografia fluida: `--text-*` com `clamp()` em `@theme`, mantendo nomes `text-xs`…`text-9xl` e máximos nominais; sem escala paralela nem `<br>` responsivo. Headings: Bricolage Grotesque, uppercase, slate, com palavras-chave em `<strong>` (carbon; white em `.surface-dark`/`.card-secondary`) via `@layer base`; sempre destaque as palavras-chave de cada heading.
 - `--spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem)` (`px-gutter`); `--max-w-container: 100rem` (`max-w-container`); `.site-container`; `.site-grid`.
 - Grid: `grid grid-cols-1 md:grid-cols-12` com `col-span/start/end`.
-- Classes visuais: `.btn` + `.btn-primary|secondary|tertiary`, `.card` + `.card-primary|secondary|tertiary`, `.eyebrow`, `.site-container`, `.site-grid`. Botões sempre `rounded-xs`, nunca `rounded-full`. Uppercase em headings, labels de input, eyebrows e small text identificador; nunca em corpo, botões ou navegação.
+- Classes visuais: `.btn` + `.btn-primary|secondary|tertiary`, `.card` + `.card-primary|secondary|tertiary`, `.site-container`, `.site-grid`. Botões sempre `rounded-xs`, nunca `rounded-full`. Uppercase em headings, labels de input, eyebrows e small text identificador; nunca em corpo, botões ou navegação.
 - Elemento só visual = classe global, não componente. Componente Angular só com estado, comportamento, I/O, interação ou reutilização funcional; prefira HTML nativo.
 - Reutilize antes de criar; não duplique definições.
 
 ## Design
-Direção de arte obrigatória: minimalista, premium, tipográfica, assimétrica (intencional, dentro do grid), muito espaço negativo, sem gradientes decorativos, glassmorphism, imagens abstratas de tecnologia ou hero genérico de SaaS. Funciona sem imagens. Motion discreto com `prefers-reduced-motion`. Acessibilidade sempre.
+Direção de arte obrigatória: minimalista, premium, tipográfica, assimétrica (intencional, dentro do grid), muito espaço negativo, sem gradientes decorativos, glassmorphism, imagens abstratas de tecnologia ou hero genérico de SaaS. Funciona sem imagens. Motion discreto com GSAP apenas via serviço `Gsap` (`core/gsap.ts`) e diretiva `appReveal`; nunca importar `gsap` direto nos componentes; respeitar `prefers-reduced-motion`. Acessibilidade sempre.
 
 ## Código
 - Conciso: menos linhas sem perder clareza; sem variáveis intermediárias sem reutilização/ganho de legibilidade; sem dependências sem justificativa nem arquivos excessivamente fragmentados.

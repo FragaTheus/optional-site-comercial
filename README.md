@@ -1,12 +1,14 @@
-# Option
+# Optional
 
 > Estado: projeto Angular criado com a **homepage** (hub de serviços). Páginas de serviços, concepts, sitemap e canal de contato real ainda **não** existem.
 
 ## 1. Visão geral
-Site da Option, empresa de desenvolvimento de software e infraestrutura digital para empresas.
+A marca é **Optional**.
+
+Site da Optional, empresa de desenvolvimento de software e infraestrutura digital para empresas.
 
 ## 2. Objetivo empresarial
-Posicionar a Option como autoridade, apresentar serviços, servir de portfólio de competências e projetos, captar oportunidades, apoiar a prospecção e hospedar conceitos comerciais personalizados.
+Posicionar a Optional como autoridade, apresentar serviços, servir de portfólio de competências e projetos, captar oportunidades, apoiar a prospecção e hospedar conceitos comerciais personalizados.
 
 ## 3. Posicionamento
 Comercial e tecnológico, soluções sob medida para a realidade de cada empresa. Não é agência de marketing, nem currículo individual. Sem promessas de vendas/faturamento sem evidência; sem resultados, números ou depoimentos inventados.
@@ -26,7 +28,7 @@ Referências (sujeitas a validação, sem dados confidenciais): Símtese (CRM/ag
 `src/app/{core, layouts/main-layout, shared/components, features/{site,concepts}}`. MainLayout com header, `RouterOutlet`, footer e drawer (`<dialog>`). Detalhes em [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## 8. Stack
-Angular 22.2 (standalone, SSR + prerendering via `@angular/ssr`), Tailwind CSS 4.3 (`@tailwindcss/postcss`), Geist Sans (body) e Bricolage Grotesque (headings) self-hosted (`public/fonts`, licença OFL), Vitest, TypeScript 6. Versões conforme `package.json`.
+Angular 22.2 (standalone, SSR + prerendering via `@angular/ssr`), Tailwind CSS 4.3 (`@tailwindcss/postcss`), Bricolage Grotesque (única família, headings e corpo) self-hosted (`public/fonts`, licença OFL), GSAP 3.15 (via serviço `Gsap`), Vitest, TypeScript 6. Versões conforme `package.json`.
 
 ## 9. Direção de arte
 "Precisão em cada detalhe." Minimalista, tipográfica, assimétrica. Paleta: Carbon `#111315`, Paper `#F3F1EB`, Signal `#FF5930`, Slate `#74797D`, White `#FFFFFF`. Ver [`docs/ART_DIRECTION.md`](docs/ART_DIRECTION.md).
@@ -44,8 +46,8 @@ Title, description, canonical, Open Graph, HTML semântico, links internos e sit
 Páginas personalizadas para prospects. Noindex não é privacidade: nada confidencial em URL ou conteúdo; não bloquear em robots.txt; fora do sitemap e da navegação.
 
 ## 14. Agente e skills
-- Agente: `.github/agents/option.agent.md`; instruções: `.github/copilot-instructions.md`.
-- Skills do projeto: `.github/skills/option-web-design`, `.github/skills/option-copywriting`.
+- Agente: `.github/agents/optional.agent.md`; instruções: `.github/copilot-instructions.md`.
+- Skills do projeto: `.github/skills/optional-web-design`, `.github/skills/optional-copywriting`.
 - Skills externas (em `.agents/skills/`, registradas em `skills-lock.json`): `angular-developer` (angular/skills), `tailwind-best-practices` (ofershap/tailwind-best-practices), `frontend-design` (anthropics/skills).
 
 ## 15. Comandos de desenvolvimento

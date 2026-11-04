@@ -1,0 +1,14 @@
+<!-- Retorno à esquerda sobre faixa branca; bento de blocos desiguais, com um bloco dominante -->
+<section class="bg-white py-section-m">
+  <div class="site-container">
+    <h2 appReveal="lines" class="text-6xl"><strong>Estrutura,</strong> não improviso.</h2>
+    <div data-stagger=":scope > div" class="bento mt-section-s">
+      @for (principle of principles; track principle.title) {
+        <div [class]="'bento-tile ' + principle.tile">
+          <h3 class="text-4xl"><strong>{{ principle.title }}</strong></h3>
+          <p class="text-xl">{{ principle.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

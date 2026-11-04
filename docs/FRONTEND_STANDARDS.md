@@ -75,7 +75,6 @@ Elementos puramente visuais são **classes**, não componentes Angular.
 
 - Botões: `.btn` (base, `rounded-xs`, nunca `rounded-full`), `.btn-primary`, `.btn-secondary`, `.btn-tertiary`.
 - Cards: `.card`, `.card-primary`, `.card-secondary`, `.card-tertiary`.
-- Identificador: `.eyebrow` (único lugar, com labels de input, onde uppercase é permitido).
 - Composição: `.site-container`, `.site-grid`.
 - Superfície escura: `.surface-dark` (fundo carbon, texto paper, strong dos headings em white). `.card-secondary` compartilha a mesma regra.
 
@@ -105,6 +104,10 @@ Criar componentes quando houver estado, comportamento, inputs/outputs, interaç�
 - Angular: seguir a versão instalada, API moderna (standalone, signals, `inject()`, control flow nativo, `OnPush`), lazy loading, acessibilidade, style guide oficial.
 - Sem secrets no frontend; sem dados confidenciais de prospects.
 
-## 13. Acessibilidade e motion
+## 13. Motion (GSAP)
+
+Toda animação passa pelo serviço `Gsap` (`core/gsap.ts`): registra ScrollTrigger e SplitText, não executa no servidor e só anima com `prefers-reduced-motion: no-preference`. Componentes injetam o serviço (`Gsap.run(host, …)` retorna o cleanup para `DestroyRef`); textos usam a diretiva `appReveal` (`shared/directives/reveal.ts`): `appReveal="lines"` em headings, `appReveal` em parágrafos e blocos. Listas de cards usam `data-stagger="<seletor>"` no container. Não importar `gsap` diretamente em componentes. Animações discretas (fade, subida curta, máscara de linhas).
+
+## 14. Acessibilidade
 
 Contraste AA, foco visível, navegação por teclado, semântica HTML, `prefers-reduced-motion` respeitado (`motion-safe:` / `motion-reduce:`).

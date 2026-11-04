@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "option-site": {
+    "optional-site": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -64,10 +64,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "option-site:build:production"
+              "buildTarget": "optional-site:build:production"
             },
             "development": {
-              "buildTarget": "option-site:build:development"
+              "buildTarget": "optional-site:build:development"
             }
           },
           "defaultConfiguration": "development"

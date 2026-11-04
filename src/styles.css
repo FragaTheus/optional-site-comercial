@@ -1,14 +1,6 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Geist";
-  src: url("/fonts/Geist-Variable.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Bricolage Grotesque";
   src: url("/fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
   font-weight: 200 800;
@@ -25,8 +17,12 @@
   --color-slate: #74797d;
   --color-white: #ffffff;
 
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Bricolage Grotesque", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-display);
+
+  --tracking-display: -0.04em;
+  --tracking-title: -0.035em;
+  --tracking-heading: -0.02em;
 
   /* Escala fluida: máximos = tamanhos nominais do Tailwind */
   --text-xs: clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);
@@ -59,6 +55,11 @@
   --spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
   --max-w-container: 100rem;
   --container-container: var(--max-w-container);
+
+  /* Ritmo vertical irregular entre seções */
+  --spacing-section-s: clamp(4rem, 3rem + 4vw, 7rem);
+  --spacing-section-m: clamp(6rem, 4rem + 8vw, 12rem);
+  --spacing-section-l: clamp(8rem, 5rem + 12vw, 18rem);
 }
 
 @layer base {
@@ -67,9 +68,10 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-slate uppercase tracking-tight text-balance;
+    @apply font-display text-slate uppercase tracking-heading text-balance;
   }
-  h1, h2 { @apply font-extrabold; }
+  h1 { @apply font-extrabold tracking-display; }
+  h2 { @apply font-extrabold tracking-title; }
   h3 { @apply font-bold; }
   h4, h5, h6 { @apply font-semibold; }
   :is(h1, h2, h3, h4, h5, h6) strong {
@@ -97,10 +99,6 @@
     }
   }
 
-  .eyebrow {
-    @apply text-sm font-medium tracking-widest uppercase;
-  }
-
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-xs px-6 py-3 text-base font-semibold transition-colors motion-reduce:transition-none;
   }
@@ -121,6 +119,13 @@
     @apply bg-white text-carbon/75;
   }
   .card-tertiary {
-    @apply border border-carbon/20;
+    @apply bg-carbon/5;
+  }
+
+  .bento {
+    @apply grid grid-cols-1 gap-gutter md:auto-rows-[minmax(11rem,auto)] md:grid-cols-12;
+  }
+  .bento-tile {
+    @apply flex flex-col justify-between gap-8 rounded-xs p-8 md:p-10;
   }
 }

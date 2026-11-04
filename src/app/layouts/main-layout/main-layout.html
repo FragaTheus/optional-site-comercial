@@ -1,14 +1,14 @@
 <a href="#conteudo" class="btn btn-primary fixed top-2 left-2 z-50 -translate-y-20 focus:translate-y-0">Ir para o conteúdo</a>
 
-<header class="sticky top-0 z-40 border-b border-carbon/10 bg-paper/95">
+<header #header class="sticky top-0 z-40 bg-paper">
   <div class="site-container flex h-16 items-center justify-between">
-    <a routerLink="/" class="text-2xl font-display font-extrabold tracking-tight text-carbon" aria-label="Option, página inicial">Option</a>
+    <a routerLink="/" class="text-2xl font-display font-extrabold tracking-tight text-carbon" aria-label="Optional, página inicial">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></a>
 
     <nav aria-label="Principal" class="hidden items-center gap-8 md:flex">
       @for (link of links; track link.fragment) {
         <a routerLink="/" [fragment]="link.fragment" class="text-base font-medium text-carbon/75 hover:text-carbon">{{ link.label }}</a>
       }
-      <a [href]="contactUrl" class="btn btn-primary">Apresentar projeto</a>
+      <a [href]="contactUrl" class="btn btn-tertiary text-carbon">Apresentar projeto</a>
     </nav>
 
     <button type="button" class="btn btn-secondary text-carbon md:hidden" aria-haspopup="dialog" (click)="open()">Menu</button>
@@ -17,7 +17,7 @@
 
 <dialog #drawer aria-label="Menu" class="my-0 mr-0 ml-auto h-dvh max-h-none w-full max-w-sm surface-dark p-gutter backdrop:bg-carbon/60" (click)="closeOnBackdrop($event)">
   <div class="flex items-center justify-between">
-    <span class="text-2xl font-display font-extrabold tracking-tight text-white">Option</span>
+    <span class="text-2xl font-display font-extrabold tracking-tight text-white">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></span>
     <button type="button" class="btn btn-secondary" (click)="close()">Fechar</button>
   </div>
   <nav aria-label="Menu principal" class="mt-16 flex flex-col gap-6">
@@ -35,15 +35,14 @@
 <footer class="surface-dark py-16">
   <div class="site-container site-grid gap-y-10">
     <div class="md:col-span-6">
-      <p class="text-3xl font-display font-extrabold tracking-tight text-white">Option</p>
+      <p class="text-3xl font-display font-extrabold tracking-tight text-white">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></p>
       <p class="mt-4 max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
     </div>
     <nav aria-label="Rodapé" class="flex flex-col gap-3 md:col-span-3 md:col-start-8">
-      <p class="eyebrow">Navegação</p>
       @for (link of links; track link.fragment) {
         <a routerLink="/" [fragment]="link.fragment" class="hover:text-white">{{ link.label }}</a>
       }
     </nav>
-    <p class="text-sm md:col-span-12">© {{ year }} Option. Todos os direitos reservados.</p>
+    <p class="text-sm md:col-span-12">© {{ year }} Optional. Todos os direitos reservados.</p>
   </div>
 </footer>
