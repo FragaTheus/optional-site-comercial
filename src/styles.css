@@ -1,8 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src: url("/fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+  font-family: 'Bricolage Grotesque';
+  src: url('/fonts/bricolage-grotesque-latin-wght-normal.woff2') format('woff2');
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
@@ -17,12 +17,13 @@
   --color-slate: #74797d;
   --color-white: #ffffff;
 
-  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-display);
 
-  --tracking-display: -0.04em;
-  --tracking-title: -0.035em;
-  --tracking-heading: -0.02em;
+  /* Headings: tracking mais fechado no h1 (tighter), aliviando até tight nos níveis menores */
+  --tracking-display: -0.05em;
+  --tracking-title: -0.0375em;
+  --tracking-heading: -0.025em;
 
   /* Escala fluida: máximos = tamanhos nominais do Tailwind */
   --text-xs: clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);
@@ -67,15 +68,35 @@
     @apply bg-paper font-sans text-carbon/75 antialiased motion-safe:scroll-smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display text-slate uppercase tracking-heading text-balance;
   }
-  h1 { @apply font-extrabold tracking-display; }
-  h2 { @apply font-extrabold tracking-title; }
-  h3 { @apply font-bold; }
-  h4, h5, h6 { @apply font-semibold; }
+  h1 {
+    @apply font-extrabold tracking-display;
+  }
+  h2 {
+    @apply font-extrabold tracking-title;
+  }
+  h3 {
+    @apply font-bold;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
   :is(h1, h2, h3, h4, h5, h6) strong {
     @apply font-[inherit] text-carbon;
+  }
+
+  a,
+  button {
+    @apply cursor-pointer;
   }
 
   :focus-visible {
@@ -92,7 +113,8 @@
     @apply grid grid-cols-1 gap-x-gutter md:grid-cols-12;
   }
 
-  .surface-dark, .card-secondary {
+  .surface-dark,
+  .card-secondary {
     @apply bg-carbon text-paper/75;
     :is(h1, h2, h3, h4, h5, h6) strong {
       @apply text-white;
@@ -103,10 +125,13 @@
     @apply inline-flex items-center justify-center gap-2 rounded-xs px-6 py-3 text-base font-semibold transition-colors motion-reduce:transition-none;
   }
   .btn-primary {
-    @apply bg-signal text-carbon hover:bg-white;
+    @apply bg-signal text-carbon hover:bg-carbon hover:text-signal;
   }
   .btn-secondary {
-    @apply border border-current hover:bg-current/10;
+    @apply border border-current hover:bg-carbon hover:text-paper;
+    .surface-dark & {
+      @apply hover:bg-paper hover:text-carbon;
+    }
   }
   .btn-tertiary {
     @apply px-0 underline decoration-1 underline-offset-4 hover:decoration-signal;

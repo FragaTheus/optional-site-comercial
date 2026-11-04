@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Reveal } from '../../../../shared/directives/reveal';
+import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Resume os princípios de trabalho da Optional em um bento de blocos desiguais.
 @Component({

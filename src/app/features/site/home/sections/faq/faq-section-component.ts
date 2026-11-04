@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Reveal } from '../../../../shared/directives/reveal';
+import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Perguntas frequentes em details/summary nativos, para reduzir objeções e explicar como funciona trabalhar com a Optional.
 @Component({

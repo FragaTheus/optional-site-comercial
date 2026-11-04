@@ -24,28 +24,43 @@ export class Gsap {
     return () => mm.revert();
   }
 
-  /** Revela o elemento ao entrar na viewport (fade + subida). */
+  /** Revela o elemento ao entrar na viewport (fade + deslocamento a partir da sua posição na seção). */
   fade(targets: gsap.TweenTarget, trigger: Element, delay = 0): void {
-    gsap.from(targets, { autoAlpha: 0, y: 24, duration: 0.8, delay, ease: 'power3.out', scrollTrigger: { trigger, start: 'top 85%', once: true } });
+    const { x, y } = this.origin(trigger, 24);
+    gsap.from(targets, { autoAlpha: 0, x, y, duration: 0.8, delay, ease: 'power3.out', scrollTrigger: { trigger, start: 'top 85%', once: true } });
   }
 
-  /** Revela linhas de texto com máscara ao entrar na viewport. */
+  /** Revela linhas de texto com máscara ao entrar na viewport, vindo do lado da seção em que o texto está. */
   lines(el: Element): void {
     SplitText.create(el, {
       type: 'lines',
       mask: 'lines',
       autoSplit: true,
-      onSplit: self => gsap.from(self.lines, { yPercent: 110, duration: 0.9, stagger: 0.08, ease: 'power4.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }),
+      onSplit: self => {
+        const { x, y } = this.origin(el, 110);
+        return gsap.from(self.lines, { xPercent: x, yPercent: y, duration: 0.9, stagger: 0.08, ease: 'power4.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+      },
     });
   }
 
   /** Revela filhos em sequência (cards, itens de lista). */
   stagger(container: Element, selector: string): void {
-    gsap.from(container.querySelectorAll(selector), { autoAlpha: 0, y: 32, duration: 0.8, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: container, start: 'top 80%', once: true } });
+    const { x, y } = this.origin(container, 32);
+    gsap.from(container.querySelectorAll(selector), { autoAlpha: 0, x, y, duration: 0.8, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: container, start: 'top 80%', once: true } });
   }
 
   /** Entrada única no carregamento (ex.: header). */
   intro(targets: gsap.TweenTarget, vars: gsap.TweenVars = {}): void {
     gsap.from(targets, { autoAlpha: 0, y: -16, duration: 0.7, ease: 'power3.out', ...vars });
+  }
+
+  /** Deslocamento inicial de `el` conforme sua posição na seção: esquerda/direita vêm do lado; o restante vem de cima (metade superior) ou de baixo (metade inferior). */
+  private origin(el: Element, distance: number): { x: number; y: number } {
+    const box = (el.closest('section, footer') ?? el.parentElement ?? el).getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+    const dx = (rect.left + rect.width / 2 - box.left) / (box.width || 1) - 0.5;
+    const dy = (rect.top + rect.height / 2 - box.top) / (box.height || 1) - 0.5;
+    if (Math.abs(dx) > 0.2) return { x: Math.sign(dx) * distance, y: 0 };
+    return { x: 0, y: Math.sign(dy) * distance };
   }
 }

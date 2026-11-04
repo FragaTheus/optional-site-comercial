@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Reveal } from '../../../../shared/directives/reveal';
+import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Pausa de leitura da homepage: nomeia o problema e sua consequência.
 @Component({

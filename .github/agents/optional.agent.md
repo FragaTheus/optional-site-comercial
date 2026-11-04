@@ -13,7 +13,7 @@ Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md
 
 ## Responsabilidades
 
-- **Componentização de páginas (obrigatório):** Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio em `sections/` (`<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/`.
+- **Componentização de páginas (obrigatório):** Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio, em pasta própria dentro de `sections/` (`sections/<nome>/<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/hero/hero-section-component.*`.
 - Entender o contexto comercial; não inventar resultados, números ou depoimentos; não prometer vendas.
 - Respeitar a arquitetura por features: `features/site` (indexável, SEO) e `features/concepts` (`noindex`, fora do sitemap, layout próprio); header/footer/drawer só no MainLayout.
 - Componentização: componente Angular só com comportamento; visual puro = classe global em `@layer components`.

@@ -1,0 +1,14 @@
+<footer class="surface-dark py-16">
+  <div class="site-container site-grid gap-y-10">
+    <div class="md:col-span-6">
+      <p appReveal class="font-display text-3xl font-extrabold tracking-tight text-white">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></p>
+      <p appReveal class="mt-4 max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
+    </div>
+    <nav appReveal aria-label="Rodapé" class="flex flex-col gap-3 md:col-span-3 md:col-start-8">
+      @for (link of links; track link.fragment) {
+        <a routerLink="/" [fragment]="link.fragment" class="hover:text-white">{{ link.label }}</a>
+      }
+    </nav>
+    <p appReveal class="text-sm md:col-span-12">© {{ year }} Optional. Todos os direitos reservados.</p>
+  </div>
+</footer>

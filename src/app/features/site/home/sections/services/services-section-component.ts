@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Reveal } from '../../../../shared/directives/reveal';
+import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Hub de serviços: cada serviço é uma subseção posicionada em uma região diferente do grid, para a seção não virar uma lista repetida.
 @Component({

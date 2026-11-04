@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Reveal } from '../../../../shared/directives/reveal';
+import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Mostra como um projeto pode evoluir de landing page a ERP, em etapas, para reduzir a barreira de entrada.
 @Component({

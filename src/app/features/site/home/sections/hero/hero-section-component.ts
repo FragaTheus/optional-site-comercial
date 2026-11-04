@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CONTACT_URL } from '../../../../core/site.config';
-import { Reveal } from '../../../../shared/directives/reveal';
+import { CONTACT_URL } from '../../../../../core/site.config';
+import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Abertura da homepage: apresenta a Optional e leva o visitante ao contato ou aos serviços.
 @Component({

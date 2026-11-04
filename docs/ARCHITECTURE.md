@@ -12,7 +12,7 @@ Orientada a features; ajustar nomes às convenções da versão instalada e não
 src/app/
   core/                 serviços singleton, SEO/metadados, configuração
   layouts/
-    main-layout/        header, <router-outlet>, footer, drawer
+    main-layout/        header/ e footer/ (componentes), <router-outlet>, drawer
   shared/
     components/         somente componentes comportamentais reutilizáveis
   features/
@@ -22,7 +22,7 @@ src/app/
 
 ## features/site
 
-Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio em `sections/` (`<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/`.
+Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio, **em uma pasta própria** dentro de `sections/` (`sections/<nome>/<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/hero/hero-section-component.*`.
 
 Homepage, páginas satélites de serviços (CRM, ERP/gestão, automações, landing pages, sites comerciais), projetos e cases, conteúdo comercial, SEO, metadados, CTAs. Páginas indexáveis e otimizadas.
 

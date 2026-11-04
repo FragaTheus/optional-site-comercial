@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Reveal } from '../../../../shared/directives/reveal';
+import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Mostra o tipo de interface que a Optional constrói, em quatro fragmentos ilustrativos (sem dados reais de clientes) que dividem o conteúdo da página.
 @Component({
