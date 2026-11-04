@@ -12,6 +12,7 @@ Referências (apenas princípios): About da Meta e home da Apple — espaço em 
 |---|---|---|---|
 | Famílias | Geist (corpo) + Bricolage (títulos) | **Bricolage Grotesque** como única sans; IBM Plex Mono como secundária | Pedido: 1 sans + no máximo 1 secundária |
 | Cards | `.card*` liberados | Sem grid de cards iguais; ver exceção em §5.4 | Tipografia é o design |
+| Bento | Não previsto | Bento assimétrico em no máximo 2 seções, para mesclar com as seções tipográficas; ver §4.1 | Variar o ritmo sem virar grid de cards |
 | Imagens | "Não gerar imagens" | Slots previstos, **nunca obrigatórios**; a página funciona sem elas | Há zero imagens reais hoje |
 
 Inalterados: paleta de 5 cores, botões `rounded-xs`, títulos em uppercase com palavras-chave em `<strong>`, Tailwind obrigatório, tokens em `@theme`, MainLayout, regras de SEO.
@@ -98,6 +99,23 @@ Superfícies: Paper (padrão), White (no máximo uma faixa), Carbon (seções de
 
 Escala de espaçamento interno: múltiplos de 0,5rem (`2, 4, 6, 8, 12, 16, 24, 32` do Tailwind). Não usar valores arbitrários.
 
+### 4.1 Bento (uso pontual, para mesclar)
+
+Bento é um mosaico de blocos de tamanhos **diferentes** sobre o grid de 12 colunas. Serve para quebrar o ritmo tipográfico em até **2 seções da Home** (evita monotonia); nunca para a página inteira.
+
+Regras:
+- Blocos desiguais, no mínimo 3 tamanhos (ex.: 7×2, 5×1, 4×1 colunas×linhas). Proibido grid de blocos iguais.
+- Montado com `grid grid-cols-1 md:grid-cols-12` e `col-span`/`row-span`, `auto-rows` por token; 4 a 6 blocos por mosaico.
+- Gap = `--spacing-gutter`. Superfícies só da paleta: Paper com borda fina (`--color-line`), White, Carbon e, no máximo um bloco, Signal (texto Carbon).
+- Cada bloco é tipografia: um título curto (h3), uma frase e, se couber, um numeral em mono. Sem ícones, sem imagem decorativa, sem sombra.
+- Cantos: `rounded-xs`, o mesmo raio dos botões. Sem `rounded-2xl`.
+- Estilo reutilizável: classe `.bento` (container) e `.bento-tile` + variantes de superfície (`.bento-tile-light`, `.bento-tile-dark`) em `@layer components`, reaproveitando `.card*` quando equivalente; sem componente Angular só para a caixa.
+- Um bloco de texto grande deve dominar; os demais recuam (hierarquia de tamanho = hierarquia de importância).
+- Mobile: 1 coluna, blocos empilhados na ordem de leitura, mantendo variação de altura e recuo; sem `row-span` abaixo de `md`.
+- Motion: o mesmo fade + translate com stagger do §7; sem hover animado.
+
+Onde usar na Home (alternando com seções tipográficas): **Princípios** (§5.5) e, opcionalmente, **Evolução** (§5.4) no lugar da escada. Serviços, FAQ, hero e fechamento permanecem tipográficos.
+
 ## 5. Layout da Home (seção por seção)
 
 Cada seção é um componente em `features/site/home/sections/`. Alinhamentos abaixo são intenção, não receita mecânica.
@@ -121,10 +139,11 @@ Cada seção é um componente em `features/site/home/sections/`. Alinhamentos ab
 
 ### 5.4 Evolução do projeto — degraus (exceção controlada de cards)
 - O conteúdo foi pedido em cards: manter 4 etapas, mas **não como grid de cards iguais**. Escada diagonal: cada etapa desce um degrau (`mt` crescente) e ocupa 3 col. (col. 1, 4, 7, 10). Sem sombra, sem preenchimento; borda fina superior em Slate. Só a última (ERP) usa `.card-secondary` (Carbon) como destino.
+- Alternativa bento (§4.1), se a escada pesar: 4 blocos desiguais (LP col. 1–4, Integrações col. 5–12, CRM col. 1–8, ERP col. 9–12 em Carbon). Escolher uma das duas formas, não ambas.
 - Numeração em mono (`01`–`04`). h2 em col. 1–8, texto de apoio em col. 9–12 ao lado.
 
-### 5.5 Princípios — retorno à esquerda, faixa White
-- h2 col. 1–5; lista de 3 princípios (`dl`) em col. 7–12, sem divisórias pesadas, só linhas finas.
+### 5.5 Princípios — retorno à esquerda, faixa White, bento
+- h2 col. 1–5 acima do mosaico (ou ao lado em `lg`). Mosaico bento (§4.1) com 3 princípios + 1 bloco de fechamento: Sob medida col. 1–7 (2 linhas, bloco dominante, Carbon), Integrado col. 8–12 (1 linha, Paper com borda), Evolutivo col. 8–12 (1 linha, White com borda), frase de síntese col. 1–7 (1 linha, Signal ou Paper). Sem divisórias pesadas.
 
 ### 5.6 FAQ — coluna deslocada
 - h2 col. 1–4 (fixo ao rolar em `md+` com `position: sticky`, sem JS); `details`/`summary` em col. 6–12.
@@ -168,7 +187,7 @@ Sutil e funcional, via serviço `Gsap` (componentes não importam `gsap`): fade 
 ## 9. Anti-padrões proibidos
 
 - Gradientes (especialmente roxo/azul), glassmorphism, `backdrop-blur`.
-- Grid de cards iguais; caixas em volta de cada bloco.
+- Grid de cards ou de bento com blocos iguais; caixas em volta de cada bloco; bento em mais de 2 seções.
 - Hero centralizado com dois botões de igual peso.
 - Ícones decorativos, emojis como ícone, ilustrações genéricas de tecnologia.
 - Sombras pesadas (`shadow-lg` ou maior); no máximo borda fina.
