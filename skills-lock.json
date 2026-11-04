@@ -7,6 +7,12 @@
       "skillPath": "angular-developer/SKILL.md",
       "computedHash": "06f89c855e544fe306e8e08cae83a667e54fbb81509e8a1e631bff308f268cbd"
     },
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "6ac8ba6089dcbc303744a507a4587113c5d845ca2f658b3ce2b0b5eab108fb0d"
+    },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",
