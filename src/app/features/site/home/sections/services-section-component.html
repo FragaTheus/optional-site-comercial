@@ -1,0 +1,26 @@
+<!-- Seção escura; cada serviço é uma subseção h3 em uma região diferente do grid -->
+<section id="servicos" class="surface-dark scroll-mt-16 py-24 md:py-40">
+  <div class="site-container">
+    <p class="eyebrow">Serviços</p>
+    <h2 appReveal="lines" class="mt-6 max-w-4xl text-5xl">Cinco frentes, um <strong>mesmo critério:</strong> a <strong>sua realidade.</strong></h2>
+
+    <div class="mt-20 flex flex-col gap-24 md:mt-32 md:gap-40">
+      @for (service of services; track service.name) {
+        <article class="site-grid gap-y-8">
+          <div [class]="service.title">
+            <h3 appReveal="lines" class="text-4xl"><strong>{{ service.name }}</strong></h3>
+            <p appReveal class="mt-4 text-xl text-white">{{ service.lead }}</p>
+          </div>
+          <div [class]="service.body">
+            <p appReveal class="text-lg">{{ service.text }}</p>
+            <ul data-stagger="li" class="mt-6 flex flex-col gap-2 border-t border-paper/15 pt-6">
+              @for (point of service.points; track point) {
+                <li>{{ point }}</li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

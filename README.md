@@ -1,9 +1,9 @@
-# Optional<>
+# Optional
 
 > Estado: projeto Angular criado com a **homepage** (hub de serviços). Páginas de serviços, concepts, sitemap e canal de contato real ainda **não** existem.
 
 ## 1. Visão geral
-A marca é **Optional<>** (wordmark com `<>` em Signal; em texto corrido, escrever "Optional").
+A marca é **Optional**.
 
 Site da Optional, empresa de desenvolvimento de software e infraestrutura digital para empresas.
 
@@ -46,8 +46,8 @@ Title, description, canonical, Open Graph, HTML semântico, links internos e sit
 Páginas personalizadas para prospects. Noindex não é privacidade: nada confidencial em URL ou conteúdo; não bloquear em robots.txt; fora do sitemap e da navegação.
 
 ## 14. Agente e skills
-- Agente: `.github/agents/option.agent.md`; instruções: `.github/copilot-instructions.md`.
-- Skills do projeto: `.github/skills/option-web-design`, `.github/skills/option-copywriting`.
+- Agente: `.github/agents/optional.agent.md`; instruções: `.github/copilot-instructions.md`.
+- Skills do projeto: `.github/skills/optional-web-design`, `.github/skills/optional-copywriting`.
 - Skills externas (em `.agents/skills/`, registradas em `skills-lock.json`): `angular-developer` (angular/skills), `tailwind-best-practices` (ofershap/tailwind-best-practices), `frontend-design` (anthropics/skills).
 
 ## 15. Comandos de desenvolvimento

@@ -1,5 +1,5 @@
 ---
-name: option
+name: optional
 description: Agente de desenvolvimento do site da Optional (software e infraestrutura digital sob medida). Aplica contexto comercial, arquitetura Angular por features, padrões Tailwind, direção de arte, SEO e acessibilidade, coordenando as skills especializadas.
 ---
 
@@ -13,6 +13,7 @@ Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md
 
 ## Responsabilidades
 
+- **Componentização de páginas (obrigatório):** Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio em `sections/` (`<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/`.
 - Entender o contexto comercial; não inventar resultados, números ou depoimentos; não prometer vendas.
 - Respeitar a arquitetura por features: `features/site` (indexável, SEO) e `features/concepts` (`noindex`, fora do sitemap, layout próprio); header/footer/drawer só no MainLayout.
 - Componentização: componente Angular só com comportamento; visual puro = classe global em `@layer components`.
@@ -26,8 +27,8 @@ Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md
 
 | Tarefa | Skill |
 | --- | --- |
-| Identidade e composição visual | `option-web-design` (+ `frontend-design` como apoio) |
-| Textos comerciais e SEO | `option-copywriting` |
+| Identidade e composição visual | `optional-web-design` (+ `frontend-design` como apoio) |
+| Textos comerciais e SEO | `optional-copywriting` |
 | Angular (componentes, signals, rotas, SSR, testes, a11y) | `angular-developer` |
 | Tailwind v4 (tokens, layers, utilities) | `tailwind-best-practices` |
 

@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { Home } from './home';
+import { HomePageComponent } from './home-page-component';
 
-describe('Home', () => {
-  it('renders services, evolution cards and faq', async () => {
-    await TestBed.configureTestingModule({ imports: [Home], providers: [provideRouter([])] }).compileComponents();
-    const fixture = TestBed.createComponent(Home);
+describe('HomePageComponent', () => {
+  it('renders hero, services, evolution cards and faq', async () => {
+    await TestBed.configureTestingModule({ imports: [HomePageComponent], providers: [provideRouter([])] }).compileComponents();
+    const fixture = TestBed.createComponent(HomePageComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelector('h1')?.textContent).toContain('Software sob medida');

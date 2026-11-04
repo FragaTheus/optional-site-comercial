@@ -1,5 +1,5 @@
 ---
-name: option-web-design
+name: optional-web-design
 description: Preserva a identidade visual da Optional ao criar ou revisar interfaces do site (Angular + Tailwind). Use ao desenhar páginas, seções, layouts, tipografia, botões, cards ou qualquer UI da Optional, aplicando a direção de arte oficial e coordenando as skills frontend-design, tailwind-best-practices e angular-developer.
 ---
 

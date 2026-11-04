@@ -2,12 +2,13 @@
 
 Optional: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestão, automações e integrações, landing pages, sites comerciais). Não é agência de marketing nem portfólio pessoal. Sem promessas de vendas/faturamento, sem resultados, números ou depoimentos inventados.
 
-Leia antes de trabalhar: `README.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `option-web-design`, `option-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Optional prevalecem sobre sugestões das skills externas.
+Leia antes de trabalhar: `README.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `optional-web-design`, `optional-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Optional prevalecem sobre sugestões das skills externas.
 
 ## Estado do projeto
 Angular 22 + Tailwind 4 (confirme em `package.json`). Existem: MainLayout e Home. Não implemente CRM, dashboard, autenticação ou área interna sem pedido explícito.
 
 ## Arquitetura
+**Páginas divididas em componentes (obrigatório):** cada página é um componente de página (`<nome>-page-component.ts/.html`) que só compõe seções, define SEO e orquestra animações; cada seção é um componente em `sections/` (`<nome>-section-component.ts/.html`). Nunca deixe todas as seções em um arquivo. Ex.: `features/site/home/home-page-component.*` + `features/site/home/sections/`.
 Features em `src/app/`: `core/`, `layouts/main-layout/`, `shared/components/`, `features/site/` (público, indexável, SEO) e `features/concepts/` (`/concept/:slug`, layout próprio, `noindex`, fora do sitemap e da navegação; sem dados confidenciais; não bloquear no robots.txt). Header, footer e drawer (`<dialog>`) vivem só no MainLayout, com `RouterOutlet`. Não reorganize código funcional sem necessidade; evite abstrações prematuras.
 
 ## Tailwind / CSS (obrigatório; alvo v4)

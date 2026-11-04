@@ -1,0 +1,17 @@
+<!-- Composição horizontal em degraus, de landing page a ERP -->
+<section id="evolucao" class="scroll-mt-16 py-24 md:py-40">
+  <div class="site-container">
+    <p class="eyebrow">Evolução do projeto</p>
+    <h2 appReveal="lines" class="mt-6 max-w-4xl text-5xl">Uma <strong>landing page</strong> pode virar um <strong>ERP.</strong> Um passo de cada vez.</h2>
+    <p appReveal class="mt-8 max-w-2xl text-xl">Você não precisa comprar o sistema completo no primeiro dia. O projeto começa pequeno, prova seu valor e cresce quando o negócio pede, sem recomeçar do zero.</p>
+    <ol data-stagger="li" class="mt-16 grid grid-cols-1 items-start gap-gutter md:grid-cols-4">
+      @for (stage of stages; track stage.name; let i = $index) {
+        <li [class]="'card ' + stage.card + ' ' + stage.offset">
+          <p class="eyebrow">Etapa 0{{ i + 1 }}</p>
+          <h3 class="mt-4 text-3xl"><strong>{{ stage.name }}</strong></h3>
+          <p class="mt-3">{{ stage.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

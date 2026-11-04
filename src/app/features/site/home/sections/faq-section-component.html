@@ -1,0 +1,18 @@
+<!-- Coluna central -->
+<section id="faq" class="scroll-mt-16 py-24 md:py-40">
+  <div class="site-container mx-auto max-w-4xl">
+    <p class="eyebrow text-center">Perguntas frequentes</p>
+    <h2 appReveal="lines" class="mt-6 text-center text-5xl">Como <strong>funciona</strong> trabalhar com a Optional.</h2>
+    <div class="mt-16 border-t border-carbon/20">
+      @for (faq of faqs; track faq.q) {
+        <details class="group border-b border-carbon/20 py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold text-carbon [&::-webkit-details-marker]:hidden">
+            {{ faq.q }}
+            <span aria-hidden="true" class="text-3xl font-normal motion-safe:transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl">{{ faq.a }}</p>
+        </details>
+      }
+    </div>
+  </div>
+</section>

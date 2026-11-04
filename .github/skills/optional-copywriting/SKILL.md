@@ -1,5 +1,5 @@
 ---
-name: option-copywriting
+name: optional-copywriting
 description: Escreve copy comercial e SEO semântico em português para o site da Optional (software e infraestrutura digital sob medida). Use ao redigir ou revisar textos de homepage, páginas de serviços (CRM, ERP, automações, landing pages, sites comerciais), cases, CTAs, titles e meta descriptions.
 ---
 
