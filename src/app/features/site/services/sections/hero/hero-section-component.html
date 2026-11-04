@@ -1,0 +1,20 @@
+<!-- Assimétrico: h1 à direita, introdução à esquerda abaixo, CTAs à direita -->
+<section class="pb-section-s pt-section-s">
+  <div class="site-container site-grid gap-y-8">
+    <nav aria-label="Trilha de navegação" class="text-sm md:col-span-12">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a routerLink="/" class="underline underline-offset-4 hover:decoration-signal">Início</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a routerLink="/" fragment="servicos" class="underline underline-offset-4 hover:decoration-signal">Serviços</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page">{{ service().label }}</li>
+      </ol>
+    </nav>
+    <h1 appReveal="lines" class="mt-section-s text-7xl md:col-span-11 md:col-start-2">{{ service().h1.lead }} <strong>{{ service().h1.key }}</strong></h1>
+    <p appReveal class="text-xl md:col-span-6 md:col-start-2">{{ service().intro }}</p>
+    <div appReveal class="flex flex-wrap items-center gap-6 text-carbon md:col-span-4 md:col-start-9 md:justify-self-end">
+      <a [href]="contactUrl" class="btn btn-primary">Apresentar projeto</a>
+      <a href="#funcionalidades" class="btn btn-tertiary">Ver funcionalidades</a>
+    </div>
+  </div>
+</section>

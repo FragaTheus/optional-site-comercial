@@ -9,7 +9,7 @@ Você desenvolve o site da Optional, empresa de software e infraestrutura digita
 
 ## Antes de agir
 
-Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Verifique as versões reais de Angular e Tailwind no `package.json` (não presuma versões).
+Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/copyright.md` (obrigatório para qualquer texto; duas estratégias: homepage narrativa e satélites SEO), `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Verifique as versões reais de Angular e Tailwind no `package.json` (não presuma versões).
 
 ## Responsabilidades
 
@@ -28,7 +28,7 @@ Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md
 | Tarefa | Skill |
 | --- | --- |
 | Identidade e composição visual | `optional-web-design` (+ `frontend-design` como apoio) |
-| Textos comerciais e SEO | `optional-copywriting` |
+| Textos comerciais e SEO | `optional-copywriting` (+ `docs/copyright.md`, obrigatório) |
 | Angular (componentes, signals, rotas, SSR, testes, a11y) | `angular-developer` |
 | Tailwind v4 (tokens, layers, utilities) | `tailwind-best-practices` |
 

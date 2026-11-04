@@ -1,19 +1,18 @@
 import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@angular/core';
 import { Gsap } from '../../../core/gsap';
 import { Seo } from '../../../core/seo';
+import { SITE_URL } from '../../../core/site.config';
+import { CasesSectionComponent } from './sections/cases/cases-section-component';
 import { ClosingSectionComponent } from './sections/closing/closing-section-component';
-import { EvolutionSectionComponent } from './sections/evolution/evolution-section-component';
-import { FaqSectionComponent } from './sections/faq/faq-section-component';
 import { HeroSectionComponent } from './sections/hero/hero-section-component';
-import { PrinciplesSectionComponent } from './sections/principles/principles-section-component';
-import { ProblemSectionComponent } from './sections/problem/problem-section-component';
+import { ObjectionsSectionComponent } from './sections/objections/objections-section-component';
 import { ServicesSectionComponent } from './sections/services/services-section-component';
 import { ShowcaseSectionComponent } from './sections/showcase/showcase-section-component';
 
 // Página inicial: só compõe as seções, define o SEO e aciona as animações em sequência (`data-stagger`) das seções.
 @Component({
   selector: 'app-home-page',
-  imports: [HeroSectionComponent, ProblemSectionComponent, ServicesSectionComponent, ShowcaseSectionComponent, EvolutionSectionComponent, PrinciplesSectionComponent, FaqSectionComponent, ClosingSectionComponent],
+  imports: [HeroSectionComponent, ObjectionsSectionComponent, ServicesSectionComponent, ShowcaseSectionComponent, CasesSectionComponent, ClosingSectionComponent],
   templateUrl: './home-page-component.html',
 })
 export class HomePageComponent {
@@ -22,11 +21,14 @@ export class HomePageComponent {
     inject(Seo).set(
       'Optional — Software e infraestrutura digital sob medida para empresas',
       'A Optional desenvolve CRM, ERP e sistemas de gestão, automações, landing pages e sites comerciais sob medida para a realidade de cada empresa.',
+      '/',
+      [{ '@type': 'Organization', name: 'Optional', description: 'Software e infraestrutura digital sob medida para empresas.', ...(SITE_URL && { url: SITE_URL }) }],
     );
     const host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
     const gsap = inject(Gsap);
+    const destroyRef = inject(DestroyRef);
     afterNextRender(() =>
-      inject(DestroyRef).onDestroy(gsap.run(host, () => host.querySelectorAll('[data-stagger]').forEach(el => gsap.stagger(el, el.getAttribute('data-stagger')!)))),
+      destroyRef.onDestroy(gsap.run(host, () => host.querySelectorAll('[data-stagger]').forEach(el => gsap.stagger(el, el.getAttribute('data-stagger')!)))),
     );
   }
 }

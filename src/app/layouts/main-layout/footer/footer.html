@@ -4,9 +4,14 @@
       <p appReveal class="font-display text-3xl font-extrabold tracking-tight text-white">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></p>
       <p appReveal class="mt-4 max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
     </div>
-    <nav appReveal aria-label="Rodapé" class="flex flex-col gap-3 md:col-span-3 md:col-start-8">
+    <nav appReveal aria-label="Rodapé" class="flex flex-col gap-3 md:col-span-2 md:col-start-7">
       @for (link of links; track link.fragment) {
         <a routerLink="/" [fragment]="link.fragment" class="hover:text-white">{{ link.label }}</a>
+      }
+    </nav>
+    <nav appReveal aria-label="Serviços" class="flex flex-col gap-3 md:col-span-4 md:col-start-9">
+      @for (service of services; track service.slug) {
+        <a [routerLink]="['/servicos', service.slug]" class="hover:text-white">{{ service.label }}</a>
       }
     </nav>
     <p appReveal class="text-sm md:col-span-12">© {{ year }} Optional. Todos os direitos reservados.</p>

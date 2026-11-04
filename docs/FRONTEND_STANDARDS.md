@@ -76,6 +76,8 @@ Elementos puramente visuais são **classes**, não componentes Angular.
 - Botões: `.btn` (base, `rounded-xs`, nunca `rounded-full`), `.btn-primary`, `.btn-secondary`, `.btn-tertiary`.
 - Cards: `.card`, `.card-primary`, `.card-secondary`, `.card-tertiary`.
 - Composição: `.site-container`, `.site-grid`.
+- Card com imagem de fundo: `.media-card` (container), `.media-card-img` (`object-cover`), `.media-card-fade` (gradiente horizontal `bg-linear-to-r from-carbon via-transparent to-carbon`: o equivalente de black→transparent→black dentro da paleta, já que `--color-black` não existe), `.media-card-scrim` (reforço de contraste sob o texto). Texto em `paper`/`white`; a imagem é decorativa (`alt=""`) e o texto carrega o conteúdo.
+- `.eyebrow`: rótulo identificador em uppercase.
 - Superfície escura: `.surface-dark` (fundo carbon, texto paper, strong dos headings em white). `.card-secondary` compartilha a mesma regra.
 
 Usar `@apply` com utilities Tailwind; não aplicar uma classe custom dentro de outra com `@apply` (não suportado em v4 para classes de `@layer components`). Combinar base + variante no template:
