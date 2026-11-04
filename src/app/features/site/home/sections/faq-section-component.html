@@ -1,16 +1,15 @@
-<!-- Coluna central -->
-<section id="faq" class="scroll-mt-16 py-24 md:py-40">
-  <div class="site-container mx-auto max-w-4xl">
-    <p class="eyebrow text-center">Perguntas frequentes</p>
-    <h2 appReveal="lines" class="mt-6 text-center text-5xl">Como <strong>funciona</strong> trabalhar com a Optional.</h2>
-    <div class="mt-16 border-t border-carbon/20">
+<!-- Título preso à esquerda enquanto as respostas rolam à direita; blocos separados por tom, não por linhas -->
+<section id="faq" class="scroll-mt-16 py-section-l">
+  <div class="site-container site-grid gap-y-10">
+    <h2 appReveal="lines" class="text-6xl md:sticky md:top-24 md:col-span-5 md:self-start">Como <strong>trabalhamos.</strong></h2>
+    <div data-stagger=":scope > details" class="flex flex-col gap-2 md:col-span-6 md:col-start-7">
       @for (faq of faqs; track faq.q) {
-        <details class="group border-b border-carbon/20 py-6">
+        <details class="group rounded-xs bg-white p-6">
           <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold text-carbon [&::-webkit-details-marker]:hidden">
             {{ faq.q }}
             <span aria-hidden="true" class="text-3xl font-normal motion-safe:transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="mt-4 max-w-2xl">{{ faq.a }}</p>
+          <p class="mt-4 max-w-prose">{{ faq.a }}</p>
         </details>
       }
     </div>

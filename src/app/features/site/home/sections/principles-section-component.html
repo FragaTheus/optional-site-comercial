@@ -1,14 +1,14 @@
-<!-- Retorno à esquerda, sobre fundo branco -->
-<section class="bg-white py-24 md:py-40">
-  <div class="site-container site-grid gap-y-12">
-    <h2 appReveal="lines" class="text-5xl md:col-span-5"><strong>Estrutura</strong> no lugar de <strong>improviso.</strong></h2>
-    <dl class="grid gap-10 md:col-span-6 md:col-start-7">
+<!-- Retorno à esquerda sobre faixa branca; bento de blocos desiguais, com um bloco dominante -->
+<section class="bg-white py-section-m">
+  <div class="site-container">
+    <h2 appReveal="lines" class="text-6xl"><strong>Estrutura,</strong> não improviso.</h2>
+    <div data-stagger=":scope > div" class="bento mt-section-s">
       @for (principle of principles; track principle.title) {
-        <div>
-          <dt class="text-2xl font-bold text-carbon">{{ principle.title }}</dt>
-          <dd class="mt-2">{{ principle.text }}</dd>
+        <div [class]="'bento-tile ' + principle.tile">
+          <h3 class="text-4xl"><strong>{{ principle.title }}</strong></h3>
+          <p class="text-xl">{{ principle.text }}</p>
         </div>
       }
-    </dl>
+    </div>
   </div>
 </section>

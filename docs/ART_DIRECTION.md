@@ -38,12 +38,12 @@ A narrativa visual é assimétrica e deliberada. Exemplo de ritmo: esquerda → 
 
 A tipografia é o principal elemento gráfico.
 
-- Heading: **Bricolage Grotesque** (variável, OFL, self-hosted; pesos 200–800, logo `font-extrabold` é o máximo). Body: **Geist Sans**. Mono: **IBM Plex Mono**, só quando necessário.
+- Heading: **Bricolage Grotesque** (variável, OFL, self-hosted; pesos 200–800, logo `font-extrabold` é o máximo). Body: a mesma família. Sem monospace (só em blocos de código reais).
 - Antes de implementar, avaliar licença, disponibilidade e estratégia de carregamento (self-host, `font-display: swap`, subset, preload). Evitar muitas famílias.
 - Headings: fortes, expressivos, **uppercase**, em slate com as **palavras-chave em `<strong>` na cor carbon** (white em fundos escuros). Cada heading deve destacar suas palavras-chave com `<strong>`. Pesos de semibold a extrabold, entrelinha compacta quando apropriado, tracking ajustado, escala claramente superior ao body.
 - Body: peso confortável, aparência cinza, contraste acessível, entrelinha generosa.
 - Escala fluida com `clamp()` (ver `FRONTEND_STANDARDS.md`).
-- **Uppercase** em headings (h1–h6), labels de inputs, eyebrows e small text identificador. Nunca em textos corridos, botões, navegação ou descrições.
+- **Uppercase** em headings (h1–h6), labels de inputs e small text identificador. Nunca em textos corridos, botões, navegação ou descrições.
 
 ## Botões
 

@@ -30,7 +30,7 @@ Minimalismo premium; tipografia protagonista; assimetria controlada; espaço neg
 - Container `.site-container` (max `100rem`, `px-gutter`); gutter fluido 1.5–2.5rem.
 - Tipografia fluida via tokens `--text-*`; headings em Bricolage Grotesque uppercase, slate, com palavras-chave em `<strong>` (carbon); body em Geist Sans.
 - Botões: `.btn` + variante, `rounded-xs`, nunca `rounded-full`.
-- Uppercase em headings, labels de input, eyebrows e small text identificador; nunca em corpo, botões ou navegação.
+- Uppercase em headings, labels de input e small text identificador; nunca em corpo, botões ou navegação.
 - Sem CSS arbitrário/por componente, sem `style=""`, sem libs de UI externas.
 - Elemento puramente visual = classe global, não componente Angular.
 - Sem imagens necessárias para o impacto; sem gradientes decorativos, glassmorphism, sombras fortes, ícones genéricos.

@@ -10,7 +10,8 @@ Referências (apenas princípios): About da Meta e home da Apple — espaço em 
 
 | Tema | Antes | Agora | Motivo |
 |---|---|---|---|
-| Famílias | Geist (corpo) + Bricolage (títulos) | **Bricolage Grotesque** como única sans; IBM Plex Mono como secundária | Pedido: 1 sans + no máximo 1 secundária |
+| Famílias | Geist (corpo) + Bricolage (títulos) | **Bricolage Grotesque** como única família (Geist removida); sem mono | Pedido: 1 sans; a skill `design-taste-frontend` proíbe mono fora de código |
+| Rótulos | Eyebrows, numeração, linhas finas | Removidos; ordem por posição, separação por espaço e tom | Regras da skill `design-taste-frontend` (inspect.mjs) |
 | Cards | `.card*` liberados | Sem grid de cards iguais; ver exceção em §5.4 | Tipografia é o design |
 | Bento | Não previsto | Bento assimétrico em no máximo 2 seções, para mesclar com as seções tipográficas; ver §4.1 | Variar o ritmo sem virar grid de cards |
 | Imagens | "Não gerar imagens" | Slots previstos, **nunca obrigatórios**; a página funciona sem elas | Há zero imagens reais hoje |
@@ -31,7 +32,7 @@ Inalterados: paleta de 5 cores, botões `rounded-xs`, títulos em uppercase com 
 |---|---|
 | Título de 7–9 colunas ancorado à esquerda | Hero centralizado com dois botões |
 | Texto de apoio pequeno deslocado para outra coluna | Texto de apoio colado ao título, mesma largura |
-| Linhas finas (`border`) como divisores | Caixas em volta de tudo |
+| Espaço e mudança de tom como divisores | Linhas finas, caixas em volta de tudo |
 | Listas tipográficas numeradas | Grid de cards iguais, ícones decorativos |
 | Um CTA primário por tela | Vários botões de peso igual |
 
@@ -39,16 +40,13 @@ Inalterados: paleta de 5 cores, botões `rounded-xs`, títulos em uppercase com 
 
 **Família principal — Bricolage Grotesque** (Google Fonts, SIL OFL, já self-hosted em `public/fonts/`). Sans grotesca com personalidade própria (aberturas e terminais incomuns), forte em tamanho display e legível em texto; evita o aspecto neutro de Inter/Roboto/Arial. Pesos disponíveis no arquivo atual: 200–800. **Revisão:** o arquivo atual é somente `wght`; usar os eixos `opsz`/`wdth` exige trocar o arquivo (pendente, avaliar tamanho antes).
 
-**Família secundária — IBM Plex Mono** (Google Fonts, OFL), só para detalhes: numeração de etapas (`01`), rótulos técnicos, legendas. Carregar apenas pesos 400 e 500, latin. Alternativa descartada: serif — conflita com o tom tecnológico.
-
-Geist deixa de ser usada quando esta direção for implementada (remover `@font-face` e preload).
+Sem família secundária: monospace só em blocos de código reais. Geist foi removida (`@font-face`, preload e arquivo).
 
 ### Tokens
 
 ```
 --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
 --font-sans:    var(--font-display);
---font-mono:    "IBM Plex Mono", ui-monospace, monospace;
 ```
 
 ### Escala (mantém os nomes `text-*`; máximos = tamanhos nominais do Tailwind)
@@ -62,7 +60,7 @@ A escala fluida `--text-xs … --text-9xl` já definida em `src/styles.css` perm
 | Subtítulo (h3) | `text-3xl` a `text-4xl` | 700 | 1.15–1.25 | `-0.02em` |
 | Lead | `text-xl` | 400 | 1.5 | `0` |
 | Corpo | `text-base`/`text-lg` | 400 | 1.65 | `0` |
-| Eyebrow / rótulo | `text-sm` (mono) | 500 | 1.5 | `+0.08em`, uppercase |
+| Rótulo / apoio | `text-sm` | 500 | 1.5 | 0 (sem uppercase) |
 
 Tokens a acrescentar em `@theme` na implementação: `--tracking-display: -0.04em`, `--tracking-title: -0.035em`, `--tracking-heading: -0.02em`. Títulos: uppercase (aprovado), Carbon nas palavras-chave (`<strong>`) e Slate no restante; em superfície escura, `<strong>` em White. Uppercase continua proibido em corpo, botões e navegação. Largura de leitura do corpo: máx. 62ch.
 
@@ -101,59 +99,34 @@ Escala de espaçamento interno: múltiplos de 0,5rem (`2, 4, 6, 8, 12, 16, 24, 3
 
 ### 4.1 Bento (uso pontual, para mesclar)
 
-Bento é um mosaico de blocos de tamanhos **diferentes** sobre o grid de 12 colunas. Serve para quebrar o ritmo tipográfico em até **2 seções da Home** (evita monotonia); nunca para a página inteira.
+Bento é um mosaico de blocos de tamanhos **diferentes** sobre o grid de 12 colunas. Serve para quebrar o ritmo tipográfico em no máximo 2 seções da Home (hoje: 1) (evita monotonia); nunca para a página inteira.
 
 Regras:
 - Blocos desiguais, no mínimo 3 tamanhos (ex.: 7×2, 5×1, 4×1 colunas×linhas). Proibido grid de blocos iguais.
 - Montado com `grid grid-cols-1 md:grid-cols-12` e `col-span`/`row-span`, `auto-rows` por token; 4 a 6 blocos por mosaico.
-- Gap = `--spacing-gutter`. Superfícies só da paleta: Paper com borda fina (`--color-line`), White, Carbon e, no máximo um bloco, Signal (texto Carbon).
-- Cada bloco é tipografia: um título curto (h3), uma frase e, se couber, um numeral em mono. Sem ícones, sem imagem decorativa, sem sombra.
+- Gap = `--spacing-gutter`. Superfícies só da paleta: Paper e tons de Carbon a 5% (sem bordas), White, Carbon e, no máximo um bloco, Signal (texto Carbon).
+- Cada bloco é tipografia: um título curto (h3), uma frase. Sem numeração, ícones, sem imagem decorativa, sem sombra.
 - Cantos: `rounded-xs`, o mesmo raio dos botões. Sem `rounded-2xl`.
-- Estilo reutilizável: classe `.bento` (container) e `.bento-tile` + variantes de superfície (`.bento-tile-light`, `.bento-tile-dark`) em `@layer components`, reaproveitando `.card*` quando equivalente; sem componente Angular só para a caixa.
+- Estilo reutilizável: classe `.bento` (container) e `.bento-tile` + variantes de superfície (`.surface-dark`, `.card-primary`, `.card-tertiary`) em `@layer components`, reaproveitando `.card*` quando equivalente; sem componente Angular só para a caixa.
 - Um bloco de texto grande deve dominar; os demais recuam (hierarquia de tamanho = hierarquia de importância).
 - Mobile: 1 coluna, blocos empilhados na ordem de leitura, mantendo variação de altura e recuo; sem `row-span` abaixo de `md`.
 - Motion: o mesmo fade + translate com stagger do §7; sem hover animado.
 
-Onde usar na Home (alternando com seções tipográficas): **Princípios** (§5.5) e, opcionalmente, **Evolução** (§5.4) no lugar da escada. Serviços, FAQ, hero e fechamento permanecem tipográficos.
+Onde usar na Home: **Princípios** (implementado). Evolução usa a escada de cards (não bento) para não haver duas seções de blocos em sequência. Serviços, FAQ, hero e fechamento permanecem tipográficos.
 
-## 5. Layout da Home (seção por seção)
+## 5. Layout da Home (seção por seção, como implementado)
 
-Cada seção é um componente em `features/site/home/sections/`. Alinhamentos abaixo são intenção, não receita mecânica.
+Cada seção é um componente em `features/site/home/sections/`. Direção dealt pela skill: `type-only-statement` (seed 1426254857), com paleta e tipografia mantidas da marca. Títulos de no máximo 2 linhas em todas as larguras (exigência do `inspect.mjs`); a frase de apoio carrega o detalhe. Sem eyebrows, numeração, mono nem linhas finas.
 
-### 5.1 Hero — âncora à esquerda
-- Eyebrow (mono) na col. 1–4.
-- h1 `text-9xl`, col. 1–9 (7 a 9 colunas), 3–4 linhas; palavras-chave em `<strong>`.
-- Texto de apoio (`text-lg`, ≤ 5 col.) deslocado: col. 8–12, linha abaixo, com `mt` generoso.
-- CTA primário "Apresentar projeto" na col. 1–3, abaixo; o secundário é um link tertiary, não um botão do mesmo peso.
-- Imagem: nenhuma. Espaço: `--space-section-l` abaixo.
+1. **Hero — vazio, depois a frase na base.** Topo vazio; h1 "Software sob medida" (`text-8xl`) deslocado para a direita (col. 2–12); frase de apoio na col. 1–4 e CTA primário + link na col. 9–12, na mesma base. Sem imagem.
+2. **Problema — deslocado à direita.** h2 "Planilhas já não bastam." col. 4–12; parágrafo col. 7–11. Seção curta (`py-section-s`), uma pausa.
+3. **Serviços — Carbon, subseções h3 em regiões diferentes.** h2 "Cinco frentes, um critério." Cada serviço: h3 + lead de um lado, texto + lista do outro; alterna esquerda/direita, um centralizado (Automações) e um estreito (Landing pages). Separação só por espaço.
+4. **Evolução — degraus de cards.** h2 col. 1–8 e apoio col. 9–12. 4 etapas em escada (cada uma desce um degrau; no mobile, recuo crescente); a última (ERP) em Carbon. Cards desiguais por posição, sem numeração.
+5. **Princípios — faixa branca, bento.** h2 acima; mosaico bento (§4.1): "Sob medida" 7 col. × 2 linhas em Carbon, "Integrado" e "Evolutivo" 5 col. em tons de Paper.
+6. **FAQ — título preso à esquerda.** h2 "Como trabalhamos." (col. 1–5, sticky em `md+`), `details`/`summary` em col. 7–12, blocos brancos separados por espaço.
+7. **Fechamento — Carbon, única seção centralizada.** h2 "Conte a sua operação." (`text-8xl`), frase e CTA primário.
 
-### 5.2 Problema — deslocado para a direita
-- h2 `text-6xl`, col. 4–12 (deslocado à direita, em contraste com o hero).
-- Corpo curto na col. 4–8, abaixo. Espaço: `--space-section-s` (seção curta, quase uma pausa).
-
-### 5.3 Serviços — Carbon, composição horizontal e alternada
-- Fundo `.surface-dark`. h2 `text-7xl`, col. 1–8.
-- Cada serviço é um `<article>` com h3 e linha fina (`border-t`) acima; sem card, sem ícone.
-- Alternância intencional: serviço 1 título col. 1–5 / texto col. 7–12; serviço 2 invertido (texto col. 1–5, título col. 8–12); serviço 3 título em largura de 8 col. com texto abaixo e recuado em col. 5–10; 4 e 5 retomam esquerda e direita. Pontos-chave como lista tipográfica com `—`, sem bullets decorativos.
-- Espaço entre serviços irregular: alternar `--space-section-s` e `--space-section-m`.
-
-### 5.4 Evolução do projeto — degraus (exceção controlada de cards)
-- O conteúdo foi pedido em cards: manter 4 etapas, mas **não como grid de cards iguais**. Escada diagonal: cada etapa desce um degrau (`mt` crescente) e ocupa 3 col. (col. 1, 4, 7, 10). Sem sombra, sem preenchimento; borda fina superior em Slate. Só a última (ERP) usa `.card-secondary` (Carbon) como destino.
-- Alternativa bento (§4.1), se a escada pesar: 4 blocos desiguais (LP col. 1–4, Integrações col. 5–12, CRM col. 1–8, ERP col. 9–12 em Carbon). Escolher uma das duas formas, não ambas.
-- Numeração em mono (`01`–`04`). h2 em col. 1–8, texto de apoio em col. 9–12 ao lado.
-
-### 5.5 Princípios — retorno à esquerda, faixa White, bento
-- h2 col. 1–5 acima do mosaico (ou ao lado em `lg`). Mosaico bento (§4.1) com 3 princípios + 1 bloco de fechamento: Sob medida col. 1–7 (2 linhas, bloco dominante, Carbon), Integrado col. 8–12 (1 linha, Paper com borda), Evolutivo col. 8–12 (1 linha, White com borda), frase de síntese col. 1–7 (1 linha, Signal ou Paper). Sem divisórias pesadas.
-
-### 5.6 FAQ — coluna deslocada
-- h2 col. 1–4 (fixo ao rolar em `md+` com `position: sticky`, sem JS); `details`/`summary` em col. 6–12.
-- Resposta ≤ 62ch. Indicador `+` em mono.
-
-### 5.7 Fechamento — Carbon, composição única centralizada
-- Única seção centralizada, por ser o encerramento. h2 `text-8xl` em col. 2–11, CTA primário abaixo. Espaço: `--space-section-l`.
-
-### Imagens (slots opcionais)
-Nenhuma é necessária. Se vierem a existir (fotos reais, telas reais de produto autorizadas), entram grandes e raras: no máximo duas na Home, 7–8 col., sangrando para a margem, sem moldura, sem sombra. Não usar imagens abstratas de tecnologia nem mockups inventados.
+Imagens: nenhuma (ver conflitos conhecidos). Se existirem imagens reais, entram grandes e raras, sem moldura nem sombra.
 
 ## 6. Componentes
 
@@ -166,10 +139,9 @@ Elementos puramente visuais são classes em `@layer components`; componentes Ang
 | **Link** | Sublinhado de 1px com `underline-offset-4`; hover troca a cor do sublinhado para Signal. Foco: outline Signal de 2px. |
 | **Hero** | §5.1. Sem imagem, sem gradiente, sem centralização. |
 | **Bloco de texto com destaque** | Título uppercase com `<strong>` nas palavras-chave (Carbon sobre Slate) ao lado do corpo em outra coluna. É o padrão base de toda seção. |
-| **Eyebrow** | `.eyebrow`, mono, uppercase, `tracking-widest`; no máximo um por seção. |
 | **Footer** (`<footer>`) | Carbon. Wordmark grande (`text-8xl`) à esquerda, links institucionais em lista simples na col. 8–12, linha legal pequena. Sem ícones sociais decorativos. |
 
-Tokens de componente a acrescentar: `--radius-button` (alias de `rounded-xs`), `--line-hairline: 1px`, `--color-line: color-mix(in oklab, var(--color-carbon) 15%, transparent)` (linhas finas derivadas da paleta, sem nova cor).
+Tom de bloco derivado da paleta, sem nova cor: `bg-carbon/5` (`.card-tertiary`).
 
 ## 7. Motion
 
@@ -198,7 +170,10 @@ Sutil e funcional, via serviço `Gsap` (componentes não importam `gsap`): fade 
 
 ## Pendências
 
-- Aprovar o corte de Geist e a troca para Bricolage única (e, se desejado, o arquivo com eixos `opsz`/`wdth`).
-- Definir se IBM Plex Mono entra agora ou apenas quando houver necessidade real.
+- Confirmar a troca para Bricolage única (e, se desejado, o arquivo com eixos `opsz`/`wdth`).
 - Canal de contato (`CONTACT_URL`) e domínio (`SITE_URL`) seguem indefinidos.
 - Execução do skill `design-taste-frontend` (script `draw.mjs` e inspeção no navegador) ficou para a etapa de implementação; este documento só registra a direção.
+
+## Conflitos conhecidos com a skill design-taste-frontend
+
+O `inspect.mjs` aponta, e a decisão é mantê-los porque vêm da identidade aprovada: fundo Paper (`palette-cream`), títulos uppercase com palavras-chave em `<strong>` de outra cor, zero imagens (não há material real nem autorização para inventar telas ou resultados; piso de 4 imagens e vídeo) e o vazio proposital no topo do hero.

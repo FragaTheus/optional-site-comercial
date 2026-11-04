@@ -75,7 +75,6 @@ Elementos puramente visuais são **classes**, não componentes Angular.
 
 - Botões: `.btn` (base, `rounded-xs`, nunca `rounded-full`), `.btn-primary`, `.btn-secondary`, `.btn-tertiary`.
 - Cards: `.card`, `.card-primary`, `.card-secondary`, `.card-tertiary`.
-- Identificador: `.eyebrow` (único lugar, com labels de input, onde uppercase é permitido).
 - Composição: `.site-container`, `.site-grid`.
 - Superfície escura: `.surface-dark` (fundo carbon, texto paper, strong dos headings em white). `.card-secondary` compartilha a mesma regra.
 

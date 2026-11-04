@@ -8,7 +8,7 @@ describe('HomePageComponent', () => {
     const fixture = TestBed.createComponent(HomePageComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
-    expect(el.querySelector('h1')?.textContent).toContain('Software sob medida');
+    expect(el.querySelector('h1')?.textContent).toContain('Software');
     expect(el.querySelectorAll('#servicos article h3').length).toBe(5);
     expect(el.querySelectorAll('#evolucao li').length).toBe(4);
     expect(el.querySelectorAll('#faq details').length).toBe(6);

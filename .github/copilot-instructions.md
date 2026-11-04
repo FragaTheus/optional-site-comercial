@@ -19,7 +19,7 @@ Features em `src/app/`: `core/`, `layouts/main-layout/`, `shared/components/`, `
 - Tipografia fluida: `--text-*` com `clamp()` em `@theme`, mantendo nomes `text-xs`…`text-9xl` e máximos nominais; sem escala paralela nem `<br>` responsivo. Headings: Bricolage Grotesque, uppercase, slate, com palavras-chave em `<strong>` (carbon; white em `.surface-dark`/`.card-secondary`) via `@layer base`; sempre destaque as palavras-chave de cada heading.
 - `--spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem)` (`px-gutter`); `--max-w-container: 100rem` (`max-w-container`); `.site-container`; `.site-grid`.
 - Grid: `grid grid-cols-1 md:grid-cols-12` com `col-span/start/end`.
-- Classes visuais: `.btn` + `.btn-primary|secondary|tertiary`, `.card` + `.card-primary|secondary|tertiary`, `.eyebrow`, `.site-container`, `.site-grid`. Botões sempre `rounded-xs`, nunca `rounded-full`. Uppercase em headings, labels de input, eyebrows e small text identificador; nunca em corpo, botões ou navegação.
+- Classes visuais: `.btn` + `.btn-primary|secondary|tertiary`, `.card` + `.card-primary|secondary|tertiary`, `.site-container`, `.site-grid`. Botões sempre `rounded-xs`, nunca `rounded-full`. Uppercase em headings, labels de input, eyebrows e small text identificador; nunca em corpo, botões ou navegação.
 - Elemento só visual = classe global, não componente. Componente Angular só com estado, comportamento, I/O, interação ou reutilização funcional; prefira HTML nativo.
 - Reutilize antes de criar; não duplique definições.
 
