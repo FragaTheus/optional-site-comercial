@@ -1,10 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, DestroyRef, afterNextRender, inject } from '@angular/core';
+import { Gsap } from '../../../core/gsap';
+import { Reveal } from '../../../shared/directives/reveal';
 import { Seo } from '../../../core/seo';
 import { CONTACT_URL } from '../../../core/site.config';
 
-// Homepage: apresenta a Option e funciona como hub que direciona para cada serviço.
+// Homepage: apresenta a Optional e funciona como hub que direciona para cada serviço.
 @Component({
   selector: 'app-home',
+  imports: [Reveal],
   templateUrl: './home.html',
 })
 export class Home {
@@ -75,9 +78,19 @@ export class Home {
 
   // Construtores
   constructor() {
+    const host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
+    const gsap = inject(Gsap);
+    const destroyRef = inject(DestroyRef);
+    afterNextRender(() =>
+      destroyRef.onDestroy(
+        gsap.run(host, () => {
+          host.querySelectorAll('[data-stagger]').forEach(el => gsap.stagger(el, el.getAttribute('data-stagger')!));
+        }),
+      ),
+    );
     inject(Seo).set(
-      'Option — Software e infraestrutura digital sob medida para empresas',
-      'A Option desenvolve CRM, ERP e sistemas de gestão, automações, landing pages e sites comerciais sob medida para a realidade de cada empresa.',
+      'Optional — Software e infraestrutura digital sob medida para empresas',
+      'A Optional desenvolve CRM, ERP e sistemas de gestão, automações, landing pages e sites comerciais sob medida para a realidade de cada empresa.',
     );
   }
 }

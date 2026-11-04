@@ -1,8 +1,8 @@
-# Instruções do Copilot — Option
+# Instruções do Copilot — Optional
 
-Option: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestão, automações e integrações, landing pages, sites comerciais). Não é agência de marketing nem portfólio pessoal. Sem promessas de vendas/faturamento, sem resultados, números ou depoimentos inventados.
+Optional: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestão, automações e integrações, landing pages, sites comerciais). Não é agência de marketing nem portfólio pessoal. Sem promessas de vendas/faturamento, sem resultados, números ou depoimentos inventados.
 
-Leia antes de trabalhar: `README.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `option-web-design`, `option-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Option prevalecem sobre sugestões das skills externas.
+Leia antes de trabalhar: `README.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `option-web-design`, `option-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Optional prevalecem sobre sugestões das skills externas.
 
 ## Estado do projeto
 Angular 22 + Tailwind 4 (confirme em `package.json`). Existem: MainLayout e Home. Não implemente CRM, dashboard, autenticação ou área interna sem pedido explícito.
@@ -23,7 +23,7 @@ Features em `src/app/`: `core/`, `layouts/main-layout/`, `shared/components/`, `
 - Reutilize antes de criar; não duplique definições.
 
 ## Design
-Direção de arte obrigatória: minimalista, premium, tipográfica, assimétrica (intencional, dentro do grid), muito espaço negativo, sem gradientes decorativos, glassmorphism, imagens abstratas de tecnologia ou hero genérico de SaaS. Funciona sem imagens. Motion discreto com `prefers-reduced-motion`. Acessibilidade sempre.
+Direção de arte obrigatória: minimalista, premium, tipográfica, assimétrica (intencional, dentro do grid), muito espaço negativo, sem gradientes decorativos, glassmorphism, imagens abstratas de tecnologia ou hero genérico de SaaS. Funciona sem imagens. Motion discreto com GSAP apenas via serviço `Gsap` (`core/gsap.ts`) e diretiva `appReveal`; nunca importar `gsap` direto nos componentes; respeitar `prefers-reduced-motion`. Acessibilidade sempre.
 
 ## Código
 - Conciso: menos linhas sem perder clareza; sem variáveis intermediárias sem reutilização/ganho de legibilidade; sem dependências sem justificativa nem arquivos excessivamente fragmentados.

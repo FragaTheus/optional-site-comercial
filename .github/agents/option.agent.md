@@ -1,11 +1,11 @@
 ---
 name: option
-description: Agente de desenvolvimento do site da Option (software e infraestrutura digital sob medida). Aplica contexto comercial, arquitetura Angular por features, padrões Tailwind, direção de arte, SEO e acessibilidade, coordenando as skills especializadas.
+description: Agente de desenvolvimento do site da Optional (software e infraestrutura digital sob medida). Aplica contexto comercial, arquitetura Angular por features, padrões Tailwind, direção de arte, SEO e acessibilidade, coordenando as skills especializadas.
 ---
 
-# Agente Option
+# Agente Optional
 
-Você desenvolve o site da Option, empresa de software e infraestrutura digital para empresas (CRM, ERP/gestão, automações, landing pages, sites comerciais). Posicionamento comercial e tecnológico; não é agência de marketing nem portfólio individual.
+Você desenvolve o site da Optional, empresa de software e infraestrutura digital para empresas (CRM, ERP/gestão, automações, landing pages, sites comerciais). Posicionamento comercial e tecnológico; não é agência de marketing nem portfólio individual.
 
 ## Antes de agir
 
@@ -31,7 +31,7 @@ Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md
 | Angular (componentes, signals, rotas, SSR, testes, a11y) | `angular-developer` |
 | Tailwind v4 (tokens, layers, utilities) | `tailwind-best-practices` |
 
-As regras da Option prevalecem sobre qualquer sugestão genérica de skill externa.
+As regras da Optional prevalecem sobre qualquer sugestão genérica de skill externa.
 
 ## Limites
 

@@ -1,4 +1,5 @@
-import { Component, ElementRef, viewChild } from '@angular/core';
+import { Component, DestroyRef, ElementRef, afterNextRender, inject, viewChild } from '@angular/core';
+import { Gsap } from '../../core/gsap';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CONTACT_URL, NAV_LINKS } from '../../core/site.config';
 
@@ -14,6 +15,14 @@ export class MainLayout {
   protected readonly contactUrl = CONTACT_URL;
   protected readonly year = new Date().getFullYear();
   private readonly drawer = viewChild.required<ElementRef<HTMLDialogElement>>('drawer');
+  private readonly header = viewChild.required<ElementRef<HTMLElement>>('header');
+  private readonly gsap = inject(Gsap);
+
+  // Construtores
+  constructor() {
+    const destroyRef = inject(DestroyRef);
+    afterNextRender(() => destroyRef.onDestroy(this.gsap.run(this.header().nativeElement, () => this.gsap.intro(this.header().nativeElement))));
+  }
 
   // Métodos
   protected open(): void {

@@ -1,11 +1,11 @@
 ---
 name: option-copywriting
-description: Escreve copy comercial e SEO semântico em português para o site da Option (software e infraestrutura digital sob medida). Use ao redigir ou revisar textos de homepage, páginas de serviços (CRM, ERP, automações, landing pages, sites comerciais), cases, CTAs, titles e meta descriptions.
+description: Escreve copy comercial e SEO semântico em português para o site da Optional (software e infraestrutura digital sob medida). Use ao redigir ou revisar textos de homepage, páginas de serviços (CRM, ERP, automações, landing pages, sites comerciais), cases, CTAs, titles e meta descriptions.
 ---
 
-# Option — Copywriting comercial e SEO
+# Optional — Copywriting comercial e SEO
 
-A Option é uma empresa de desenvolvimento de software e infraestrutura digital para empresas. Não é agência de marketing nem portfólio pessoal. Mensagem central: soluções sob medida, conforme a realidade de cada empresa.
+A Optional é uma empresa de desenvolvimento de software e infraestrutura digital para empresas. Não é agência de marketing nem portfólio pessoal. Mensagem central: soluções sob medida, conforme a realidade de cada empresa.
 
 ## Tom de voz
 

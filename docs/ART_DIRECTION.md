@@ -1,6 +1,6 @@
-# Direção de arte — Option
+# Direção de arte — Optional
 
-Documento normativo. Toda interface da Option deve segui-lo. Skills externas (`frontend-design` etc.) apoiam a criação, mas **nunca substituem** estas regras.
+Documento normativo. Toda interface da Optional deve segui-lo. Skills externas (`frontend-design` etc.) apoiam a criação, mas **nunca substituem** estas regras.
 
 ## Conceito criativo
 
