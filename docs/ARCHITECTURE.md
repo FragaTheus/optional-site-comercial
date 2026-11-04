@@ -2,7 +2,7 @@
 
 ## Estado atual (verificado na inspeção)
 
-O repositório contém apenas um README inicial. **Não há** `package.json`, Angular, Tailwind, `angular.json`, arquivo global de estilos, roteamento, layouts, SSR ou prerendering. Versões: **não identificadas** (nada instalado). Ao criar o projeto com o Angular CLI, não fixar versão sem pedido, e registrar aqui as versões efetivas de Angular e Tailwind. A arquitetura abaixo é decisão aprovada, **ainda não implementada**.
+Angular 22.2 e Tailwind CSS 4.3 (v4, CSS-first), com SSR + prerendering habilitados (`RenderMode.Prerender` em `**`). Implementados: `core/` (`seo.ts`, `site.config.ts`), `layouts/main-layout`, `features/site/home`. **Não implementados**: páginas de serviços, `features/concepts`, sitemap. Pendentes em `site.config.ts`: `CONTACT_URL` (canal de contato) e `SITE_URL` (domínio; sem ele não há canonical/og:url).
 
 ## Estrutura Angular pretendida
 
@@ -44,7 +44,7 @@ Rotas institucionais como filhas do MainLayout; features carregadas com lazy loa
 
 Páginas comerciais exigem: `title` e meta description próprios, canonical, Open Graph, HTML semântico, conteúdo indexável, links internos, sitemap e metadados específicos (via `Title`/`Meta` do Angular, definidos por rota).
 
-**Renderização:** SPA com render apenas no cliente é insuficiente para SEO ideal. **Pendência técnica:** avaliar SSR/prerendering (Angular SSR com prerender das rotas comerciais estáticas) quando o projeto for criado. Não instalar automaticamente sem avaliar a arquitetura.
+**Renderização:** Angular SSR com prerendering das rotas estáticas (HTML da homepage já sai com conteúdo). Ao criar `concepts`, definir `RenderMode` adequado e `noindex`. **Pendência:** sitemap e domínio.
 
 Concepts: noindex, fora do sitemap, sem exposição de dados confidenciais.
 

@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Paleta oficial: única fonte das cores */
+  --color-*: initial;
+  --color-carbon: #111315;
+  --color-paper: #f3f1eb;
+  --color-signal: #ff5930;
+  --color-slate: #74797d;
+  --color-white: #ffffff;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+
+  /* Escala fluida: máximos = tamanhos nominais do Tailwind */
+  --text-xs: clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);
+  --text-xs--line-height: 1.5;
+  --text-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-sm--line-height: 1.5;
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --text-base--line-height: 1.65;
+  --text-lg: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg--line-height: 1.6;
+  --text-xl: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  --text-xl--line-height: 1.5;
+  --text-2xl: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --text-2xl--line-height: 1.35;
+  --text-3xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
+  --text-3xl--line-height: 1.25;
+  --text-4xl: clamp(1.75rem, 1.4rem + 1.5vw, 2.25rem);
+  --text-4xl--line-height: 1.15;
+  --text-5xl: clamp(2rem, 1.5rem + 2.3vw, 3rem);
+  --text-5xl--line-height: 1.08;
+  --text-6xl: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+  --text-6xl--line-height: 1.04;
+  --text-7xl: clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
+  --text-7xl--line-height: 1;
+  --text-8xl: clamp(2.75rem, 1.4rem + 6vw, 6rem);
+  --text-8xl--line-height: 0.96;
+  --text-9xl: clamp(3rem, 1rem + 8.5vw, 8rem);
+  --text-9xl--line-height: 0.92;
+
+  --spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
+  --max-w-container: 100rem;
+  --container-container: var(--max-w-container);
+}
+
+@layer base {
+  html {
+    @apply bg-paper font-sans text-carbon/75 antialiased motion-safe:scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-carbon tracking-tight text-balance;
+  }
+  h1 { @apply font-black tracking-tighter; }
+  h2 { @apply font-extrabold; }
+  h3 { @apply font-bold; }
+  h4, h5, h6 { @apply font-semibold; }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-signal;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-container px-gutter;
+  }
+
+  .site-grid {
+    @apply grid grid-cols-1 gap-x-gutter md:grid-cols-12;
+  }
+
+  .eyebrow {
+    @apply text-sm font-medium tracking-widest uppercase;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xs px-6 py-3 text-base font-semibold transition-colors motion-reduce:transition-none;
+  }
+  .btn-primary {
+    @apply bg-signal text-carbon hover:bg-white;
+  }
+  .btn-secondary {
+    @apply border border-current hover:bg-current/10;
+  }
+  .btn-tertiary {
+    @apply px-0 underline decoration-1 underline-offset-4 hover:decoration-signal;
+  }
+
+  .card {
+    @apply p-8;
+  }
+  .card-primary {
+    @apply bg-white text-carbon/75;
+  }
+  .card-secondary {
+    @apply bg-carbon text-paper/75;
+  }
+  .card-tertiary {
+    @apply border border-carbon/20;
+  }
+}

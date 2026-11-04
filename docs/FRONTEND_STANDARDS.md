@@ -2,7 +2,7 @@
 
 Documento normativo. Alvo: **Tailwind CSS v4** (CSS-first). Se o projeto instalado usar v3, adaptar para os mecanismos equivalentes (`tailwind.config.js` com `theme.extend`, `@layer components`, `@apply`) e registrar a diferença aqui; nunca misturar sintaxes.
 
-> Estado atual: o repositório ainda não contém projeto Angular nem Tailwind instalados (ver `ARCHITECTURE.md`). Tudo abaixo é decisão aprovada, **ainda não implementada**. Ao criar o projeto, verificar as versões efetivas e ajustar.
+> Estado atual: Tailwind v4.3 instalado; tokens, escala fluida e classes globais estão em `src/styles.css`. Paleta com `--color-*: initial` (só as 5 cores existem). Primário usa texto carbon sobre signal (white sobre signal não atinge contraste AA).
 
 ## 1. Estilização
 
