@@ -8,11 +8,12 @@ import { HeroSectionComponent } from './sections/hero-section-component';
 import { PrinciplesSectionComponent } from './sections/principles-section-component';
 import { ProblemSectionComponent } from './sections/problem-section-component';
 import { ServicesSectionComponent } from './sections/services-section-component';
+import { ShowcaseSectionComponent } from './sections/showcase-section-component';
 
 // Página inicial: só compõe as seções, define o SEO e aciona as animações em sequência (`data-stagger`) das seções.
 @Component({
   selector: 'app-home-page',
-  imports: [HeroSectionComponent, ProblemSectionComponent, ServicesSectionComponent, EvolutionSectionComponent, PrinciplesSectionComponent, FaqSectionComponent, ClosingSectionComponent],
+  imports: [HeroSectionComponent, ProblemSectionComponent, ServicesSectionComponent, ShowcaseSectionComponent, EvolutionSectionComponent, PrinciplesSectionComponent, FaqSectionComponent, ClosingSectionComponent],
   templateUrl: './home-page-component.html',
 })
 export class HomePageComponent {
