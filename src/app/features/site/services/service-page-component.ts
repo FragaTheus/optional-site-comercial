@@ -10,13 +10,14 @@ import { CapabilitiesSectionComponent } from './sections/capabilities/capabiliti
 import { CtaSectionComponent } from './sections/cta/cta-section-component';
 import { DifferentialsSectionComponent } from './sections/differentials/differentials-section-component';
 import { FaqSectionComponent } from './sections/faq/faq-section-component';
+import { CtaBandComponent } from '../../../shared/components/cta-band/cta-band-component';
 import { HeroSectionComponent } from './sections/hero/hero-section-component';
 import { RelatedSectionComponent } from './sections/related/related-section-component';
 
 // Página satélite de serviço (/servicos/:slug): escolhe o conteúdo pelo `slug` da rota, compõe as seções, define SEO e dados estruturados e aciona as animações. Orientada à intenção de busca, não à narrativa da homepage.
 @Component({
   selector: 'app-service-page',
-  imports: [HeroSectionComponent, AboutSectionComponent, ApplicationsSectionComponent, CapabilitiesSectionComponent, DifferentialsSectionComponent, RelatedSectionComponent, FaqSectionComponent, CtaSectionComponent],
+  imports: [HeroSectionComponent, AboutSectionComponent, ApplicationsSectionComponent, CapabilitiesSectionComponent, DifferentialsSectionComponent, RelatedSectionComponent, FaqSectionComponent, CtaSectionComponent, CtaBandComponent],
   templateUrl: './service-page-component.html',
 })
 export class ServicePageComponent {
