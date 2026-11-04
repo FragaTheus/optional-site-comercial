@@ -1,6 +1,6 @@
 import { Component, ElementRef, inject, viewChild } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { CONTACT_URL, NAV_LINKS } from '../../core/site.config';
+import { CONTACT_URL, SERVICE_LINKS } from '../../core/site.config';
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
 
@@ -12,7 +12,7 @@ import { Header } from './header/header';
 })
 export class MainLayout {
   // Atributos
-  protected readonly links = NAV_LINKS;
+  protected readonly services = SERVICE_LINKS;
   protected readonly contactUrl = CONTACT_URL;
   private readonly drawer = viewChild.required<ElementRef<HTMLDialogElement>>('drawer');
 

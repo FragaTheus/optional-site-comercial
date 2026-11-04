@@ -1,16 +1,7 @@
-<!-- Fundo claro sob o header: barra escura (surface-dark); fundo escuro: barra branca -->
-<div
-  class="mx-auto flex h-16 w-full max-w-container items-center justify-between rounded-xs px-6 shadow-lg shadow-carbon/15 transition-colors duration-300 motion-reduce:transition-none"
-  [class]="overDark() ? 'bg-white text-carbon' : 'surface-dark'"
->
-  <a routerLink="/" class="font-display text-2xl font-extrabold tracking-tight" [class]="overDark() ? 'text-carbon' : 'text-white'" aria-label="Optional, página inicial">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></a>
+<div class="surface-dark mx-auto flex h-16 w-full max-w-container items-center justify-between rounded-xs px-6 shadow-lg shadow-carbon/15">
+  <a routerLink="/" class="font-display text-2xl font-extrabold tracking-tight text-white" aria-label="Optional, página inicial">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></a>
 
-  <nav aria-label="Principal" class="hidden items-center gap-8 md:flex">
-    @for (link of links; track link.fragment) {
-      <a routerLink="/" [fragment]="link.fragment" class="text-base font-medium opacity-75 hover:opacity-100">{{ link.label }}</a>
-    }
-    <a [href]="contactUrl" class="btn btn-tertiary">Apresentar projeto</a>
-  </nav>
+  <a [href]="contactUrl" class="btn btn-tertiary hidden md:inline-flex">Apresentar projeto</a>
 
   <button type="button" class="btn btn-secondary md:hidden" aria-haspopup="dialog" (click)="menuOpen.emit()">Menu</button>
 </div>

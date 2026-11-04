@@ -8,8 +8,8 @@
     <button type="button" class="btn btn-secondary" (click)="close()">Fechar</button>
   </div>
   <nav aria-label="Menu principal" class="mt-16 flex flex-col gap-6">
-    @for (link of links; track link.fragment) {
-      <a routerLink="/" [fragment]="link.fragment" class="font-display text-4xl font-bold tracking-tight text-white uppercase" (click)="close()">{{ link.label }}</a>
+    @for (service of services; track service.slug) {
+      <a [routerLink]="['/servicos', service.slug]" class="font-display text-3xl font-bold tracking-tight text-white uppercase" (click)="close()">{{ service.label }}</a>
     }
     <a [href]="contactUrl" class="btn btn-primary mt-6 self-start" (click)="close()">Apresentar projeto</a>
   </nav>

@@ -4,12 +4,6 @@ export const CONTACT_URL = '#contato';
 /** URL pública canônica (sem barra final). PROVISÓRIA (domínio de deploy atual): trocar aqui, em `public/sitemap.xml` e em `public/robots.txt` quando o domínio definitivo existir. */
 export const SITE_URL = 'https://optional-site-comercial-eyx6.vercel.app';
 
-export const NAV_LINKS = [
-  { label: 'Serviços', fragment: 'servicos' },
-  { label: 'Projetos', fragment: 'projetos' },
-  { label: 'Contato', fragment: 'contato' },
-] as const;
-
 /** Páginas satélites de serviço: fonte única de slugs e nomes para rotas, footer e links internos. */
 export const SERVICE_LINKS = [
   { slug: 'sites', label: 'Sites comerciais' },
