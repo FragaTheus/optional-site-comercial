@@ -99,7 +99,7 @@ Escala de espaçamento interno: múltiplos de 0,5rem (`2, 4, 6, 8, 12, 16, 24, 3
 
 ### 4.1 Bento (uso pontual, para mesclar)
 
-Bento é um mosaico de blocos de tamanhos **diferentes** sobre o grid de 12 colunas. Serve para quebrar o ritmo tipográfico em no máximo 2 seções da Home (hoje: 1) (evita monotonia); nunca para a página inteira.
+Bento é um mosaico de blocos de tamanhos **diferentes** sobre o grid de 12 colunas. Serve para quebrar o ritmo tipográfico em no máximo 2 seções da Home (hoje: Interfaces e Princípios) (evita monotonia); nunca para a página inteira.
 
 Regras:
 - Blocos desiguais, no mínimo 3 tamanhos (ex.: 7×2, 5×1, 4×1 colunas×linhas). Proibido grid de blocos iguais.
@@ -121,12 +121,13 @@ Cada seção é um componente em `features/site/home/sections/`. Direção dealt
 1. **Hero — vazio, depois a frase na base.** Topo vazio; h1 "Software sob medida" (`text-8xl`) deslocado para a direita (col. 2–12); frase de apoio na col. 1–4 e CTA primário + link na col. 9–12, na mesma base. Sem imagem.
 2. **Problema — deslocado à direita.** h2 "Planilhas já não bastam." col. 4–12; parágrafo col. 7–11. Seção curta (`py-section-s`), uma pausa.
 3. **Serviços — Carbon, subseções h3 em regiões diferentes.** h2 "Cinco frentes, um critério." Cada serviço: h3 + lead de um lado, texto + lista do outro; alterna esquerda/direita, um centralizado (Automações) e um estreito (Landing pages). Separação só por espaço.
-4. **Evolução — degraus de cards.** h2 col. 1–8 e apoio col. 9–12. 4 etapas em escada (cada uma desce um degrau; no mobile, recuo crescente); a última (ERP) em Carbon. Cards desiguais por posição, sem numeração.
-5. **Princípios — faixa branca, bento.** h2 acima; mosaico bento (§4.1): "Sob medida" 7 col. × 2 linhas em Carbon, "Integrado" e "Evolutivo" 5 col. em tons de Paper.
-6. **FAQ — título preso à esquerda.** h2 "Como trabalhamos." (col. 1–5, sticky em `md+`), `details`/`summary` em col. 7–12, blocos brancos separados por espaço.
-7. **Fechamento — Carbon, única seção centralizada.** h2 "Conte a sua operação." (`text-8xl`), frase e CTA primário.
+4. **Interfaces — fragmentos de UI em blocos desiguais (bento).** Entre serviços e evolução, quatro cards de interface sem pessoas (pipeline de CRM, tabela de ERP, fluxo de automação, landing page), marcados com `data-ui`, em 7/5/5/7 colunas, cada um com legenda. Conteúdo ilustrativo, declarado como "não são telas de clientes"; sem números, marcas ou resultados.
+5. **Evolução — degraus de cards.** h2 col. 1–8 e apoio col. 9–12. 4 etapas em escada (cada uma desce um degrau; no mobile, recuo crescente); a última (ERP) em Carbon. Cards desiguais por posição, sem numeração.
+6. **Princípios — faixa branca, bento.** h2 acima; mosaico bento (§4.1): "Sob medida" 7 col. × 2 linhas em Carbon, "Integrado" e "Evolutivo" 5 col. em tons de Paper.
+7. **FAQ — título preso à esquerda.** h2 "Como trabalhamos." (col. 1–5, sticky em `md+`), `details`/`summary` em col. 7–12, blocos brancos separados por espaço.
+8. **Fechamento — Carbon, única seção centralizada.** h2 "Conte a sua operação." (`text-8xl`), frase e CTA primário.
 
-Imagens: nenhuma (ver conflitos conhecidos). Se existirem imagens reais, entram grandes e raras, sem moldura nem sombra.
+Imagens: não há fotos nem fundos de imagem; a imagem é interface desenhada em HTML (cards `data-ui`), sem pessoas. Fotos de acervos abertos não foram usadas (rede indisponível na implementação e baixa aderência ao assunto).
 
 ## 6. Componentes
 
@@ -134,7 +135,7 @@ Elementos puramente visuais são classes em `@layer components`; componentes Ang
 
 | Elemento | Definição |
 |---|---|
-| **Nav** (`<header>`) | Fixa e transparente sobre Paper, sem blur. Wordmark à esquerda (`Optional` + `<>` em Signal), links em `text-base` normal case (sem uppercase), alinhados à direita; um único CTA tertiary. Em mobile, abre o drawer (`<dialog>`). |
+| **Nav** (`<header>`) | Fixa, barra branca (`bg-white`, `rounded-xs`) com margem lateral e superior (não colada às bordas), sem sombra nem blur. Wordmark à esquerda (`Optional` + `<>` em Signal), links em `text-base` normal case (sem uppercase), alinhados à direita; um único CTA tertiary. Em mobile, abre o drawer (`<dialog>`). |
 | **Botão** | `.btn` com `rounded-xs`, normal case. `.btn-primary`: fundo Signal, texto Carbon. `.btn-secondary`: contorno 1px. `.btn-tertiary`: texto com sublinhado fino. Um primário por tela. Sem `rounded-full`. |
 | **Link** | Sublinhado de 1px com `underline-offset-4`; hover troca a cor do sublinhado para Signal. Foco: outline Signal de 2px. |
 | **Hero** | §5.1. Sem imagem, sem gradiente, sem centralização. |
