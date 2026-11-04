@@ -14,6 +14,7 @@ export interface ServiceContent {
   h1: Heading;
   intro: string;
   cta: string;
+  midCta: { headline: string; text: string };
   about: { title: Heading; paragraphs: string[] };
   applications: { title: Heading; items: Item[] };
   capabilities: Item[];
@@ -37,6 +38,7 @@ export const SERVICES: ServiceContent[] = [
     description: 'Desenvolvimento de CRM personalizado: base de clientes, histórico de atendimento e processo comercial desenhados para a sua operação. Solicite um projeto.',
     h1: { lead: 'Desenvolvimento de', key: 'CRM personalizado' },
     intro: 'Um CRM personalizado organiza clientes, histórico e acompanhamento comercial do jeito que a sua empresa trabalha, em vez de exigir que a equipe se adapte a um sistema pronto. A Optional projeta e desenvolve o CRM a partir do seu processo real.',
+    midCta: { headline: 'Quer um CRM desenhado para o seu processo comercial?', text: 'Descreva como os contatos chegam e são acompanhados hoje. Indicamos o que faz sentido construir.' },
     cta: 'Conte como o seu processo comercial funciona hoje. Indicamos o que faz sentido construir e por onde começar.',
     about: {
       title: { lead: 'O que é um', key: 'CRM personalizado' },
@@ -98,6 +100,7 @@ export const SERVICES: ServiceContent[] = [
     description: 'Desenvolvimento de ERP personalizado e sistemas de gestão: controle operacional, rastreabilidade e dados centralizados a partir da rotina da sua empresa.',
     h1: { lead: 'Desenvolvimento de', key: 'ERP e sistemas de gestão' },
     intro: 'Um sistema de gestão sob medida centraliza os dados e controla os processos da operação do jeito que a empresa realmente trabalha, com rastreabilidade do que aconteceu, quando e com quem. A Optional o desenvolve a partir das rotinas, dos registros e dos controles da sua empresa.',
+    midCta: { headline: 'Sua operação pede mais controle e rastreabilidade?', text: 'Conte como os setores trabalham hoje. Indicamos por onde um sistema de gestão pode começar.' },
     cta: 'Conte como a sua operação funciona hoje. Indicamos o que faz sentido construir e por onde começar.',
     about: {
       title: { lead: 'O que é um', key: 'ERP personalizado' },
@@ -158,6 +161,7 @@ export const SERVICES: ServiceContent[] = [
     description: 'Automação de processos empresariais e integração de sistemas sob medida: reduza tarefas repetitivas e faça as ferramentas da empresa trocarem dados sozinhas.',
     h1: { lead: 'Desenvolvimento de', key: 'automações e integrações' },
     intro: 'Automações e integrações conectam as ferramentas que a empresa já usa e assumem as tarefas repetitivas entre elas: copiar dados, conferir planilhas, repetir lançamentos, avisar a equipe. A Optional desenvolve essas rotinas sob medida para a sua operação.',
+    midCta: { headline: 'Tem tarefas repetidas que ocupam a equipe?', text: 'Liste as rotinas e as ferramentas envolvidas. Avaliamos o que pode ser automatizado.' },
     cta: 'Conte quais tarefas se repetem na sua rotina. Avaliamos o que pode ser automatizado e o que vale revisar antes.',
     about: {
       title: { lead: 'O que é', key: 'automação de processos' },
@@ -219,6 +223,7 @@ export const SERVICES: ServiceContent[] = [
     description: 'Desenvolvimento de landing pages profissionais para campanhas: experiência de conversão, performance, responsividade e mensuração configurada desde o início.',
     h1: { lead: 'Desenvolvimento de', key: 'landing pages' },
     intro: 'Uma landing page é a página criada para uma oferta ou campanha específica, com um objetivo claro: levar o visitante a uma ação, como pedir contato ou orçamento. A Optional desenvolve a página com foco em experiência de conversão, desempenho e mensuração.',
+    midCta: { headline: 'Tem uma campanha que precisa de uma página própria?', text: 'Conte a oferta e o público. Indicamos como estruturar a página e o que medir.' },
     cta: 'Conte qual é a oferta ou a campanha. Indicamos como estruturar a página e o que medir.',
     about: {
       title: { lead: 'O que é uma', key: 'landing page' },
@@ -279,6 +284,7 @@ export const SERVICES: ServiceContent[] = [
     description: 'Desenvolvimento de sites institucionais e comerciais com SEO técnico, performance e responsividade, para empresas que precisam de presença digital profissional.',
     h1: { lead: 'Desenvolvimento de', key: 'sites profissionais e comerciais' },
     intro: 'O site é, muitas vezes, o primeiro contato com a empresa. A Optional desenvolve sites institucionais e comerciais com apresentação cuidadosa, estrutura preparada para buscadores e caminhos claros para o visitante entrar em contato.',
+    midCta: { headline: 'O site da sua empresa precisa representar melhor o seu trabalho?', text: 'Conte o que a empresa faz e como o site está hoje. Indicamos o que precisa mudar.' },
     cta: 'Conte o que a empresa faz e como o site está hoje. Indicamos o que precisa mudar e por onde começar.',
     about: {
       title: { lead: 'O que é um', key: 'site comercial' },
