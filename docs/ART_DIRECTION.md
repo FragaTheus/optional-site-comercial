@@ -14,7 +14,7 @@ Referências de sensibilidade (sem copiar literalmente): páginas institucionais
 
 | Token  | Hex       | Uso                                                              |
 | ------ | --------- | ---------------------------------------------------------------- |
-| carbon | `#111315` | Cor principal dos títulos; fundo de seções escuras               |
+| carbon | `#111315` | Destaque das palavras-chave dos títulos (`strong`); fundo de seções escuras |
 | paper  | `#F3F1EB` | Fundo claro predominante                                         |
 | signal | `#FF5930` | Destaque, uso moderado (CTA primário, detalhes pontuais)         |
 | slate  | `#74797D` | Elementos secundários, bordas, textos grandes                    |
@@ -38,12 +38,12 @@ A narrativa visual é assimétrica e deliberada. Exemplo de ritmo: esquerda → 
 
 A tipografia é o principal elemento gráfico.
 
-- Heading e body: **Geist Sans**. Mono: **IBM Plex Mono**, só quando necessário.
+- Heading: **Bricolage Grotesque** (variável, OFL, self-hosted; pesos 200–800, logo `font-extrabold` é o máximo). Body: **Geist Sans**. Mono: **IBM Plex Mono**, só quando necessário.
 - Antes de implementar, avaliar licença, disponibilidade e estratégia de carregamento (self-host, `font-display: swap`, subset, preload). Evitar muitas famílias.
-- Headings: fortes, expressivos, predominantemente carbon, pesos de semibold a black, entrelinha compacta quando apropriado, tracking ajustado, escala claramente superior ao body.
+- Headings: fortes, expressivos, **uppercase**, em slate com as **palavras-chave em `<strong>` na cor carbon** (white em fundos escuros). Cada heading deve destacar suas palavras-chave com `<strong>`. Pesos de semibold a extrabold, entrelinha compacta quando apropriado, tracking ajustado, escala claramente superior ao body.
 - Body: peso confortável, aparência cinza, contraste acessível, entrelinha generosa.
 - Escala fluida com `clamp()` (ver `FRONTEND_STANDARDS.md`).
-- **Uppercase** apenas em labels de inputs, eyebrows e small text identificador. Nunca em headlines, textos corridos, botões, navegação ou descrições.
+- **Uppercase** em headings (h1–h6), labels de inputs, eyebrows e small text identificador. Nunca em textos corridos, botões, navegação ou descrições.
 
 ## Botões
 
@@ -64,5 +64,5 @@ Animações discretas e com propósito (feedback, orientação, transição de e
 - Há assimetria justificada, dentro do grid de 12 colunas?
 - Paleta e tokens intactos? Signal usado com moderação?
 - Contraste do texto pequeno ≥ 4.5:1?
-- Botões com `rounded-xs`; sem uppercase indevido?
+- Botões com `rounded-xs`; sem uppercase fora dos casos permitidos?
 - Não parece template SaaS genérico?

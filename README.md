@@ -26,7 +26,7 @@ Referências (sujeitas a validação, sem dados confidenciais): Símtese (CRM/ag
 `src/app/{core, layouts/main-layout, shared/components, features/{site,concepts}}`. MainLayout com header, `RouterOutlet`, footer e drawer (`<dialog>`). Detalhes em [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## 8. Stack
-Angular 22.2 (standalone, SSR + prerendering via `@angular/ssr`), Tailwind CSS 4.3 (`@tailwindcss/postcss`), Geist Sans self-hosted (`public/fonts`, licença OFL), Vitest, TypeScript 6. Versões conforme `package.json`.
+Angular 22.2 (standalone, SSR + prerendering via `@angular/ssr`), Tailwind CSS 4.3 (`@tailwindcss/postcss`), Geist Sans (body) e Bricolage Grotesque (headings) self-hosted (`public/fonts`, licença OFL), Vitest, TypeScript 6. Versões conforme `package.json`.
 
 ## 9. Direção de arte
 "Precisão em cada detalhe." Minimalista, tipográfica, assimétrica. Paleta: Carbon `#111315`, Paper `#F3F1EB`, Signal `#FF5930`, Slate `#74797D`, White `#FFFFFF`. Ver [`docs/ART_DIRECTION.md`](docs/ART_DIRECTION.md).

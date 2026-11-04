@@ -28,15 +28,15 @@ Minimalismo premium; tipografia protagonista; assimetria controlada; espaço neg
 
 - Paleta: carbon `#111315`, paper `#F3F1EB`, signal `#FF5930`, slate `#74797D`, white `#FFFFFF`. Imutável; só via tokens.
 - Container `.site-container` (max `100rem`, `px-gutter`); gutter fluido 1.5–2.5rem.
-- Tipografia fluida via tokens `--text-*`; Geist Sans; headings carbon semibold–black.
+- Tipografia fluida via tokens `--text-*`; headings em Bricolage Grotesque uppercase, slate, com palavras-chave em `<strong>` (carbon); body em Geist Sans.
 - Botões: `.btn` + variante, `rounded-xs`, nunca `rounded-full`.
-- Uppercase só em labels de input, eyebrows e small text identificador.
+- Uppercase em headings, labels de input, eyebrows e small text identificador; nunca em corpo, botões ou navegação.
 - Sem CSS arbitrário/por componente, sem `style=""`, sem libs de UI externas.
 - Elemento puramente visual = classe global, não componente Angular.
 - Sem imagens necessárias para o impacto; sem gradientes decorativos, glassmorphism, sombras fortes, ícones genéricos.
 
 ## Critérios de reprovação
 
-A interface não pode: parecer template SaaS genérico; depender de imagens para impressionar; repetir cards sem necessidade; usar `rounded-full` em botões; alterar a paleta; usar uppercase indiscriminado; criar CSS fora dos padrões.
+A interface não pode: parecer template SaaS genérico; depender de imagens para impressionar; repetir cards sem necessidade; usar `rounded-full` em botões; alterar a paleta; usar uppercase fora dos casos permitidos; criar CSS fora dos padrões.
 
 Renderizar corretamente não basta: avalie a qualidade da composição visual (ritmo, hierarquia, espaço negativo, assimetria intencional) antes de considerar concluído.
