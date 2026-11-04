@@ -15,10 +15,10 @@ Features em `src/app/`: `core/`, `layouts/main-layout/`, `shared/components/`, `
 - Ordem: classes globais existentes → utilities Tailwind → nova classe em `@layer components` justificada.
 - Arquivo global único (`src/styles.css`): `@import "tailwindcss"`, `@theme`, `@layer base`, `@layer components`.
 - Tokens: carbon `#111315`, paper `#F3F1EB`, signal `#FF5930`, slate `#74797D`, white `#FFFFFF`. Paleta imutável; sem hex nos templates; texto pequeno cinza = carbon com opacidade quando slate não tiver contraste.
-- Tipografia fluida: `--text-*` com `clamp()` em `@theme`, mantendo nomes `text-xs`…`text-9xl` e máximos nominais; sem escala paralela nem `<br>` responsivo. Heading carbon (h1 black, h2 extrabold, h3 bold, h4–h6 semibold) via `@layer base`.
+- Tipografia fluida: `--text-*` com `clamp()` em `@theme`, mantendo nomes `text-xs`…`text-9xl` e máximos nominais; sem escala paralela nem `<br>` responsivo. Headings: Bricolage Grotesque, uppercase, slate, com palavras-chave em `<strong>` (carbon; white em `.surface-dark`/`.card-secondary`) via `@layer base`; sempre destaque as palavras-chave de cada heading.
 - `--spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem)` (`px-gutter`); `--max-w-container: 100rem` (`max-w-container`); `.site-container`; `.site-grid`.
 - Grid: `grid grid-cols-1 md:grid-cols-12` com `col-span/start/end`.
-- Classes visuais: `.btn` + `.btn-primary|secondary|tertiary`, `.card` + `.card-primary|secondary|tertiary`, `.eyebrow`, `.site-container`, `.site-grid`. Botões sempre `rounded-xs`, nunca `rounded-full`. Uppercase só em labels de input, eyebrows e small text identificador.
+- Classes visuais: `.btn` + `.btn-primary|secondary|tertiary`, `.card` + `.card-primary|secondary|tertiary`, `.eyebrow`, `.site-container`, `.site-grid`. Botões sempre `rounded-xs`, nunca `rounded-full`. Uppercase em headings, labels de input, eyebrows e small text identificador; nunca em corpo, botões ou navegação.
 - Elemento só visual = classe global, não componente. Componente Angular só com estado, comportamento, I/O, interação ou reutilização funcional; prefira HTML nativo.
 - Reutilize antes de criar; não duplique definições.
 

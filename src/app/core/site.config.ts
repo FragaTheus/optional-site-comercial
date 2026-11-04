@@ -6,6 +6,7 @@ export const SITE_URL = '';
 
 export const NAV_LINKS = [
   { label: 'Serviços', fragment: 'servicos' },
-  { label: 'Como trabalhamos', fragment: 'metodo' },
+  { label: 'Evolução', fragment: 'evolucao' },
+  { label: 'Perguntas', fragment: 'faq' },
   { label: 'Contato', fragment: 'contato' },
 ] as const;

@@ -16,7 +16,8 @@ Direto, confiante, incisivo, profissional, específico, orientado a problemas re
 - Fabricar prova social, números, depoimentos ou resultados.
 - Prometer aumento de vendas/faturamento sem evidência.
 - Descrever projetos de referência (Símtese, LaLouise, Caldeiraria Realiza, Paulo Carvalho, Profissão do Século) além do que foi validado: Símtese = CRM/gestão de agendamentos e resultados; LaLouise = controle operacional e rastreabilidade; Caldeiraria Realiza = site comercial; Paulo Carvalho = site profissional; Profissão do Século = landing page. Só usar com validação e sem publicar marcas/dados confidenciais sem autorização.
-- Uppercase em headlines, botões e textos corridos.
+- Escrever headlines em caixa normal (o CSS aplica uppercase); identificar 1–3 palavras-chave de cada heading e envolvê-las em `<strong>`.
+- Uppercase manual em textos corridos e botões.
 
 ## Estrutura de persuasão
 

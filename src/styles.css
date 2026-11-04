@@ -8,6 +8,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   /* Paleta oficial: única fonte das cores */
   --color-*: initial;
@@ -18,6 +26,7 @@
   --color-white: #ffffff;
 
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Geist", ui-sans-serif, system-ui, sans-serif;
 
   /* Escala fluida: máximos = tamanhos nominais do Tailwind */
   --text-xs: clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);
@@ -58,12 +67,14 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-carbon tracking-tight text-balance;
+    @apply font-display text-slate uppercase tracking-tight text-balance;
   }
-  h1 { @apply font-black tracking-tighter; }
-  h2 { @apply font-extrabold; }
+  h1, h2 { @apply font-extrabold; }
   h3 { @apply font-bold; }
   h4, h5, h6 { @apply font-semibold; }
+  :is(h1, h2, h3, h4, h5, h6) strong {
+    @apply font-[inherit] text-carbon;
+  }
 
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-signal;
@@ -77,6 +88,13 @@
 
   .site-grid {
     @apply grid grid-cols-1 gap-x-gutter md:grid-cols-12;
+  }
+
+  .surface-dark, .card-secondary {
+    @apply bg-carbon text-paper/75;
+    :is(h1, h2, h3, h4, h5, h6) strong {
+      @apply text-white;
+    }
   }
 
   .eyebrow {
@@ -101,9 +119,6 @@
   }
   .card-primary {
     @apply bg-white text-carbon/75;
-  }
-  .card-secondary {
-    @apply bg-carbon text-paper/75;
   }
   .card-tertiary {
     @apply border border-carbon/20;

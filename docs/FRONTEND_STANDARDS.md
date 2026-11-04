@@ -46,7 +46,7 @@ Sem quebras manuais de linha responsivas (`<br>` com `hidden md:block`) no lugar
 
 ## 5. Heading e body (`@layer base`)
 
-- Heading em carbon; h1 `font-black`, h2 `font-extrabold`, h3 `font-bold`, h4–h6 `font-semibold` (intervalo semibold–black), entrelinha compacta e tracking ajustado.
+- Heading: `font-display` (Bricolage Grotesque), `uppercase`, `text-slate`; h1/h2 `font-extrabold`, h3 `font-bold`, h4–h6 `font-semibold`. Palavras-chave dentro de `<strong>` ficam em carbon (regra em `@layer base`; em `.surface-dark` e `.card-secondary` ficam white). Heading sem `<strong>` aparece todo em slate: sempre destacar as palavras-chave.
 - Body em carbon com opacidade (cinza de alto contraste derivado da paleta), entrelinha generosa.
 - Não usar slate em texto pequeno sem contraste suficiente.
 - Os estilos base não impedem customização pontual por utilities.
@@ -77,6 +77,7 @@ Elementos puramente visuais são **classes**, não componentes Angular.
 - Cards: `.card`, `.card-primary`, `.card-secondary`, `.card-tertiary`.
 - Identificador: `.eyebrow` (único lugar, com labels de input, onde uppercase é permitido).
 - Composição: `.site-container`, `.site-grid`.
+- Superfície escura: `.surface-dark` (fundo carbon, texto paper, strong dos headings em white). `.card-secondary` compartilha a mesma regra.
 
 Usar `@apply` com utilities Tailwind; não aplicar uma classe custom dentro de outra com `@apply` (não suportado em v4 para classes de `@layer components`). Combinar base + variante no template:
 

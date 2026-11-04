@@ -2,7 +2,7 @@
 
 <header class="sticky top-0 z-40 border-b border-carbon/10 bg-paper/95">
   <div class="site-container flex h-16 items-center justify-between">
-    <a routerLink="/" class="text-2xl font-black tracking-tighter text-carbon" aria-label="Option, página inicial">Option</a>
+    <a routerLink="/" class="text-2xl font-display font-extrabold tracking-tight text-carbon" aria-label="Option, página inicial">Option</a>
 
     <nav aria-label="Principal" class="hidden items-center gap-8 md:flex">
       @for (link of links; track link.fragment) {
@@ -15,14 +15,14 @@
   </div>
 </header>
 
-<dialog #drawer aria-label="Menu" class="my-0 mr-0 ml-auto h-dvh max-h-none w-full max-w-sm bg-carbon p-gutter text-paper backdrop:bg-carbon/60" (click)="closeOnBackdrop($event)">
+<dialog #drawer aria-label="Menu" class="my-0 mr-0 ml-auto h-dvh max-h-none w-full max-w-sm surface-dark p-gutter backdrop:bg-carbon/60" (click)="closeOnBackdrop($event)">
   <div class="flex items-center justify-between">
-    <span class="text-2xl font-black tracking-tighter text-white">Option</span>
+    <span class="text-2xl font-display font-extrabold tracking-tight text-white">Option</span>
     <button type="button" class="btn btn-secondary" (click)="close()">Fechar</button>
   </div>
   <nav aria-label="Menu principal" class="mt-16 flex flex-col gap-6">
     @for (link of links; track link.fragment) {
-      <a routerLink="/" [fragment]="link.fragment" class="text-4xl font-bold tracking-tight text-white" (click)="close()">{{ link.label }}</a>
+      <a routerLink="/" [fragment]="link.fragment" class="font-display text-4xl font-bold tracking-tight text-white uppercase" (click)="close()">{{ link.label }}</a>
     }
     <a [href]="contactUrl" class="btn btn-primary mt-6 self-start" (click)="close()">Apresentar projeto</a>
   </nav>
@@ -32,10 +32,10 @@
   <router-outlet />
 </main>
 
-<footer class="bg-carbon py-16 text-paper/75">
+<footer class="surface-dark py-16">
   <div class="site-container site-grid gap-y-10">
     <div class="md:col-span-6">
-      <p class="text-3xl font-black tracking-tighter text-white">Option</p>
+      <p class="text-3xl font-display font-extrabold tracking-tight text-white">Option</p>
       <p class="mt-4 max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
     </div>
     <nav aria-label="Rodapé" class="flex flex-col gap-3 md:col-span-3 md:col-start-8">
