@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Reveal } from '../../../../../shared/directives/reveal';
 
-// Mostra o tipo de interface que a Optional constrói, em quatro fragmentos ilustrativos (sem dados reais de clientes) que dividem o conteúdo da página.
+// Mostra como a Optional estrutura sistemas, em quatro imagens abstratas que dividem o conteúdo da página.
 @Component({
   selector: 'app-showcase-section',
   imports: [Reveal],
@@ -9,15 +9,10 @@ import { Reveal } from '../../../../../shared/directives/reveal';
 })
 export class ShowcaseSectionComponent {
   // Atributos
-  protected readonly pipeline = [
-    { stage: 'Novos contatos', items: ['Indústria de embalagens', 'Clínica odontológica'] },
-    { stage: 'Em conversa', items: ['Distribuidora de peças', 'Escritório contábil'] },
-    { stage: 'Proposta enviada', items: ['Rede de academias'] },
+  protected readonly images = [
+    { src: 'home-img/optional_abstrato_01_camadas.png', layout: 'md:col-span-7 md:mt-section-s', caption: 'Camadas: dados e processos organizados em níveis.' },
+    { src: 'home-img/optional_abstrato_02_arco.png', layout: 'md:col-span-5', caption: 'Arco: do primeiro contato ao sistema completo.' },
+    { src: 'home-img/optional_abstrato_03_planos.png', layout: 'md:col-span-5', caption: 'Planos: módulos que se encaixam e crescem com o negócio.' },
+    { src: 'home-img/optional_abstrato_04_diagonais.png', layout: 'md:col-span-7', caption: 'Diagonais: integrações que conectam as ferramentas da operação.' },
   ];
-  protected readonly records = [
-    { name: 'Pedido de compra', step: 'Conferência', status: 'Em andamento' },
-    { name: 'Lote de produção', step: 'Expedição', status: 'Concluído' },
-    { name: 'Ordem de serviço', step: 'Aprovação', status: 'Pendente' },
-  ];
-  protected readonly flow = ['Formulário do site recebido', 'Contato criado no CRM', 'Equipe avisada no canal interno'];
 }
