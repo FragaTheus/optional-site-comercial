@@ -135,7 +135,7 @@ Elementos puramente visuais são classes em `@layer components`; componentes Ang
 
 | Elemento | Definição |
 |---|---|
-| **Nav** (`<header>`) | Fixa e transparente sobre Paper, sem blur. Wordmark à esquerda (`Optional` + `<>` em Signal), links em `text-base` normal case (sem uppercase), alinhados à direita; um único CTA tertiary. Em mobile, abre o drawer (`<dialog>`). |
+| **Nav** (`<header>`) | Fixa, barra branca (`bg-white`, `rounded-xs`) com margem lateral e superior (não colada às bordas), sem sombra nem blur. Wordmark à esquerda (`Optional` + `<>` em Signal), links em `text-base` normal case (sem uppercase), alinhados à direita; um único CTA tertiary. Em mobile, abre o drawer (`<dialog>`). |
 | **Botão** | `.btn` com `rounded-xs`, normal case. `.btn-primary`: fundo Signal, texto Carbon. `.btn-secondary`: contorno 1px. `.btn-tertiary`: texto com sublinhado fino. Um primário por tela. Sem `rounded-full`. |
 | **Link** | Sublinhado de 1px com `underline-offset-4`; hover troca a cor do sublinhado para Signal. Foco: outline Signal de 2px. |
 | **Hero** | §5.1. Sem imagem, sem gradiente, sem centralização. |
