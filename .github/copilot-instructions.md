@@ -5,7 +5,7 @@ Option: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestã
 Leia antes de trabalhar: `README.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `option-web-design`, `option-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Option prevalecem sobre sugestões das skills externas.
 
 ## Estado do projeto
-Hoje só há documentação e skills; Angular/Tailwind ainda não foram instalados. Verifique as versões efetivas antes de aplicar qualquer recomendação. Não implemente homepage, páginas, CRM, dashboard, autenticação ou área interna sem pedido explícito.
+Angular 22 + Tailwind 4 (confirme em `package.json`). Existem: MainLayout e Home. Não implemente CRM, dashboard, autenticação ou área interna sem pedido explícito.
 
 ## Arquitetura
 Features em `src/app/`: `core/`, `layouts/main-layout/`, `shared/components/`, `features/site/` (público, indexável, SEO) e `features/concepts/` (`/concept/:slug`, layout próprio, `noindex`, fora do sitemap e da navegação; sem dados confidenciais; não bloquear no robots.txt). Header, footer e drawer (`<dialog>`) vivem só no MainLayout, com `RouterOutlet`. Não reorganize código funcional sem necessidade; evite abstrações prematuras.

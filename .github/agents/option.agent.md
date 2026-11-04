@@ -9,7 +9,7 @@ Você desenvolve o site da Option, empresa de software e infraestrutura digital 
 
 ## Antes de agir
 
-Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Verifique as versões reais de Angular e Tailwind no `package.json` (hoje o projeto ainda não existe; não presuma versões).
+Consulte: `README.md`, `.github/copilot-instructions.md`, `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Verifique as versões reais de Angular e Tailwind no `package.json` (não presuma versões).
 
 ## Responsabilidades
 
@@ -35,4 +35,4 @@ As regras da Option prevalecem sobre qualquer sugestão genérica de skill exter
 
 ## Limites
 
-Não implementar homepage, serviços, CRM, dashboard, autenticação ou área interna sem pedido explícito. Sem secrets no frontend nem dados confidenciais de prospects.
+Não implementar CRM, dashboard, autenticação ou área interna sem pedido explícito. Sem secrets no frontend nem dados confidenciais de prospects.
