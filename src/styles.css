@@ -143,6 +143,10 @@
     @apply underline decoration-1 underline-offset-4 hover:decoration-signal;
   }
 
+  .stat {
+    @apply font-display text-6xl font-extrabold tracking-title text-carbon;
+  }
+
   .card {
     @apply p-gutter;
   }
@@ -154,7 +158,7 @@
   }
 
   .eyebrow {
-    @apply text-sm font-semibold uppercase tracking-wide text-carbon/75;
+    @apply text-xs font-semibold uppercase tracking-wide text-carbon/70;
     .surface-dark &,
     .media-card & {
       @apply text-paper/75;

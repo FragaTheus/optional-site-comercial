@@ -1,32 +1,25 @@
 <section id="home-hero" aria-labelledby="home-hero-title">
-  <div class="site-container site-grid gap-y-gutter">
+  <div class="site-container site-grid gap-gutter">
     <header class="lg:col-span-full">
-      <div class="flex items-center justify-between flex-wrap eyebrow mb-gutter">
+      <div class="flex flex-col eyebrow mb-gutter">
+        <p class="text-carbon" appReveal>Est. 2025 // SP</p>
         <p appReveal>Studio de Engenharia de Software</p>
-        <p appReveal class="text-carbon">Est. 2025 // São Paulo</p>
       </div>
-      <h1 id="home-hero-title" appReveal="lines" class="">
-        <strong>Infraestrutura digital</strong> para aumentar a <strong>produtividade</strong> da
-        sua empresa
+      <h1 id="home-hero-title" appReveal="lines">
+        <strong>Infraestrutura</strong> para aumentar a <strong>produtividade</strong> e
+        <strong>aquisição</strong> de novos clientes.
       </h1>
     </header>
 
-    <footer class="w-full flex items-center justify-between gap-gutter flex-wrap lg:col-span-full">
-      <div class="flex items-center gap-gutter">
-        @for (a of asides; track a.label) {
-          <div class="flex flex-col">
-            <p class="font-bold" appReveal>
-              <strong>{{ a.label }}</strong>
-            </p>
-            <p class="text-carbon text-xs" appReveal>{{ a.data }}</p>
-          </div>
-        }
-      </div>
-
-      <div class="flex items-center gap-2 flex-wrap">
-        <app-btn-cta [cta]="{ label: 'Fale conosco', wppMessage: 'Olá! Vim pelo topo da homepage e gostaria de falar com a Optional.' }" />
-        <a href="#servicos" class="btn-secondary">Ver projetos <i class="pi pi-arrow-down"></i></a>
-      </div>
+    <footer class="flex items-center lg:justify-end gap-2 flex-wrap lg:col-span-4 lg:col-start-9">
+      <app-btn-cta
+        [cta]="{
+          label: 'Fale conosco',
+          wppMessage:
+            'Olá! Vim pelo proposta inicial da Optional e gostaria de falar com a Optional.',
+        }"
+      />
+      <a href="#servicos" class="btn-secondary">Soluções <i class="pi pi-arrow-down"></i></a>
     </footer>
   </div>
 </section>

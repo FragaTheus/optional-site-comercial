@@ -16,8 +16,8 @@ interface IAside {
 export class HeroSectionComponent {
   // Atributos
   protected readonly asides: IAside[] = [
-    { label: '12+', data: 'Operações' },
-    { label: '367h', data: '/mes' },
-    { label: '4.400h', data: 'Economizadas/ano' },
+    { label: '12+', data: 'Empresas Automatizadas' },
+    { label: '367h', data: 'Economizados/mes' },
+    { label: '4.400h', data: 'Economizados/ano' },
   ];
 }
