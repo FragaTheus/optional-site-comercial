@@ -10,10 +10,10 @@
           <img [src]="card.src" alt="" width="767" height="511" loading="lazy" decoding="async" class="media-card-img" />
           <div class="media-card-fade" aria-hidden="true"></div>
           <div class="media-card-scrim" aria-hidden="true"></div>
-          <div class="max-w-xl p-6 md:p-10">
+          <div class="max-w-xl p-gutter">
             <p class="eyebrow">{{ card.label }}</p>
-            <h3 class="mt-3 text-3xl text-paper"><strong>{{ card.title }}</strong></h3>
-            <p class="mt-3 text-lg text-paper">{{ card.text }}</p>
+            <h3 class="mt-gutter text-3xl text-paper"><strong>{{ card.title }}</strong></h3>
+            <p class="mt-gutter text-lg text-paper">{{ card.text }}</p>
           </div>
         </article>
       }

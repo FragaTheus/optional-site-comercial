@@ -1,19 +1,19 @@
 <!-- Seção escura: cada serviço é uma faixa com tema, proposta, explicação e link; posições diferentes no grid, separadas por filetes -->
 <section id="servicos" class="surface-dark">
-  <div class="site-container site-grid gap-y-8">
+  <div class="site-container site-grid gap-y-gutter">
     <h2 appReveal="lines" class="text-6xl lg:col-span-8">Problemas diferentes exigem <strong>soluções diferentes.</strong></h2>
     <p appReveal class="text-xl lg:col-span-4 lg:col-start-9 md:self-end">Da presença digital à gestão operacional, desenvolvemos a tecnologia que faz sentido para cada necessidade.</p>
 
     @for (service of services; track service.slug) {
-      <article class="site-grid mt-gutter gap-y-6 border-t border-paper/15 pt-8 lg:col-span-12">
+      <article class="site-grid mt-gutter gap-y-gutter border-t border-paper/15 pt-gutter lg:col-span-12">
         <p appReveal class="eyebrow lg:col-span-2">{{ service.theme }}</p>
         <div [class]="service.title">
           <h3 appReveal="lines" class="text-4xl"><strong>{{ service.name }}</strong></h3>
-          <p appReveal class="mt-4 text-xl text-white">{{ service.value }}</p>
+          <p appReveal class="mt-gutter text-xl text-white">{{ service.value }}</p>
         </div>
         <div [class]="service.body">
           <p appReveal class="text-lg">{{ service.text }}</p>
-          <a appReveal [routerLink]="['/servicos', service.slug]" class="btn btn-tertiary mt-6 text-white">{{ service.anchor }}</a>
+          <a appReveal [routerLink]="['/servicos', service.slug]" class="btn btn-tertiary mt-gutter text-white">{{ service.anchor }}</a>
         </div>
       </article>
     }
