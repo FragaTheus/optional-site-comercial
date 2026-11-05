@@ -1,24 +1,37 @@
 <!-- Três situações em alinhamentos diferentes, separadas por filetes discretos; a conclusão em bloco escuro prepara a seção de serviços -->
-<section>
-  <div class="site-container site-grid gap-y-gutter">
-    <h2 appReveal="lines" class=" lg:col-span-10 lg:col-start-2">Nem tudo que <strong>funciona</strong> está <strong>resolvido.</strong></h2>
-    <p appReveal class=" lg:col-span-4 lg:col-start-8">Algumas limitações não impedem uma empresa de trabalhar. Apenas se tornam parte da rotina.</p>
+<section id="atuacao">
+  <div class="site-container site-grid grid-flow-dense p-0">
+    <header class="lg:col-span-6 lg:col-start-7 lg:text-end p-gutter">
+      <h2 appReveal="lines">Onde a <strong>tecnologia</strong> faz a <strong>diferença</strong></h2>
+    </header>
 
-    @for (item of items; track item.label) {
-      <article appReveal class="site-grid mt-gutter gap-y-gutter border-t border-carbon/15 pt-gutter lg:col-span-12">
-        <p class="eyebrow lg:col-span-2">{{ item.label }}</p>
-        <div [class]="item.body">
-          <h3 class="" [innerHTML]="item.headline"></h3>
-          <p class="mt-gutter">{{ item.text }}</p>
-        </div>
-      </article>
-    }
+    <ul
+      class="lg:col-span-6 lg:order-first lg:row-span-2 flex lg:flex-col overflow-x-auto scrollbar-none px-gutter gap-gutter lg:py-gutter"
+    >
+      @for (item of items; track item.label) {
+        <li>
+          <article
+            appReveal
+            class="card card-primary min-w-3xs lg:w-full flex flex-col gap-gutter min-h-68"
+          >
+            <span class="eyebrow">{{ item.label }}</span>
+            <h4 [innerHTML]="item.headline" class="whitespace-pre-line text-carbon"></h4>
+            <p>{{ item.text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
 
-    <div appReveal class="surface-dark mt-gutter rounded-xs p-gutter lg:col-span-12 md:p-gutter">
-      <h3 class=" md:max-w-4xl">
-        <span class="block">Não é sobre <strong>trocar tudo.</strong></span>
-        <span class="block">É sobre <strong>resolver</strong> o que precisa ser resolvido.</span>
-      </h3>
-    </div>
+    <footer appReveal class="lg:col-span-6 p-gutter">
+      <div class="card surface-dark flex flex-col gap-gutter justify-between">
+        <h3>Sua <strong>empresa enfrenta</strong> um desses <strong>desafios?</strong></h3>
+        <app-btn-cta
+          [cta]="{
+            label: 'Vamos conversar',
+            wppMessage: 'Olá! Gostaria de falar sobre os desafios que minha empresa enfrenta.',
+          }"
+        />
+      </div>
+    </footer>
   </div>
 </section>

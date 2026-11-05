@@ -8,13 +8,20 @@ import { HeroSectionComponent } from './sections/hero/hero-section-component';
 import { ObjectionsSectionComponent } from './sections/objections/objections-section-component';
 import { CtaSectionComponent } from '../../../shared/components/cta-section/cta-section-component';
 import { ServicesSectionComponent } from './sections/services/services-section-component';
-import { SocialproofSectionComponent } from './sections/socialproof/socialproof-section-component';
 import { ShowcaseSectionComponent } from './sections/showcase/showcase-section-component';
 
 // Página inicial: só compõe as seções, define o SEO e aciona as animações em sequência (`data-stagger`) das seções.
 @Component({
   selector: 'app-home-page',
-  imports: [HeroSectionComponent, SocialproofSectionComponent, ObjectionsSectionComponent, ServicesSectionComponent, ShowcaseSectionComponent, CasesSectionComponent, ClosingSectionComponent, CtaSectionComponent],
+  imports: [
+    HeroSectionComponent,
+    ObjectionsSectionComponent,
+    ServicesSectionComponent,
+    ShowcaseSectionComponent,
+    CasesSectionComponent,
+    ClosingSectionComponent,
+    CtaSectionComponent,
+  ],
   templateUrl: './home-page-component.html',
 })
 export class HomePageComponent {
@@ -24,13 +31,26 @@ export class HomePageComponent {
       'Optional — Software e infraestrutura digital sob medida para empresas',
       'A Optional desenvolve CRM, ERP e sistemas de gestão, automações, landing pages e sites comerciais sob medida para a realidade de cada empresa.',
       '/',
-      [{ '@type': 'Organization', name: 'Optional', description: 'Software e infraestrutura digital sob medida para empresas.', ...(SITE_URL && { url: SITE_URL }) }],
+      [
+        {
+          '@type': 'Organization',
+          name: 'Optional',
+          description: 'Software e infraestrutura digital sob medida para empresas.',
+          ...(SITE_URL && { url: SITE_URL }),
+        },
+      ],
     );
     const host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
     const gsap = inject(Gsap);
     const destroyRef = inject(DestroyRef);
     afterNextRender(() =>
-      destroyRef.onDestroy(gsap.run(host, () => host.querySelectorAll('[data-stagger]').forEach(el => gsap.stagger(el, el.getAttribute('data-stagger')!)))),
+      destroyRef.onDestroy(
+        gsap.run(host, () =>
+          host
+            .querySelectorAll('[data-stagger]')
+            .forEach((el) => gsap.stagger(el, el.getAttribute('data-stagger')!)),
+        ),
+      ),
     );
   }
 }
