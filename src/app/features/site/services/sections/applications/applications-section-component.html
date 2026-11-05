@@ -1,8 +1,8 @@
 <!-- Lista deslocada para a direita; título à esquerda -->
-<section class="py-section-m">
+<section>
   <div class="site-container site-grid gap-y-8">
-    <h2 appReveal="lines" class="text-5xl md:col-span-7">{{ service().applications.title.lead }} <strong>{{ service().applications.title.key }}</strong> {{ service().applications.title.tail }}</h2>
-    <ul data-stagger=":scope > li" class="md:col-span-8 md:col-start-5">
+    <h2 appReveal="lines" class="text-5xl lg:col-span-7">{{ service().applications.title.lead }} <strong>{{ service().applications.title.key }}</strong> {{ service().applications.title.tail }}</h2>
+    <ul data-stagger=":scope > li" class="lg:col-span-8 lg:col-start-5">
       @for (item of service().applications.items; track item.name) {
         <li class="border-t border-carbon/15 py-6">
           <h3 class="text-3xl"><strong>{{ item.name }}</strong></h3>

@@ -36,9 +36,9 @@ Exemplo conceitual (completar todos os tamanhos com coerência e validar visualm
 
 ```css
 @theme {
-  --text-base: clamp(0.9375rem, 0.9rem + 0.3vw, 1rem);
-  --text-xl: clamp(1.0625rem, 1rem + 0.55vw, 1.25rem);
-  --text-4xl: clamp(1.75rem, 1.4rem + 1.8vw, 2.25rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --text-xl: clamp(1rem, 0.92rem + 0.4vw, 1.25rem);
+  --text-4xl: clamp(1.1875rem, 0.8875rem + 1.5vw, 2.25rem);
 }
 ```
 
@@ -53,21 +53,24 @@ Sem quebras manuais de linha responsivas (`<br>` com `hidden md:block`) no lugar
 
 ## 6. Gutter
 
-`--spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);` em `@theme` (gera `px-gutter`, `gap-gutter`…). Mínimo 1.5rem, máximo 2.5rem (ajustar a fórmula se necessário para respeitar os limites). É o espaçamento horizontal padrão dos containers; não substituir por `px-4/px-6/px-10` variáveis por página.
+`--spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);` em `@theme` (gera `p-gutter`, `px-gutter`, `gap-gutter`…). Mínimo 1.5rem, máximo 2.5rem (ajustar a fórmula se necessário para respeitar os limites). O gutter é o espaçamento padrão dos containers em todos os lados; não substituir por padding variável (`p-*`, `px-*`) por página.
 
 ## 7. Container
 
 `--max-w-container: 100rem;` como alias explícito; em v4 expor a utility `max-w-container` via namespace de `@theme` (`--container-container: 100rem` ou `@utility max-w-container`), sem redefinir o `container` padrão do Tailwind. Classe de composição:
 
 ```css
-.site-container { width: 100%; max-width: var(--max-w-container); margin-inline: auto; padding-inline: var(--spacing-gutter); }
+.site-container { width: 100%; max-width: var(--max-w-container); margin-inline: auto; padding: var(--spacing-gutter); }
 ```
 
-Implementar com a sintaxe correta para a versão instalada (`@apply w-full max-w-container mx-auto px-gutter`).
+Implementar com a sintaxe correta para a versão instalada (`@apply w-full max-w-container mx-auto p-gutter`).
+As seções usam o padding vertical do `.site-container`; não aplicar espaçamentos `section-*` diretamente às tags `<section>`.
 
 ## 8. Grid
 
-Mobile `grid-cols-1`; a partir de `md`: `md:grid-cols-12`. A maioria das seções usa 12 colunas, distribuindo com `col-span`, `col-start`, `col-end`; a assimetria nasce nesse grid. Sem breakpoints arbitrários sem necessidade; o mobile pode simplificar. `.site-grid` = `grid grid-cols-1 md:grid-cols-12 gap-x-gutter`.
+Mobile e tablet usam `grid-cols-1`; a partir de `lg`: `lg:grid-cols-12`. As utilitárias de posicionamento (`col-span`, `col-start`, `col-end`) também devem usar o prefixo `lg:` para só compor o grid de 12 colunas nesse breakpoint. Sem breakpoints arbitrários sem necessidade; telas menores podem simplificar. `.site-grid` = `grid grid-cols-1 lg:grid-cols-12 gap-x-gutter`.
+
+Os mínimos dos tokens `text-lg` a `text-9xl` reduzem a escala em telas estreitas mantendo a hierarquia, enquanto `text-xs` a `text-base` preservam seus mínimos legíveis. Os máximos nominais permanecem inalterados.
 
 ## 9. Componentes visuais (`@layer components`)
 

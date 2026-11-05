@@ -84,17 +84,9 @@ Superfícies: Paper (padrão), White (no máximo uma faixa), Carbon (seções de
 
 ## 4. Grid e espaçamento
 
-- 12 colunas a partir de `md` (`grid grid-cols-1 md:grid-cols-12`), via `.site-grid`; container `.site-container` (`--max-w-container: 100rem`, `px-gutter`).
+- 12 colunas a partir de `lg` (`grid grid-cols-1 lg:grid-cols-12`), via `.site-grid`; container `.site-container` (`--max-w-container: 100rem`, `p-gutter`).
 - `--spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem)` serve de margem lateral e de gap de colunas.
 - Textos de leitura nunca ocupam mais de 5 colunas.
-- Escala vertical de seção (novo token, ritmo irregular de propósito):
-
-```
---space-section-s:  clamp(4rem, 3rem + 4vw, 7rem);
---space-section-m:  clamp(6rem, 4rem + 8vw, 12rem);
---space-section-l:  clamp(8rem, 5rem + 12vw, 18rem);
-```
-
 Escala de espaçamento interno: múltiplos de 0,5rem (`2, 4, 6, 8, 12, 16, 24, 32` do Tailwind). Não usar valores arbitrários.
 
 ### 4.1 Bento (uso pontual, para mesclar)
@@ -119,7 +111,7 @@ Onde usar na Home: **Princípios** (implementado). Evolução usa a escada de ca
 Cada seção é um componente em `features/site/home/sections/`. Direção dealt pela skill: `type-only-statement` (seed 1426254857), com paleta e tipografia mantidas da marca. Títulos de no máximo 2 linhas em todas as larguras (exigência do `inspect.mjs`); a frase de apoio carrega o detalhe. Sem eyebrows, numeração, mono nem linhas finas.
 
 1. **Hero — vazio, depois a frase na base.** Topo vazio; h1 "Software sob medida" (`text-8xl`) deslocado para a direita (col. 2–12); frase de apoio na col. 1–4 e CTA primário + link na col. 9–12, na mesma base. Sem imagem.
-2. **Problema — deslocado à direita.** h2 "Planilhas já não bastam." col. 4–12; parágrafo col. 7–11. Seção curta (`py-section-s`), uma pausa.
+2. **Problema — deslocado à direita.** h2 "Planilhas já não bastam." col. 4–12; parágrafo col. 7–11. Seção curta, uma pausa.
 3. **Serviços — Carbon, subseções h3 em regiões diferentes.** h2 "Cinco frentes, um critério." Cada serviço: h3 + lead de um lado, texto + lista do outro; alterna esquerda/direita, um centralizado (Automações) e um estreito (Landing pages). Separação só por espaço.
 4. **Interfaces — fragmentos de UI em blocos desiguais (bento).** Entre serviços e evolução, quatro cards de interface sem pessoas (pipeline de CRM, tabela de ERP, fluxo de automação, landing page), marcados com `data-ui`, em 7/5/5/7 colunas, cada um com legenda. Conteúdo ilustrativo, declarado como "não são telas de clientes"; sem números, marcas ou resultados.
 5. **Evolução — degraus de cards.** h2 col. 1–8 e apoio col. 9–12. 4 etapas em escada (cada uma desce um degrau; no mobile, recuo crescente); a última (ERP) em Carbon. Cards desiguais por posição, sem numeração.

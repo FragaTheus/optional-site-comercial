@@ -1,12 +1,12 @@
 <!-- Seção escura: cada serviço é uma faixa com tema, proposta, explicação e link; posições diferentes no grid, separadas por filetes -->
-<section id="servicos" class="surface-dark py-section-m">
+<section id="servicos" class="surface-dark">
   <div class="site-container site-grid gap-y-8">
-    <h2 appReveal="lines" class="text-6xl md:col-span-8">Problemas diferentes exigem <strong>soluções diferentes.</strong></h2>
-    <p appReveal class="text-xl md:col-span-4 md:col-start-9 md:self-end">Da presença digital à gestão operacional, desenvolvemos a tecnologia que faz sentido para cada necessidade.</p>
+    <h2 appReveal="lines" class="text-6xl lg:col-span-8">Problemas diferentes exigem <strong>soluções diferentes.</strong></h2>
+    <p appReveal class="text-xl lg:col-span-4 lg:col-start-9 md:self-end">Da presença digital à gestão operacional, desenvolvemos a tecnologia que faz sentido para cada necessidade.</p>
 
     @for (service of services; track service.slug) {
-      <article class="site-grid mt-section-s gap-y-6 border-t border-paper/15 pt-8 md:col-span-12">
-        <p appReveal class="eyebrow md:col-span-2">{{ service.theme }}</p>
+      <article class="site-grid mt-gutter gap-y-6 border-t border-paper/15 pt-8 lg:col-span-12">
+        <p appReveal class="eyebrow lg:col-span-2">{{ service.theme }}</p>
         <div [class]="service.title">
           <h3 appReveal="lines" class="text-4xl"><strong>{{ service.name }}</strong></h3>
           <p appReveal class="mt-4 text-xl text-white">{{ service.value }}</p>

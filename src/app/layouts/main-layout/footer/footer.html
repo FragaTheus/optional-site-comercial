@@ -1,14 +1,14 @@
 <footer class="surface-dark py-16">
   <div class="site-container site-grid gap-y-10">
-    <div class="md:col-span-6">
+    <div class="lg:col-span-6">
       <app-logo appReveal size="text-3xl" />
       <p appReveal class="mt-4 max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
     </div>
-    <nav appReveal aria-label="Serviços" class="flex flex-col gap-3 md:col-span-5 md:col-start-8">
+    <nav appReveal aria-label="Serviços" class="flex flex-col gap-3 lg:col-span-5 lg:col-start-8">
       @for (service of services; track service.slug) {
         <a [routerLink]="['/servicos', service.slug]" class="hover:text-white">{{ service.label }}</a>
       }
     </nav>
-    <p appReveal class="text-sm md:col-span-12">© {{ year }} Optional. Todos os direitos reservados.</p>
+    <p appReveal class="text-sm lg:col-span-12">© {{ year }} Optional. Todos os direitos reservados.</p>
   </div>
 </footer>

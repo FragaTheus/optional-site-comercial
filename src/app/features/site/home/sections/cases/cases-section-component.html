@@ -1,15 +1,15 @@
 <!-- Faixa clara com lista editorial: projeto, tipo de entrega, escopo validado e link para o serviço correspondente -->
-<section id="projetos" class="bg-white py-section-m">
+<section id="projetos" class="bg-white">
   <div class="site-container site-grid gap-y-8">
-    <h2 appReveal="lines" class="text-6xl md:col-span-8">Onde isso <strong>já foi aplicado.</strong></h2>
-    <p appReveal class="text-xl md:col-span-4 md:col-start-9 md:self-end">Projetos desenvolvidos pela Optional. Detalhes de cada entrega são apresentados na conversa, respeitando o que cada cliente autoriza divulgar.</p>
+    <h2 appReveal="lines" class="text-6xl lg:col-span-8">Onde isso <strong>já foi aplicado.</strong></h2>
+    <p appReveal class="text-xl lg:col-span-4 lg:col-start-9 md:self-end">Projetos desenvolvidos pela Optional. Detalhes de cada entrega são apresentados na conversa, respeitando o que cada cliente autoriza divulgar.</p>
 
-    <ul data-stagger=":scope > li" class="mt-section-s md:col-span-12">
+    <ul data-stagger=":scope > li" class="mt-gutter lg:col-span-12">
       @for (project of projects; track project.name) {
         <li class="site-grid items-baseline gap-y-3 border-t border-carbon/15 py-8">
-          <h3 class="text-4xl md:col-span-5"><strong>{{ project.name }}</strong></h3>
-          <p class="eyebrow md:col-span-3">{{ project.type }}</p>
-          <p class="text-lg md:col-span-4">{{ project.scope }} <a [routerLink]="['/servicos', project.slug]" class="btn btn-tertiary text-carbon">{{ project.anchor }}</a></p>
+          <h3 class="text-4xl lg:col-span-5"><strong>{{ project.name }}</strong></h3>
+          <p class="eyebrow lg:col-span-3">{{ project.type }}</p>
+          <p class="text-lg lg:col-span-4">{{ project.scope }} <a [routerLink]="['/servicos', project.slug]" class="btn btn-tertiary text-carbon">{{ project.anchor }}</a></p>
         </li>
       }
     </ul>

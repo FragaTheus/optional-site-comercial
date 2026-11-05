@@ -12,9 +12,9 @@ Orientada a features; ajustar nomes às convenções da versão instalada e não
 src/app/
   core/                 serviços singleton, SEO/metadados, configuração
   layouts/
-    main-layout/        header/ e footer/ (componentes), <router-outlet>, drawer
+    main-layout/        header/ e footer/ (componentes), <router-outlet>
   shared/
-    components/         somente componentes comportamentais reutilizáveis
+    components/         somente componentes comportamentais reutilizáveis, incluindo menu/drawer
   features/
     site/               presença comercial pública (indexável)
     concepts/           conceitos personalizados para prospects (noindex)
@@ -36,7 +36,7 @@ Rota `/concept/:slug`, layout independente, identidade visual própria possível
 
 ## MainLayout
 
-Componente de layout compartilhado que envolve as rotas institucionais com `RouterOutlet` e child routes. Contém `<header>` (navegação institucional), `<footer>` (informações institucionais e navegação complementar) e o drawer (`<dialog>` nativo, com gerenciamento de foco, fechamento por Esc/backdrop e acessibilidade). Páginas **não** declaram header/footer/drawer individualmente. `/concept/:slug` fica fora do MainLayout.
+Componente de layout compartilhado que envolve as rotas institucionais com `RouterOutlet` e child routes. Contém `<header>` (navegação institucional) e `<footer>` (informações institucionais e navegação complementar). O componente compartilhado de menu/drawer renderiza seu próprio botão e `<dialog>` nativo, gerenciando abertura, fechamento por Esc/backdrop e acessibilidade, sem estado ou handlers no layout. Páginas **não** declaram header/footer individualmente. `/concept/:slug` fica fora do MainLayout.
 
 ## Componentes compartilhados
 

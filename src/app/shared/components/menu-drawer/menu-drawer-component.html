@@ -1,0 +1,14 @@
+<button type="button" class="btn btn-secondary" aria-haspopup="dialog" aria-controls="site-menu" (click)="open()">Menu</button>
+
+<dialog #dialog id="site-menu" aria-label="Menu" class="my-0 mr-0 ml-auto h-dvh max-h-none w-full max-w-sm surface-dark p-gutter backdrop:bg-carbon/60" (click)="closeOnBackdrop($event)">
+  <div class="flex items-center justify-between">
+    <span class="text-2xl font-display font-extrabold tracking-tight text-white">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></span>
+    <button type="button" class="btn btn-secondary" (click)="close()">Fechar</button>
+  </div>
+  <nav aria-label="Menu principal" class="mt-16 flex flex-col gap-6">
+    @for (service of services; track service.slug) {
+      <a [routerLink]="['/servicos', service.slug]" class="font-display text-3xl font-bold tracking-tight text-white uppercase" (click)="close()">{{ service.label }}</a>
+    }
+    <a [href]="contactUrl" class="btn btn-primary mt-6 self-start" (click)="close()">Apresentar projeto</a>
+  </nav>
+</dialog>

@@ -1,7 +1,13 @@
-<div class="surface-dark mx-auto flex h-16 w-full max-w-container items-center justify-between rounded-xs px-6 shadow-lg shadow-carbon/15">
-  <app-logo />
+<header class="p-gutter max-w-container mx-auto">
+  <div
+    class="surface-dark mx-auto flex h-20 w-full max-w-contsainer items-center justify-between rounded-xs px-gutter shadow-lg shadow-carbon/15 max-w-container"
+  >
+    <app-logo />
 
-  <a [href]="contactUrl" class="btn btn-tertiary hidden md:inline-flex">Apresentar projeto</a>
+    <div class="items-center gap-gutter flex">
+      <a [href]="contactUrl" class="btn btn-tertiary hidden md:inline-flex">Apresentar projeto</a>
 
-  <button type="button" class="btn btn-secondary md:hidden" aria-haspopup="dialog" (click)="menuOpen.emit()">Menu</button>
-</div>
+      <app-menu-drawer />
+    </div>
+  </div>
+</header>

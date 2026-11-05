@@ -1,8 +1,8 @@
 <!-- Título fixo à esquerda, respostas à direita -->
-<section class="py-section-m">
+<section>
   <div class="site-container site-grid gap-y-10">
-    <h2 appReveal="lines" class="text-5xl md:sticky md:top-24 md:col-span-5 md:self-start">Perguntas sobre <strong>{{ service().label }}</strong></h2>
-    <div data-stagger=":scope > details" class="flex flex-col gap-2 md:col-span-6 md:col-start-7">
+    <h2 appReveal="lines" class="text-5xl md:sticky md:top-24 lg:col-span-5 md:self-start">Perguntas sobre <strong>{{ service().label }}</strong></h2>
+    <div data-stagger=":scope > details" class="flex flex-col gap-2 lg:col-span-6 lg:col-start-7">
       @for (faq of service().faq; track faq.q) {
         <details class="group rounded-xs bg-white p-6">
           <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold text-carbon [&::-webkit-details-marker]:hidden">

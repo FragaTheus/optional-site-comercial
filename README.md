@@ -34,7 +34,7 @@ Angular 22.2 (standalone, SSR + prerendering via `@angular/ssr`), Tailwind CSS 4
 "Precisão em cada detalhe." Minimalista, tipográfica, assimétrica. Paleta: Carbon `#111315`, Paper `#F3F1EB`, Signal `#FF5930`, Slate `#74797D`, White `#FFFFFF`. Ver [`docs/ART_DIRECTION.md`](docs/ART_DIRECTION.md).
 
 ## 10. Padrões de Tailwind
-Tailwind obrigatório; tokens em `@theme`; escala `text-*` fluida com `clamp()`; `--spacing-gutter`; `max-w-container` (100rem); grid `grid-cols-1 md:grid-cols-12`; classes `.btn*`, `.card*`, `.media-card*` (card com imagem de fundo), `.eyebrow`, `.site-container`, `.site-grid` em `@layer components`; botões `rounded-xs`. Ver [`docs/FRONTEND_STANDARDS.md`](docs/FRONTEND_STANDARDS.md).
+Tailwind obrigatório; tokens em `@theme`; escala `text-*` fluida com `clamp()`; `--spacing-gutter`; `max-w-container` (100rem); grid `grid-cols-1 lg:grid-cols-12`; classes `.btn*`, `.card*`, `.media-card*` (card com imagem de fundo), `.eyebrow`, `.site-container`, `.site-grid` em `@layer components`; botões `rounded-xs`. Ver [`docs/FRONTEND_STANDARDS.md`](docs/FRONTEND_STANDARDS.md).
 
 ## 11. Componentização
 Componente Angular só com estado/comportamento/interação; visual puro vira classe global; preferir HTML nativo.

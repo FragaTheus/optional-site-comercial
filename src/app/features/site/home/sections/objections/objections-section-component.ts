@@ -11,8 +11,8 @@ export class ObjectionsSectionComponent {
   // Atributos
   // `body` define a região de cada situação no grid de 12 colunas; `headline` é conteúdo próprio com <strong> nas palavras-chave.
   protected readonly items = [
-    { label: '01 — Presença digital', headline: 'Um <strong>site</strong> que existe. Mas <strong>não representa.</strong>', text: 'Estar online é diferente de apresentar o seu trabalho com a qualidade que ele merece.', body: 'md:col-span-6 md:col-start-3' },
-    { label: '02 — Processos', headline: 'Uma <strong>operação</strong> que roda. Mas <strong>depende de improviso.</strong>', text: 'Planilhas, tarefas repetidas e informações dispersas podem manter tudo funcionando. Nem sempre da melhor maneira.', body: 'md:col-span-6 md:col-start-5' },
-    { label: '03 — Sistemas', headline: 'Um <strong>sistema</strong> que funciona. Mas <strong>dita as regras.</strong>', text: 'Quando a ferramenta exige que o negócio se adapte constantemente a ela, vale questionar se a solução ainda faz sentido.', body: 'md:col-span-6 md:col-start-7' },
+    { label: '01 — Presença digital', headline: 'Um <strong>site</strong> que existe. Mas <strong>não representa.</strong>', text: 'Estar online é diferente de apresentar o seu trabalho com a qualidade que ele merece.', body: 'lg:col-span-6 lg:col-start-3' },
+    { label: '02 — Processos', headline: 'Uma <strong>operação</strong> que roda. Mas <strong>depende de improviso.</strong>', text: 'Planilhas, tarefas repetidas e informações dispersas podem manter tudo funcionando. Nem sempre da melhor maneira.', body: 'lg:col-span-6 lg:col-start-5' },
+    { label: '03 — Sistemas', headline: 'Um <strong>sistema</strong> que funciona. Mas <strong>dita as regras.</strong>', text: 'Quando a ferramenta exige que o negócio se adapte constantemente a ela, vale questionar se a solução ainda faz sentido.', body: 'lg:col-span-6 lg:col-start-7' },
   ];
 }
