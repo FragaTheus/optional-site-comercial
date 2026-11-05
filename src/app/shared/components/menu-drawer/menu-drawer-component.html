@@ -26,7 +26,7 @@
     @for (service of services; track service.slug) {
       <a
         [routerLink]="['/servicos', service.slug]"
-        class="font-display text-lg font-bold tracking-tight text-white uppercase w-full hover:bg-slate"
+        class="font-display font-bold tracking-tight text-white uppercase w-full hover:bg-slate"
         (click)="close()"
         >{{ service.label }}</a
       >

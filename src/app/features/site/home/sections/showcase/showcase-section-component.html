@@ -1,8 +1,8 @@
 <!-- Cards com imagem de fundo (object-cover), gradiente horizontal e texto sobre a imagem; larguras desiguais no grid -->
 <section>
   <div class="site-container site-grid gap-y-gutter">
-    <h2 appReveal="lines" class="text-6xl lg:col-span-7">Estrutura <strong>sob medida.</strong></h2>
-    <p appReveal class="text-xl lg:col-span-4 lg:col-start-9 md:self-end">Sob medida não é um pacote adaptado. É uma estrutura montada a partir da operação de cada empresa.</p>
+    <h2 appReveal="lines" class=" lg:col-span-7">Estrutura <strong>sob medida.</strong></h2>
+    <p appReveal class=" lg:col-span-4 lg:col-start-9 md:self-end">Sob medida não é um pacote adaptado. É uma estrutura montada a partir da operação de cada empresa.</p>
 
     <div data-stagger=":scope > article" class="contents">
       @for (card of cards; track card.src) {
@@ -12,8 +12,8 @@
           <div class="media-card-scrim" aria-hidden="true"></div>
           <div class="max-w-xl p-gutter">
             <p class="eyebrow">{{ card.label }}</p>
-            <h3 class="mt-gutter text-3xl text-paper"><strong>{{ card.title }}</strong></h3>
-            <p class="mt-gutter text-lg text-paper">{{ card.text }}</p>
+            <h3 class="mt-gutter text-paper"><strong>{{ card.title }}</strong></h3>
+            <p class="mt-gutter text-paper">{{ card.text }}</p>
           </div>
         </article>
       }

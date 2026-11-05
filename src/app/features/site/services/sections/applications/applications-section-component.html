@@ -1,12 +1,12 @@
 <!-- Lista deslocada para a direita; título à esquerda -->
 <section>
   <div class="site-container site-grid gap-y-gutter">
-    <h2 appReveal="lines" class="text-5xl lg:col-span-7">{{ service().applications.title.lead }} <strong>{{ service().applications.title.key }}</strong> {{ service().applications.title.tail }}</h2>
+    <h2 appReveal="lines" class=" lg:col-span-7">{{ service().applications.title.lead }} <strong>{{ service().applications.title.key }}</strong> {{ service().applications.title.tail }}</h2>
     <ul data-stagger=":scope > li" class="lg:col-span-8 lg:col-start-5">
       @for (item of service().applications.items; track item.name) {
         <li class="border-t border-carbon/15 py-gutter">
-          <h3 class="text-3xl"><strong>{{ item.name }}</strong></h3>
-          <p class="mt-gutter max-w-prose text-lg">{{ item.text }}</p>
+          <h3 class=""><strong>{{ item.name }}</strong></h3>
+          <p class="mt-gutter max-w-prose">{{ item.text }}</p>
         </li>
       }
     </ul>

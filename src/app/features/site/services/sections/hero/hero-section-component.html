@@ -1,7 +1,7 @@
 <!-- Assimétrico: h1 à direita, introdução à esquerda abaixo, CTAs à direita -->
 <section>
   <div class="site-container site-grid gap-y-gutter">
-    <nav aria-label="Trilha de navegação" class="text-sm lg:col-span-12">
+    <nav aria-label="Trilha de navegação" class=" lg:col-span-12">
       <ol class="flex flex-wrap items-center gap-gutter">
         <li>
           <a routerLink="/" class="underline underline-offset-4 hover:decoration-signal">Início</a>
@@ -19,10 +19,10 @@
         <li aria-current="page">{{ service().label }}</li>
       </ol>
     </nav>
-    <h1 appReveal="lines" class="text-7xl lg:col-span-11">
+    <h1 appReveal="lines" class=" lg:col-span-11">
       {{ service().h1.lead }} <strong>{{ service().h1.key }}</strong>
     </h1>
-    <p appReveal class="text-xl lg:col-span-6">{{ service().intro }}</p>
+    <p appReveal class=" lg:col-span-6">{{ service().intro }}</p>
     <div
       appReveal
       class="flex flex-wrap items-center gap-gutter text-carbon lg:col-span-4 lg:col-start-9 md:justify-self-end"

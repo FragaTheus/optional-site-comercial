@@ -1,24 +1,24 @@
 <!-- Títulos à esquerda; projetos e serviços complementares à direita -->
 <section class="bg-white">
   <div class="site-container site-grid gap-y-gutter">
-    <h2 appReveal="lines" class="text-5xl lg:col-span-6">Serviços e projetos <strong>relacionados</strong></h2>
+    <h2 appReveal="lines" class=" lg:col-span-6">Serviços e projetos <strong>relacionados</strong></h2>
     <div class="flex flex-col gap-gutter lg:col-span-6 lg:col-start-7">
       @if (service().projects.length) {
         <div>
-          <h3 class="text-2xl">Projetos <strong>da Optional</strong></h3>
+          <h3 class="">Projetos <strong>da Optional</strong></h3>
           <ul class="mt-gutter">
             @for (project of service().projects; track project.name) {
-              <li class="border-t border-carbon/15 py-gutter text-lg"><strong class="text-carbon">{{ project.name }}</strong>: {{ project.scope }}</li>
+              <li class="border-t border-carbon/15 py-gutter"><strong class="text-carbon">{{ project.name }}</strong>: {{ project.scope }}</li>
             }
           </ul>
           <a routerLink="/" fragment="projetos" class="btn btn-tertiary mt-gutter text-carbon">Ver todos os projetos</a>
         </div>
       }
       <div>
-        <h3 class="text-2xl">Serviços <strong>complementares</strong></h3>
+        <h3 class="">Serviços <strong>complementares</strong></h3>
         <ul class="mt-gutter">
           @for (link of service().links; track link.slug) {
-            <li class="border-t border-carbon/15 py-gutter text-lg">
+            <li class="border-t border-carbon/15 py-gutter">
               <a [routerLink]="['/servicos', link.slug]" class="font-semibold text-carbon underline decoration-1 underline-offset-4 hover:decoration-signal">{{ link.anchor }}</a>
               <span>: {{ link.text }}</span>
             </li>

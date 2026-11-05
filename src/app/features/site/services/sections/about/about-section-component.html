@@ -1,20 +1,20 @@
 <!-- Título fixo à esquerda, explicação à direita; abaixo, comparação em três colunas -->
 <section class="bg-white">
   <div class="site-container site-grid gap-y-gutter">
-    <h2 appReveal="lines" class="text-5xl md:sticky md:top-24 lg:col-span-5 md:self-start">{{ service().about.title.lead }} <strong>{{ service().about.title.key }}</strong> {{ service().about.title.tail }}</h2>
+    <h2 appReveal="lines" class=" md:sticky md:top-24 lg:col-span-5 md:self-start">{{ service().about.title.lead }} <strong>{{ service().about.title.key }}</strong> {{ service().about.title.tail }}</h2>
     <div class="flex flex-col gap-gutter lg:col-span-6 lg:col-start-7">
       @for (paragraph of service().about.paragraphs; track paragraph) {
-        <p appReveal class="text-xl">{{ paragraph }}</p>
+        <p appReveal class="">{{ paragraph }}</p>
       }
     </div>
 
     <div class="mt-gutter lg:col-span-12">
-      <h2 appReveal="lines" class="text-4xl">{{ service().contrast.title.lead }} <strong>{{ service().contrast.title.key }}</strong> {{ service().contrast.title.tail }}</h2>
+      <h2 appReveal="lines" class="">{{ service().contrast.title.lead }} <strong>{{ service().contrast.title.key }}</strong> {{ service().contrast.title.tail }}</h2>
       <dl data-stagger=":scope > div" class="mt-gutter grid gap-gutter md:grid-cols-3">
         @for (item of service().contrast.items; track item.name) {
           <div class="border-t border-carbon/15 pt-gutter">
-            <dt class="font-display text-2xl font-bold uppercase tracking-heading text-carbon">{{ item.name }}</dt>
-            <dd class="mt-gutter text-lg">{{ item.text }}</dd>
+            <dt class="font-display font-bold uppercase tracking-heading text-carbon">{{ item.name }}</dt>
+            <dd class="mt-gutter">{{ item.text }}</dd>
           </div>
         }
       </dl>

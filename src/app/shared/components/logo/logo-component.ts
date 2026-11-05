@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `<a
     routerLink="/"
-    class="font-display font-extrabold tracking-tight text-white text-2xl px-0"
+    class="logo px-0"
     aria-label="Optional, página inicial"
     >Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></a
   >`,

@@ -26,7 +26,7 @@
   --tracking-title: -0.0375em;
   --tracking-heading: -0.025em;
 
-  /* Escala fluida: máximos = tamanhos nominais do Tailwind */
+  /* Escala fluida: máximos = tamanhos nominais do Tailwind (hierarquia: h1 8xl → h2 7xl → h3 6xl → h4 5xl → h5 4xl → h6 lg) */
   --text-xs: clamp(0.6875rem, 0.66rem + 0.12vw, 0.75rem);
   --text-xs--line-height: 1.5;
   --text-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
@@ -51,8 +51,6 @@
   --text-7xl--line-height: 1;
   --text-8xl: clamp(1.75rem, 0.55rem + 6vw, 6rem);
   --text-8xl--line-height: 0.96;
-  --text-9xl: clamp(2rem, 0.3rem + 8.5vw, 8rem);
-  --text-9xl--line-height: 0.92;
 
   --spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
   --max-w-container: 100rem;
@@ -73,18 +71,28 @@
     @apply font-display text-slate uppercase tracking-heading text-balance;
   }
   h1 {
-    @apply font-extrabold tracking-display;
+    @apply text-8xl font-extrabold tracking-display;
   }
   h2 {
-    @apply font-extrabold tracking-title;
+    @apply text-7xl font-extrabold tracking-title;
   }
   h3 {
-    @apply font-bold;
+    @apply text-6xl font-bold;
   }
-  h4,
-  h5,
+  h4 {
+    @apply text-5xl font-semibold;
+  }
+  h5 {
+    @apply text-4xl font-semibold;
+  }
   h6 {
-    @apply font-semibold;
+    @apply text-lg font-semibold;
+  }
+  p {
+    @apply text-base;
+  }
+  small {
+    @apply text-xs;
   }
   :is(h1, h2, h3, h4, h5, h6) strong {
     @apply text-carbon;
@@ -116,6 +124,10 @@
     :is(h1, h2, h3, h4, h5, h6) strong {
       @apply text-white;
     }
+  }
+
+  .logo {
+    @apply font-display text-2xl font-extrabold tracking-tight text-white;
   }
 
   .btn-primary {
