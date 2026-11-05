@@ -35,16 +35,37 @@ Cada seção responde ou desenvolve o argumento da anterior. Seção que não te
 
 | # | Seção | Papel | Mensagem-chave | Prepara a próxima porque… |
 |---|---|---|---|---|
-| 1 | Hero | Posicionamento | "Software sob medida." Para quem, como difere (parte da operação, não de um pacote), próximo passo (Apresentar projeto / Conhecer serviços) | afirma o diferencial que as objeções vão colocar em contraste |
-| 2 | Objeções | Provocação | "Nem tudo que funciona está resolvido." Três situações reconhecíveis: presença digital, processos, sistemas. Conclusão: "Não é sobre trocar tudo. É sobre resolver o que precisa ser resolvido." | a conclusão pede soluções pontuais |
+| 1 | Hero ✅ final | Posicionamento | "Infraestrutura Digital para aumentar a eficiência da sua empresa." Sistemas e automações de acordo com a operação, para reduzir custos, aumentar a produtividade e contribuir com a aquisição de novos clientes | leva ao `#atuacao` (Entender atuação) |
+| 2 | Objeções ✅ final | Identificação | "Onde a tecnologia faz a diferença": três frentes reconhecíveis (Custos, Produtividade, Experiência). Fecha com "Sua empresa enfrenta um desses desafios?" + CTA "Vamos conversar" | o desafio reconhecido pede soluções pontuais |
 | 3 | Serviços | Soluções | "Problemas diferentes exigem soluções diferentes." Cinco serviços independentes (presença digital, aquisição, relacionamento, produtividade, gestão), cada um com link para a satélite | mostra o que, falta mostrar como |
 | 4 | Estrutura sob medida | Abordagem | Organização, personalização, engenharia, integração, em cards com imagem de fundo | a abordagem pede evidência |
 | 5 | Projetos | Evidências reais | Apenas projetos e escopos validados; sem métricas | a evidência leva à conversa |
 | 6 | Contato | Próximo passo | "Agora, vamos falar da sua operação." | fecha a narrativa |
 
+### Versão final decidida: Hero e Objeções (seções 1 e 2)
+
+Conteúdo **definitivo**; não alterar sem decisão explícita. Implementado em `features/site/home/sections/hero` e `sections/objections`.
+
+**1. Hero** (`#home-hero`)
+- Eyebrows: "Est. 2025 // SP" e "Studio de Engenharia de Software".
+- H1: **Infraestrutura Digital** para aumentar a **eficiência** da sua **empresa.**
+- Apoio: "Sistemas e automações de acordo com sua operação para reduzir custos, aumentar a produtividade e contribuir com a aquisição de novos clientes."
+- CTA único: "Entender atuação" (âncora `#atuacao`, `btn-secondary`).
+- Minimalista: tipografia e espaço negativo, sem imagens.
+
+**2. Objeções** (`#atuacao`)
+- H2: Onde a **tecnologia** faz a **diferença**.
+- Três cards numerados (`card-primary`, rolagem horizontal no mobile):
+  - 01 **Custos**: "Erros e retrabalho aumentam os custos da operação e comprometem sua margem de lucro."
+  - 02 **Produtividade**: "Tarefas manuais e repetitivas consomem tempo e limitam a capacidade da sua equipe."
+  - 03 **Experiência**: "Seu site não acompanha a evolução da empresa nem transmite a qualidade dos serviços."
+- Fecho em bloco escuro: "Sua **empresa enfrenta** um desses **desafios?**" + CTA "Vamos conversar" (mensagem de WhatsApp: "Olá! Gostaria de falar sobre os desafios que minha empresa enfrenta.").
+
+> **Próximas seções (3 a 6):** serão elaboradas de forma diferente das duas primeiras. A tabela acima descreve a intenção original e será revisada seção a seção; não tomar Hero e Objeções como modelo de formato.
+
 Regras da homepage:
 - A sequência de serviços (presença digital → aquisição → relacionamento → produtividade → gestão) é um recurso narrativo, **não** uma evolução obrigatória. Nunca afirmar que uma landing page "evolui" para ERP; serviços são contratados individualmente.
-- Objeções não são FAQ: sem acordeão, sem pergunta/resposta; o visitante se reconhece. Sem cards convencionais e sem ícones decorativos.
+- Objeções não são FAQ: sem acordeão, sem pergunta/resposta; o visitante se reconhece. Sem ícones decorativos.
 - Sem FAQ extenso. Dúvidas úteis para busca vão para as satélites.
 - Sem botão flutuante de WhatsApp; sem formulários ou integrações inventados (`CONTACT_URL` em `core/site.config.ts` é o fluxo de contato, ainda pendente).
 - Hero minimalista: tipografia, espaço negativo e hierarquia; sem imagens.
