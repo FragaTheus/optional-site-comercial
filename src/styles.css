@@ -56,7 +56,6 @@
   --spacing-gutter: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
   --max-w-container: 100rem;
   --container-container: var(--max-w-container);
-
 }
 
 @layer base {
@@ -87,12 +86,12 @@
     @apply font-semibold;
   }
   :is(h1, h2, h3, h4, h5, h6) strong {
-    @apply font-[inherit] text-carbon;
+    @apply text-carbon;
   }
 
   a,
   button {
-    @apply cursor-pointer;
+    @apply cursor-pointer inline-flex items-center justify-center gap-2 rounded-xs px-gutter py-4 text-base font-semibold transition-colors;
   }
 
   :focus-visible {
@@ -118,9 +117,6 @@
     }
   }
 
-  .btn {
-    @apply inline-flex items-center justify-center gap-gutter rounded-xs px-gutter py-gutter text-base font-semibold transition-colors motion-reduce:transition-none;
-  }
   .btn-primary {
     @apply bg-signal text-carbon hover:bg-carbon hover:text-signal;
   }

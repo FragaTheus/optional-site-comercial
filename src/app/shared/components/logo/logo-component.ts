@@ -5,10 +5,12 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-logo',
   imports: [RouterLink],
-  template: `<a routerLink="/" class="font-display font-extrabold tracking-tight text-white" [class]="size()" aria-label="Optional, página inicial">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></a>`,
+  template: `<a
+    routerLink="/"
+    class="font-display font-extrabold tracking-tight text-white text-2xl px-0"
+    aria-label="Optional, página inicial"
+    >Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></a
+  >`,
   host: { class: 'inline-block' },
 })
-export class LogoComponent {
-  // Atributos
-  readonly size = input('text-2xl');
-}
+export class LogoComponent {}

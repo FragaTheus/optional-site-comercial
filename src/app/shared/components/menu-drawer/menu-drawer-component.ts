@@ -1,9 +1,10 @@
 import { Component, ElementRef, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CONTACT_URL, SERVICE_LINKS } from '../../../core/site.config';
+import { LogoComponent } from '../logo/logo-component';
 
 @Component({
-  imports: [RouterLink],
+  imports: [RouterLink, LogoComponent],
   selector: 'app-menu-drawer',
   templateUrl: './menu-drawer-component.html',
   host: { class: 'block' },
@@ -21,9 +22,5 @@ export class MenuDrawerComponent {
 
   protected close(): void {
     this.dialog().nativeElement.close();
-  }
-
-  protected closeOnBackdrop(event: MouseEvent): void {
-    if (event.target === this.dialog().nativeElement) this.close();
   }
 }
