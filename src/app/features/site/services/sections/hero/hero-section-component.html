@@ -1,8 +1,8 @@
 <!-- Assimétrico: h1 à direita, introdução à esquerda abaixo, CTAs à direita -->
 <section>
-  <div class="site-container site-grid gap-y-8">
+  <div class="site-container site-grid gap-y-gutter">
     <nav aria-label="Trilha de navegação" class="text-sm lg:col-span-12">
-      <ol class="flex flex-wrap items-center gap-2">
+      <ol class="flex flex-wrap items-center gap-gutter">
         <li>
           <a routerLink="/" class="underline underline-offset-4 hover:decoration-signal">Início</a>
         </li>
@@ -25,7 +25,7 @@
     <p appReveal class="text-xl lg:col-span-6">{{ service().intro }}</p>
     <div
       appReveal
-      class="flex flex-wrap items-center gap-6 text-carbon lg:col-span-4 lg:col-start-9 md:justify-self-end"
+      class="flex flex-wrap items-center gap-gutter text-carbon lg:col-span-4 lg:col-start-9 md:justify-self-end"
     >
       <a [href]="contactUrl" class="btn btn-primary">Apresentar projeto</a>
       <a href="#funcionalidades" class="btn btn-tertiary">Ver funcionalidades</a>

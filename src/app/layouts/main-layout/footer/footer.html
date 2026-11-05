@@ -1,10 +1,10 @@
-<footer class="surface-dark py-16">
-  <div class="site-container site-grid gap-y-10">
+<footer class="surface-dark py-gutter">
+  <div class="site-container site-grid gap-y-gutter">
     <div class="lg:col-span-6">
       <app-logo appReveal size="text-3xl" />
-      <p appReveal class="mt-4 max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
+      <p appReveal class="mt-gutter max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
     </div>
-    <nav appReveal aria-label="Serviços" class="flex flex-col gap-3 lg:col-span-5 lg:col-start-8">
+    <nav appReveal aria-label="Serviços" class="flex flex-col gap-gutter lg:col-span-5 lg:col-start-8">
       @for (service of services; track service.slug) {
         <a [routerLink]="['/servicos', service.slug]" class="hover:text-white">{{ service.label }}</a>
       }

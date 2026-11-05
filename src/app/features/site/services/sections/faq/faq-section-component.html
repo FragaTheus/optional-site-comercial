@@ -1,15 +1,15 @@
 <!-- Título fixo à esquerda, respostas à direita -->
 <section>
-  <div class="site-container site-grid gap-y-10">
+  <div class="site-container site-grid gap-y-gutter">
     <h2 appReveal="lines" class="text-5xl md:sticky md:top-24 lg:col-span-5 md:self-start">Perguntas sobre <strong>{{ service().label }}</strong></h2>
-    <div data-stagger=":scope > details" class="flex flex-col gap-2 lg:col-span-6 lg:col-start-7">
+    <div data-stagger=":scope > details" class="flex flex-col gap-gutter lg:col-span-6 lg:col-start-7">
       @for (faq of service().faq; track faq.q) {
-        <details class="group rounded-xs bg-white p-6">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold text-carbon [&::-webkit-details-marker]:hidden">
+        <details class="group rounded-xs bg-white p-gutter">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-gutter text-xl font-semibold text-carbon [&::-webkit-details-marker]:hidden">
             {{ faq.q }}
             <span aria-hidden="true" class="text-3xl font-normal motion-safe:transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="mt-4 max-w-prose">{{ faq.a }}</p>
+          <p class="mt-gutter max-w-prose">{{ faq.a }}</p>
         </details>
       }
     </div>

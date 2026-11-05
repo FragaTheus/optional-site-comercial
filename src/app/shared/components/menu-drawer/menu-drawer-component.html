@@ -5,10 +5,10 @@
     <span class="text-2xl font-display font-extrabold tracking-tight text-white">Optional<span class="text-signal" aria-hidden="true">&lt;&gt;</span></span>
     <button type="button" class="btn btn-secondary" (click)="close()">Fechar</button>
   </div>
-  <nav aria-label="Menu principal" class="mt-16 flex flex-col gap-6">
+  <nav aria-label="Menu principal" class="mt-gutter flex flex-col gap-gutter">
     @for (service of services; track service.slug) {
       <a [routerLink]="['/servicos', service.slug]" class="font-display text-3xl font-bold tracking-tight text-white uppercase" (click)="close()">{{ service.label }}</a>
     }
-    <a [href]="contactUrl" class="btn btn-primary mt-6 self-start" (click)="close()">Apresentar projeto</a>
+    <a [href]="contactUrl" class="btn btn-primary mt-gutter self-start" (click)="close()">Apresentar projeto</a>
   </nav>
 </dialog>
