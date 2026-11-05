@@ -127,7 +127,7 @@
     }
   }
   .btn-tertiary {
-    @apply px-0 underline decoration-1 underline-offset-4 hover:decoration-signal;
+    @apply underline decoration-1 underline-offset-4 hover:decoration-signal;
   }
 
   .card {

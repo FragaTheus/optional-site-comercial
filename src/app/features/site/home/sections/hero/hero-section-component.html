@@ -1,11 +1,32 @@
-<!-- Vazio no topo; a frase se ancora na base, deslocada para a direita (eixo em ~25% da largura) -->
-<section class="flex items-end pb-gutter md:min-h-[min(46rem,calc(100dvh-4rem))]">
+<section id="home-hero" aria-labelledby="home-hero-title">
   <div class="site-container site-grid gap-y-gutter">
-    <h1 appReveal="lines" class="text-8xl lg:col-span-11 lg:col-start-2"><strong>Software</strong> sob medida</h1>
-    <p appReveal class="text-xl lg:col-span-4">A Optional desenvolve sistemas, automações e sites a partir da operação de cada empresa, e não de um pacote adaptado.</p>
-    <div appReveal class="flex flex-wrap items-center gap-gutter text-carbon lg:col-span-4 lg:col-start-9 md:justify-self-end">
-      <a [href]="contactUrl" class="btn btn-primary">Apresentar projeto</a>
-      <a href="#servicos" class="btn btn-tertiary">Conhecer serviços</a>
-    </div>
+    <header class="lg:col-span-full">
+      <div class="flex items-center justify-between flex-wrap eyebrow mb-gutter">
+        <p appReveal>Studio de Engenharia de Software</p>
+        <p appReveal class="text-carbon">Est. 2025 // São Paulo</p>
+      </div>
+      <h1 id="home-hero-title" appReveal="lines" class="text-9xl">
+        <strong>Infraestrutura digital</strong> para aumentar a <strong>produtividade</strong> da
+        sua empresa
+      </h1>
+    </header>
+
+    <footer class="w-full flex items-center justify-between gap-gutter flex-wrap lg:col-span-full">
+      <div class="flex items-center gap-gutter">
+        @for (a of asides; track a.label) {
+          <div class="flex flex-col">
+            <p class="font-bold" appReveal>
+              <strong>{{ a.label }}</strong>
+            </p>
+            <p class="text-carbon text-xs" appReveal>{{ a.data }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap">
+        <a href="#servicos" class="btn-primary border border-signal">Fale conosco</a>
+        <a href="#servicos" class="btn-secondary">Ver projetos <i class="pi pi-arrow-down"></i></a>
+      </div>
+    </footer>
   </div>
 </section>
