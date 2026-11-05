@@ -1,5 +1,5 @@
-/** Destino dos CTAs. PENDENTE: definir o canal real de contato (formulário, e-mail ou WhatsApp). Páginas de serviço expõem `#contato` na seção final. */
-export const CONTACT_URL = '#contato';
+/** Canal de contato dos CTAs: WhatsApp da Optional (DDI 55 + 11974479570). A mensagem é anexada por `BtnCtaComponent`. */
+export const CONTACT_URL = 'https://wa.me/5511974479570';
 
 /** URL pública canônica (sem barra final). PROVISÓRIA (domínio de deploy atual): trocar aqui, em `public/sitemap.xml` e em `public/robots.txt` quando o domínio definitivo existir. */
 export const SITE_URL = 'https://optional-site-comercial-eyx6.vercel.app';
