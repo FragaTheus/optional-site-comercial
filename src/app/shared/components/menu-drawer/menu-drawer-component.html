@@ -1,6 +1,6 @@
 <button
   type="button"
-  class="btn-secondary"
+  class="btn-secondary w-auto max-w-none"
   aria-haspopup="dialog"
   aria-controls="site-menu"
   aria-label="menu do site"
@@ -19,7 +19,7 @@
   <div class="flex min-h-full flex-col">
     <header class="flex items-center justify-between p-gutter">
       <app-logo (click)="close()" />
-      <button type="button" class="btn btn-secondary" aria-label="Fechar menu" (click)="close()">
+      <button type="button" class="btn btn-secondary w-auto max-w-none" aria-label="Fechar menu" (click)="close()">
         <i class="pi pi-times" aria-hidden="true"></i>
       </button>
     </header>

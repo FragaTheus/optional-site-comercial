@@ -100,7 +100,7 @@
 
   a,
   button {
-    @apply cursor-pointer inline-flex items-center justify-center gap-2 rounded-xs px-gutter py-4 text-base font-semibold transition-colors;
+    @apply cursor-pointer inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-xs px-gutter py-4 text-base font-semibold transition-colors;
   }
 
   :focus-visible {
@@ -167,13 +167,13 @@
 
   /* Card com imagem de fundo: imagem (object-cover) → gradiente horizontal → reforço de contraste sob o texto */
   .media-card {
-    @apply relative isolate flex min-h-96 items-end overflow-hidden rounded-xs md:min-h-112;
+    @apply relative isolate flex items-end overflow-hidden rounded-xs;
   }
   .media-card-img {
     @apply absolute inset-0 -z-30 size-full object-cover;
   }
   .media-card-fade {
-    @apply absolute inset-0 -z-20 bg-linear-to-r from-carbon via-transparent to-carbon;
+    @apply absolute inset-0 -z-20 bg-radial  from-carbon via-carbon to-transparent;
   }
   .media-card-scrim {
     @apply absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-linear-to-t from-carbon/90 to-transparent;

@@ -36,8 +36,8 @@ Cada seção responde ou desenvolve o argumento da anterior. Seção que não te
 | # | Seção | Papel | Mensagem-chave | Prepara a próxima porque… |
 |---|---|---|---|---|
 | 1 | Hero ✅ final | Posicionamento | "Infraestrutura Digital para aumentar a eficiência da sua empresa." Sistemas e automações de acordo com a operação, para reduzir custos, aumentar a produtividade e contribuir com a aquisição de novos clientes | leva ao `#atuacao` (Entender atuação) |
-| 2 | Introdução às soluções | Atuação | Apresentação breve da oferta com link para `/servicos` | leva ao detalhamento dos serviços |
-| 3 | Introdução aos cases | Evidências | Apresentação breve dos projetos com link para `/cases` | leva aos cases publicados |
+| 2 | Introdução às soluções | Atuação | Destaques de sites comerciais e automações, com links individuais e para `/servicos` | leva ao detalhamento dos serviços |
+| 3 | Introdução aos cases | Evidências | Destaques de LaLouise e Símtese, com links individuais e para `/cases` | leva aos cases publicados |
 | 4 | Sobre a Optional | Abordagem | Apresentação institucional e diferenciais | prepara a conversa |
 | 5 | Contato | Próximo passo | "Agora, vamos falar da sua operação." | fecha a narrativa |
 

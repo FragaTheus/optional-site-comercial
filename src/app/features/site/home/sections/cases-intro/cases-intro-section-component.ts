@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Reveal } from '../../../../../shared/directives/reveal';
+import { CASES } from '../../../cases/case-content';
 
-// Introduz os projetos e direciona à seleção de cases.
+// Destaca projetos publicados e direciona à seleção completa de cases.
 @Component({
   selector: 'app-cases-intro-section',
   imports: [Reveal, RouterLink],
   templateUrl: './cases-intro-section-component.html',
 })
-export class CasesIntroSectionComponent {}
+export class CasesIntroSectionComponent {
+  protected readonly cases = CASES
+    .filter(({ slug }) => slug === 'lalouise' || slug === 'simtese')
+    .sort((a, b) => Number(a.slug !== 'lalouise') - Number(b.slug !== 'lalouise'));
+}

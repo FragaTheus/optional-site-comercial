@@ -19,7 +19,7 @@
         <ul class="mt-gutter">
           @for (link of service().links; track link.slug) {
             <li class="border-t border-carbon/15 py-gutter">
-              <a [routerLink]="['/servicos', link.slug]" class="font-semibold text-carbon underline decoration-1 underline-offset-4 hover:decoration-signal">{{ link.anchor }}</a>
+              <a [routerLink]="['/servicos', link.slug]" class="w-auto max-w-none font-semibold text-carbon underline decoration-1 underline-offset-4 hover:decoration-signal">{{ link.anchor }}</a>
               <span>: {{ link.text }}</span>
             </li>
           }

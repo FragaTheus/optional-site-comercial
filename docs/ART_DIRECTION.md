@@ -52,7 +52,7 @@ A tipografia é o principal elemento gráfico.
 
 ## Imagens
 
-Nesta fase não se geram imagens. O design deve funcionar sem imagens: tipografia e espaço negativo criam o impacto. Os assets abstratos existentes (`public/home-img`) só aparecem como fundo de cards (`.media-card`) com gradiente horizontal e texto sobre a imagem, nunca como galeria decorativa.
+Nesta fase não se geram imagens. O design deve funcionar sem imagens: tipografia e espaço negativo criam o impacto. Os assets abstratos existentes (`public/home-img`) aparecem como fundo de cards (`.media-card`) com gradientes que preservam a legibilidade; nunca como galeria decorativa.
 
 ## Motion
 

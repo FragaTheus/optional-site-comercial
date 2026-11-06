@@ -1,9 +1,41 @@
-<section id="atuacao" class="surface-dark">
-  <div class="site-container site-grid gap-y-gutter">
-    <h2 appReveal="lines" class="lg:col-span-7">Tecnologia para <strong>cada operação.</strong></h2>
-    <div appReveal class="lg:col-span-4 lg:col-start-9 lg:self-end">
-      <p>De sites comerciais a sistemas de gestão, desenvolvemos soluções de acordo com os desafios da sua empresa.</p>
-      <a routerLink="/servicos" class="btn btn-secondary mt-gutter">Conhecer soluções</a>
-    </div>
+<section id="atuacao">
+  <div class="site-container site-grid gap-gutter">
+    <header class="lg:col-span-6 lg:row-span-2">
+      <div class="sticky top-gutter flex-col gap-gutter flex">
+        <h2 appReveal="lines">Tecnologia para <strong>cada operação.</strong></h2>
+
+        <p appReveal class="max-w-md">
+          Descubra como nossas soluções tecnológicas podem otimizar cada operação do seu negócio.
+        </p>
+
+        <a routerLink="/servicos" class="btn btn-secondary">Conhecer todas as soluções</a>
+      </div>
+    </header>
+
+    @for (solution of solutions; track solution.slug) {
+      <article class="media-card lg:col-span-6">
+        <img
+          [src]="solution.image"
+          alt=""
+          width="767"
+          height="511"
+          loading="lazy"
+          decoding="async"
+          class="media-card-img brightness-70"
+        />
+        <div class="media-card-scrim" aria-hidden="true"></div>
+        <div appReveal class="w-full p-gutter">
+          <h3 class="whitespace-pre-line">
+            <strong>{{ solution.title }}</strong>
+          </h3>
+          <p class="mt-gutter text-white">{{ solution.intro }}</p>
+          <a
+            [routerLink]="['/servicos', solution.slug]"
+            class="btn btn-secondary mt-gutter text-white"
+            >{{ solution.linkLabel }}</a
+          >
+        </div>
+      </article>
+    }
   </div>
 </section>

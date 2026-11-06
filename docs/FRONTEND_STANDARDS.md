@@ -76,10 +76,10 @@ Os mínimos dos tokens `text-lg` a `text-9xl` reduzem a escala em telas estreita
 
 Elementos puramente visuais são **classes**, não componentes Angular.
 
-- Botões: `.btn` (base, `rounded-xs`, nunca `rounded-full`), `.btn-primary`, `.btn-secondary`, `.btn-tertiary`.
+- Botões: `.btn` (base, `rounded-xs`, nunca `rounded-full`), `.btn-primary`, `.btn-secondary`, `.btn-tertiary`. Os seletores globais `a` e `button` usam `w-full max-w-sm`; logo, controles compactos e links de navegação ou texto podem ajustar a largura quando necessário.
 - Cards: `.card`, `.card-primary`, `.card-secondary`, `.card-tertiary`.
 - Composição: `.site-container`, `.site-grid`.
-- Card com imagem de fundo: `.media-card` (container), `.media-card-img` (`object-cover`), `.media-card-fade` (gradiente horizontal `bg-linear-to-r from-carbon via-transparent to-carbon`: o equivalente de black→transparent→black dentro da paleta, já que `--color-black` não existe), `.media-card-scrim` (reforço de contraste sob o texto). Texto em `paper`/`white`; a imagem é decorativa (`alt=""`) e o texto carrega o conteúdo.
+- Card com imagem de fundo: `.media-card` (container), `.media-card-img` (`object-cover`), `.media-card-fade` (gradiente radial em carbon), `.media-card-scrim` (reforço de contraste sob o texto). Texto em `paper`/`white`; a imagem é decorativa (`alt=""`) e o texto carrega o conteúdo.
 - `.eyebrow`: rótulo identificador em uppercase.
 - Superfície escura: `.surface-dark` (fundo carbon, texto paper, strong dos headings em white). `.card-secondary` compartilha a mesma regra.
 
