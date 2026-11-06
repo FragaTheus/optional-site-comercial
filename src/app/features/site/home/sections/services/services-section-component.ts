@@ -66,25 +66,26 @@ export class ServicesSectionComponent {
           kind: 'image' as const,
           src: '/services-imgs/crm-home-print.png',
           poster: '',
-          label: 'Tela inicial do CRM da Simtese',
-        },
-        {
-          kind: 'image' as const,
-          src: '/services-imgs/crm-appointments-print.png',
-          poster: '',
-          label: 'Tela de agendamentos do CRM da Simtese',
+          label: 'Tela inicial do CRM da Simtese servindo de experiencia para clientes',
         },
         {
           kind: 'image' as const,
           src: '/services-imgs/crm-dash-print.png',
           poster: '',
-          label: 'Painel de indicadores do CRM da Simtese',
+          label: 'Tela para agendamento publico por empresa para usuarios externos do CRM',
+        },
+        {
+          kind: 'image' as const,
+          src: '/services-imgs/crm-appointments-print.png',
+          poster: '',
+          label: 'Tela de controle de agendamentos para usuarios internos do CRM',
         },
       ],
       proof: {
-        project: 'Simtese',
+        project: 'Simtese Medicina do Trabalho',
         url: 'https://www.simtese.com.br/',
-        solved: 'Sistema de gestão desenvolvido sob medida para a rotina da Simtese.',
+        solved:
+          'Sistema de gestão de clientes desenvolvido baseado no processo operacional da Simtese com objetivo de disponibilizar o agendamento de exames, controle interno e liberação de resultados pela equipe.',
       },
     },
     {
