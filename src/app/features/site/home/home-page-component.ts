@@ -2,25 +2,21 @@ import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@ang
 import { Gsap } from '../../../core/gsap';
 import { Seo } from '../../../core/seo';
 import { SITE_URL } from '../../../core/site.config';
-import { CasesSectionComponent } from './sections/cases/cases-section-component';
 import { ClosingSectionComponent } from './sections/closing/closing-section-component';
 import { HeroSectionComponent } from './sections/hero/hero-section-component';
-import { ObjectionsSectionComponent } from './sections/objections/objections-section-component';
-import { CtaSectionComponent } from '../../../shared/components/cta-section/cta-section-component';
-import { ServicesSectionComponent } from './sections/services/services-section-component';
-import { ShowcaseSectionComponent } from './sections/showcase/showcase-section-component';
+import { SolutionsIntroSectionComponent } from './sections/solutions-intro/solutions-intro-section-component';
+import { CasesIntroSectionComponent } from './sections/cases-intro/cases-intro-section-component';
+import { AboutSectionComponent } from './sections/about/about-section-component';
 
 // Página inicial: só compõe as seções, define o SEO e aciona as animações em sequência (`data-stagger`) das seções.
 @Component({
   selector: 'app-home-page',
   imports: [
     HeroSectionComponent,
-    ObjectionsSectionComponent,
-    ServicesSectionComponent,
-    ShowcaseSectionComponent,
-    CasesSectionComponent,
+    SolutionsIntroSectionComponent,
+    CasesIntroSectionComponent,
+    AboutSectionComponent,
     ClosingSectionComponent,
-    CtaSectionComponent,
   ],
   templateUrl: './home-page-component.html',
 })

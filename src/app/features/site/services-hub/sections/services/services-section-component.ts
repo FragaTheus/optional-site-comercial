@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Reveal } from '../../../../../shared/directives/reveal';
 
-// Serviços da homepage: continua o argumento das objeções com as cinco soluções, cada uma com tema, proposta e link para sua página satélite. Os serviços são independentes e podem ser contratados isoladamente.
+// Serviços do hub: apresenta cinco soluções independentes e seus links para páginas detalhadas.
 @Component({
   selector: 'app-services-section',
   imports: [Reveal, RouterLink],

@@ -1,6 +1,6 @@
 # Optional
 
-> Estado: **homepage**, cinco páginas satélites de serviços e quatro páginas de cases implementadas, com sitemap. Concepts ainda não existem.
+> Estado: **homepage**, hubs de serviços e cases, cinco páginas satélites de serviços e quatro páginas de cases implementadas, com sitemap. Concepts ainda não existem.
 
 ## 1. Visão geral
 A marca é **Optional**.
@@ -21,7 +21,7 @@ Plataforma institucional; apresentação comercial; portfólio; canal de aquisi�
 Referências (sujeitas a validação, sem dados confidenciais): Símtese (CRM/agendamentos), LaLouise (controle operacional/rastreabilidade), Caldeiraria Realiza (site comercial), Paulo Carvalho (site profissional), Profissão do Século (landing page).
 
 ## 6. Features principais
-- `features/site`: homepage, páginas satélites `/servicos/{crm,erp,automacoes,landing-pages,sites}` e cases em `/cases/:slug`. O conteúdo dos cases deve ser revisado antes da publicação.
+- `features/site`: homepage, hubs `/servicos` e `/cases`, páginas satélites `/servicos/{crm,erp,automacoes,landing-pages,sites}` e cases em `/cases/:slug`. O conteúdo dos cases deve ser revisado antes da publicação.
 - `features/concepts`: `/concept/:slug`, noindex, fora do sitemap. *(não implementado)*
 
 ## 7. Arquitetura Angular

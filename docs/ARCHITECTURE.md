@@ -26,13 +26,17 @@ Páginas nunca ficam em um único arquivo: cada página é um componente de pág
 
 Homepage, páginas satélites de serviços (CRM, ERP/gestão, automações, landing pages, sites comerciais), projetos e cases, conteúdo comercial, SEO, metadados, CTAs. Páginas indexáveis e otimizadas.
 
+### Hubs
+
+`services-hub/` compõe a página `/servicos`, incluindo as antigas seções de objeções, serviços e abordagem. `cases-hub/` compõe `/cases` e apresenta cada entrada de `CASES` com links para suas páginas. A homepage resume as duas áreas e aponta para os hubs. As imagens abstratas da homepage e da lista de cases são provisórias.
+
 ### Páginas satélites
 
 `features/site/services/`: um único `service-page-component` (rota `servicos/:slug`, uma rota estática por serviço gerada de `SERVICE_LINKS`, para o prerender descobrir cada URL) escolhe o conteúdo em `service-content.ts` pelo `slug` em `route.data` e compõe as seções em `sections/` (hero, about, applications, capabilities, differentials, related, faq, cta). Novo serviço = nova entrada em `SERVICE_LINKS` e `SERVICES`. Estratégia de conteúdo: `docs/copyright.md`.
 
 ### Cases
 
-`features/site/cases/`: `case-page-component` compõe hero, problema, solução e CTA. `case-content.ts` concentra conteúdo, link para o serviço, endereço do projeto, imagem de hero e imagens opcionais. As rotas estáticas `/cases/:slug` são geradas de `CASES` para prerender. Para adicionar um case, incluir seus dados em `CASES`, atualizar o sitemap e, quando pertinente, `caseSlug` na seção de serviços da homepage. Revisar textos, direitos de uso e dados visíveis nas imagens antes de publicar; requisitos e metas não são resultados comprovados.
+`features/site/cases/`: `case-page-component` compõe hero, problema, solução e CTA. `case-content.ts` concentra conteúdo, link para o serviço, endereço do projeto, imagem de hero e imagens opcionais. As rotas estáticas `/cases/:slug` são geradas de `CASES` para prerender. Para adicionar um case, incluir seus dados em `CASES`, atualizar o sitemap e, quando pertinente, `caseSlug` na seção de serviços do hub. Revisar textos, direitos de uso e dados visíveis nas imagens antes de publicar; requisitos e metas não são resultados comprovados.
 
 ## features/concepts
 

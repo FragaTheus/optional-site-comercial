@@ -8,7 +8,7 @@ interface IItem {
   body: string;
 }
 
-// Segunda dobra da homepage: três situações em que a empresa funciona, mas não está resolvida (presença digital, processos e sistemas), para o visitante se reconhecer antes de ver os serviços.
+// Situações que ajudam o visitante a reconhecer desafios antes de conhecer os serviços.
 @Component({
   selector: 'app-objections-section',
   imports: [Reveal, BtnCtaComponent],

@@ -36,15 +36,16 @@ Cada seção responde ou desenvolve o argumento da anterior. Seção que não te
 | # | Seção | Papel | Mensagem-chave | Prepara a próxima porque… |
 |---|---|---|---|---|
 | 1 | Hero ✅ final | Posicionamento | "Infraestrutura Digital para aumentar a eficiência da sua empresa." Sistemas e automações de acordo com a operação, para reduzir custos, aumentar a produtividade e contribuir com a aquisição de novos clientes | leva ao `#atuacao` (Entender atuação) |
-| 2 | Objeções ✅ final | Identificação | "Onde a tecnologia faz a diferença": três frentes reconhecíveis (Custos, Produtividade, Experiência). Fecha com "Sua empresa enfrenta um desses desafios?" + CTA "Vamos conversar" | o desafio reconhecido pede soluções pontuais |
-| 3 | Serviços | Soluções | "Problemas diferentes exigem soluções diferentes." Cinco serviços independentes (presença digital, aquisição, relacionamento, produtividade, gestão), cada um com link para a satélite | mostra o que, falta mostrar como |
-| 4 | Estrutura sob medida | Abordagem | Organização, personalização, engenharia, integração, em cards com imagem de fundo | a abordagem pede evidência |
-| 5 | Projetos | Evidências reais | Apenas projetos e escopos validados; sem métricas | a evidência leva à conversa |
-| 6 | Contato | Próximo passo | "Agora, vamos falar da sua operação." | fecha a narrativa |
+| 2 | Introdução às soluções | Atuação | Apresentação breve da oferta com link para `/servicos` | leva ao detalhamento dos serviços |
+| 3 | Introdução aos cases | Evidências | Apresentação breve dos projetos com link para `/cases` | leva aos cases publicados |
+| 4 | Sobre a Optional | Abordagem | Apresentação institucional e diferenciais | prepara a conversa |
+| 5 | Contato | Próximo passo | "Agora, vamos falar da sua operação." | fecha a narrativa |
 
-### Versão final decidida: Hero e Objeções (seções 1 e 2)
+O hub `/servicos` reúne hero, objeções, soluções, abordagem e CTA; o hub `/cases` apresenta os projetos publicados e seus links individuais. A navegação também permite acessar diretamente as páginas detalhadas.
 
-Conteúdo **definitivo**; não alterar sem decisão explícita. Implementado em `features/site/home/sections/hero` e `sections/objections`.
+### Conteúdo anterior: Hero e Objeções
+
+O hero permanece na homepage; a seção de objeções foi migrada para `features/site/services-hub/sections/objections`.
 
 **1. Hero** (`#home-hero`)
 - Eyebrows: "Est. 2025 // SP" e "Studio de Engenharia de Software".
@@ -61,7 +62,6 @@ Conteúdo **definitivo**; não alterar sem decisão explícita. Implementado em 
   - 03 **Experiência**: "Seu site não acompanha a evolução da empresa nem transmite a qualidade dos serviços."
 - Fecho em bloco escuro: "Sua **empresa enfrenta** um desses **desafios?**" + CTA "Vamos conversar" (mensagem de WhatsApp: "Olá! Gostaria de falar sobre os desafios que minha empresa enfrenta.").
 
-> **Próximas seções (3 a 6):** serão elaboradas de forma diferente das duas primeiras. A tabela acima descreve a intenção original e será revisada seção a seção; não tomar Hero e Objeções como modelo de formato.
 
 Regras da homepage:
 - A sequência de serviços (presença digital → aquisição → relacionamento → produtividade → gestão) é um recurso narrativo, **não** uma evolução obrigatória. Nunca afirmar que uma landing page "evolui" para ERP; serviços são contratados individualmente.

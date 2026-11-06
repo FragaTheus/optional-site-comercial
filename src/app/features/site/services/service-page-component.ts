@@ -32,7 +32,7 @@ export class ServicePageComponent {
     inject(Seo).set(title, description, path, [
       { '@type': 'Service', name: label, description, provider, ...(SITE_URL && { url: SITE_URL + path }) },
       { '@type': 'FAQPage', mainEntity: faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
-      ...(SITE_URL ? [{ '@type': 'BreadcrumbList', itemListElement: [{ name: 'Início', url: SITE_URL + '/' }, { name: 'Serviços', url: SITE_URL + '/#servicos' }, { name: label, url: SITE_URL + path }].map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, item: item.url })) }] : []),
+      ...(SITE_URL ? [{ '@type': 'BreadcrumbList', itemListElement: [{ name: 'Início', url: SITE_URL + '/' }, { name: 'Serviços', url: SITE_URL + '/servicos' }, { name: label, url: SITE_URL + path }].map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, item: item.url })) }] : []),
     ]);
     const host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
     const gsap = inject(Gsap);
