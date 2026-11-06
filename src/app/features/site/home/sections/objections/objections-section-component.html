@@ -8,29 +8,32 @@
     <ul
       class="lg:col-span-6 lg:order-first lg:row-span-2 flex lg:flex-col overflow-x-auto scrollbar-none px-gutter gap-gutter lg:py-gutter"
     >
-      @for (item of items; track item.label) {
+      @for (item of items; track item.headline) {
         <li>
-          <article
-            appReveal
-            class="card card-primary min-w-3xs lg:w-full flex flex-col gap-gutter min-h-68"
-          >
-            <span class="eyebrow">{{ item.label }}</span>
-            <h4 [innerHTML]="item.headline" class="whitespace-pre-line text-carbon"></h4>
+          <article appReveal [class]="item.body">
+            <h4 class="whitespace-pre-line">
+              <strong>{{ item.headline }}</strong>
+            </h4>
             <p>{{ item.text }}</p>
           </article>
         </li>
       }
     </ul>
 
-    <footer appReveal class="lg:col-span-6 p-gutter">
+    <footer appReveal class="lg:col-span-6 p-gutter items-end flex">
       <div class="card surface-dark flex flex-col gap-gutter justify-between">
-        <h3>Sua <strong>empresa enfrenta</strong> um desses <strong>desafios?</strong></h3>
-        <app-btn-cta
-          [cta]="{
-            label: 'Vamos conversar',
-            wppMessage: 'Olá! Gostaria de falar sobre os desafios que minha empresa enfrenta.',
-          }"
-        />
+        <h3><strong>Sua empresa enfrenta</strong> um desses <strong>desafios?</strong></h3>
+        <div class="flex items-center flex-wrap gap-2">
+          <app-btn-cta
+            [cta]="{
+              label: 'Vamos conversar',
+              wppMessage: 'Olá! Gostaria de falar sobre os desafios que minha empresa enfrenta.',
+            }"
+          />
+          <a href="#servicos" class="btn-secondary h-full"
+            >Entender Soluções<i class="pi pi-arrow-down"></i
+          ></a>
+        </div>
       </div>
     </footer>
   </div>

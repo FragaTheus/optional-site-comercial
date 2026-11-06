@@ -13,7 +13,7 @@ export interface ICta {
     [href]="href()"
     target="_blank"
     rel="noopener"
-    class="btn btn-primary border-signal"
+    class="btn btn-primary border-signal border"
     >{{ cta().label }}</a
   >`,
 })

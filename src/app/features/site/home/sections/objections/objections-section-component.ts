@@ -3,9 +3,9 @@ import { Reveal } from '../../../../../shared/directives/reveal';
 import { BtnCtaComponent } from '../../../../../shared/components/btn-cta/btn-cta-component';
 
 interface IItem {
-  label: string;
   headline: string;
   text: string;
+  body: string;
 }
 
 // Segunda dobra da homepage: três situações em que a empresa funciona, mas não está resolvida (presença digital, processos e sistemas), para o visitante se reconhecer antes de ver os serviços.
@@ -17,21 +17,24 @@ interface IItem {
 export class ObjectionsSectionComponent {
   // Atributos
   // `body` define a região de cada situação no grid de 12 colunas; `headline` é conteúdo próprio com <strong> nas palavras-chave.
+
+  private readonly defaultClass = 'card min-w-3xs lg:w-full flex flex-col gap-gutter';
+
   protected readonly items: IItem[] = [
     {
-      label: '01',
-      headline: 'Custos',
-      text: 'Erros e retrabalho aumentam os custos da operação e comprometem sua margem de lucro.',
+      headline: 'Faturamento\n e Lucro',
+      text: 'Retrabalhos aumentam os custos e comprometem sua margem de lucro.',
+      body: `${this.defaultClass} card-primary`,
     },
     {
-      label: '02',
-      headline: 'Produtividade',
-      text: 'Tarefas manuais e repetitivas consomem tempo e limitam a capacidade da sua equipe.',
+      headline: 'Produtividade\n operacional',
+      text: 'Tarefas manuais consomem tempo e impactam na capacidade da sua equipe.',
+      body: `${this.defaultClass} card-tertiary`,
     },
     {
-      label: '03',
-      headline: 'Experiência',
-      text: 'Seu site não acompanha a evolução da empresa nem transmite a qualidade dos serviços.',
+      headline: 'Experiência\n do clientes',
+      text: 'Sua empresa passa uma experiência online inferior à qualidade dos serviços.',
+      body: `${this.defaultClass} card-primary`,
     },
   ];
 }
