@@ -11,21 +11,23 @@ import { Reveal } from '../../../../../shared/directives/reveal';
 })
 export class ServicesSectionComponent {
   // Atributos
-  // `slug` aponta para /servicos/:slug; `video` (src, poster, label) e `proof` (projeto entregue) alimentam a imagem e o aside de prova social. Dados de `proof` , vídeos e posters são provisórios.
+  // `slug` aponta para /servicos/:slug; `media` (lista de imagens ou vídeos com kind, src, poster, label; com mais de um item o layout vira conteúdo acima e mídias abaixo, 4 colunas cada) e `proof` (projeto entregue) alimentam a imagem e o aside de prova social. Dados de `proof` , vídeos e posters são provisórios.
   protected readonly services = [
     {
       slug: 'landing-pages',
       theme: 'Landing pages',
       name: 'Aquisição de clientes',
-      anchor: 'Ver desenvolvimento de landing pages',
       value:
         'Apresenta sua oferta, esclarece dúvidas frequentes e facilita o contato com potenciais clientes.',
       text: 'Páginas para campanhas ou serviços específicos, com foco em conversão, performance e mensuração.',
-      video: {
-        src: '/services-video/%SLUG%.mp4',
-        poster: '/home-img/optional_abstrato_01_camadas.png',
-        label: '',
-      },
+      media: [
+        {
+          kind: 'video' as const,
+          src: '/services-video/%SLUG%.mp4',
+          poster: '/home-img/optional_abstrato_01_camadas.png',
+          label: '',
+        },
+      ],
       proof: {
         project: 'Projeto em definição',
         url: 'https://optional.com.br',
@@ -36,15 +38,17 @@ export class ServicesSectionComponent {
       slug: 'sites',
       theme: 'Sites comerciais',
       name: 'Experiência do cliente',
-      anchor: 'Ver desenvolvimento de sites comerciais',
       value:
         'Transmite a qualidade da sua empresa e facilita que novos clientes encontrem seus serviços.',
       text: 'Sites institucionais e comerciais com SEO, apresentação de serviços e canais de contato.',
-      video: {
-        src: '/services-video/%SLUG%.mp4',
-        poster: '/home-img/optional_abstrato_02_arco.png',
-        label: '',
-      },
+      media: [
+        {
+          kind: 'video' as const,
+          src: '/services-video/%SLUG%.mp4',
+          poster: '/home-img/optional_abstrato_02_arco.png',
+          label: '',
+        },
+      ],
       proof: {
         project: 'Projeto em definição',
         url: 'https://optional.com.br',
@@ -55,32 +59,48 @@ export class ServicesSectionComponent {
       slug: 'crm',
       theme: 'CRM',
       name: 'Organização comercial',
-      anchor: 'Ver desenvolvimento de CRM personalizado',
       value: 'Centraliza informações e facilita o acompanhamento de clientes e oportunidades.',
       text: 'Sistemas personalizados para gerenciar relacionamentos, atendimentos e processos comerciais.',
-      video: {
-        src: '/services-video/%SLUG%.mp4',
-        poster: '/home-img/optional_abstrato_03_planos.png',
-        label: '',
-      },
+      media: [
+        {
+          kind: 'image' as const,
+          src: '/services-imgs/crm-home-print.png',
+          poster: '',
+          label: 'Tela inicial do CRM da Simtese',
+        },
+        {
+          kind: 'image' as const,
+          src: '/services-imgs/crm-appointments-print.png',
+          poster: '',
+          label: 'Tela de agendamentos do CRM da Simtese',
+        },
+        {
+          kind: 'image' as const,
+          src: '/services-imgs/crm-dash-print.png',
+          poster: '',
+          label: 'Painel de indicadores do CRM da Simtese',
+        },
+      ],
       proof: {
-        project: 'Projeto em definição',
-        url: 'https://optional.com.br',
-        solved: 'Descreva aqui o problema resolvido pelo projeto entregue.',
+        project: 'Simtese',
+        url: 'https://www.simtese.com.br/',
+        solved: 'Sistema de gestão desenvolvido sob medida para a rotina da Simtese.',
       },
     },
     {
       slug: 'automacoes',
       theme: 'Automações e integrações',
       name: 'Produtividade e eficiência',
-      anchor: 'Ver automações e integrações de sistemas',
       value: 'Reduz tarefas manuais, valida informações e evita retrabalho entre ferramentas.',
       text: 'Fluxos automatizados e integrações desenvolvidos para as rotinas da sua operação.',
-      video: {
-        src: '/services-video/%SLUG%.mp4',
-        poster: '/home-img/optional_abstrato_04_diagonais.png',
-        label: '',
-      },
+      media: [
+        {
+          kind: 'video' as const,
+          src: '/services-video/%SLUG%.mp4',
+          poster: '/home-img/optional_abstrato_04_diagonais.png',
+          label: '',
+        },
+      ],
       proof: {
         project: 'Projeto em definição',
         url: 'https://optional.com.br',
@@ -91,14 +111,16 @@ export class ServicesSectionComponent {
       slug: 'erp',
       theme: 'ERP e sistemas de gestão',
       name: 'Controle operacional',
-      anchor: 'Ver desenvolvimento de ERP e sistemas de gestão',
       value: 'Organiza processos e centraliza informações para reduzir erros e melhorar a gestão.',
       text: 'Sistemas de gestão sob medida para controle de operações, registros e rastreabilidade.',
-      video: {
-        src: '/services-video/%SLUG%.mp4',
-        poster: '/home-img/optional_abstrato_01_camadas.png',
-        label: '',
-      },
+      media: [
+        {
+          kind: 'video' as const,
+          src: '/services-video/%SLUG%.mp4',
+          poster: '/home-img/optional_abstrato_01_camadas.png',
+          label: '',
+        },
+      ],
       proof: {
         project: 'Projeto em definição',
         url: 'https://optional.com.br',
