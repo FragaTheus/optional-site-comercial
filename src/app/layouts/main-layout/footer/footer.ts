@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { SERVICE_LINKS } from '../../../core/site.config';
 import { LogoComponent } from '../../../shared/components/logo/logo-component';
+import { SiteNavigationComponent } from '../../../shared/components/site-navigation/site-navigation-component';
 import { Reveal } from '../../../shared/directives/reveal';
 
-// Rodapé institucional: assinatura, links dos serviços e direitos.
+// Rodapé institucional: assinatura, navegação e direitos.
 @Component({
   selector: 'app-footer',
-  imports: [LogoComponent, RouterLink, Reveal],
+  imports: [LogoComponent, SiteNavigationComponent, Reveal],
   templateUrl: './footer.html',
   host: { class: 'block' },
 })
 export class Footer {
   // Atributos
-  protected readonly services = SERVICE_LINKS;
   protected readonly year = new Date().getFullYear();
 }

@@ -24,13 +24,14 @@
           <p appReveal class="mt-gutter text-white">{{ service.value }}</p>
           <p appReveal class="mt-gutter">{{ service.text }}</p>
 
-          <a
-            appReveal
-            [routerLink]="['/servicos', service.slug]"
-            class="btn btn-secondary mt-gutter"
-            >Ver mais<i class="pi pi-arrow-right" aria-hidden="true"></i
-          ></a>
+          <div appReveal class="mt-gutter flex flex-wrap gap-gutter">
+            @if (service.caseSlug) {
+              <a [routerLink]="['/cases', service.caseSlug]" class="btn btn-primary">Ver case</a>
+            }
+            <a [routerLink]="['/servicos', service.slug]" class="btn btn-secondary">Entender solução</a>
+          </div>
 
+          @if (service.proof; as proof) {
           <details appReveal class="group mt-gutter border-t border-paper/15 pt-gutter">
             <summary
               class="eyebrow flex cursor-pointer list-none items-center justify-between gap-gutter [&::-webkit-details-marker]:hidden"
@@ -40,15 +41,16 @@
             </summary>
             <aside class="mt-gutter">
               <a
-                [href]="service.proof.url"
+                [href]="proof.url"
                 target="_blank"
                 rel="noopener"
                 class="block text-white underline"
-                >{{ service.proof.project }}</a
+                >{{ proof.project }}</a
               >
-              <p class="mt-2">{{ service.proof.solved }}</p>
+              <p class="mt-2">{{ proof.solved }}</p>
             </aside>
           </details>
+          }
         </div>
 
         @if (hasImages) {

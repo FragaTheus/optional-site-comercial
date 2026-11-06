@@ -1,0 +1,32 @@
+<nav aria-label="Navegação">
+  <p class="eyebrow">Navegação</p>
+  <a routerLink="/" (click)="selectLink($event)" class="mt-4 flex min-h-12 justify-start px-0 text-white hover:text-signal">Home</a>
+
+  <details class="group border-t border-paper/15">
+    <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-semibold text-white hover:text-signal [&::-webkit-details-marker]:hidden">
+      Serviços
+      <span aria-hidden="true" class="group-open:rotate-45">+</span>
+    </summary>
+    <ul class="pb-3">
+      @for (service of services; track service.slug) {
+        <li>
+          <a [routerLink]="['/servicos', service.slug]" (click)="selectLink($event)" class="flex min-h-12 justify-start px-0 py-3 text-paper hover:text-signal">{{ service.label }}</a>
+        </li>
+      }
+    </ul>
+  </details>
+
+  <details class="group border-t border-paper/15">
+    <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-semibold text-white hover:text-signal [&::-webkit-details-marker]:hidden">
+      Cases
+      <span aria-hidden="true" class="group-open:rotate-45">+</span>
+    </summary>
+    <ul class="pb-3">
+      @for (caseStudy of cases; track caseStudy.slug) {
+        <li>
+          <a [routerLink]="['/cases', caseStudy.slug]" (click)="selectLink($event)" class="flex min-h-12 justify-start px-0 py-3 text-paper hover:text-signal">{{ caseStudy.project }}</a>
+        </li>
+      }
+    </ul>
+  </details>
+</nav>

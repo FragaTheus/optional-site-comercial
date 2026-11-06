@@ -4,11 +4,7 @@
       <app-logo appReveal />
       <p appReveal class="mt-gutter max-w-md">Software e infraestrutura digital sob medida para empresas.</p>
     </div>
-    <nav appReveal aria-label="Serviços" class="flex flex-col gap-gutter lg:col-span-5 lg:col-start-8">
-      @for (service of services; track service.slug) {
-        <a [routerLink]="['/servicos', service.slug]" class="hover:text-white">{{ service.label }}</a>
-      }
-    </nav>
+    <app-site-navigation appReveal class="lg:col-span-5 lg:col-start-8" />
     <p appReveal class="text-sm lg:col-span-12">© {{ year }} Optional. Todos os direitos reservados.</p>
   </div>
 </footer>

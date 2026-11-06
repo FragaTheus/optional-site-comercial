@@ -30,6 +30,10 @@ Homepage, páginas satélites de serviços (CRM, ERP/gestão, automações, land
 
 `features/site/services/`: um único `service-page-component` (rota `servicos/:slug`, uma rota estática por serviço gerada de `SERVICE_LINKS`, para o prerender descobrir cada URL) escolhe o conteúdo em `service-content.ts` pelo `slug` em `route.data` e compõe as seções em `sections/` (hero, about, applications, capabilities, differentials, related, faq, cta). Novo serviço = nova entrada em `SERVICE_LINKS` e `SERVICES`. Estratégia de conteúdo: `docs/copyright.md`.
 
+### Cases
+
+`features/site/cases/`: `case-page-component` compõe hero, problema, solução e CTA. `case-content.ts` concentra conteúdo, link para o serviço, endereço do projeto, imagem de hero e imagens opcionais. As rotas estáticas `/cases/:slug` são geradas de `CASES` para prerender. Para adicionar um case, incluir seus dados em `CASES`, atualizar o sitemap e, quando pertinente, `caseSlug` na seção de serviços da homepage. Revisar textos, direitos de uso e dados visíveis nas imagens antes de publicar; requisitos e metas não são resultados comprovados.
+
 ## features/concepts
 
 Rota `/concept/:slug`, layout independente, identidade visual própria possível, conteúdo/interfaces/imagens para apresentações e follow-ups. Regras: `noindex`; fora do sitemap; fora da navegação institucional; sem otimização para busca; **sem informações confidenciais em URLs ou conteúdo**. Noindex não é privacidade. Não bloquear essas rotas no `robots.txt`, pois o buscador precisa ler o noindex.
@@ -40,7 +44,7 @@ Componente de layout compartilhado que envolve as rotas institucionais com `Rout
 
 ## Componentes compartilhados
 
-Só componentes com estado/comportamento (drawer, accordion interativo, formulários, navegação). Elementos puramente visuais são classes em `@layer components` (ver `FRONTEND_STANDARDS.md`).
+Só componentes com estado/comportamento (drawer, accordion interativo, formulários, navegação). `site-navigation` é compartilhado pelo drawer e rodapé e usa `SERVICE_LINKS` e `CASES` como fontes dos links; ao selecionar um link normalmente, avisa o drawer para fechá-lo. Elementos puramente visuais são classes em `@layer components` (ver `FRONTEND_STANDARDS.md`).
 
 ## Roteamento
 

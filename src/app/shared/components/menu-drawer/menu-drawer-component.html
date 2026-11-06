@@ -6,35 +6,27 @@
   aria-label="menu do site"
   (click)="open()"
 >
-  <i class="pi pi-bars"></i>
+  <i class="pi pi-bars" aria-hidden="true"></i>
 </button>
 
 <dialog
   #dialog
   id="site-menu"
   aria-label="Menu"
-  class="ml-auto h-dvh max-h-none w-full max-w-md surface-dark backdrop:bg-carbon/50 backdrop:overscroll-contain backdrop:overflow-hidden overflow-hidden overscroll-contain"
-  (click)="close()"
+  class="ml-auto h-dvh max-h-none w-full max-w-md surface-dark backdrop:bg-carbon/50 overflow-y-auto overscroll-contain"
+  (click)="closeOnBackdrop($event)"
 >
-  <header class="flex items-center justify-between p-gutter">
-    <app-logo />
-    <button type="button" class="btn btn-secondary" (click)="close()">
-      <i class="pi pi-times"></i>
-    </button>
-  </header>
-  <nav aria-label="Menu principal" class="mt-gutter flex flex-col items-start divide-y">
-    @for (service of services; track service.slug) {
-      <a
-        [routerLink]="['/servicos', service.slug]"
-        class="font-display font-bold tracking-tight text-white uppercase w-full hover:bg-slate"
-        (click)="close()"
-        >{{ service.label }}</a
-      >
-    }
-  </nav>
-
-  <footer class="absolute bottom-0 w-full flex items-center justify-center flex-col">
-    <small>Version 1.0</small>
-    <small>&copy; 2025 Optional Site Comercial</small>
-  </footer>
+  <div class="flex min-h-full flex-col">
+    <header class="flex items-center justify-between p-gutter">
+      <app-logo (click)="close()" />
+      <button type="button" class="btn btn-secondary" aria-label="Fechar menu" (click)="close()">
+        <i class="pi pi-times" aria-hidden="true"></i>
+      </button>
+    </header>
+    <app-site-navigation class="grow px-gutter" (linkSelected)="close()" />
+    <footer class="flex flex-col items-center p-gutter">
+      <small>Version 1.0</small>
+      <small>&copy; 2025 Optional Site Comercial</small>
+    </footer>
+  </div>
 </dialog>

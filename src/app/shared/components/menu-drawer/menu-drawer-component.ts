@@ -1,18 +1,16 @@
 import { Component, ElementRef, viewChild } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { CONTACT_URL, SERVICE_LINKS } from '../../../core/site.config';
 import { LogoComponent } from '../logo/logo-component';
+import { SiteNavigationComponent } from '../site-navigation/site-navigation-component';
 
+// Controla o diálogo de navegação, incluindo abertura, fechamento e clique no backdrop.
 @Component({
-  imports: [RouterLink, LogoComponent],
+  imports: [LogoComponent, SiteNavigationComponent],
   selector: 'app-menu-drawer',
   templateUrl: './menu-drawer-component.html',
   host: { class: 'block' },
 })
 export class MenuDrawerComponent {
   // Atributos
-  protected readonly services = SERVICE_LINKS;
-  protected readonly contactUrl = CONTACT_URL;
   private readonly dialog = viewChild.required<ElementRef<HTMLDialogElement>>('dialog');
 
   // Métodos
@@ -22,5 +20,9 @@ export class MenuDrawerComponent {
 
   protected close(): void {
     this.dialog().nativeElement.close();
+  }
+
+  protected closeOnBackdrop(event: MouseEvent): void {
+    if (event.target === event.currentTarget) this.close();
   }
 }

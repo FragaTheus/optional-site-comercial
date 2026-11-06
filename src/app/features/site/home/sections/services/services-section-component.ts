@@ -10,10 +10,11 @@ import { Reveal } from '../../../../../shared/directives/reveal';
 })
 export class ServicesSectionComponent {
   // Atributos
-  // `slug` aponta para /servicos/:slug; `images` (lista de src e alt; com mais de um item o layout vira conteúdo acima e mídias abaixo, 4 colunas cada) e `proof` (projeto entregue) alimentam a imagem e o aside de prova social. Dados de `proof` , vídeos e posters são provisórios.
+  // `caseSlug` identifica um case publicado; serviços sem case não exibem o link.
   protected readonly services = [
     {
       slug: 'landing-pages',
+      caseSlug: 'paulo-carvalho',
       theme: 'Landing pages',
       name: 'Aquisição de clientes',
       value:
@@ -33,6 +34,7 @@ export class ServicesSectionComponent {
     },
     {
       slug: 'sites',
+      caseSlug: 'caldeiraria-realiza',
       theme: 'Sites comerciais',
       name: 'Experiência do cliente',
       value:
@@ -57,6 +59,7 @@ export class ServicesSectionComponent {
     },
     {
       slug: 'crm',
+      caseSlug: 'simtese',
       theme: 'CRM',
       name: 'Organização comercial',
       value: 'Centraliza informações e facilita o acompanhamento de clientes e oportunidades.',
@@ -70,10 +73,6 @@ export class ServicesSectionComponent {
           src: '/services-imgs/crm-dash-print.png',
           alt: 'Tela para agendamento publico por empresa para usuarios externos do CRM',
         },
-        {
-          src: '/services-imgs/crm-appointments-print.png',
-          alt: 'Tela de controle de agendamentos para usuarios internos do CRM',
-        },
       ],
       proof: {
         project: 'Simtese Medicina do Trabalho',
@@ -84,19 +83,17 @@ export class ServicesSectionComponent {
     },
     {
       slug: 'automacoes',
+      caseSlug: null,
       theme: 'Automações e integrações',
       name: 'Produtividade e eficiência',
       value: 'Reduz tarefas manuais, valida informações e evita retrabalho entre ferramentas.',
       text: 'Fluxos automatizados e integrações desenvolvidos para as rotinas da sua operação.',
       images: [],
-      proof: {
-        project: 'Projeto em definição',
-        url: 'https://optional.com.br',
-        solved: 'Descreva aqui o problema resolvido pelo projeto entregue.',
-      },
+      proof: null,
     },
     {
       slug: 'erp',
+      caseSlug: 'lalouise',
       theme: 'ERP e sistemas de gestão',
       name: 'Controle operacional',
       value: 'Organiza processos e centraliza informações para reduzir erros e melhorar a gestão.',
