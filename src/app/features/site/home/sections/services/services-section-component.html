@@ -6,17 +6,48 @@
       <p></p>
     </header>
 
-    @for (service of services; track service.slug) {
-      <article class="site-grid gap-y-gutter border-t border-paper/15 pt-gutter lg:col-span-12">
-        <p appReveal class="eyebrow lg:col-span-2">{{ service.theme }}</p>
-        <div [class]="service.title">
-          <h3 appReveal="lines" class="">
+    @for (service of services; track service.slug; let odd = $odd) {
+      <article
+        class="site-grid items-center gap-y-gutter border-t border-paper/15 pt-gutter lg:col-span-12"
+      >
+        <figure appReveal class="lg:col-span-6" [class.lg:order-2]="odd">
+          <video
+            [appLazyVideo]="service.video.src"
+            [poster]="service.video.poster"
+            [attr.aria-label]="service.video.label || null"
+            [attr.aria-hidden]="service.video.label ? null : true"
+            muted
+            loop
+            playsinline
+            preload="none"
+            class="aspect-4/3 w-full rounded-xs object-cover"
+          ></video>
+        </figure>
+
+        <div class="lg:col-span-6" [class.lg:order-1]="odd">
+          <p appReveal class="eyebrow">{{ service.theme }}</p>
+          <h3 appReveal="lines" class="mt-gutter">
             <strong>{{ service.name }}</strong>
           </h3>
           <p appReveal class="mt-gutter text-white">{{ service.value }}</p>
-        </div>
-        <div [class]="service.body">
-          <p appReveal class="">{{ service.text }}</p>
+          <p appReveal class="mt-gutter">{{ service.text }}</p>
+
+          <aside
+            appReveal
+            class="mt-gutter border-t border-paper/15 pt-gutter"
+            [attr.aria-label]="'Projeto entregue: ' + service.proof.project"
+          >
+            <p class="eyebrow">Projeto entregue</p>
+            <a
+              [href]="service.proof.url"
+              target="_blank"
+              rel="noopener"
+              class="mt-2 block text-white underline"
+              >{{ service.proof.project }}</a
+            >
+            <p class="mt-2">{{ service.proof.solved }}</p>
+          </aside>
+
           <a
             appReveal
             [routerLink]="['/servicos', service.slug]"
