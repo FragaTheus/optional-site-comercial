@@ -32,21 +32,24 @@
           <p appReveal class="mt-gutter text-white">{{ service.value }}</p>
           <p appReveal class="mt-gutter">{{ service.text }}</p>
 
-          <aside
-            appReveal
-            class="mt-gutter border-t border-paper/15 pt-gutter"
-            [attr.aria-label]="'Projeto entregue: ' + service.proof.project"
-          >
-            <p class="eyebrow">Projeto entregue</p>
-            <a
-              [href]="service.proof.url"
-              target="_blank"
-              rel="noopener"
-              class="mt-2 block text-white underline"
-              >{{ service.proof.project }}</a
+          <details appReveal class="group mt-gutter border-t border-paper/15 pt-gutter">
+            <summary
+              class="eyebrow flex cursor-pointer list-none items-center justify-between gap-gutter [&::-webkit-details-marker]:hidden"
             >
-            <p class="mt-2">{{ service.proof.solved }}</p>
-          </aside>
+              Projeto entregue
+              <span aria-hidden="true" class="group-open:rotate-45">+</span>
+            </summary>
+            <aside class="mt-gutter">
+              <a
+                [href]="service.proof.url"
+                target="_blank"
+                rel="noopener"
+                class="block text-white underline"
+                >{{ service.proof.project }}</a
+              >
+              <p class="mt-2">{{ service.proof.solved }}</p>
+            </aside>
+          </details>
 
           <a
             appReveal
