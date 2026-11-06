@@ -1,4 +1,4 @@
-<section id="atuacao">
+<section id="atuacao" class="surface-dark">
   <div class="site-container site-grid gap-gutter">
     <header class="lg:col-span-6 lg:row-span-2">
       <div class="sticky top-gutter flex-col gap-gutter flex">
@@ -29,11 +29,9 @@
             <strong>{{ solution.title }}</strong>
           </h3>
           <p class="mt-gutter text-white">{{ solution.intro }}</p>
-          <a
-            [routerLink]="['/servicos', solution.slug]"
-            class="btn btn-secondary mt-gutter text-white"
-            >{{ solution.linkLabel }}</a
-          >
+          <a [routerLink]="['/servicos', solution.slug]" class="btn btn-secondary mt-gutter">{{
+            solution.linkLabel
+          }}</a>
         </div>
       </article>
     }
