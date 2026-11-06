@@ -10,8 +10,13 @@
       <article
         class="site-grid items-center gap-y-gutter border-t border-paper/15 pt-gutter lg:col-span-12"
       >
-        @let multi = service.media.length > 1;
-        <div [class]="multi ? 'lg:col-span-12' : 'lg:col-span-6 ' + (odd ? '' : 'lg:order-2')">
+        @let multi = service.images.length > 1;
+        @let hasImages = service.images.length > 0;
+        <div
+          [class]="
+            multi || !hasImages ? 'lg:col-span-12' : 'lg:col-span-6 ' + (odd ? '' : 'lg:order-2')
+          "
+        >
           <p appReveal class="eyebrow">{{ service.theme }}</p>
           <h3 appReveal="lines" class="mt-gutter">
             <strong>{{ service.name }}</strong>
@@ -46,38 +51,29 @@
           </details>
         </div>
 
-        <div
-          [class]="
-            multi
-              ? 'flex min-w-0 gap-gutter overflow-x-auto scrollbar-none lg:col-span-12 lg:grid lg:grid-cols-12 lg:overflow-visible'
-              : 'lg:col-span-6 ' + (odd ? '' : 'lg:order-1')
-          "
-        >
-          @for (item of service.media; track item.src) {
-            <figure appReveal [class]="multi ? 'w-3xs shrink-0 lg:col-span-4 lg:w-auto' : 'w-full'">
-              @if (item.kind === 'video') {
-                <video
-                  [appLazyVideo]="item.src"
-                  [poster]="item.poster"
-                  [attr.aria-label]="item.label || null"
-                  [attr.aria-hidden]="item.label ? null : true"
-                  muted
-                  loop
-                  playsinline
-                  preload="none"
-                  class="aspect-4/3 w-full rounded-xs object-cover"
-                ></video>
-              } @else {
+        @if (hasImages) {
+          <div
+            [class]="
+              multi
+                ? 'flex min-w-0 gap-gutter overflow-x-auto scrollbar-none lg:col-span-12 lg:grid lg:grid-cols-12 lg:overflow-visible'
+                : 'lg:col-span-6 ' + (odd ? '' : 'lg:order-1')
+            "
+          >
+            @for (item of service.images; track item.src) {
+              <figure
+                appReveal
+                [class]="multi ? 'w-3xs shrink-0 lg:col-span-4 lg:w-auto' : 'w-full'"
+              >
                 <img
                   [src]="item.src"
-                  [alt]="item.label"
+                  [alt]="item.alt"
                   loading="lazy"
                   class="aspect-4/3 w-full rounded-xs object-cover object-top"
                 />
-              }
-            </figure>
-          }
-        </div>
+              </figure>
+            }
+          </div>
+        }
       </article>
     }
   </div>

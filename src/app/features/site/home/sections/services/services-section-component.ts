@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LazyVideo } from '../../../../../shared/directives/lazy-video';
 import { Reveal } from '../../../../../shared/directives/reveal';
 
 // Serviços da homepage: continua o argumento das objeções com as cinco soluções, cada uma com tema, proposta e link para sua página satélite. Os serviços são independentes e podem ser contratados isoladamente.
 @Component({
   selector: 'app-services-section',
-  imports: [LazyVideo, Reveal, RouterLink],
+  imports: [Reveal, RouterLink],
   templateUrl: './services-section-component.html',
 })
 export class ServicesSectionComponent {
   // Atributos
-  // `slug` aponta para /servicos/:slug; `media` (lista de imagens ou vídeos com kind, src, poster, label; com mais de um item o layout vira conteúdo acima e mídias abaixo, 4 colunas cada) e `proof` (projeto entregue) alimentam a imagem e o aside de prova social. Dados de `proof` , vídeos e posters são provisórios.
+  // `slug` aponta para /servicos/:slug; `images` (lista de src e alt; com mais de um item o layout vira conteúdo acima e mídias abaixo, 4 colunas cada) e `proof` (projeto entregue) alimentam a imagem e o aside de prova social. Dados de `proof` , vídeos e posters são provisórios.
   protected readonly services = [
     {
       slug: 'landing-pages',
@@ -20,18 +19,16 @@ export class ServicesSectionComponent {
       value:
         'Apresenta sua oferta, esclarece dúvidas frequentes e facilita o contato com potenciais clientes.',
       text: 'Páginas para campanhas ou serviços específicos, com foco em conversão, performance e mensuração.',
-      media: [
+      images: [
         {
-          kind: 'video' as const,
-          src: '/services-video/%SLUG%.mp4',
-          poster: '/home-img/optional_abstrato_01_camadas.png',
-          label: '',
+          src: '/services-imgs/landing-page-hero-print.png',
+          alt: 'Seção principal da landing page do PC Paulo Carvalho',
         },
       ],
       proof: {
-        project: 'Projeto em definição',
-        url: 'https://optional.com.br',
-        solved: 'Descreva aqui o problema resolvido pelo projeto entregue.',
+        project: 'PC Paulo Carvalho',
+        url: 'https://www.pcpaulocarvalho.com.br/',
+        solved: 'Landing page desenvolvida para apresentar o serviço e facilitar o contato.',
       },
     },
     {
@@ -41,18 +38,21 @@ export class ServicesSectionComponent {
       value:
         'Transmite a qualidade da sua empresa e facilita que novos clientes encontrem seus serviços.',
       text: 'Sites institucionais e comerciais com SEO, apresentação de serviços e canais de contato.',
-      media: [
+      images: [
         {
-          kind: 'video' as const,
-          src: '/services-video/%SLUG%.mp4',
-          poster: '/home-img/optional_abstrato_02_arco.png',
-          label: '',
+          src: '/services-imgs/site-home-page-print.png',
+          alt: 'Página inicial do site da Caldeiraria Realiza',
+        },
+        {
+          src: '/services-imgs/site-subpage-print.png',
+          alt: 'Página interna de serviço do site da Caldeiraria Realiza',
         },
       ],
       proof: {
-        project: 'Projeto em definição',
-        url: 'https://optional.com.br',
-        solved: 'Descreva aqui o problema resolvido pelo projeto entregue.',
+        project: 'Caldeiraria Realiza',
+        url: 'https://caldeirariarealiza.com.br/',
+        solved:
+          'Site institucional desenvolvido para apresentar os serviços da empresa e facilitar o contato.',
       },
     },
     {
@@ -61,24 +61,18 @@ export class ServicesSectionComponent {
       name: 'Organização comercial',
       value: 'Centraliza informações e facilita o acompanhamento de clientes e oportunidades.',
       text: 'Sistemas personalizados para gerenciar relacionamentos, atendimentos e processos comerciais.',
-      media: [
+      images: [
         {
-          kind: 'image' as const,
           src: '/services-imgs/crm-home-print.png',
-          poster: '',
-          label: 'Tela inicial do CRM da Simtese servindo de experiencia para clientes',
+          alt: 'Tela inicial do CRM da Simtese servindo de experiencia para clientes',
         },
         {
-          kind: 'image' as const,
           src: '/services-imgs/crm-dash-print.png',
-          poster: '',
-          label: 'Tela para agendamento publico por empresa para usuarios externos do CRM',
+          alt: 'Tela para agendamento publico por empresa para usuarios externos do CRM',
         },
         {
-          kind: 'image' as const,
           src: '/services-imgs/crm-appointments-print.png',
-          poster: '',
-          label: 'Tela de controle de agendamentos para usuarios internos do CRM',
+          alt: 'Tela de controle de agendamentos para usuarios internos do CRM',
         },
       ],
       proof: {
@@ -94,14 +88,7 @@ export class ServicesSectionComponent {
       name: 'Produtividade e eficiência',
       value: 'Reduz tarefas manuais, valida informações e evita retrabalho entre ferramentas.',
       text: 'Fluxos automatizados e integrações desenvolvidos para as rotinas da sua operação.',
-      media: [
-        {
-          kind: 'video' as const,
-          src: '/services-video/%SLUG%.mp4',
-          poster: '/home-img/optional_abstrato_04_diagonais.png',
-          label: '',
-        },
-      ],
+      images: [],
       proof: {
         project: 'Projeto em definição',
         url: 'https://optional.com.br',
@@ -114,18 +101,25 @@ export class ServicesSectionComponent {
       name: 'Controle operacional',
       value: 'Organiza processos e centraliza informações para reduzir erros e melhorar a gestão.',
       text: 'Sistemas de gestão sob medida para controle de operações, registros e rastreabilidade.',
-      media: [
+      images: [
         {
-          kind: 'video' as const,
-          src: '/services-video/%SLUG%.mp4',
-          poster: '/home-img/optional_abstrato_01_camadas.png',
-          label: '',
+          src: '/services-imgs/erp-home-print.png',
+          alt: 'Tela inicial do ERP de controle de validade da Lalouise Consultoria',
+        },
+        {
+          src: '/services-imgs/erp-dash-print.png',
+          alt: 'Painel de indicadores de validade e qualidade dos alimentos',
+        },
+        {
+          src: '/services-imgs/erp-labels-print.png',
+          alt: 'Tela de etiquetas de validade dos alimentos',
         },
       ],
       proof: {
-        project: 'Projeto em definição',
-        url: 'https://optional.com.br',
-        solved: 'Descreva aqui o problema resolvido pelo projeto entregue.',
+        project: 'Lalouise Consultoria',
+        url: 'https://lalouiseconsultoria.com.br/',
+        solved:
+          'ERP multitenant com módulos sob medida para controle de validade e qualidade de alimentos em restaurantes orientais. A Lalouise oferece o mesmo sistema a vários restaurantes clientes.',
       },
     },
   ];
