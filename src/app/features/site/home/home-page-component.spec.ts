@@ -15,7 +15,7 @@ describe('HomePageComponent', () => {
     expect(el.querySelector('app-hero-section a[href="#objecoes"]')).not.toBeNull();
     const order = [...el.children].map((c) => c.tagName.toLowerCase());
     expect(order.slice(0, 5)).toEqual(['app-hero-section', 'app-objections-section', 'app-cases-intro-section', 'app-solutions-intro-section', 'app-about-section']);
-    const solutions = [...el.querySelectorAll('#atuacao li > a.group')];
+    const solutions = [...el.querySelectorAll('#atuacao li [data-solution-content] a')];
     expect(solutions).toHaveLength(5);
     const caseLinks = [...el.querySelectorAll('#projetos details a')];
     expect(caseLinks.map((link) => link.getAttribute('href'))).toEqual([

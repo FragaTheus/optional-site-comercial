@@ -54,6 +54,20 @@ export class Gsap {
     gsap.from(targets, { autoAlpha: 0, y: -16, duration: 0.7, ease: 'power3.out', ...vars });
   }
 
+  /** Transição de seleção do accordion sem alterar o estado final definido pelo layout. */
+  accordion(panels: HTMLElement[], previous: number[], content: HTMLElement): void {
+    if (panels.some((panel, i) => Number(getComputedStyle(panel).flexGrow) !== previous[i])) {
+      gsap.from(panels, {
+        flexGrow: (i: number) => previous[i],
+        duration: 0.45,
+        ease: 'power2.out',
+        clearProps: 'flexGrow',
+        overwrite: true,
+      });
+    }
+    gsap.from(content, { opacity: 0, duration: 0.3, ease: 'power2.out', clearProps: 'opacity' });
+  }
+
   /** Deslocamento inicial de `el` conforme sua posição na seção: esquerda/direita vêm do lado; o restante vem de cima (metade superior) ou de baixo (metade inferior). */
   private origin(el: Element, distance: number): { x: number; y: number } {
     const box = (el.closest('section, footer') ?? el.parentElement ?? el).getBoundingClientRect();

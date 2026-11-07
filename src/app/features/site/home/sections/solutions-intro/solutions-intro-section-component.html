@@ -7,36 +7,74 @@
       </p>
     </header>
 
-    <ul class="site-grid gap-y-gutter lg:col-span-12">
+    <ul appReveal class="grid grid-cols-12 lg:col-span-12 2xl:flex 2xl:gap-gutter">
       @for (solution of solutions; track solution.slug) {
-        <li appReveal class="lg:col-span-4">
-          <a
-            [routerLink]="['/servicos', solution.slug]"
-            class="group media-card card h-full min-h-72 flex-col items-stretch justify-between gap-gutter"
+        <li
+          data-solution-card
+          class="media-card min-h-96 min-w-11 flex-col items-stretch gap-gutter p-0 2xl:mx-0 2xl:flex 2xl:w-auto 2xl:min-w-0 2xl:p-gutter"
+          [class.hidden]="$index < selectedIndex() - 1 || $index > selectedIndex() + 1"
+          [class.col-span-2]="selected() !== solution.slug"
+          [class.col-span-8]="selected() === solution.slug"
+          [class.col-start-1]="$index === selectedIndex() - 1"
+          [class.col-start-3]="selected() === solution.slug"
+          [class.col-start-11]="$index === selectedIndex() + 1"
+          [class.justify-self-end]="$index === selectedIndex() + 1"
+          [class.mx-1]="selected() === solution.slug"
+          [class.w-full]="selected() !== solution.slug"
+          [class.p-3]="selected() === solution.slug"
+          [class.2xl:flex-3]="selected() === solution.slug"
+          [class.2xl:flex-1]="selected() !== solution.slug"
+        >
+          <img
+            [src]="solution.image"
+            alt=""
+            width="767"
+            height="511"
+            loading="lazy"
+            decoding="async"
+            class="media-card-img brightness-70"
+          />
+          <div class="media-card-scrim" aria-hidden="true"></div>
+          <div class="absolute inset-0 -z-10 bg-carbon/60" aria-hidden="true"></div>
+          <h3 class="flex flex-1 text-xl" [class.2xl:flex-1]="selected() !== solution.slug">
+            <button
+              type="button"
+              [id]="'solution-trigger-' + solution.slug"
+              [attr.aria-expanded]="selected() === solution.slug"
+              [attr.aria-disabled]="selected() === solution.slug"
+              [attr.aria-controls]="'solution-panel-' + solution.slug"
+              (click)="select(solution.slug)"
+              class="h-full max-w-none p-0 text-left text-xl font-bold focus-visible:outline-inset"
+              [class.justify-start]="selected() === solution.slug"
+            >
+              <strong
+                [class.rotate-90]="selected() !== solution.slug"
+                [class.whitespace-nowrap]="selected() !== solution.slug"
+                class="2xl:rotate-0 2xl:whitespace-normal"
+                >{{ solution.label }}</strong
+              >
+            </button>
+          </h3>
+          <div
+            data-solution-content
+            [id]="'solution-panel-' + solution.slug"
+            [attr.aria-labelledby]="'solution-trigger-' + solution.slug"
+            [hidden]="selected() !== solution.slug"
+            class="flex min-w-0 flex-1 flex-col items-start justify-end gap-gutter"
           >
-            <img
-              [src]="solution.image"
-              alt=""
-              width="767"
-              height="511"
-              loading="lazy"
-              decoding="async"
-              class="media-card-img brightness-70"
-            />
-            <div class="media-card-scrim" aria-hidden="true"></div>
-            <h3><strong>{{ solution.label }}</strong></h3>
             <p>{{ solution.text }}</p>
-            <i
-              class="pi pi-arrow-right self-end text-signal transition-transform group-hover:translate-x-2 motion-reduce:transition-none"
-              aria-hidden="true"
-            ></i>
-          </a>
+            <a [routerLink]="['/servicos', solution.slug]" class="btn btn-secondary max-w-full px-3 2xl:w-auto 2xl:max-w-none 2xl:px-gutter"
+              >Conhecer {{ solution.label }}<i class="pi pi-arrow-right" aria-hidden="true"></i
+            ></a>
+          </div>
         </li>
       }
     </ul>
 
     <footer class="lg:col-span-12">
-      <a href="#sobre" class="btn btn-secondary">Nossa liderança<i class="pi pi-arrow-down" aria-hidden="true"></i></a>
+      <a href="#sobre" class="btn btn-secondary"
+        >Nossa liderança<i class="pi pi-arrow-down" aria-hidden="true"></i
+      ></a>
     </footer>
   </div>
 </section>

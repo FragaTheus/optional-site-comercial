@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SERVICE_LINKS } from '../../../../../core/site.config';
 import { Reveal } from '../../../../../shared/directives/reveal';
@@ -13,13 +13,14 @@ const TEXTS: Record<(typeof SERVICE_LINKS)[number]['slug'], string> = {
 
 // Imagens abstratas provisórias, a serem substituídas.
 const IMAGES = [
-  'optional_abstrato_01_camadas.png',
-  'optional_abstrato_02_arco.png',
-  'optional_abstrato_03_planos.png',
-  'optional_abstrato_04_diagonais.png',
+  'site-abstract.png',
+  'landing-page-abstract.png',
+  'crm.png',
+  'automation.png',
+  'erp.png',
 ];
 
-// Apresenta todos os serviços como cards-link e conduz à seção seguinte.
+// Apresenta os serviços em um accordion de seleção única e conduz à seção seguinte.
 @Component({
   selector: 'app-solutions-intro-section',
   imports: [Reveal, RouterLink],
@@ -29,6 +30,16 @@ export class SolutionsIntroSectionComponent {
   protected readonly solutions = SERVICE_LINKS.map((s, i) => ({
     ...s,
     text: TEXTS[s.slug],
-    image: `/home-img/${IMAGES[i % IMAGES.length]}`,
+    image: `/solutions/${IMAGES[i % IMAGES.length]}`,
   }));
+  protected readonly selected = signal<(typeof SERVICE_LINKS)[number]['slug']>(
+    SERVICE_LINKS[0].slug,
+  );
+  protected readonly selectedIndex = computed(() =>
+    this.solutions.findIndex((solution) => solution.slug === this.selected()),
+  );
+
+  protected select(slug: (typeof SERVICE_LINKS)[number]['slug']): void {
+    this.selected.set(slug);
+  }
 }
