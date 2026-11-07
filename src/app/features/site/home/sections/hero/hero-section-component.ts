@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
-import { BtnCtaComponent } from '../../../../../shared/components/btn-cta/btn-cta-component';
 import { Reveal } from '../../../../../shared/directives/reveal';
 
-interface IAside {
+interface IStat {
   label: string;
   data: string;
 }
 
-// Abertura da homepage: apresenta a Optional e leva o visitante ao contato ou aos serviços.
+// Abertura da homepage: apresenta a Optional e leva o visitante à seção seguinte.
 @Component({
   selector: 'app-hero-section',
-  imports: [Reveal, BtnCtaComponent],
+  imports: [Reveal],
   templateUrl: './hero-section-component.html',
 })
 export class HeroSectionComponent {
   // Atributos
-  protected readonly asides: IAside[] = [
-    { label: '12+', data: 'Empresas Automatizadas' },
-    { label: '367h', data: 'Economizados/mes' },
-    { label: '4.400h', data: 'Economizados/ano' },
+  protected readonly stats: IStat[] = [
+    { label: '−66%', data: 'Retrabalho/ano' },
+    { label: '1.280h', data: 'Economizadas/ano' },
+    { label: 'R$ 38 mil', data: 'Economizados/ano' },
   ];
 }

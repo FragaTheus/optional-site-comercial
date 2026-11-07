@@ -12,23 +12,15 @@ describe('HomePageComponent', () => {
     expect(el.querySelector('h1')?.textContent).toContain('Infraestrutura');
     expect(el.querySelector('#atuacao a[href="/servicos"]')).not.toBeNull();
     expect(el.querySelector('#projetos a[href="/cases"]')).not.toBeNull();
-    const solutions = [...el.querySelectorAll('#atuacao article')];
-    expect(solutions).toHaveLength(2);
-    expect(el.querySelector('#atuacao header')?.classList.contains('lg:row-span-2')).toBe(true);
-    expect(el.querySelector('#atuacao footer')?.classList.contains('lg:col-span-full')).toBe(true);
-    for (const [index, slug] of ['sites', 'automacoes'].entries()) {
-      expect(solutions[index].querySelector(`a[href="/servicos/${slug}"]`)).not.toBeNull();
-      expect(solutions[index].classList.contains('media-card')).toBe(true);
-      expect(solutions[index].querySelector('img')?.getAttribute('alt')).toBe('');
-      expect(solutions[index].querySelector('img')?.getAttribute('src')).toMatch(/^\/home-img\//);
-      expect(solutions[index].querySelector('.media-card-fade')).not.toBeNull();
-      expect(solutions[index].querySelector('.media-card-scrim')).not.toBeNull();
-    }
-    const cases = [...el.querySelectorAll('#projetos article')];
-    expect(cases).toHaveLength(2);
-    for (const [index, slug] of ['lalouise', 'simtese'].entries()) {
-      expect(cases[index].querySelector(`a[href="/cases/${slug}"]`)).not.toBeNull();
-      expect(cases[index].querySelector('img')?.getAttribute('src')).toBe(CASES.find(item => item.slug === slug)?.heroImage);
+    expect(el.querySelectorAll('app-hero-section li')).toHaveLength(3);
+    expect(el.querySelector('app-hero-section a[href="#objecoes"]')).not.toBeNull();
+    const order = [...el.children].map((c) => c.tagName.toLowerCase());
+    expect(order.slice(0, 4)).toEqual(['app-hero-section', 'app-about-section', 'app-cases-intro-section', 'app-solutions-intro-section']);
+    const solutions = [...el.querySelectorAll('#atuacao li > a.group')];
+    expect(solutions).toHaveLength(5);
+    expect(el.querySelectorAll('#projetos details')).toHaveLength(CASES.length);
+    for (const item of CASES) {
+      expect(el.querySelector(`#projetos a[href="/cases/${item.slug}"]`)).not.toBeNull();
     }
     expect(el.querySelectorAll('app-about-section li').length).toBe(3);
     expect(el.querySelector('app-about-section img')).not.toBeNull();

@@ -1,6 +1,6 @@
 <section id="projetos">
   <div class="site-container site-grid gap-y-gutter">
-    <header class="lg:col-span-12 flex text-end flex-col gap-gutter">
+    <header class="lg:col-span-6 flex flex-col gap-gutter">
       <h2 appReveal="lines">Da necessidade ao <strong>projeto.</strong></h2>
       <p appReveal>
         Projetos desenvolvidos para diferentes operações, mostrando como transformamos necessidades
@@ -8,39 +8,35 @@
       </p>
     </header>
 
-    @for (caseStudy of cases; track caseStudy.slug; let odd = $odd) {
-      <article class="site-grid gap-y-gutter lg:col-span-12">
-        <div appReveal [class]="odd ? 'lg:col-span-6 lg:order-2' : 'lg:col-span-6'">
-          <h3>
-            <strong>{{ caseStudy.project }}</strong>
-          </h3>
-          <p class="mt-gutter">{{ caseStudy.intro }}</p>
-          <a [routerLink]="['/cases', caseStudy.slug]" class="btn btn-secondary mt-gutter"
-            >Conhecer case {{ caseStudy.project }}</a
+    <div class="lg:col-span-6 flex flex-col">
+      @for (caseStudy of cases; track caseStudy.slug) {
+        <details appReveal class="group border-t border-carbon/15 py-gutter last:border-b">
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-gutter [&::-webkit-details-marker]:hidden"
           >
-        </div>
-        <figure appReveal [class]="odd ? 'lg:col-span-6 lg:order-1' : 'lg:col-span-6'">
-          <img
-            [src]="caseStudy.heroImage"
-            [alt]="'Imagem do projeto ' + caseStudy.project"
-            width="1840"
-            height="963"
-            loading="lazy"
-            decoding="async"
-            class="aspect-4/3 w-full rounded-xs object-cover object-top"
-          />
-        </figure>
-      </article>
-    }
+            <h3><strong>{{ caseStudy.project }}</strong></h3>
+            <span aria-hidden="true" class="transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-gutter flex flex-col gap-gutter">
+            <img
+              [src]="caseStudy.heroImage"
+              [alt]="'Imagem do projeto ' + caseStudy.project"
+              width="1840"
+              height="963"
+              loading="lazy"
+              decoding="async"
+              class="aspect-4/3 w-full rounded-xs object-cover object-top"
+            />
+            <p>{{ caseStudy.intro }}</p>
+            <a [routerLink]="['/cases', caseStudy.slug]" class="btn btn-secondary self-start"
+              >Conhecer case {{ caseStudy.project }}</a
+            >
+          </div>
+        </details>
+      }
+    </div>
 
-    <footer
-      appReveal
-      class="lg:col-span-12 flex items-center gap-gutter justify-between flex-wrap card card-primary"
-    >
-      <p appReveal class="max-w-2xl">
-        Conheça projetos desenvolvidos para diferentes operações e os desafios que orientaram cada
-        solução.
-      </p>
+    <footer class="lg:col-span-12">
       <a routerLink="/cases" class="btn btn-secondary">Conhecer todos os cases</a>
     </footer>
   </div>
