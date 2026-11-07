@@ -10,5 +10,7 @@ import { CASES } from '../../../cases/case-content';
   templateUrl: './cases-intro-section-component.html',
 })
 export class CasesIntroSectionComponent {
-  protected readonly cases = CASES;
+  protected readonly cases = CASES.filter(({ slug }) =>
+    ['caldeiraria-realiza', 'simtese', 'lalouise'].includes(slug),
+  );
 }

@@ -76,7 +76,8 @@ export const CASES: CaseContent[] = [
     title: 'Caldeiraria Realiza: site comercial | Optional',
     description:
       'Conheça o site comercial da Caldeiraria Realiza e a proposta de apresentar seus serviços em uma presença digital própria.',
-    intro: 'Um site comercial para apresentar a empresa, seus serviços e seus canais de contato.',
+    intro:
+      'Desenvolvemos um site comercial para apresentar os serviços da empresa e facilitar solicitações de orçamento, fortalecendo sua credibilidade e criando novas oportunidades comerciais.',
     projectUrl: 'https://caldeirariarealiza.com.br/',
     projectLinkLabel: 'Ver projeto',
     heroImage: '/services-imgs/site-home-page-print.png',
@@ -113,7 +114,8 @@ export const CASES: CaseContent[] = [
     title: 'Símtese: CRM e agendamentos | Optional',
     description:
       'Conheça a solução de CRM e gestão de agendamentos desenvolvida para a operação da Símtese.',
-    intro: 'Um sistema para apoiar o acompanhamento de clientes, agendamentos e resultados.',
+    intro:
+      'Substituímos o pré-cadastro por e-mail por um sistema com validação de dados e padronização de exames, antecipando inconsistências, reduzindo retrabalho e aumentando a eficiência no atendimento.',
     projectUrl: 'https://www.simtese.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
     heroImage: '/services-imgs/crm-home-print.png',
@@ -143,7 +145,8 @@ export const CASES: CaseContent[] = [
     title: 'LaLouise: sistema de gestão | Optional',
     description:
       'Conheça o sistema de gestão para controle operacional e rastreabilidade desenvolvido para a LaLouise.',
-    intro: 'Um sistema de gestão voltado ao controle operacional e à rastreabilidade.',
+    intro:
+      'Substituímos a etiquetagem manual por um sistema de validade automática, reduzindo tarefas repetitivas e facilitando a rastreabilidade dos alimentos.',
     projectUrl: 'https://lalouiseconsultoria.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
     heroImage: '/services-imgs/erp-home-print.png',

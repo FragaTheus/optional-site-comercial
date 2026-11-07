@@ -28,7 +28,7 @@ Homepage, páginas satélites de serviços (CRM, ERP/gestão, automações, land
 
 ### Hubs
 
-A homepage é o único hub (não há `/servicos` nem `/cases`). A homepage destaca sites comerciais e automações em cards com fundos abstratos, e LaLouise e Símtese com as imagens de hero de `CASES`, com links individuais e botões que levam à seção seguinte. As imagens abstratas da homepage e da lista de cases são provisórias.
+A homepage é o único hub (não há `/servicos` nem `/cases`). A homepage destaca sites comerciais e automações em cards com fundos abstratos, e apresenta Caldeiraria Realiza, Símtese e LaLouise com as imagens de hero de `CASES` e links individuais. A seleção de cases é definida na seção da homepage; os demais cases continuam disponíveis em suas páginas. As imagens abstratas da homepage e da lista de cases são provisórias.
 
 ### Páginas satélites
 
