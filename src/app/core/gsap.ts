@@ -68,6 +68,19 @@ export class Gsap {
     gsap.from(content, { opacity: 0, duration: 0.3, ease: 'power2.out', clearProps: 'opacity' });
   }
 
+  /** Expande o conteúdo de um details e executa `onComplete` quando a altura estabiliza. */
+  details(content: HTMLElement, onComplete: () => void): void {
+    gsap.from(content, {
+      height: 0,
+      autoAlpha: 0,
+      overflow: 'hidden',
+      duration: 0.45,
+      ease: 'power2.out',
+      clearProps: 'height,opacity,visibility,overflow',
+      onComplete,
+    });
+  }
+
   /** Deslocamento inicial de `el` conforme sua posição na seção: esquerda/direita vêm do lado; o restante vem de cima (metade superior) ou de baixo (metade inferior). */
   private origin(el: Element, distance: number): { x: number; y: number } {
     const box = (el.closest('section, footer') ?? el.parentElement ?? el).getBoundingClientRect();
