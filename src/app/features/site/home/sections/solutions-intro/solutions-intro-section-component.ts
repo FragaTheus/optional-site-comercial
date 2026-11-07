@@ -19,7 +19,7 @@ const IMAGES = [
   'optional_abstrato_04_diagonais.png',
 ];
 
-// Apresenta todos os serviços como cards-link e conduz ao hub de serviços.
+// Apresenta todos os serviços como cards-link e conduz à seção seguinte.
 @Component({
   selector: 'app-solutions-intro-section',
   imports: [Reveal, RouterLink],

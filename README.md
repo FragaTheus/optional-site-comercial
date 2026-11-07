@@ -21,7 +21,7 @@ Plataforma institucional; apresentação comercial; portfólio; canal de aquisi�
 Referências (sujeitas a validação, sem dados confidenciais): Símtese (CRM/agendamentos), LaLouise (controle operacional/rastreabilidade), Caldeiraria Realiza (site comercial), Paulo Carvalho (site profissional), Profissão do Século (landing page).
 
 ## 6. Features principais
-- `features/site`: homepage, hubs `/servicos` e `/cases`, páginas satélites `/servicos/{crm,erp,automacoes,landing-pages,sites}` e cases em `/cases/:slug`. O conteúdo dos cases deve ser revisado antes da publicação.
+- `features/site`: homepage (único hub), páginas satélites `/servicos/{crm,erp,automacoes,landing-pages,sites}` e cases em `/cases/:slug`. O conteúdo dos cases deve ser revisado antes da publicação.
 - `features/concepts`: `/concept/:slug`, noindex, fora do sitemap. *(não implementado)*
 
 ## 7. Arquitetura Angular

@@ -20,9 +20,9 @@ describe('SiteNavigationComponent', () => {
     expect(details[0].querySelector('summary')?.textContent).toContain('Serviços');
     expect(details[1].querySelector('summary')?.textContent).toContain('Cases');
     expect(Array.from(details[0].querySelectorAll('a')).map(a => a.getAttribute('href')))
-      .toEqual(['/servicos', ...SERVICE_LINKS.map(item => `/servicos/${item.slug}`)]);
+      .toEqual([...SERVICE_LINKS.map(item => `/servicos/${item.slug}`)]);
     expect(Array.from(details[1].querySelectorAll('a')).map(a => a.getAttribute('href')))
-      .toEqual(['/cases', ...CASES.map(item => `/cases/${item.slug}`)]);
+      .toEqual([...CASES.map(item => `/cases/${item.slug}`)]);
   });
 
   it('emits only for ordinary link selection, not modified clicks', async () => {
