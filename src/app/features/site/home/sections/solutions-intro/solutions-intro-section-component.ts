@@ -62,6 +62,7 @@ export class SolutionsIntroSectionComponent {
     if (this.selected() === slug) return;
     const cards = [...this.host.querySelectorAll<HTMLElement>('[data-solution-card]')];
     const previous = cards.map((card) => Number(getComputedStyle(card).flexGrow));
+    const widths = cards.map((card) => card.getBoundingClientRect().width);
     this.selected.set(slug);
     afterNextRender(
       () => {
@@ -70,7 +71,7 @@ export class SolutionsIntroSectionComponent {
         if (!content) return;
         this.animationCleanup?.();
         this.animationCleanup = this.gsap.run(this.host, () =>
-          this.gsap.accordion(cards, previous, content),
+          this.gsap.accordion(cards, previous, widths, content),
         );
       },
       { injector: this.injector },
