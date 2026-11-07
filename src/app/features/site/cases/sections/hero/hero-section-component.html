@@ -8,7 +8,7 @@
       <h1 appReveal="lines" class="mt-gutter"><strong>{{ caseStudy().project }}</strong></h1>
       <p appReveal class="mt-gutter max-w-2xl text-white">{{ caseStudy().intro }}</p>
       <div appReveal class="mt-gutter flex flex-wrap gap-gutter">
-        <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary">{{ caseStudy().projectLinkLabel }}</a>
+        <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary">{{ caseStudy().projectLinkLabel }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
         <a [routerLink]="[]" fragment="problema" class="btn btn-secondary">Entender solução</a>
       </div>
     </div>
