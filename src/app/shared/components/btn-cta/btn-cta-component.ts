@@ -9,11 +9,12 @@ export interface ICta {
 // Botão de contato único do site: abre o WhatsApp da Optional com uma mensagem que identifica de qual ponto da página o clique veio.
 @Component({
   selector: 'app-btn-cta',
+  host: { class: 'block' },
   template: `<a
     [href]="href()"
     target="_blank"
     rel="noopener"
-    class="btn btn-primary border-signal border"
+    class="btn btn-primary w-full max-w-sm border-signal border"
     >{{ cta().label }}</a
   >`,
 })

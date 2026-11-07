@@ -11,6 +11,14 @@ const TEXTS: Record<(typeof SERVICE_LINKS)[number]['slug'], string> = {
   erp: 'Sistemas de gestão que centralizam processos, controles e informações da operação.',
 };
 
+// Imagens abstratas provisórias, a serem substituídas.
+const IMAGES = [
+  'optional_abstrato_01_camadas.png',
+  'optional_abstrato_02_arco.png',
+  'optional_abstrato_03_planos.png',
+  'optional_abstrato_04_diagonais.png',
+];
+
 // Apresenta todos os serviços como cards-link e conduz ao hub de serviços.
 @Component({
   selector: 'app-solutions-intro-section',
@@ -18,5 +26,9 @@ const TEXTS: Record<(typeof SERVICE_LINKS)[number]['slug'], string> = {
   templateUrl: './solutions-intro-section-component.html',
 })
 export class SolutionsIntroSectionComponent {
-  protected readonly solutions = SERVICE_LINKS.map((s) => ({ ...s, text: TEXTS[s.slug] }));
+  protected readonly solutions = SERVICE_LINKS.map((s, i) => ({
+    ...s,
+    text: TEXTS[s.slug],
+    image: `/home-img/${IMAGES[i % IMAGES.length]}`,
+  }));
 }
