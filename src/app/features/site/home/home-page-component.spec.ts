@@ -15,7 +15,7 @@ describe('HomePageComponent', () => {
     expect(el.querySelectorAll('app-hero-section li')).toHaveLength(3);
     expect(el.querySelector('app-hero-section a[href="#objecoes"]')).not.toBeNull();
     const order = [...el.children].map((c) => c.tagName.toLowerCase());
-    expect(order.slice(0, 4)).toEqual(['app-hero-section', 'app-about-section', 'app-cases-intro-section', 'app-solutions-intro-section']);
+    expect(order.slice(0, 5)).toEqual(['app-hero-section', 'app-objections-section', 'app-cases-intro-section', 'app-solutions-intro-section', 'app-about-section']);
     const solutions = [...el.querySelectorAll('#atuacao li > a.group')];
     expect(solutions).toHaveLength(5);
     expect(el.querySelectorAll('#projetos details')).toHaveLength(CASES.length);
@@ -24,7 +24,8 @@ describe('HomePageComponent', () => {
     }
     expect(el.querySelectorAll('app-about-section li').length).toBe(3);
     expect(el.querySelector('app-about-section img')).not.toBeNull();
-    expect(el.querySelector('app-objections-section, app-services-section, app-showcase-section')).toBeNull();
+    expect(el.querySelectorAll('app-objections-section li')).toHaveLength(3);
+    expect(el.querySelector('app-services-section, app-showcase-section')).toBeNull();
     expect(el.querySelector('#evolucao, #faq')).toBeNull();
   });
 });
