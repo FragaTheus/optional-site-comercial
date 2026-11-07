@@ -8,16 +8,24 @@
       </p>
     </header>
 
-    <div class="lg:col-span-6 flex flex-col">
+    <div class="lg:col-span-6 lg:row-span-2 flex flex-col">
       @for (caseStudy of cases; track caseStudy.slug) {
         <details appReveal class="group border-t border-carbon/15 py-gutter last:border-b">
           <summary
             class="flex cursor-pointer list-none items-center justify-between gap-gutter [&::-webkit-details-marker]:hidden"
           >
-            <h3><strong>{{ caseStudy.project }}</strong></h3>
+            <h3>
+              <strong class="whitespace-pre-line">{{ caseStudy.project }}</strong>
+            </h3>
             <span aria-hidden="true" class="transition-transform group-open:rotate-45">+</span>
           </summary>
-          <div class="mt-gutter flex flex-col gap-gutter">
+          <div class="mt-gutter grid grid-cols-1 gap-gutter md:grid-cols-2">
+            <div class="flex flex-col items-start gap-gutter">
+              <small class="text-sm">{{ caseStudy.intro }}</small>
+              <a [routerLink]="['/cases', caseStudy.slug]" class="btn btn-secondary self-start"
+                >Ver mais<i class="pi pi-arrow-up-right" aria-hidden="true"></i
+              ></a>
+            </div>
             <img
               [src]="caseStudy.heroImage"
               [alt]="'Imagem do projeto ' + caseStudy.project"
@@ -25,19 +33,17 @@
               height="963"
               loading="lazy"
               decoding="async"
-              class="aspect-4/3 w-full rounded-xs object-cover object-top"
+              class="aspect-4/3 max-h-48 w-full rounded-xl object-cover object-top"
             />
-            <p>{{ caseStudy.intro }}</p>
-            <a [routerLink]="['/cases', caseStudy.slug]" class="btn btn-secondary self-start"
-              >Conhecer case {{ caseStudy.project }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a
-            >
           </div>
         </details>
       }
     </div>
 
-    <footer class="lg:col-span-12">
-      <a href="#atuacao" class="btn btn-secondary">Conhecer as soluções<i class="pi pi-arrow-down" aria-hidden="true"></i></a>
+    <footer class="lg:col-span-6 flex items-end">
+      <a href="#atuacao" class="btn btn-secondary"
+        >Conhecer as soluções<i class="pi pi-arrow-down" aria-hidden="true"></i
+      ></a>
     </footer>
   </div>
 </section>

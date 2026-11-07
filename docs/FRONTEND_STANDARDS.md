@@ -28,17 +28,17 @@ Fonte única em `@theme`, com nomes semânticos: `--color-carbon: #111315`, `--c
 
 ## 4. Escala tipográfica fluida
 
-Sobrescrever `--text-*` em `@theme` com `clamp()`, mantendo os nomes `text-xs` … `text-9xl`. Sem segunda escala paralela. O **máximo** de cada valor é o tamanho nominal original do Tailwind; o mínimo reduz proporcionalmente; interpolação via `vw`. Definir também `--text-*--line-height` coerente. Utilities `text-*` não são redefinidas em `@layer base`; use `@theme`.
+Sobrescrever `--text-*` em `@theme`, mantendo os nomes `text-xs` … `text-9xl`. Sem segunda escala paralela. A escala fluida original é reduzida em 10%, sem ficar abaixo dos mínimos existentes. Definir também `--text-*--line-height` coerente. Utilities `text-*` não são redefinidas em `@layer base`; use `@theme`.
 
-Valores nominais máximos: xs 0.75rem, sm 0.875rem, base 1rem, lg 1.125rem, xl 1.25rem, 2xl 1.5rem, 3xl 1.875rem, 4xl 2.25rem, 5xl 3rem, 6xl 3.75rem, 7xl 4.5rem, 8xl 6rem, 9xl 8rem.
+Valores nominais de referência do Tailwind: xs 0.75rem, sm 0.875rem, base 1rem, lg 1.125rem, xl 1.25rem, 2xl 1.5rem, 3xl 1.875rem, 4xl 2.25rem, 5xl 3rem, 6xl 3.75rem, 7xl 4.5rem, 8xl 6rem, 9xl 8rem.
 
 Exemplo conceitual (completar todos os tamanhos com coerência e validar visualmente):
 
 ```css
 @theme {
-  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
-  --text-xl: clamp(1rem, 0.92rem + 0.4vw, 1.25rem);
-  --text-4xl: clamp(1.1875rem, 0.8875rem + 1.5vw, 2.25rem);
+  --text-base: max(0.9375rem, clamp(0.9375rem, 0.9rem + 0.2vw, 1rem) * 0.9);
+  --text-xl: max(1rem, clamp(1rem, 0.92rem + 0.4vw, 1.25rem) * 0.9);
+  --text-4xl: max(1.1875rem, clamp(1.1875rem, 0.8875rem + 1.5vw, 2.25rem) * 0.9);
 }
 ```
 
@@ -70,7 +70,7 @@ As seções usam o padding vertical do `.site-container`; não aplicar espaçame
 
 Mobile e tablet usam `grid-cols-1`; a partir de `lg`: `lg:grid-cols-12`. As utilitárias de posicionamento (`col-span`, `col-start`, `col-end`) também devem usar o prefixo `lg:` para só compor o grid de 12 colunas nesse breakpoint. Sem breakpoints arbitrários sem necessidade; telas menores podem simplificar. `.site-grid` = `grid grid-cols-1 lg:grid-cols-12 gap-x-gutter`.
 
-Os mínimos dos tokens `text-lg` a `text-9xl` reduzem a escala em telas estreitas mantendo a hierarquia, enquanto `text-xs` a `text-base` preservam seus mínimos legíveis. Os máximos nominais permanecem inalterados.
+Os mínimos dos tokens preservam a legibilidade em telas estreitas; a redução de 10% não ultrapassa esses limites.
 
 ## 9. Componentes visuais (`@layer components`)
 
