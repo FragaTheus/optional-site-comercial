@@ -12,10 +12,20 @@
         <li appReveal class="lg:col-span-4">
           <a
             [routerLink]="['/servicos', solution.slug]"
-            class="group card flex h-full flex-col gap-gutter border border-paper/15 transition-colors hover:border-signal"
+            class="group media-card card h-full min-h-72 flex-col items-stretch justify-between gap-gutter"
           >
+            <img
+              [src]="solution.image"
+              alt=""
+              width="767"
+              height="511"
+              loading="lazy"
+              decoding="async"
+              class="media-card-img brightness-70"
+            />
+            <div class="media-card-scrim" aria-hidden="true"></div>
             <h3><strong>{{ solution.label }}</strong></h3>
-            <p class="grow">{{ solution.text }}</p>
+            <p>{{ solution.text }}</p>
             <i
               class="pi pi-arrow-right self-end text-signal transition-transform group-hover:translate-x-2 motion-reduce:transition-none"
               aria-hidden="true"
