@@ -10,8 +10,8 @@ describe('HomePageComponent', () => {
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelector('h1')?.textContent).toContain('Infraestrutura');
-    expect(el.querySelector('#atuacao a[href="/servicos"]')).not.toBeNull();
-    expect(el.querySelector('#projetos a[href="/cases"]')).not.toBeNull();
+    expect(el.querySelector('#atuacao a[href="#sobre"]')).not.toBeNull();
+    expect(el.querySelector('#projetos a[href="#atuacao"]')).not.toBeNull();
     expect(el.querySelectorAll('app-hero-section li')).toHaveLength(3);
     expect(el.querySelector('app-hero-section a[href="#objecoes"]')).not.toBeNull();
     const order = [...el.children].map((c) => c.tagName.toLowerCase());

@@ -8,7 +8,6 @@
       <span aria-hidden="true" class="group-open:rotate-45">+</span>
     </summary>
     <ul class="pb-3">
-      <li><a routerLink="/servicos" (click)="selectLink($event)" class="flex min-h-12 max-w-none justify-start px-0 py-3 text-white hover:text-signal">Todos os serviços</a></li>
       @for (service of services; track service.slug) {
         <li>
           <a [routerLink]="['/servicos', service.slug]" (click)="selectLink($event)" class="flex min-h-12 max-w-none justify-start px-0 py-3 text-paper hover:text-signal">{{ service.label }}</a>
@@ -23,7 +22,6 @@
       <span aria-hidden="true" class="group-open:rotate-45">+</span>
     </summary>
     <ul class="pb-3">
-      <li><a routerLink="/cases" (click)="selectLink($event)" class="flex min-h-12 max-w-none justify-start px-0 py-3 text-white hover:text-signal">Todos os cases</a></li>
       @for (caseStudy of cases; track caseStudy.slug) {
         <li>
           <a [routerLink]="['/cases', caseStudy.slug]" (click)="selectLink($event)" class="flex min-h-12 max-w-none justify-start px-0 py-3 text-paper hover:text-signal">{{ caseStudy.project }}</a>

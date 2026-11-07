@@ -36,12 +36,12 @@ Cada seção responde ou desenvolve o argumento da anterior. Seção que não te
 | # | Seção | Papel | Mensagem-chave | Prepara a próxima porque… |
 |---|---|---|---|---|
 | 1 | Hero ✅ final | Posicionamento | "Infraestrutura Digital para aumentar a eficiência da sua empresa." Sistemas e automações de acordo com a operação, para reduzir custos, aumentar a produtividade e contribuir com a aquisição de novos clientes | leva ao `#atuacao` (Entender atuação) |
-| 2 | Introdução às soluções | Atuação | Destaques de sites comerciais e automações, com links individuais e para `/servicos` | leva ao detalhamento dos serviços |
-| 3 | Introdução aos cases | Evidências | Destaques de LaLouise e Símtese, com links individuais e para `/cases` | leva aos cases publicados |
+| 2 | Introdução às soluções | Atuação | Destaques de sites comerciais e automações, com links individuais | leva à seção Sobre (`#sobre`) |
+| 3 | Introdução aos cases | Evidências | Destaques de LaLouise e Símtese, com links individuais | leva às soluções (`#atuacao`) |
 | 4 | Sobre a Optional | Abordagem | Apresentação institucional e diferenciais | prepara a conversa |
 | 5 | Contato | Próximo passo | "Agora, vamos falar da sua operação." | fecha a narrativa |
 
-O hub `/servicos` reúne hero, objeções, soluções, abordagem e CTA; o hub `/cases` apresenta os projetos publicados e seus links individuais. A navegação também permite acessar diretamente as páginas detalhadas.
+A homepage é o único hub; não existem `/servicos` nem `/cases`. A navegação permite acessar diretamente as páginas detalhadas.
 
 ### Conteúdo anterior: Hero e Objeções
 

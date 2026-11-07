@@ -4,8 +4,6 @@ import { CASES } from './cases/case-content';
 
 export const SITE_ROUTES: Routes = [
   { path: '', loadComponent: () => import('./home/home-page-component').then(m => m.HomePageComponent) },
-  { path: 'servicos', loadComponent: () => import('./services-hub/services-hub-page-component').then(m => m.ServicesHubPageComponent) },
-  { path: 'cases', loadComponent: () => import('./cases-hub/cases-hub-page-component').then(m => m.CasesHubPageComponent) },
   ...SERVICE_LINKS.map(({ slug }) => ({
     path: `servicos/${slug}`,
     data: { slug },
