@@ -10,7 +10,7 @@ describe('ServicesHubPageComponent', () => {
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelectorAll('h1')).toHaveLength(1);
-    expect(el.querySelector('#atuacao')).not.toBeNull();
+    expect(el.querySelector('#servicos')).not.toBeNull();
     expect(el.querySelectorAll('#servicos article')).toHaveLength(5);
     expect(el.querySelectorAll('.media-card')).toHaveLength(4);
     expect(el.querySelector('#contato a')?.getAttribute('href')).toContain('wa.me/');

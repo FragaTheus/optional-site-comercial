@@ -6,6 +6,7 @@ import { ClosingSectionComponent } from './sections/closing/closing-section-comp
 import { HeroSectionComponent } from './sections/hero/hero-section-component';
 import { SolutionsIntroSectionComponent } from './sections/solutions-intro/solutions-intro-section-component';
 import { CasesIntroSectionComponent } from './sections/cases-intro/cases-intro-section-component';
+import { ObjectionsSectionComponent } from './sections/objections/objections-section-component';
 import { AboutSectionComponent } from './sections/about/about-section-component';
 
 // Página inicial: só compõe as seções, define o SEO e aciona as animações em sequência (`data-stagger`) das seções.
@@ -13,9 +14,10 @@ import { AboutSectionComponent } from './sections/about/about-section-component'
   selector: 'app-home-page',
   imports: [
     HeroSectionComponent,
-    AboutSectionComponent,
+    ObjectionsSectionComponent,
     CasesIntroSectionComponent,
     SolutionsIntroSectionComponent,
+    AboutSectionComponent,
     ClosingSectionComponent,
   ],
   templateUrl: './home-page-component.html',
