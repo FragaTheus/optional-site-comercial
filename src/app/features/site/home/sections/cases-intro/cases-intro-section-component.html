@@ -29,7 +29,7 @@
             />
             <p>{{ caseStudy.intro }}</p>
             <a [routerLink]="['/cases', caseStudy.slug]" class="btn btn-secondary self-start"
-              >Conhecer case {{ caseStudy.project }}</a
+              >Conhecer case {{ caseStudy.project }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a
             >
           </div>
         </details>
@@ -37,7 +37,7 @@
     </div>
 
     <footer class="lg:col-span-12">
-      <a routerLink="/cases" class="btn btn-secondary">Conhecer todos os cases</a>
+      <a routerLink="/cases" class="btn btn-secondary">Conhecer todos os cases<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
     </footer>
   </div>
 </section>

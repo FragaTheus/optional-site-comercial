@@ -26,9 +26,9 @@
 
           <div appReveal class="mt-gutter flex flex-wrap gap-gutter">
             @if (service.caseSlug) {
-              <a [routerLink]="['/cases', service.caseSlug]" class="btn btn-primary">Ver case</a>
+              <a [routerLink]="['/cases', service.caseSlug]" class="btn btn-primary">Ver case<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
             }
-            <a [routerLink]="['/servicos', service.slug]" class="btn btn-secondary">Entender solução</a>
+            <a [routerLink]="['/servicos', service.slug]" class="btn btn-secondary">Entender solução<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
           </div>
 
           @if (service.proof; as proof) {
