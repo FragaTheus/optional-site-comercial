@@ -1,30 +1,31 @@
 <section id="home-hero" aria-labelledby="home-hero-title">
   <div class="site-container site-grid gap-gutter">
-    <header class="lg:col-span-9">
+    <header class="lg:col-span-full">
       <div class="flex flex-col eyebrow mb-gutter">
         <p class="text-carbon" appReveal>Est. 2025 // SP</p>
         <p appReveal>Studio de Engenharia de Software</p>
       </div>
-      <h1 id="home-hero-title" appReveal="lines" class="max-w-7xl">
-        <strong>Infraestrutura </strong> para aumentar a <strong>eficiência</strong> da sua
+      <h1 id="home-hero-title" appReveal="lines">
+        <strong>Infraestrutura </strong> para aumentar a <strong>produtividade</strong> da sua
         <strong>empresa.</strong>
       </h1>
-      <p appReveal class="mt-gutter max-w-2xl text-lg">
-        Desenvolvemos software e automações sob medida para organizar processos, integrar
-        sistemas e dar mais controle à operação da sua empresa.
-      </p>
     </header>
 
-    <ul class="lg:col-span-4 flex flex-col gap-2">
-      @for (stat of stats; track stat.data) {
-        <li appReveal class="flex items-baseline gap-2">
-          <strong class="text-3xl text-carbon">{{ stat.label }}</strong>
-          <span>{{ stat.data }}</span>
-        </li>
-      }
-    </ul>
+    <p appReveal class="text-lg lg:col-span-8 max-w-xl">
+      Sistemas e automações sob medida que contribui no faturamento, produtividade, aquisição e
+      retenção de clientes.
+    </p>
 
-    <footer class="lg:col-span-8 flex items-center gap-2 lg:justify-end lg:self-end flex-wrap">
+    <footer class="lg:col-span-full flex items-center gap-gutter flex-wrap justify-between">
+      <ul class="flex gap-6 flex-wrap">
+        @for (stat of stats; track stat.data) {
+          <li appReveal class="flex flex-col">
+            <strong class="text-signal">{{ stat.label }}</strong>
+            <span class="text-sm">{{ stat.data }}</span>
+          </li>
+        }
+      </ul>
+
       <a href="#objecoes" class="btn-secondary"
         >Entender atuação<i class="pi pi-arrow-down" aria-hidden="true"></i
       ></a>
