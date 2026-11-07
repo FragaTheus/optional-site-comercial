@@ -10,7 +10,5 @@ import { CASES } from '../../../cases/case-content';
   templateUrl: './cases-intro-section-component.html',
 })
 export class CasesIntroSectionComponent {
-  protected readonly cases = CASES
-    .filter(({ slug }) => slug === 'lalouise' || slug === 'simtese')
-    .sort((a, b) => Number(a.slug !== 'lalouise') - Number(b.slug !== 'lalouise'));
+  protected readonly cases = CASES;
 }

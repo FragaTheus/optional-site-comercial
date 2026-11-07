@@ -11,14 +11,17 @@
       </h1>
     </header>
 
-    <p class="lg:col-span-4">
-      Desenvolvemos software e infraestrutura digital sob medida para empresas, com foco em
-      eficiência operacional.s
-    </p>
+    <ul class="lg:col-span-4 flex flex-col gap-2">
+      @for (stat of stats; track stat.data) {
+        <li appReveal class="flex items-baseline gap-2">
+          <strong class="text-3xl text-carbon">{{ stat.label }}</strong>
+          <span>{{ stat.data }}</span>
+        </li>
+      }
+    </ul>
 
     <footer class="lg:col-span-8 flex items-center gap-2 lg:justify-end lg:self-end flex-wrap">
-      <a href="#atuacao" class="btn-primary">Agendar reunião</a>
-      <a href="#atuacao" class="btn-secondary"
+      <a href="#objecoes" class="btn-secondary"
         >Entender atuação<i class="pi pi-arrow-down" aria-hidden="true"></i
       ></a>
     </footer>

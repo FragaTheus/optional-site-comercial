@@ -13,9 +13,9 @@ import { AboutSectionComponent } from './sections/about/about-section-component'
   selector: 'app-home-page',
   imports: [
     HeroSectionComponent,
-    SolutionsIntroSectionComponent,
-    CasesIntroSectionComponent,
     AboutSectionComponent,
+    CasesIntroSectionComponent,
+    SolutionsIntroSectionComponent,
     ClosingSectionComponent,
   ],
   templateUrl: './home-page-component.html',

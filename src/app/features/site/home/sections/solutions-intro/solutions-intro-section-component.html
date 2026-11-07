@@ -1,39 +1,32 @@
 <section id="atuacao" class="surface-dark">
-  <div class="site-container site-grid gap-gutter">
-    <header class="lg:col-span-6 lg:row-span-2">
-      <div class="sticky top-gutter flex-col gap-gutter flex">
-        <h2 appReveal="lines">Tecnologia para <strong>cada operação.</strong></h2>
-
-        <p appReveal class="max-w-md">
-          Descubra como nossas soluções tecnológicas podem otimizar cada operação do seu negócio.
-        </p>
-
-        <a routerLink="/servicos" class="btn btn-secondary">Conhecer todas as soluções</a>
-      </div>
+  <div class="site-container site-grid gap-y-gutter">
+    <header class="lg:col-span-12 flex flex-col gap-gutter">
+      <h2 appReveal="lines">Tecnologia para <strong>cada operação.</strong></h2>
+      <p appReveal class="max-w-xl">
+        Descubra como nossas soluções tecnológicas podem otimizar cada operação do seu negócio.
+      </p>
     </header>
 
-    @for (solution of solutions; track solution.slug) {
-      <article class="media-card lg:col-span-6">
-        <img
-          [src]="solution.image"
-          alt=""
-          width="767"
-          height="511"
-          loading="lazy"
-          decoding="async"
-          class="media-card-img brightness-70"
-        />
-        <div class="media-card-scrim" aria-hidden="true"></div>
-        <div appReveal class="w-full p-gutter">
-          <h3 class="whitespace-pre-line">
-            <strong>{{ solution.title }}</strong>
-          </h3>
-          <p class="mt-gutter text-white">{{ solution.intro }}</p>
-          <a [routerLink]="['/servicos', solution.slug]" class="btn btn-secondary mt-gutter">{{
-            solution.linkLabel
-          }}</a>
-        </div>
-      </article>
-    }
+    <ul class="site-grid gap-y-gutter lg:col-span-12">
+      @for (solution of solutions; track solution.slug) {
+        <li appReveal class="lg:col-span-4">
+          <a
+            [routerLink]="['/servicos', solution.slug]"
+            class="group card flex h-full flex-col gap-gutter border border-paper/15 transition-colors hover:border-signal"
+          >
+            <h3><strong>{{ solution.label }}</strong></h3>
+            <p class="grow">{{ solution.text }}</p>
+            <i
+              class="pi pi-arrow-right self-end text-signal transition-transform group-hover:translate-x-2 motion-reduce:transition-none"
+              aria-hidden="true"
+            ></i>
+          </a>
+        </li>
+      }
+    </ul>
+
+    <footer class="lg:col-span-12">
+      <a routerLink="/servicos" class="btn btn-secondary">Conhecer todas as soluções</a>
+    </footer>
   </div>
 </section>
