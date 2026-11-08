@@ -1,45 +1,57 @@
 import { Component, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SERVICE_LINKS } from '../../../../../core/site.config';
 import { Reveal } from '../../../../../shared/directives/reveal';
 
-const TEXTS: Record<(typeof SERVICE_LINKS)[number]['slug'], string> = {
-  sites: 'Presença digital própria para apresentar a empresa, os serviços e os canais de contato.',
-  'landing-pages': 'Páginas focadas em uma oferta, desenhadas para converter visitas em contatos.',
-  crm: 'Clientes, histórico e acompanhamento comercial organizados do jeito que sua equipe trabalha.',
-  automacoes: 'Fluxos e integrações que conectam ferramentas e reduzem tarefas manuais.',
-  erp: 'Sistemas de gestão que centralizam processos, controles e informações da operação.',
-};
+const SOLUTIONS = [
+  {
+    slug: 'qualificacao',
+    label: 'Qualificação comercial',
+    serviceSlug: 'sites',
+    text: 'Contatos sem aderência e dúvidas recorrentes ocupam o time quando o site não deixa claros o serviço, o nicho e a região. Uma presença digital que responde às dúvidas e apresenta a oferta com precisão ajuda a qualificar a procura; estruturamos essa comunicação em sites comerciais e landing pages alinhados à oferta e ao público.',
+    image: 'site-abstract.png',
+  },
+  {
+    slug: 'relacionamento',
+    label: 'Gestão de relacionamento',
+    serviceSlug: 'crm',
+    text: 'Quando o histórico e os próximos passos ficam espalhados entre mensagens, planilhas e pessoas, o relacionamento depende da memória da equipe. Um processo visível ajuda a dar continuidade a cada contato; desenhamos um CRM sob medida para registrar interações, responsabilidades e etapas do atendimento.',
+    image: 'crm.png',
+  },
+  {
+    slug: 'processos',
+    label: 'Automações de processo',
+    serviceSlug: 'automacoes',
+    text: 'Tarefas repetitivas e a transferência manual de dados entre sistemas consomem tempo e abrem espaço para inconsistências. Com integrações e fluxos definidos, a equipe pode acompanhar as etapas sem refazer o mesmo trabalho; mapeamos o processo e automatizamos regras, exceções e sinalização de falhas.',
+    image: 'automation.png',
+  },
+  {
+    slug: 'operacao',
+    label: 'Organização operacional',
+    serviceSlug: 'erp',
+    text: 'Quando controles, registros e rotinas ficam em ferramentas separadas, é difícil saber o que aconteceu e qual é o próximo passo. Organizar informações e rastreabilidade ajuda a acompanhar a operação com mais clareza; desenvolvemos sistemas de gestão a partir das rotinas, dos registros e dos controles que o negócio precisa.',
+    image: 'erp.png',
+  },
+] as const;
 
-// Imagens abstratas provisórias, a serem substituídas.
-const IMAGES = [
-  'site-abstract.png',
-  'landing-page-abstract.png',
-  'crm.png',
-  'automation.png',
-  'erp.png',
-];
+type SolutionSlug = (typeof SOLUTIONS)[number]['slug'];
 
-// Apresenta os serviços em um accordion de seleção única e conduz à seção seguinte.
+// Apresenta quatro frentes comerciais em um accordion de seleção única.
 @Component({
   selector: 'app-solutions-intro-section',
   imports: [Reveal, RouterLink],
   templateUrl: './solutions-intro-section-component.html',
 })
 export class SolutionsIntroSectionComponent {
-  protected readonly solutions = SERVICE_LINKS.map((s, i) => ({
-    ...s,
-    text: TEXTS[s.slug],
-    image: `/solutions/${IMAGES[i % IMAGES.length]}`,
+  protected readonly solutions = SOLUTIONS.map((solution) => ({
+    ...solution,
+    image: `/solutions/${solution.image}`,
   }));
-  protected readonly selected = signal<(typeof SERVICE_LINKS)[number]['slug']>(
-    SERVICE_LINKS[0].slug,
-  );
+  protected readonly selected = signal<SolutionSlug>(SOLUTIONS[0].slug);
   protected readonly selectedIndex = computed(() =>
     this.solutions.findIndex((solution) => solution.slug === this.selected()),
   );
 
-  protected select(slug: (typeof SERVICE_LINKS)[number]['slug']): void {
+  protected select(slug: SolutionSlug): void {
     this.selected.set(slug);
   }
 }

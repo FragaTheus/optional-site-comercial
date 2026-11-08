@@ -23,7 +23,7 @@ export const CASES: CaseContent[] = [
   {
     slug: 'paulo-carvalho',
     project: 'Paulo Carvalho',
-    service: 'landing-pages',
+    service: 'sites',
     title: 'Paulo Carvalho: presença digital profissional | Optional',
     description:
       'Conheça o projeto de presença digital de Paulo Carvalho e os requisitos de conteúdo, busca e experiência que orientaram a solução.',

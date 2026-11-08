@@ -27,7 +27,7 @@ export class HomePageComponent {
   constructor() {
     inject(Seo).set(
       'Optional — Software e infraestrutura digital sob medida para empresas',
-      'A Optional desenvolve CRM, ERP e sistemas de gestão, automações, landing pages e sites comerciais sob medida para a realidade de cada empresa.',
+      'A Optional desenvolve CRM, ERP e sistemas de gestão, automações, sites comerciais e landing pages sob medida para a realidade de cada empresa.',
       '/',
       [
         {

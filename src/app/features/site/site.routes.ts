@@ -14,4 +14,8 @@ export const SITE_ROUTES: Routes = [
     data: { slug },
     loadComponent: () => import('./cases/case-page-component').then(m => m.CasePageComponent),
   })),
+  {
+    path: '**',
+    loadComponent: () => import('./not-found/not-found-page-component').then(m => m.NotFoundPageComponent),
+  },
 ];

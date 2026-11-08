@@ -4,7 +4,7 @@ Documento normativo e **fonte de verdade de toda a comunicação comercial** da 
 
 ## 1. Princípios
 
-A Optional desenvolve **software e infraestrutura digital sob medida** para empresas (CRM, ERP e sistemas de gestão, automações e integrações, landing pages, sites comerciais). Não é agência de marketing, nem currículo individual.
+A Optional desenvolve **software e infraestrutura digital sob medida** para empresas (CRM, ERP e sistemas de gestão, automações e integrações, sites comerciais e landing pages como formatos de uma mesma frente de presença digital). Não é agência de marketing, nem currículo individual.
 
 **Tom de voz:** premium, minimalista, direto, provocativo, profissional, confiante, objetivo, orientado a problemas reais. Pode ser incisivo ao nomear o problema; nunca sensacionalista nem condescendente.
 
@@ -36,7 +36,7 @@ Cada seção responde ou desenvolve o argumento da anterior. Seção que não te
 | # | Seção | Papel | Mensagem-chave | Prepara a próxima porque… |
 |---|---|---|---|---|
 | 1 | Hero ✅ final | Posicionamento | "Infraestrutura Digital para aumentar a eficiência da sua empresa." Sistemas e automações de acordo com a operação, para reduzir custos, aumentar a produtividade e contribuir com a aquisição de novos clientes | leva ao `#atuacao` (Entender atuação) |
-| 2 | Introdução às soluções | Atuação | Destaques de sites comerciais e automações, com links individuais | leva à seção Sobre (`#sobre`) |
+| 2 | Introdução às soluções | Atuação | Quatro frentes comerciais com links para suas páginas: Qualificação comercial, Gestão de relacionamento, Automações de processo e Organização operacional | leva à seção Sobre (`#sobre`) |
 | 3 | Introdução aos cases | Evidências | Destaques de LaLouise e Símtese, com links individuais | leva às soluções (`#atuacao`) |
 | 4 | Sobre a Optional | Abordagem | Apresentação institucional e diferenciais | prepara a conversa |
 | 5 | Contato | Próximo passo | "Agora, vamos falar da sua operação." | fecha a narrativa |
@@ -64,7 +64,7 @@ O hero permanece na homepage; a seção de objeções foi migrada para `features
 
 
 Regras da homepage:
-- A sequência de serviços (presença digital → aquisição → relacionamento → produtividade → gestão) é um recurso narrativo, **não** uma evolução obrigatória. Nunca afirmar que uma landing page "evolui" para ERP; serviços são contratados individualmente.
+- A ordem das quatro frentes (qualificação comercial → gestão de relacionamento → automações de processo → organização operacional) é apenas narrativa, **não** uma evolução obrigatória; cada frente pode ser contratada individualmente. Sites e landing pages fazem parte da mesma frente de qualificação comercial.
 - Objeções não são FAQ: sem acordeão, sem pergunta/resposta; o visitante se reconhece. Sem ícones decorativos.
 - Sem FAQ extenso. Dúvidas úteis para busca vão para as satélites.
 - Sem botão flutuante de WhatsApp; sem formulários ou integrações inventados (`CONTACT_URL` em `core/site.config.ts` é o fluxo de contato, ainda pendente).
@@ -98,12 +98,11 @@ Nenhum volume de busca, dificuldade ou posição é conhecido: as palavras-chave
 | `/servicos/crm` | desenvolvimento de CRM personalizado | Comercial: contratar desenvolvimento | CRM sob medida, CRM personalizado, sistema de gestão de clientes, gestão de relacionamento | Empresas com processo comercial próprio, equipe comercial em crescimento | Apresentar projeto |
 | `/servicos/erp` | desenvolvimento de ERP personalizado / sistema de gestão sob medida | Comercial | ERP sob medida, sistema de gestão personalizado, controle operacional, rastreabilidade | Empresas com operação própria e controles em planilhas | Apresentar projeto |
 | `/servicos/automacoes` | automação de processos empresariais | Comercial e informacional | integração de sistemas, automação de tarefas repetitivas, integração entre ferramentas | Empresas com retrabalho entre ferramentas | Apresentar projeto |
-| `/servicos/landing-pages` | desenvolvimento de landing pages | Comercial | landing page para campanhas, página de conversão, landing page profissional | Empresas que anunciam ou lançam ofertas | Apresentar projeto |
-| `/servicos/sites` | desenvolvimento de sites profissionais | Comercial | site institucional, site comercial, criação de site para empresas | Empresas de serviços, B2B e profissionais | Apresentar projeto |
+| `/servicos/sites` | desenvolvimento de sites e landing pages | Comercial | site institucional, site comercial, criação de site para empresas, landing page para campanhas, página de conversão | Empresas de serviços, B2B, profissionais e empresas com ofertas de campanha | Apresentar projeto |
 
-Dúvidas relevantes, proposta de valor, conteúdo e links internos de cada página estão em `src/app/features/site/services/service-content.ts` (fonte única do conteúdo das satélites). Links complementares: CRM↔automações, CRM↔landing pages, ERP↔automações, sites↔landing pages.
+Dúvidas relevantes, proposta de valor, conteúdo e links internos de cada página estão em `src/app/features/site/services/service-content.ts` (fonte única do conteúdo das satélites). A página `/servicos/sites` reúne a presença institucional/comercial e páginas de campanha; landing pages são abordadas como formato de conteúdo, não como frente ou destino independente. Links complementares: CRM↔automações/sites, ERP↔automações, sites↔CRM/automações.
 
-URLs: `/servicos/<slug>` (`crm`, `erp`, `automacoes`, `landing-pages`, `sites`). Slugs ficam em `SERVICE_LINKS` (`core/site.config.ts`), que alimenta rotas, footer e links. Não alterar URLs publicadas sem redirecionamento 301.
+URLs: `/servicos/<slug>` (`crm`, `erp`, `automacoes`, `sites`). Slugs ficam em `SERVICE_LINKS` (`core/site.config.ts`), que alimenta rotas, footer e links. A rota antiga `/servicos/landing-pages` foi removida sem alias ou redirecionamento, por decisão explícita do projeto; novas alterações de URLs devem manter o redirecionamento 301 como regra geral.
 
 ## 6. Checklist de revisão de copy
 

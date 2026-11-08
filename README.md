@@ -1,6 +1,6 @@
 # Optional
 
-> Estado: **homepage**, hubs de serviços e cases, cinco páginas satélites de serviços e quatro páginas de cases implementadas, com sitemap. Concepts ainda não existem.
+> Estado: **homepage**, hubs de serviços e cases, quatro páginas satélites de serviços e quatro páginas de cases implementadas, com sitemap. Concepts ainda não existem.
 
 ## 1. Visão geral
 A marca é **Optional**.
@@ -13,15 +13,15 @@ Posicionar a Optional como autoridade, apresentar serviços, servir de portfóli
 ## 3. Posicionamento
 Comercial e tecnológico, soluções sob medida para a realidade de cada empresa. Não é agência de marketing, nem currículo individual. Sem promessas de vendas/faturamento sem evidência; sem resultados, números ou depoimentos inventados.
 
-## 4. Serviços
-CRM; ERP e sistemas de gestão personalizados; automações e integrações; landing pages; sites institucionais e comerciais.
+## 4. Frentes comerciais
+Qualificação comercial (sites e landing pages); gestão de relacionamento (CRM); automações de processo; organização operacional (ERP e sistemas de gestão).
 
 ## 5. Objetivos do website
 Plataforma institucional; apresentação comercial; portfólio; canal de aquisição; apoio à prospecção; repositório de conceitos.
 Referências (sujeitas a validação, sem dados confidenciais): Símtese (CRM/agendamentos), LaLouise (controle operacional/rastreabilidade), Caldeiraria Realiza (site comercial), Paulo Carvalho (site profissional), Profissão do Século (landing page).
 
 ## 6. Features principais
-- `features/site`: homepage (único hub), páginas satélites `/servicos/{crm,erp,automacoes,landing-pages,sites}` e cases em `/cases/:slug`. O conteúdo dos cases deve ser revisado antes da publicação.
+- `features/site`: homepage (único hub), páginas satélites `/servicos/{crm,erp,automacoes,sites}` e cases em `/cases/:slug`. A página de sites também aborda landing pages. O conteúdo dos cases deve ser revisado antes da publicação.
 - `features/concepts`: `/concept/:slug`, noindex, fora do sitemap. *(não implementado)*
 
 ## 7. Arquitetura Angular

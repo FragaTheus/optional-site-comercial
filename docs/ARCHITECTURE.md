@@ -24,11 +24,11 @@ src/app/
 
 Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio, **em uma pasta própria** dentro de `sections/` (`sections/<nome>/<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/hero/hero-section-component.*`.
 
-Homepage, páginas satélites de serviços (CRM, ERP/gestão, automações, landing pages, sites comerciais), projetos e cases, conteúdo comercial, SEO, metadados, CTAs. Páginas indexáveis e otimizadas.
+Homepage, páginas satélites para quatro frentes comerciais (sites e landing pages na mesma página, CRM, automações, ERP/gestão), projetos e cases, conteúdo comercial, SEO, metadados, CTAs. Páginas indexáveis e otimizadas.
 
 ### Hubs
 
-A homepage é o único hub (não há `/servicos` nem `/cases`). A homepage apresenta os cinco serviços em um accordion de seleção única com troca instantânea: abaixo de `2xl`, o card aberto fica no centro com os vizinhos imediatos nas laterais; em telas largas, os cinco aparecem lado a lado. Os cards têm links individuais e imagens provisórias. Apresenta também Caldeiraria Realiza, Símtese e LaLouise com as imagens de hero de `CASES` e links individuais. A seleção de cases é definida na seção da homepage; os demais cases continuam disponíveis em suas páginas.
+A homepage é o único hub (não há `/servicos` nem `/cases`). A homepage apresenta quatro frentes comerciais em um accordion de seleção única com troca instantânea: abaixo de `2xl`, o card aberto fica no centro com os vizinhos imediatos nas laterais; em telas largas, os quatro aparecem lado a lado. Cada frente leva à página satélite correspondente. Apresenta também Caldeiraria Realiza, Símtese e LaLouise com as imagens de hero de `CASES` e links individuais. A seleção de cases é definida na seção da homepage; os demais cases continuam disponíveis em suas páginas.
 
 ### Páginas satélites
 

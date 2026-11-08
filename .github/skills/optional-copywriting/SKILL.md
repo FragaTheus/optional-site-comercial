@@ -1,6 +1,6 @@
 ---
 name: optional-copywriting
-description: Escreve copy comercial e SEO semântico em português para o site da Optional (software e infraestrutura digital sob medida). Use ao redigir ou revisar textos de homepage, páginas de serviços (CRM, ERP, automações, landing pages, sites comerciais), cases, CTAs, titles e meta descriptions.
+description: Escreve copy comercial e SEO semântico em português para o site da Optional (software e infraestrutura digital sob medida). Use ao redigir ou revisar textos de homepage, páginas de serviços (CRM, ERP, automações, sites comerciais e landing pages na mesma frente), cases, CTAs, titles e meta descriptions.
 ---
 
 # Optional — Copywriting comercial e SEO
@@ -31,8 +31,7 @@ Direto, confiante, incisivo, profissional, específico, orientado a problemas re
 - **CRM:** organização de clientes, histórico, relacionamento, processos comerciais.
 - **ERP/gestão:** controle operacional, gestão, rastreabilidade, organização empresarial.
 - **Automações:** menos tarefas manuais, integração de ferramentas, produtividade operacional.
-- **Landing pages:** infraestrutura de campanhas, experiência de conversão, mensuração e rastreamento.
-- **Sites comerciais:** autoridade, presença digital, SEO, qualidade de apresentação.
+- **Sites comerciais e landing pages:** uma presença digital que apresenta a empresa, responde à busca e também pode concentrar ofertas de campanha com mensuração.
 
 ## Direção (não repetir automaticamente)
 

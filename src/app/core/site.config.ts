@@ -7,7 +7,6 @@ export const SITE_URL = 'https://optional-site-comercial-eyx6.vercel.app';
 /** Páginas satélites de serviço: fonte única de slugs e nomes para rotas, footer e links internos. */
 export const SERVICE_LINKS = [
   { slug: 'sites', label: 'Sites comerciais' },
-  { slug: 'landing-pages', label: 'Landing pages' },
   { slug: 'crm', label: 'CRM personalizado' },
   { slug: 'automacoes', label: 'Automações e integrações' },
   { slug: 'erp', label: 'ERP e sistemas de gestão' },

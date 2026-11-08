@@ -1,11 +1,11 @@
 # Instruções do Copilot — Optional
 
-Optional: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestão, automações e integrações, landing pages, sites comerciais). Não é agência de marketing nem portfólio pessoal. Sem promessas de vendas/faturamento, sem resultados, números ou depoimentos inventados.
+Optional: empresa de software e infraestrutura digital sob medida (CRM, ERP/gestão, automações e integrações, sites comerciais e landing pages como uma mesma frente de presença digital). Não é agência de marketing nem portfólio pessoal. Sem promessas de vendas/faturamento, sem resultados, números ou depoimentos inventados.
 
 Leia antes de trabalhar: `README.md`, `docs/copyright.md` (**obrigatório para qualquer texto**: copywriting, direção editorial e SEO; homepage = narrativa progressiva, satélites = intenção de busca), `docs/ART_DIRECTION.md`, `docs/FRONTEND_STANDARDS.md`, `docs/ARCHITECTURE.md`. Skills: `optional-web-design`, `optional-copywriting` (`.github/skills`), e as externas `angular-developer`, `tailwind-best-practices`, `frontend-design` (`.agents/skills`). Regras da Optional prevalecem sobre sugestões das skills externas.
 
 ## Estado do projeto
-Angular 22 + Tailwind 4 (confirme em `package.json`). Existem: MainLayout, Home e as cinco páginas satélites `/servicos/{crm,erp,automacoes,landing-pages,sites}` (`features/site/services`; conteúdo em `service-content.ts`, slugs em `SERVICE_LINKS`). Não implemente CRM, dashboard, autenticação ou área interna sem pedido explícito.
+Angular 22 + Tailwind 4 (confirme em `package.json`). Existem: MainLayout, Home e quatro páginas satélites `/servicos/{crm,erp,automacoes,sites}` (`features/site/services`; conteúdo em `service-content.ts`, slugs em `SERVICE_LINKS`). A página de sites também cobre landing pages; não crie uma rota separada para esse formato. Não implemente CRM, dashboard, autenticação ou área interna sem pedido explícito.
 
 ## Arquitetura
 **Páginas divididas em componentes (obrigatório):** cada página é um componente de página (`<nome>-page-component.ts/.html`) que só compõe seções, define SEO e orquestra animações; cada seção é um componente em pasta própria dentro de `sections/` (`sections/<nome>/<nome>-section-component.ts/.html`). Nunca deixe todas as seções em um arquivo. Ex.: `features/site/home/home-page-component.*` + `features/site/home/sections/hero/hero-section-component.*`.

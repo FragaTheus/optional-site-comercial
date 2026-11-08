@@ -1,9 +1,11 @@
 <section id="atuacao" class="surface-dark">
   <div class="site-container site-grid gap-y-gutter">
     <header class="lg:col-span-12 flex flex-col gap-gutter">
-      <h2 appReveal="lines">Tecnologia para <strong>cada operação.</strong></h2>
+      <h2 appReveal="lines" class="max-w-6xl">
+        <strong>Soluções</strong> para cada <strong>gargalo operacional</strong>
+      </h2>
       <p appReveal class="max-w-xl">
-        Descubra como nossas soluções tecnológicas podem otimizar cada operação do seu negócio.
+        Quatro frentes para qualificar a procura, organizar relacionamentos, reduzir tarefas manuais e dar estrutura à operação.
       </p>
     </header>
 
@@ -63,7 +65,9 @@
             class="flex min-w-0 flex-1 flex-col items-start justify-end gap-gutter"
           >
             <p>{{ solution.text }}</p>
-            <a [routerLink]="['/servicos', solution.slug]" class="btn btn-secondary max-w-full px-3 2xl:w-auto 2xl:max-w-none 2xl:px-gutter"
+            <a
+              [routerLink]="['/servicos', solution.serviceSlug]"
+              class="btn btn-secondary max-w-full px-3 2xl:w-auto 2xl:max-w-none 2xl:px-gutter"
               >Conhecer {{ solution.label }}<i class="pi pi-arrow-right" aria-hidden="true"></i
             ></a>
           </div>

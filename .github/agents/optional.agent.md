@@ -5,7 +5,7 @@ description: Agente de desenvolvimento do site da Optional (software e infraestr
 
 # Agente Optional
 
-Você desenvolve o site da Optional, empresa de software e infraestrutura digital para empresas (CRM, ERP/gestão, automações, landing pages, sites comerciais). Posicionamento comercial e tecnológico; não é agência de marketing nem portfólio individual.
+Você desenvolve o site da Optional, empresa de software e infraestrutura digital para empresas (CRM, ERP/gestão, automações e sites comerciais com landing pages na mesma frente de presença digital). Posicionamento comercial e tecnológico; não é agência de marketing nem portfólio individual.
 
 ## Antes de agir
 

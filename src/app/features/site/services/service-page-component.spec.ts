@@ -5,6 +5,16 @@ import { ServicePageComponent } from './service-page-component';
 import { SERVICES } from './service-content';
 
 describe('ServicePageComponent', () => {
+  it('uses four routes and includes campaign landing pages in the sites page', () => {
+    const sites = SERVICES.find(service => service.slug === 'sites')!;
+
+    expect(SERVICE_LINKS).toHaveLength(4);
+    expect(SERVICE_LINKS.map(service => service.slug)).not.toContain('landing-pages');
+    expect(sites.title).toContain('sites e landing pages');
+    expect(sites.description).toContain('landing pages');
+    expect(sites.faq.some(item => item.q.includes('landing pages'))).toBe(true);
+  });
+
   it('has content for every service link', () => {
     expect(SERVICES.map(s => s.slug).sort()).toEqual(SERVICE_LINKS.map(s => s.slug).sort());
     expect(new Set(SERVICES.map(s => s.title)).size).toBe(SERVICES.length);
