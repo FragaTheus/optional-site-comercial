@@ -71,6 +71,24 @@
       }
     </ul>
 
+    <div class="flex justify-center lg:col-span-12 2xl:hidden">
+      @for (solution of solutions; track solution.slug) {
+        <button
+          type="button"
+          class="group flex size-8 items-center justify-center p-0 focus-visible:outline-inset"
+          [attr.aria-label]="'Ver ' + solution.label"
+          [attr.aria-current]="selected() === solution.slug"
+          (click)="select(solution.slug)"
+        >
+          <span
+            class="size-2 rounded-full"
+            [class.bg-signal]="selected() === solution.slug"
+            [class.bg-white/40]="selected() !== solution.slug"
+          ></span>
+        </button>
+      }
+    </div>
+
     <footer class="lg:col-span-12">
       <a href="#sobre" class="btn btn-secondary"
         >Nossa liderança<i class="pi pi-arrow-down" aria-hidden="true"></i
