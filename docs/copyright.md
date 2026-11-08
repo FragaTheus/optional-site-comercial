@@ -20,12 +20,12 @@ A Optional desenvolve **software e infraestrutura digital sob medida** para empr
 |---|---|---|
 | Função | Construir interesse, posicionamento e confiança | Capturar busca orgânica e converter |
 | Lógica | Narrativa editorial progressiva | Resposta direta à intenção de busca |
-| Seções | Encadeadas: cada uma desenvolve a anterior | Independentes e consultáveis: o visitante vai direto ao que procura |
+| Seções | Encadeadas: cada uma desenvolve a anterior | Quatro seções e um CTA (StoryBrand), com texto próprio por serviço |
 | Texto | Minimalista, provocativo, pouco volume | Informativo, específico, profundidade proporcional ao serviço |
-| SEO | Marca e posicionamento | Palavra-chave, intenção, termos relacionados, FAQ, dados estruturados |
+| SEO | Marca e posicionamento | Palavra-chave, intenção, termos relacionados, dados estruturados |
 | Estrutura | Fixa (§3) | Recomendada (§4), adaptável ao conteúdo |
 
-Regra de ouro: **não aplicar storytelling nas satélites e não aplicar estrutura de FAQ/SEO extensa na homepage.** Não repetir o mesmo texto entre homepage e satélites nem entre satélites.
+Regra de ouro: **as satélites usam o StoryBrand enxuto descrito em §4 (sem narrativa encadeada da homepage) e a homepage não usa estrutura de FAQ/SEO extensa.** Não repetir o mesmo texto entre homepage e satélites nem entre satélites.
 
 ## 3. Estratégia A — Homepage (narrativa progressiva)
 

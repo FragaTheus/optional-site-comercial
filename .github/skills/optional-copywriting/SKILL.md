@@ -24,7 +24,7 @@ Direto, confiante, incisivo, profissional, específico, orientado a problemas re
 ## Estrutura de persuasão
 
 - **Homepage (A):** Posicionamento → Objeções → Soluções → Abordagem → Evidências → Conversão; cada seção desenvolve a anterior.
-- **Satélites (B):** Intenção de busca → Explicação → Aplicações → Funcionalidades → Diferenciais → Dúvidas → CTA; sem storytelling.
+- **Satélites (B):** StoryBrand enxuto: Hero (personagem + sucesso) → Desafios (problema + fracasso a evitar) → Solução e experiência (guia + sucesso, com case real quando existir) → Como trabalhamos (plano) → CTA; sem 4Ps (reservado a landing pages de campanha).
 
 ## Posicionamento por serviço
 

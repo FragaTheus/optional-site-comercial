@@ -3,11 +3,11 @@
     <header class="flex flex-col gap-gutter lg:sticky lg:top-gutter lg:col-span-6 lg:self-start">
       <p class="eyebrow">{{ service().label }}</p>
       <h2 id="service-process-title" appReveal="lines">Como <strong>trabalhamos</strong></h2>
-      <p appReveal class="max-w-xl">Da primeira conversa à entrega, cada etapa é combinada com você antes de começar.</p>
+      <p appReveal class="max-w-xl">{{ service().process.text }}</p>
     </header>
 
     <ol data-stagger=":scope > li" class="flex flex-col gap-gutter lg:col-span-6 lg:col-start-7">
-      @for (step of service().steps; track step.name) {
+      @for (step of service().process.steps; track step.name) {
         <li class="card card-tertiary">
           <span class="eyebrow">Etapa {{ $index + 1 }}</span>
           <h3 class="mt-gutter"><strong>{{ step.name }}</strong></h3>
