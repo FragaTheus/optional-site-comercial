@@ -22,18 +22,18 @@ export class ObjectionsSectionComponent {
 
   protected readonly items: IItem[] = [
     {
-      headline: 'Faturamento\n e Lucro',
-      text: 'Retrabalhos aumentam os custos e comprometem sua margem de lucro.',
+      headline: 'Operação',
+      text: 'Processos manuais e tarefas repetitivas limitam a capacidade de operação.',
       body: `${this.defaultClass} card-primary`,
     },
     {
-      headline: 'Produtividade\n operacional',
-      text: 'Tarefas manuais consomem tempo e impactam na capacidade da sua equipe.',
+      headline: 'Lucro',
+      text: 'Retrabalho consomem recursos e comprometem a margem de lucro.',
       body: `${this.defaultClass} card-tertiary`,
     },
     {
-      headline: 'Experiência\n do clientes',
-      text: 'Sua empresa passa uma experiência online inferior à qualidade dos serviços.',
+      headline: 'Clientes',
+      text: 'Demora na entrega impactam na experiência e dificultam a fidelização.',
       body: `${this.defaultClass} card-primary`,
     },
   ];

@@ -1,0 +1,19 @@
+<nav aria-label="Trilha de navegação">
+  <ol class="flex flex-wrap items-center gap-gutter">
+    @for (ancestor of ancestors(); track ancestor.label) {
+      <li>
+        @if (ancestor.routerLink) {
+          <a
+            [routerLink]="ancestor.routerLink"
+            class="w-auto max-w-none underline underline-offset-4 hover:decoration-signal"
+            >{{ ancestor.label }}</a
+          >
+        } @else {
+          {{ ancestor.label }}
+        }
+      </li>
+      <li aria-hidden="true">/</li>
+    }
+    <li aria-current="page">{{ currentLabel() }}</li>
+  </ol>
+</nav>

@@ -15,7 +15,6 @@ interface IStat {
 export class HeroSectionComponent {
   // Atributos
   protected readonly stats: IStat[] = [
-    { label: '−66%', data: 'Retrabalho/ano' },
     { label: '1.280h', data: 'Economizadas/ano' },
     { label: 'R$ 38 mil', data: 'Economizados/ano' },
   ];

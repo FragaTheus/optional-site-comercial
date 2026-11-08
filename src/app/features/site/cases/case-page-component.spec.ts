@@ -23,6 +23,9 @@ describe('CasePageComponent', () => {
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelectorAll('h1')).toHaveLength(1);
     expect(el.querySelector('h1')?.textContent).toContain(item.project);
+    expect(el.querySelector('app-breadcrumb')?.textContent).toContain('Início');
+    expect(el.querySelector('app-breadcrumb')?.textContent).toContain('Cases');
+    expect(el.querySelector('app-breadcrumb [aria-current="page"]')?.textContent).toContain(item.project);
     expect(el.querySelector('#problema')?.textContent).toContain(item.current);
     expect(el.querySelector('#problema')?.textContent).toContain(item.ideal);
     expect(el.querySelectorAll('app-case-solution-section li')).toHaveLength(item.requirements.length);

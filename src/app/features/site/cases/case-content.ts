@@ -77,7 +77,7 @@ export const CASES: CaseContent[] = [
     description:
       'Conheça o site comercial da Caldeiraria Realiza e a proposta de apresentar seus serviços em uma presença digital própria.',
     intro:
-      'Desenvolvemos um site comercial para apresentar os serviços da empresa e facilitar solicitações de orçamento, fortalecendo sua credibilidade e criando novas oportunidades comerciais.',
+      'Implementamos um site comercial para que a Realiza pudesse ser encontrada pelo nicho, serviços oferecidos e região de atuação, além de melhorar a experiência e qualificar potenciais clientes.',
     projectUrl: 'https://caldeirariarealiza.com.br/',
     projectLinkLabel: 'Ver projeto',
     heroImage: '/services-imgs/site-home-page-print.png',

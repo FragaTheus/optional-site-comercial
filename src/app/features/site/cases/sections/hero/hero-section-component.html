@@ -3,6 +3,11 @@
   <div aria-hidden="true" class="absolute inset-0 -z-20 bg-linear-to-r from-carbon via-transparent to-carbon"></div>
   <div aria-hidden="true" class="absolute inset-0 -z-10 bg-carbon/75"></div>
   <div class="site-container site-grid min-h-112 content-end gap-y-gutter">
+    <app-breadcrumb
+      class="lg:col-span-12"
+      [ancestors]="[{ label: 'Início', routerLink: '/' }, { label: 'Cases' }]"
+      [currentLabel]="caseStudy().project"
+    />
     <div class="lg:col-span-9">
       <p class="eyebrow">Case Optional</p>
       <h1 appReveal="lines" class="mt-gutter"><strong>{{ caseStudy().project }}</strong></h1>

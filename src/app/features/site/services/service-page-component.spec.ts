@@ -11,15 +11,16 @@ describe('ServicePageComponent', () => {
     expect(new Set(SERVICES.map(s => s.description)).size).toBe(SERVICES.length);
   });
 
-  it.each(SERVICES.map(s => s.slug))('renders /servicos/%s with a single h1 and internal links', async slug => {
+  it.each(SERVICES)('renders /servicos/$slug with a single h1 and internal links', async service => {
     await TestBed.configureTestingModule({
       imports: [ServicePageComponent],
-      providers: [provideRouter([]), { provide: ActivatedRoute, useValue: { snapshot: { data: { slug } } } }],
+      providers: [provideRouter([]), { provide: ActivatedRoute, useValue: { snapshot: { data: { slug: service.slug } } } }],
     }).compileComponents();
     const fixture = TestBed.createComponent(ServicePageComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelectorAll('h1').length).toBe(1);
+    expect(el.querySelector('app-breadcrumb [aria-current="page"]')?.textContent).toContain(service.label);
     expect(el.querySelectorAll('h2').length).toBeGreaterThanOrEqual(6);
     expect(el.querySelector('#contato')).not.toBeNull();
     const hrefs = Array.from(el.querySelectorAll('a[href^="/servicos/"]')).map(a => a.getAttribute('href')!.replace('/servicos/', ''));

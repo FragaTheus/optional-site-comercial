@@ -1,25 +1,30 @@
 <!-- Assimétrico: h1 à direita, introdução à esquerda abaixo, CTAs à direita -->
-<section>
+<section aria-labelledby="service-hero-title">
   <div class="site-container site-grid gap-y-gutter">
-    <nav aria-label="Trilha de navegação" class=" lg:col-span-12">
-      <ol class="flex flex-wrap items-center gap-gutter">
-        <li>
-          <a routerLink="/" class="w-auto max-w-none underline underline-offset-4 hover:decoration-signal">Início</a>
-        </li>
-        <li aria-hidden="true">/</li>
-        <li aria-current="page">{{ service().label }}</li>
-      </ol>
-    </nav>
-    <h1 appReveal="lines" class=" lg:col-span-11">
-      {{ service().h1.lead }} <strong>{{ service().h1.key }}</strong>
-    </h1>
-    <p appReveal class=" lg:col-span-6">{{ service().intro }}</p>
-    <div
+    <header class="lg:col-span-full">
+      <app-breadcrumb
+        [ancestors]="[{ label: 'Início', routerLink: '/' }]"
+        [currentLabel]="service().label"
+      />
+      <h1 id="service-hero-title" appReveal="lines" class="max-w-6xl mt-gutter">
+        {{ service().h1.lead }} <strong>{{ service().h1.key }}</strong>
+      </h1>
+    </header>
+
+    <p appReveal class="lg:col-span-6 max-w-xl">{{ service().intro }}</p>
+
+    <footer
       appReveal
-      class="flex flex-wrap items-center gap-gutter text-carbon lg:col-span-4 lg:col-start-9 md:justify-self-end"
+      class="flex items-center gap-2 lg:col-span-6 lg:col-start-7 justify-end flex-wrap"
     >
-      <app-btn-cta [cta]="{ label: 'Apresentar projeto', wppMessage: 'Olá! Vim pelo topo da página de serviço e gostaria de apresentar meu projeto.' }" />
-      <a href="#funcionalidades" class="btn btn-tertiary">Ver funcionalidades</a>
-    </div>
+      <app-btn-cta
+        [cta]="{
+          label: 'Apresentar projeto',
+          wppMessage:
+            'Olá! Vim pelo topo da página de serviço e gostaria de apresentar meu projeto.',
+        }"
+      />
+      <a href="#funcionalidades" class="btn-secondary">Ver mais <i class="pi pi-arrow-down"></i></a>
+    </footer>
   </div>
 </section>
