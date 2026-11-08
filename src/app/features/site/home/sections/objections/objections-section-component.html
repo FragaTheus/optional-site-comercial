@@ -6,10 +6,12 @@
     </header>
 
     <ul
-      class="lg:col-span-6 lg:order-first lg:row-span-2 flex lg:flex-col overflow-x-auto scrollbar-none px-gutter gap-gutter lg:py-gutter"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+      class="snap-x snap-mandatory lg:snap-none lg:col-span-6 lg:order-first lg:row-span-2 flex lg:flex-col overflow-x-auto scrollbar-none px-gutter gap-gutter lg:py-gutter"
     >
       @for (item of items; track item.headline) {
-        <li>
+        <li class="snap-start snap-always">
           <article appReveal [class]="item.body">
             <h4 class="whitespace-pre-line">
               <strong>{{ item.headline }}</strong>
