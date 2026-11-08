@@ -13,7 +13,6 @@
     <ul appReveal class="grid grid-cols-12 lg:col-span-12 2xl:flex 2xl:gap-gutter">
       @for (solution of solutions; track solution.slug) {
         <li
-          data-solution-card
           class="media-card min-h-96 min-w-11 flex-col items-stretch gap-gutter p-0 2xl:mx-0 2xl:flex 2xl:w-auto 2xl:min-w-0 2xl:p-gutter"
           [class.hidden]="$index < selectedIndex() - 1 || $index > selectedIndex() + 1"
           [class.col-span-2]="selected() !== solution.slug"
@@ -59,7 +58,6 @@
             </button>
           </h3>
           <div
-            data-solution-content
             [id]="'solution-panel-' + solution.slug"
             [attr.aria-labelledby]="'solution-trigger-' + solution.slug"
             [hidden]="selected() !== solution.slug"

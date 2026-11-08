@@ -12,8 +12,8 @@ describe('SolutionsIntroSectionComponent', () => {
     await fixture.whenStable();
     const root = fixture.nativeElement as HTMLElement;
     const triggers = [...root.querySelectorAll<HTMLButtonElement>('[aria-controls]')];
-    const panels = [...root.querySelectorAll<HTMLElement>('[data-solution-content]')];
-    const cards = [...root.querySelectorAll<HTMLElement>('[data-solution-card]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[id^="solution-panel-"]')];
+    const cards = [...root.querySelectorAll<HTMLElement>('li')];
     const solutions = [
       { label: 'Qualificação comercial', href: '/servicos/sites' },
       { label: 'Gestão de relacionamento', href: '/servicos/crm' },

@@ -54,16 +54,6 @@ export class Gsap {
     gsap.from(targets, { autoAlpha: 0, y: -16, duration: 0.7, ease: 'power3.out', ...vars });
   }
 
-  /** Transição de seleção do accordion sem alterar o estado final definido pelo layout. */
-  accordion(panels: HTMLElement[], previous: number[], widths: number[], content: HTMLElement): void {
-    const flex = panels.some((panel, i) => Number(getComputedStyle(panel).flexGrow) !== previous[i]);
-    // Em grid (mobile) não há flex-grow: anima a largura anterior até a final.
-    gsap.from(panels.filter((_, i) => flex || widths[i] > 0), flex
-      ? { flexGrow: (i: number) => previous[i], duration: 0.45, ease: 'power2.out', clearProps: 'flexGrow', overwrite: true }
-      : { width: (i: number, el: HTMLElement) => widths[panels.indexOf(el)], duration: 0.45, ease: 'power2.out', clearProps: 'width', overwrite: true });
-    gsap.from(content, { opacity: 0, duration: 0.3, ease: 'power2.out', clearProps: 'opacity' });
-  }
-
   /** Expande o conteúdo de um details e executa `onUpdate` a cada quadro, para reposicionar durante a expansão. */
   details(content: HTMLElement, onUpdate: () => void): void {
     gsap.from(content, {

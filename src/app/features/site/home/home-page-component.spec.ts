@@ -11,11 +11,11 @@ describe('HomePageComponent', () => {
     expect(el.querySelector('h1')?.textContent).toContain('Infraestrutura');
     expect(el.querySelector('#atuacao a[href="#sobre"]')).not.toBeNull();
     expect(el.querySelector('#projetos a[href="#atuacao"]')).not.toBeNull();
-    expect(el.querySelectorAll('app-hero-section li')).toHaveLength(3);
+    expect(el.querySelectorAll('app-hero-section li')).toHaveLength(2);
     expect(el.querySelector('app-hero-section a[href="#objecoes"]')).not.toBeNull();
     const order = [...el.children].map((c) => c.tagName.toLowerCase());
     expect(order.slice(0, 5)).toEqual(['app-hero-section', 'app-objections-section', 'app-cases-intro-section', 'app-solutions-intro-section', 'app-about-section']);
-    const solutions = [...el.querySelectorAll('#atuacao li [data-solution-content] a')];
+    const solutions = [...el.querySelectorAll('#atuacao [id^="solution-panel-"] a')];
     expect(solutions).toHaveLength(4);
     const caseLinks = [...el.querySelectorAll('#projetos details a')];
     expect(caseLinks.map((link) => link.getAttribute('href'))).toEqual([
