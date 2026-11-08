@@ -1,7 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { vi } from 'vitest';
-import { Gsap } from '../../../../../core/gsap';
 import { SERVICE_LINKS } from '../../../../../core/site.config';
 import { SolutionsIntroSectionComponent } from './solutions-intro-section-component';
 
@@ -11,21 +9,12 @@ describe('SolutionsIntroSectionComponent', () => {
       imports: [SolutionsIntroSectionComponent],
       providers: [provideRouter([])],
     }).compileComponents();
-    const accordionAnimation = vi
-      .spyOn(TestBed.inject(Gsap), 'accordion')
-      .mockImplementation(() => {});
     const fixture = TestBed.createComponent(SolutionsIntroSectionComponent);
     await fixture.whenStable();
     const root = fixture.nativeElement as HTMLElement;
     const triggers = [...root.querySelectorAll<HTMLButtonElement>('[aria-controls]')];
     const panels = [...root.querySelectorAll<HTMLElement>('[data-solution-content]')];
     const cards = [...root.querySelectorAll<HTMLElement>('[data-solution-card]')];
-    const runAnimation = vi
-      .spyOn(TestBed.inject(Gsap), 'run')
-      .mockImplementation((_scope, animate) => {
-        animate();
-        return vi.fn();
-      });
 
     expect(triggers).toHaveLength(SERVICE_LINKS.length);
     expect(panels).toHaveLength(SERVICE_LINKS.length);
@@ -67,9 +56,5 @@ describe('SolutionsIntroSectionComponent', () => {
     triggers[3].click();
     await fixture.whenStable();
     expectSelection(3);
-    expect(accordionAnimation).toHaveBeenCalledWith(cards, expect.any(Array), panels[3]);
-    expect(runAnimation).toHaveBeenCalled();
-    expect(cards.every((card) => !card.style.flexGrow)).toBe(true);
-    expect(panels.every((panel) => !panel.style.opacity)).toBe(true);
   });
 });

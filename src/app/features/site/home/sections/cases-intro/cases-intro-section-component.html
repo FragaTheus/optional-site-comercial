@@ -13,7 +13,6 @@
         <details
           appReveal
           class="group border-t border-carbon/15 py-gutter last:border-b"
-          (toggle)="onDetailsToggle($event)"
         >
           <summary
             class="flex cursor-pointer list-none items-center justify-between gap-gutter [&::-webkit-details-marker]:hidden"
@@ -21,7 +20,7 @@
             <h3>
               <strong class="whitespace-pre-line">{{ caseStudy.project }}</strong>
             </h3>
-            <span aria-hidden="true" class="transition-transform group-open:rotate-45">+</span>
+            <span aria-hidden="true" class="group-open:rotate-45">+</span>
           </summary>
           <div data-case-content class="mt-gutter grid grid-cols-1 gap-gutter md:grid-cols-2">
             <div class="flex flex-col items-start gap-gutter">
