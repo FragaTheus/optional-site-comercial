@@ -2,13 +2,13 @@ import { Component, input } from '@angular/core';
 import { Reveal } from '../../../../../shared/directives/reveal';
 import { ServiceContent } from '../../service-content';
 
-// Apresenta as funcionalidades e capacidades do serviço em uma seção escura, com âncora usada pelo CTA do hero.
+// Desafios do serviço: apresenta os obstáculos que o público reconhece, em lista vertical no desktop e em faixa horizontal no mobile.
 @Component({
-  selector: 'app-service-capabilities-section',
+  selector: 'app-service-challenges-section',
   imports: [Reveal],
-  templateUrl: './capabilities-section-component.html',
+  templateUrl: './challenges-section-component.html',
 })
-export class CapabilitiesSectionComponent {
+export class ChallengesSectionComponent {
   // Atributos
   readonly service = input.required<ServiceContent>();
 }

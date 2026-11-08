@@ -72,22 +72,17 @@ Regras da homepage:
 
 ## 4. Estratégia B — Páginas satélites (SEO e intenção de busca)
 
-Prioridades, nesta ordem: (1) responder à intenção de busca; (2) explicar claramente o serviço; (3) demonstrar aplicações; (4) apresentar funcionalidades e capacidades; (5) esclarecer diferenciais; (6) responder dúvidas relevantes; (7) criar links internos; (8) conduzir à conversão.
+Modelo editorial: StoryBrand (SB7), com o cliente como protagonista e a Optional como guia. O 4Ps fica reservado para futuras landing pages de campanha. Os sete elementos se distribuem em quatro seções e um CTA, sem uma seção por elemento (implementado em `features/site/services/`, uma seção por componente):
 
-**Estrutura recomendada** (implementada em `features/site/services/`, uma seção por componente; ajustar quando o conteúdo pedir):
+1. Hero, personagem + sucesso: H1 alinhado ao serviço, introdução objetiva, CTA e imagem (`sections/hero`)
+2. Desafios, problema + evitar o fracasso: obstáculos reconhecíveis e suas consequências (`challenges`)
+3. Solução e experiência, guia + sucesso: o que é o serviço e, quando existir, o case real correspondente (`solution`, bento)
+4. Como trabalhamos, plano: diagnóstico, escopo e proposta, desenvolvimento e entrega (`process`)
+5. CTA final, chamada para ação (`cta`, expõe `#contato`)
 
-1. H1 alinhado ao serviço + introdução objetiva + CTA (`sections/hero`)
-2. Explicação do serviço e comparação com a alternativa mais buscada (`about`)
-3. Principais aplicações / quando faz sentido (`applications`)
-4. Funcionalidades e capacidades (`capabilities`)
-5. Diferenciais da Optional (`differentials`)
-6. Projetos relacionados (somente validados) e serviços complementares (`related`)
-7. Dúvidas relevantes, em `details` nativos (`faq`)
-8. CTA comercial (`cta`, expõe `#contato`)
+Regras: conteúdo original por página; sem keyword stuffing; sem texto genérico para "encher"; listas quando facilitam a leitura; um único H1, H2 por seção, H3 por item; links internos contextuais com âncora descritiva e só quando fizerem sentido; benefícios sempre "plausíveis" e condicionados ao processo ("reduz retrabalho", nunca "triplica vendas"); nenhuma garantia de posição no Google nem de conversão.
 
-Regras: conteúdo original por página; sem keyword stuffing; sem texto genérico para "encher"; listas quando facilitam a leitura; um único H1, H2 por seção, H3 por item; links internos contextuais com âncora descritiva e só quando fizerem sentido; FAQ só com perguntas reais da intenção de busca; benefícios sempre "plausíveis" e condicionados ao processo ("reduz retrabalho", nunca "triplica vendas"); nenhuma garantia de posição no Google nem de conversão.
-
-**Técnico obrigatório:** title e meta description exclusivos; canonical; Open Graph; HTML semântico; JSON-LD (`Service`, `FAQPage`, `BreadcrumbList`) apenas com dados reais; presença em `public/sitemap.xml`; conteúdo prerenderizado (SSR `RenderMode.Prerender`); acessibilidade e performance. Title ~50–60 caracteres; description ~140–160.
+**Técnico obrigatório:** title e meta description exclusivos; canonical; Open Graph; HTML semântico; JSON-LD (`Service`, `BreadcrumbList`) apenas com dados reais; presença em `public/sitemap.xml`; conteúdo prerenderizado (SSR `RenderMode.Prerender`); acessibilidade e performance. Title ~50–60 caracteres; description ~140–160.
 
 ## 5. Estratégia SEO por página (hipóteses a validar)
 

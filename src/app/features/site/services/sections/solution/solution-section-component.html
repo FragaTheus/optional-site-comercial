@@ -1,0 +1,29 @@
+<section aria-labelledby="service-solution-title">
+  <div class="site-container site-grid gap-y-gutter lg:grid-rows-2">
+    <header class="flex flex-col gap-gutter lg:col-span-6 lg:row-start-1">
+      <p class="eyebrow">{{ service().label }}</p>
+      <h2 id="service-solution-title" appReveal="lines">
+        {{ service().solution.title.lead }} <strong>{{ service().solution.title.key }}</strong>
+      </h2>
+    </header>
+
+    <img
+      [src]="image().src"
+      [alt]="image().alt"
+      width="1840"
+      height="963"
+      loading="lazy"
+      decoding="async"
+      class="aspect-video size-full rounded-xs object-cover lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1 lg:aspect-auto"
+    />
+
+    <footer class="flex flex-col items-start gap-gutter lg:col-span-6 lg:row-start-2 lg:self-end">
+      <p appReveal class="max-w-xl">{{ service().solution.text }}</p>
+      @if (project(); as project) {
+        <a [routerLink]="['/cases', project.slug]" class="btn btn-secondary">
+          Conhecer o projeto <i class="pi pi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      }
+    </footer>
+  </div>
+</section>

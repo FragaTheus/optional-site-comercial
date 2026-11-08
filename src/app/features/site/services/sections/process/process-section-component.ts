@@ -2,13 +2,13 @@ import { Component, input } from '@angular/core';
 import { Reveal } from '../../../../../shared/directives/reveal';
 import { ServiceContent } from '../../service-content';
 
-// Esclarece como a Optional trabalha neste serviço, em quatro pontos específicos do serviço.
+// Como trabalhamos: etapas da contratação à entrega, com título fixo ao lado dos cards a partir de lg.
 @Component({
-  selector: 'app-service-differentials-section',
+  selector: 'app-service-process-section',
   imports: [Reveal],
-  templateUrl: './differentials-section-component.html',
+  templateUrl: './process-section-component.html',
 })
-export class DifferentialsSectionComponent {
+export class ProcessSectionComponent {
   // Atributos
   readonly service = input.required<ServiceContent>();
 }

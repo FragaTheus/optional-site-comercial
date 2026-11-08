@@ -4,7 +4,7 @@ import { BreadcrumbComponent } from '../../../../../shared/components/breadcrumb
 import { Reveal } from '../../../../../shared/directives/reveal';
 import { ServiceContent } from '../../service-content';
 
-// Abertura da página de serviço: trilha de navegação, h1 alinhado à busca, introdução objetiva e CTAs.
+// Abertura da página de serviço: trilha de navegação, h1 alinhado à busca, introdução objetiva, CTA e imagem do serviço.
 @Component({
   selector: 'app-service-hero-section',
   imports: [Reveal, BreadcrumbComponent, BtnCtaComponent],

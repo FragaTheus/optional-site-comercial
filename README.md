@@ -40,7 +40,7 @@ Tailwind obrigatório; tokens em `@theme`; escala `text-*` fluida com `clamp()`;
 Componente Angular só com estado/comportamento/interação; visual puro vira classe global; preferir HTML nativo.
 
 ## 12. SEO
-Title, description, canonical, Open Graph, HTML semântico, links internos e sitemap nas páginas comerciais. SSR com prerendering habilitado (`app.routes.server.ts`); JSON-LD (`Service`, `FAQPage`, `BreadcrumbList`) nas satélites; `public/sitemap.xml` e `robots.txt`. `SITE_URL` (`core/site.config.ts`) usa o domínio de deploy atual, provisório: trocar também no sitemap e no robots quando houver domínio definitivo. Estratégia de copy e SEO em [`docs/copyright.md`](docs/copyright.md).
+Title, description, canonical, Open Graph, HTML semântico, links internos e sitemap nas páginas comerciais. SSR com prerendering habilitado (`app.routes.server.ts`); JSON-LD (`Service`, `BreadcrumbList`) nas satélites; `public/sitemap.xml` e `robots.txt`. `SITE_URL` (`core/site.config.ts`) usa o domínio de deploy atual, provisório: trocar também no sitemap e no robots quando houver domínio definitivo. Estratégia de copy e SEO em [`docs/copyright.md`](docs/copyright.md).
 
 ## 13. Concepts
 Páginas personalizadas para prospects. Noindex não é privacidade: nada confidencial em URL ou conteúdo; não bloquear em robots.txt; fora do sitemap e da navegação.

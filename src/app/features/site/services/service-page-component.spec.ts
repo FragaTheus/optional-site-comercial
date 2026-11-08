@@ -10,9 +10,8 @@ describe('ServicePageComponent', () => {
 
     expect(SERVICE_LINKS).toHaveLength(4);
     expect(SERVICE_LINKS.map(service => service.slug)).not.toContain('landing-pages');
-    expect(sites.title).toContain('sites e landing pages');
+    expect(sites.title).toContain('landing pages');
     expect(sites.description).toContain('landing pages');
-    expect(sites.faq.some(item => item.q.includes('landing pages'))).toBe(true);
   });
 
   it('has content for every service link', () => {
@@ -21,7 +20,7 @@ describe('ServicePageComponent', () => {
     expect(new Set(SERVICES.map(s => s.description)).size).toBe(SERVICES.length);
   });
 
-  it.each(SERVICES)('renders /servicos/$slug with a single h1 and internal links', async service => {
+  it.each(SERVICES)('renders /servicos/$slug with a single h1 and the five StoryBrand sections', async service => {
     await TestBed.configureTestingModule({
       imports: [ServicePageComponent],
       providers: [provideRouter([]), { provide: ActivatedRoute, useValue: { snapshot: { data: { slug: service.slug } } } }],
@@ -31,10 +30,10 @@ describe('ServicePageComponent', () => {
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelectorAll('h1').length).toBe(1);
     expect(el.querySelector('app-breadcrumb [aria-current="page"]')?.textContent).toContain(service.label);
-    expect(el.querySelectorAll('h2').length).toBeGreaterThanOrEqual(6);
+    expect(el.querySelectorAll('h2').length).toBe(4);
     expect(el.querySelector('#contato')).not.toBeNull();
-    const hrefs = Array.from(el.querySelectorAll('a[href^="/servicos/"]')).map(a => a.getAttribute('href')!.replace('/servicos/', ''));
-    expect(hrefs.length).toBeGreaterThan(0);
-    hrefs.forEach(h => expect(SERVICE_LINKS.map(s => s.slug)).toContain(h));
+    expect(el.querySelectorAll('section').length).toBe(5);
+    const caseHref = el.querySelector('a[href^="/cases/"]')?.getAttribute('href');
+    expect(caseHref).toBe(service.solution.caseSlug ? `/cases/${service.solution.caseSlug}` : undefined);
   });
 });

@@ -1,0 +1,26 @@
+<section class="bg-white" aria-labelledby="service-challenges-title">
+  <div class="site-container site-grid gap-y-gutter">
+    <header class="flex flex-col gap-gutter lg:col-span-full">
+      <p class="eyebrow">{{ service().label }}</p>
+      <h2 id="service-challenges-title" appReveal="lines" class="max-w-6xl">
+        {{ service().challenges.title.lead }} <strong>{{ service().challenges.title.key }}</strong>
+      </h2>
+      <p appReveal class="max-w-xl">{{ service().challenges.intro }}</p>
+    </header>
+
+    <ul
+      data-stagger=":scope > li"
+      class="-mx-gutter flex snap-x snap-mandatory gap-gutter overflow-x-auto px-gutter pb-gutter lg:col-span-full lg:mx-0 lg:flex-col lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0"
+    >
+      @for (item of service().challenges.items; track item.name) {
+        <li
+          class="card card-tertiary w-4/5 shrink-0 snap-start sm:w-1/2 lg:grid lg:w-full lg:grid-cols-12 lg:gap-x-gutter lg:border-t lg:border-carbon/15 lg:bg-transparent lg:px-0 lg:py-gutter"
+        >
+          <span class="eyebrow lg:col-span-1">{{ $index + 1 }}</span>
+          <h3 class="mt-gutter lg:col-span-5 lg:mt-0"><strong>{{ item.name }}</strong></h3>
+          <p class="mt-gutter max-w-prose lg:col-span-6 lg:mt-0">{{ item.text }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

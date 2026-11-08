@@ -1,30 +1,24 @@
-<!-- Assimétrico: h1 à direita, introdução à esquerda abaixo, CTAs à direita -->
 <section aria-labelledby="service-hero-title">
-  <div class="site-container site-grid gap-y-gutter">
-    <header class="lg:col-span-full">
+  <div class="site-container site-grid items-center gap-y-gutter">
+    <div class="flex min-w-0 flex-col items-start gap-gutter lg:col-span-6">
       <app-breadcrumb
         [ancestors]="[{ label: 'Início', routerLink: '/' }]"
         [currentLabel]="service().label"
       />
-      <h1 id="service-hero-title" appReveal="lines" class="max-w-6xl mt-gutter">
+      <h1 id="service-hero-title" appReveal="lines" class="lg:text-6xl">
         {{ service().h1.lead }} <strong>{{ service().h1.key }}</strong>
       </h1>
-    </header>
-
-    <p appReveal class="lg:col-span-6 max-w-xl">{{ service().intro }}</p>
-
-    <footer
-      appReveal
-      class="flex items-center gap-2 lg:col-span-6 lg:col-start-7 justify-end flex-wrap"
-    >
-      <app-btn-cta
-        [cta]="{
-          label: 'Apresentar projeto',
-          wppMessage:
-            'Olá! Vim pelo topo da página de serviço e gostaria de apresentar meu projeto.',
-        }"
-      />
-      <a href="#funcionalidades" class="btn-secondary">Ver mais <i class="pi pi-arrow-down"></i></a>
-    </footer>
+      <p appReveal class="max-w-xl">{{ service().intro }}</p>
+      <app-btn-cta [cta]="{ label: service().cta.label, wppMessage: service().cta.message }" />
+    </div>
+    <img
+      [src]="service().image"
+      alt=""
+      width="1254"
+      height="1254"
+      fetchpriority="high"
+      decoding="async"
+      class="aspect-square size-full rounded-xs object-cover lg:col-span-6"
+    />
   </div>
 </section>
