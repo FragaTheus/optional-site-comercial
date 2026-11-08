@@ -37,37 +37,4 @@ export class ObjectionsSectionComponent {
       body: `${this.defaultClass} card-primary`,
     },
   ];
-
-  private startX = 0;
-  private startIndex = 0;
-
-  // Métodos
-  // O snap CSS alinha os cards; o gesto limita o avanço a um card por deslize (só no mobile, onde a lista rola na horizontal).
-  protected onTouchStart(e: TouchEvent): void {
-    const list = e.currentTarget as HTMLElement;
-    this.startX = e.changedTouches[0].clientX;
-    this.startIndex = this.nearestIndex(list);
-  }
-
-  protected onTouchEnd(e: TouchEvent): void {
-    const list = e.currentTarget as HTMLElement;
-    const dx = e.changedTouches[0].clientX - this.startX;
-    const cards = Array.from(list.children) as HTMLElement[];
-    const step = Math.abs(dx) > 30 ? (dx < 0 ? 1 : -1) : 0;
-    const target = Math.min(Math.max(this.startIndex + step, 0), cards.length - 1);
-    list.scrollTo({ left: cards[target].offsetLeft - cards[0].offsetLeft, behavior: 'smooth' });
-  }
-
-  private nearestIndex(list: HTMLElement): number {
-    const cards = Array.from(list.children) as HTMLElement[];
-    const base = cards[0].offsetLeft;
-    return cards.reduce(
-      (best, c, i) =>
-        Math.abs(c.offsetLeft - base - list.scrollLeft) <
-        Math.abs(cards[best].offsetLeft - base - list.scrollLeft)
-          ? i
-          : best,
-      0,
-    );
-  }
 }
