@@ -146,7 +146,7 @@ export const CASES: CaseContent[] = [
     description:
       'Conheça o sistema de gestão para controle operacional e rastreabilidade desenvolvido para a LaLouise.',
     intro:
-      'Substituímos a etiquetagem manual por um sistema de validade automática, reduzindo tarefas repetitivas e facilitando a rastreabilidade dos alimentos.',
+      'Substituímos a etiquetagem manual por um sistema de validade automática, reduzindo tarefas repetitivas e facilitando a rastreabilidade dos alimentos que hoje, opera em mais de 9 restaurantes orientais.',
     projectUrl: 'https://lalouiseconsultoria.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
     heroImage: '/services-imgs/erp-home-print.png',
