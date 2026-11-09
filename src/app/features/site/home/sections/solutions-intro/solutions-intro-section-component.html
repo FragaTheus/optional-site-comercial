@@ -5,8 +5,8 @@
         <strong>Soluções</strong> para cada <strong>gargalo operacional</strong>
       </h2>
       <p appReveal class="max-w-xl">
-        Quatro frentes para qualificar a procura, automatizar tarefas, conectar sistemas
-        e organizar a operação.
+        Quatro frentes para qualificar a procura, automatizar tarefas, conectar sistemas e organizar
+        a operação.
       </p>
     </header>
 
@@ -34,7 +34,7 @@
             height="511"
             loading="lazy"
             decoding="async"
-            class="media-card-img brightness-70"
+            class="media-card-img brightness-30"
           />
           <div class="media-card-scrim" aria-hidden="true"></div>
           <div class="absolute inset-0 -z-10 bg-carbon/60" aria-hidden="true"></div>
@@ -92,10 +92,14 @@
       }
     </div>
 
-    <footer class="lg:col-span-12">
-      <a href="#sobre" class="btn btn-secondary"
-        >Nossa liderança<i class="pi pi-arrow-down" aria-hidden="true"></i
-      ></a>
+    <footer class="lg:col-span-12 flex items-center justify-between gap-gutter">
+      <div class="flex items-center gap-2 flex-wrap w-full">
+        <app-btn-cta [cta]="cta" />
+
+        <a href="#sobre" class="btn btn-secondary"
+          >Nossa liderança<i class="pi pi-arrow-down" aria-hidden="true"></i
+        ></a>
+      </div>
     </footer>
   </div>
 </section>

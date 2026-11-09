@@ -22,6 +22,7 @@ Referências de sensibilidade (sem copiar literalmente): páginas institucionais
 
 - Alternância de seções claras (paper/white) e escuras (carbon).
 - O body tem aparência cinza com contraste acessível (WCAG AA, mínimo 4.5:1 para texto pequeno). Slate sobre paper **não** atinge esse contraste em texto pequeno: use carbon com opacidade adequada (ex.: `text-carbon/75`). Não introduzir uma sexta cor.
+- Exceção de serviço: `#25D366` e seu tom pressionado só podem ser usados no hover/pressed de botões primários; o estado normal permanece Signal. Não fazem parte da paleta Optional nem devem ser reutilizados em outros elementos.
 - Não usar valores hexadecimais nos templates; apenas tokens.
 
 ## Minimalismo

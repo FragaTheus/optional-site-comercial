@@ -14,9 +14,9 @@ export interface ICta {
     [href]="href()"
     target="_blank"
     rel="noopener"
-    class="btn btn-primary w-full border-signal border"
-    >{{ cta().label }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a
-  >`,
+    class="btn btn-primary w-full group"
+    >{{ cta().label }}<i class="pi pi-whatsapp " aria-hidden="true"></i
+  ></a>`,
 })
 export class BtnCtaComponent {
   // Atributos

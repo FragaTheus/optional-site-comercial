@@ -2,7 +2,7 @@
 
 Documento normativo. Alvo: **Tailwind CSS v4** (CSS-first). Se o projeto instalado usar v3, adaptar para os mecanismos equivalentes (`tailwind.config.js` com `theme.extend`, `@layer components`, `@apply`) e registrar a diferença aqui; nunca misturar sintaxes.
 
-> Estado atual: Tailwind v4.3 instalado; tokens, escala fluida e classes globais estão em `src/styles.css`. Paleta com `--color-*: initial` (só as 5 cores existem). Primário usa texto carbon sobre signal (white sobre signal não atinge contraste AA).
+> Estado atual: Tailwind v4.3 instalado; tokens, escala fluida e classes globais estão em `src/styles.css`. Paleta Optional com `--color-*: initial` e cinco cores; `whatsapp` é uma exceção limitada ao hover/pressed dos botões primários. O primário mantém texto carbon sobre Signal no estado normal.
 
 ## 1. Estilização
 
@@ -24,7 +24,7 @@ Um único arquivo global, preferencialmente `src/styles.css` (nunca `styles.css`
 
 ## 3. Design tokens
 
-Fonte única em `@theme`, com nomes semânticos: `--color-carbon: #111315`, `--color-paper: #F3F1EB`, `--color-signal: #FF5930`, `--color-slate: #74797D`, `--color-white: #FFFFFF` (gera `text-carbon`, `bg-paper` etc.). Sem hexadecimais espalhados nos templates.
+Fonte única em `@theme`, com nomes semânticos: `--color-carbon: #111315`, `--color-paper: #F3F1EB`, `--color-signal: #FF5930`, `--color-slate: #74797D`, `--color-white: #FFFFFF` (gera `text-carbon`, `bg-paper` etc.). Sem hexadecimais espalhados nos templates. `--color-whatsapp` e `--color-whatsapp-active` são exceções restritas, respectivamente, ao hover e ao estado pressionado de `.btn-primary`.
 
 ## 4. Escala tipográfica fluida
 

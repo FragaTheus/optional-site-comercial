@@ -1,9 +1,9 @@
 <section id="home-hero" aria-labelledby="home-hero-title">
   <div class="site-container site-grid gap-gutter">
     <header class="lg:col-span-full">
-      <div class="flex flex-col eyebrow mb-gutter">
+      <div class="flex items-center justify-between eyebrow mb-gutter flex-wrap">
         <p class="text-carbon" appReveal>Est. 2025 // SP</p>
-        <p appReveal>Studio de Engenharia de Software</p>
+        <p appReveal class="md:order-first">Studio de Engenharia de Software</p>
       </div>
       <h1 id="home-hero-title" appReveal="lines" class="max-w-6xl">
         <strong>Infraestrutura digital</strong> para aumentar a <strong>produtividade </strong> da
@@ -11,23 +11,29 @@
       </h1>
     </header>
 
-    <p appReveal class="lg:col-span-8 max-w-md">
-      Sistemas e automações que ampliam a capacidade de atendimento, produção e entrega.
-    </p>
-
     <footer class="lg:col-span-full flex items-center gap-gutter flex-wrap justify-between">
-      <ul class="flex gap-6 flex-wrap">
-        @for (stat of stats; track stat.data) {
-          <li appReveal class="flex flex-col">
-            <strong class="text-signal">{{ stat.label }}</strong>
-            <span class="text-sm">{{ stat.data }}</span>
-          </li>
-        }
-      </ul>
+      <div class="flex flex-col gap-gutter">
+        <p appReveal class="lg:col-span-8 max-w-md">
+          Sistemas e automações que ampliam a capacidade de atendimento, produção e entrega.
+        </p>
 
-      <a href="#objecoes" class="btn-secondary"
-        >Entender atuação<i class="pi pi-arrow-down" aria-hidden="true"></i
-      ></a>
+        <ul class="flex gap-6 flex-wrap">
+          @for (stat of stats; track stat.data) {
+            <li appReveal class="flex flex-col">
+              <strong class="text-signal">{{ stat.label }}</strong>
+              <span class="text-sm">{{ stat.data }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap lg:justify-end">
+        <app-btn-cta [cta]="ctaBtn"></app-btn-cta>
+
+        <a href="#objecoes" class="btn-secondary"
+          >Entender atuação<i class="pi pi-arrow-down" aria-hidden="true"></i
+        ></a>
+      </div>
     </footer>
   </div>
 </section>

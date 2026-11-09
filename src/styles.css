@@ -10,13 +10,15 @@
 }
 
 @theme {
-  /* Paleta oficial: única fonte das cores */
+  /* Paleta Optional; WhatsApp é uma exceção limitada ao hover/pressed dos botões primários. */
   --color-*: initial;
   --color-carbon: #111315;
   --color-paper: #f3f1eb;
   --color-signal: #ff5930;
   --color-slate: #74797d;
   --color-white: #ffffff;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-active: #1da851;
 
   --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-display);
@@ -130,8 +132,9 @@
     @apply font-display text-2xl font-extrabold tracking-tight text-white;
   }
 
+  /* Mantém o primário Signal e reserva o verde do WhatsApp para interação. */
   .btn-primary {
-    @apply bg-signal text-carbon hover:bg-carbon hover:text-signal;
+    @apply bg-signal text-carbon hover:bg-whatsapp hover:text-carbon active:bg-whatsapp-active;
   }
   .btn-secondary {
     @apply border border-current hover:bg-carbon hover:text-paper;

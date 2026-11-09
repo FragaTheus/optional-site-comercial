@@ -11,7 +11,7 @@ interface IItem {
 // Situações que ajudam o visitante a reconhecer desafios antes de conhecer os serviços.
 @Component({
   selector: 'app-objections-section',
-  imports: [Reveal, BtnCtaComponent],
+  imports: [Reveal],
   templateUrl: './objections-section-component.html',
 })
 export class ObjectionsSectionComponent {
