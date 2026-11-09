@@ -31,8 +31,8 @@ describe('CasePageComponent', () => {
     expect(el.querySelectorAll('app-case-after-section article')).toHaveLength(item.after.benefits.length);
     expect(el.querySelector('app-case-bridge-section img')?.getAttribute('src')).toBe(item.bridge.image.src);
     expect(el.children).toHaveLength(5);
-    expect(el.querySelector('app-case-hero-section a[target="_blank"]')?.getAttribute('href')).toBe(item.projectUrl);
-    expect(el.querySelector(`a[href="/servicos/${item.service}"]`)).not.toBeNull();
+    expect(el.querySelector('app-case-hero-section a[target="_blank"]')?.getAttribute('href') ?? undefined).toBe(item.projectUrl);
+    for (const slug of [item.service, ...item.secondary]) expect(el.querySelector(`app-case-bridge-section a[href="/servicos/${slug}"]`)).not.toBeNull();
     expect(el.querySelector('#contato a')?.getAttribute('href')).toContain('wa.me/');
     expect(el.querySelector('#contato h2')?.textContent).toContain(item.cta.key);
     expect(el.querySelectorAll('app-case-before-section li')).toHaveLength(item.before.consequences.length);

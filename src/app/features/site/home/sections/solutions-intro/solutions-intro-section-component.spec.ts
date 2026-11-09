@@ -15,10 +15,10 @@ describe('SolutionsIntroSectionComponent', () => {
     const panels = [...root.querySelectorAll<HTMLElement>('[id^="solution-panel-"]')];
     const cards = [...root.querySelectorAll<HTMLElement>('li')];
     const solutions = [
-      { label: 'Qualificação comercial', href: '/servicos/sites' },
-      { label: 'Gestão de relacionamento', href: '/servicos/crm' },
-      { label: 'Automações de processo', href: '/servicos/automacoes' },
-      { label: 'Organização operacional', href: '/servicos/erp' },
+      { label: 'Experiência e qualificação comercial', href: '/servicos/sites' },
+      { label: 'Automação de processos', href: '/servicos/automacoes' },
+      { label: 'Integração de sistemas', href: '/servicos/integracoes' },
+      { label: 'Sistemas personalizados', href: '/servicos/sistemas' },
     ];
 
     expect(triggers).toHaveLength(4);

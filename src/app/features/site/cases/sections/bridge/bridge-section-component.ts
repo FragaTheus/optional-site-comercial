@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SERVICE_LINKS } from '../../../../../core/site.config';
 import { Reveal } from '../../../../../shared/directives/reveal';
 import { CaseContent } from '../../case-content';
 
@@ -11,4 +12,5 @@ import { CaseContent } from '../../case-content';
 })
 export class BridgeSectionComponent {
   readonly caseStudy = input.required<CaseContent>();
+  protected readonly fronts = computed(() => [this.caseStudy().service, ...this.caseStudy().secondary].map(slug => SERVICE_LINKS.find(s => s.slug === slug)!));
 }

@@ -3,12 +3,14 @@ import { ServiceSlug } from '../../../core/site.config';
 export interface CaseContent {
   slug: string;
   project: string;
+  /** Frente comercial principal e competências secundárias (vínculo estrutural; não altera a narrativa BAB). */
   service: ServiceSlug;
+  secondary: ServiceSlug[];
   title: string;
   description: string;
   intro: string;
-  projectUrl: string;
-  projectLinkLabel: string;
+  projectUrl?: string;
+  projectLinkLabel?: string;
   heroImage: string;
   before: { scenario: string; problem: string; consequences: string[] };
   after: { summary: string; benefits: { title: string; text: string }[] };
@@ -22,6 +24,7 @@ export const CASES: CaseContent[] = [
     slug: 'paulo-carvalho',
     project: 'Paulo Carvalho',
     service: 'sites',
+    secondary: [],
     title: 'Paulo Carvalho: presença digital profissional | Optional',
     description:
       'Como a Optional criou a presença digital de Paulo Carvalho, perito técnico, para apresentar seus serviços a advogados e equipes de RH.',
@@ -63,6 +66,7 @@ export const CASES: CaseContent[] = [
     slug: 'caldeiraria-realiza',
     project: 'Caldeiraria Realiza',
     service: 'sites',
+    secondary: [],
     title: 'Caldeiraria Realiza: site comercial | Optional',
     description:
       'Como a Optional desenvolveu o site comercial da Caldeiraria Realiza para apresentar serviços e facilitar a descoberta em buscas específicas.',
@@ -103,7 +107,8 @@ export const CASES: CaseContent[] = [
   {
     slug: 'simtese',
     project: 'Símtese',
-    service: 'crm',
+    service: 'sistemas',
+    secondary: ['automacoes'],
     title: 'Símtese: pré-cadastro e atendimento | Optional',
     description:
       'Como a Optional substituiu o pré-cadastro por e-mail da Símtese por um sistema com validação de dados e padronização de exames.',
@@ -111,7 +116,7 @@ export const CASES: CaseContent[] = [
       'Substituímos o pré-cadastro por e-mail por um sistema com validação de dados e padronização de exames, antecipando inconsistências e reduzindo retrabalho no atendimento.',
     projectUrl: 'https://www.simtese.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
-    heroImage: '/services-imgs/crm-home-print.png',
+    heroImage: '/services-imgs/simtese-home-print.png',
     before: {
       scenario:
         'O pré-cadastro dos atendimentos de medicina do trabalho era feito por formulários enviados por e-mail.',
@@ -132,7 +137,7 @@ export const CASES: CaseContent[] = [
     },
     bridge: {
       text: 'Desenvolvemos um sistema com formulário de pré-cadastro em etapas (funcionário, empresa e agendamento), validação dos dados informados e padronização dos exames. A equipe recebe as informações já organizadas, com menos conferência manual.',
-      image: { src: '/services-imgs/crm-dash-print.png', alt: 'Formulário de pré-cadastro em etapas do sistema da Símtese' },
+      image: { src: '/services-imgs/simtese-form-print.png', alt: 'Formulário de pré-cadastro em etapas do sistema da Símtese' },
     },
     cta: {
       lead: 'Seu atendimento ainda depende de',
@@ -144,7 +149,8 @@ export const CASES: CaseContent[] = [
   {
     slug: 'lalouise',
     project: 'LaLouise',
-    service: 'erp',
+    service: 'sistemas',
+    secondary: ['automacoes'],
     title: 'LaLouise: validades e rastreabilidade | Optional',
     description:
       'Como a Optional desenvolveu para a LaLouise um sistema de validade automática e etiquetas para rastrear alimentos.',
@@ -152,7 +158,7 @@ export const CASES: CaseContent[] = [
       'Substituímos a etiquetagem manual por um sistema de validade automática, reduzindo tarefas repetitivas e facilitando a rastreabilidade dos alimentos.',
     projectUrl: 'https://lalouiseconsultoria.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
-    heroImage: '/services-imgs/erp-home-print.png',
+    heroImage: '/services-imgs/lalouise-home-print.png',
     before: {
       scenario:
         'O controle de validade dos alimentos dependia de etiquetas preenchidas manualmente.',
@@ -173,13 +179,53 @@ export const CASES: CaseContent[] = [
     },
     bridge: {
       text: 'Desenvolvemos um sistema que calcula a validade de cada produto, emite as etiquetas e mantém a lista de lotes com produto, validade e status (ativo ou vencido). A equipe consulta o que está dentro do prazo sem depender de anotações.',
-      image: { src: '/services-imgs/erp-labels-print.png', alt: 'Lista de lotes do sistema da LaLouise com produto, validade e status' },
+      image: { src: '/services-imgs/lalouise-labels-print.png', alt: 'Lista de lotes do sistema da LaLouise com produto, validade e status' },
     },
     cta: {
       lead: 'Sua operação ainda depende de',
       key: 'controles manuais?',
       text: 'Conte qual rotina consome mais tempo da equipe. Vamos avaliar como um sistema de gestão sob medida pode organizá-la.',
       message: 'Olá! Vim pelo case LaLouise e gostaria de conversar sobre um sistema de gestão para a minha operação.',
+    },
+  },
+  {
+    slug: 'automacao-ecommerce',
+    project: 'Automação de e-commerce',
+    service: 'automacoes',
+    secondary: ['integracoes'],
+    title: 'Automação de e-commerce: cadastro de produtos | Optional',
+    description:
+      'Como a Optional automatizou o cadastro e o tratamento de informações de produtos de um e-commerce, conectando as ferramentas utilizadas na operação.',
+    intro:
+      'Automatizamos tarefas de cadastro e tratamento das informações de produtos, conectando as ferramentas da operação para reduzir o trabalho manual.',
+    heroImage: '/solutions/automation.png',
+    before: {
+      scenario:
+        'O cadastro e o tratamento das informações dos produtos dependiam de tarefas manuais repetidas em diferentes ferramentas.',
+      problem:
+        'A equipe precisava copiar e ajustar dados de produtos de uma ferramenta para outra, o que tomava tempo e abria espaço para erros.',
+      consequences: [
+        'Tempo da equipe dedicado a tarefas repetitivas.',
+        'Informações de produtos digitadas mais de uma vez.',
+      ],
+    },
+    after: {
+      summary: 'Etapas do cadastro e do tratamento dos produtos passaram a ser executadas automaticamente, com as ferramentas compartilhando as informações.',
+      benefits: [
+        { title: 'Menos tarefas repetitivas', text: 'Etapas que antes eram feitas à mão passam a ser executadas automaticamente.' },
+        { title: 'Menos cadastros duplicados', text: 'As ferramentas compartilham as informações dos produtos, sem a necessidade de digitá-las de novo.' },
+        { title: 'Padronização das informações', text: 'Os dados dos produtos seguem as mesmas regras de tratamento a cada cadastro.' },
+      ],
+    },
+    bridge: {
+      text: 'Desenvolvemos automações que executam as tarefas de cadastro e tratamento das informações de produtos, apoiadas por integrações entre as ferramentas usadas na operação. A automação executa as etapas; a integração permite que as informações circulem entre os sistemas.',
+      image: { src: '/solutions/automation.png', alt: 'Ilustração de fluxo automatizado entre ferramentas' },
+    },
+    cta: {
+      lead: 'Sua equipe repete as mesmas',
+      key: 'tarefas de cadastro?',
+      text: 'Conte quais ferramentas você usa e o que a equipe refaz com frequência. Vamos avaliar o que pode ser automatizado e conectado.',
+      message: 'Olá! Vim pelo case de automação de e-commerce e gostaria de conversar sobre automatizar tarefas da minha operação.',
     },
   },
 ];

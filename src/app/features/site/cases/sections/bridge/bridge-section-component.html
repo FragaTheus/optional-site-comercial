@@ -6,6 +6,10 @@
     <p class="eyebrow">Como fizemos</p>
     <h2 id="case-bridge-title" appReveal="lines" class="mt-4 max-w-3xl">A <strong>solução.</strong></h2>
     <p appReveal class="mt-gutter max-w-2xl text-white">{{ caseStudy().bridge.text }}</p>
-    <a appReveal [routerLink]="['/servicos', caseStudy().service]" class="btn btn-tertiary mt-gutter">Conhecer o serviço<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+    <div appReveal class="mt-gutter flex flex-wrap justify-center gap-gutter">
+      @for (front of fronts(); track front.slug) {
+        <a [routerLink]="['/servicos', front.slug]" class="btn btn-tertiary">{{ $first ? 'Conhecer o serviço' : front.label }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+      }
+    </div>
   </div>
 </section>

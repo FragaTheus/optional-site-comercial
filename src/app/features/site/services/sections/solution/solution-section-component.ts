@@ -16,6 +16,6 @@ export class SolutionSectionComponent {
   protected readonly project = computed(() => CASES.find(c => c.slug === this.service().solution.caseSlug));
   protected readonly image = computed(() => {
     const project = this.project();
-    return project ? { src: project.heroImage, alt: `Projeto ${project.project}` } : { src: this.service().image, alt: '' };
+    return project?.service === this.service().slug ? { src: project.heroImage, alt: `Projeto ${project.project}` } : { src: this.service().image, alt: '' };
   });
 }

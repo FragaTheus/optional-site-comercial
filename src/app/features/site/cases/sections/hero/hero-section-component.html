@@ -9,7 +9,9 @@
   </div>
   <p appReveal class="max-w-xl">{{ caseStudy().intro }}</p>
   <div appReveal class="flex flex-wrap gap-gutter">
-    <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary">{{ caseStudy().projectLinkLabel }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+    @if (caseStudy().projectUrl) {
+      <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary">{{ caseStudy().projectLinkLabel }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+    }
     <a [routerLink]="[]" fragment="solucao" class="btn btn-secondary">Entender solução</a>
   </div>
 </app-page-hero>
