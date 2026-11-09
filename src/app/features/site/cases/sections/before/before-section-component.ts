@@ -2,12 +2,12 @@ import { Component, input } from '@angular/core';
 import { Reveal } from '../../../../../shared/directives/reveal';
 import { CaseContent } from '../../case-content';
 
-// Contrasta o contexto inicial com o objetivo e apresenta a solução como ponte.
+// Apresenta como o cliente operava antes da solução e quais dificuldades isso gerava.
 @Component({
-  selector: 'app-case-problem-section',
+  selector: 'app-case-before-section',
   imports: [Reveal],
-  templateUrl: './problem-section-component.html',
+  templateUrl: './before-section-component.html',
 })
-export class ProblemSectionComponent {
+export class BeforeSectionComponent {
   readonly caseStudy = input.required<CaseContent>();
 }

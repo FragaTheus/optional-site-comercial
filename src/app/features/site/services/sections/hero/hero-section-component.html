@@ -1,24 +1,8 @@
-<section aria-labelledby="service-hero-title">
-  <div class="site-container site-grid items-center gap-y-gutter">
-    <div class="flex min-w-0 flex-col items-start gap-gutter lg:col-span-6">
-      <app-breadcrumb
-        [ancestors]="[{ label: 'Início', routerLink: '/' }]"
-        [currentLabel]="service().label"
-      />
-      <h1 id="service-hero-title" appReveal="lines" class="lg:text-6xl">
-        {{ service().h1.lead }} <strong>{{ service().h1.key }}</strong>
-      </h1>
-      <p appReveal class="max-w-xl">{{ service().intro }}</p>
-      <app-btn-cta [cta]="{ label: service().cta.label, wppMessage: service().cta.message }" />
-    </div>
-    <img
-      [src]="service().image"
-      alt=""
-      width="1254"
-      height="1254"
-      fetchpriority="high"
-      decoding="async"
-      class="aspect-square size-full rounded-xs object-cover lg:col-span-6"
-    />
-  </div>
-</section>
+<app-page-hero titleId="service-hero-title" [image]="service().image">
+  <app-breadcrumb [ancestors]="[{ label: 'Início', routerLink: '/' }]" [currentLabel]="service().label" />
+  <h1 id="service-hero-title" appReveal="lines" class="lg:text-6xl">
+    {{ service().h1.lead }} <strong>{{ service().h1.key }}</strong>
+  </h1>
+  <p appReveal class="max-w-xl">{{ service().intro }}</p>
+  <app-btn-cta [cta]="{ label: service().cta.label, wppMessage: service().cta.message }" />
+</app-page-hero>

@@ -10,15 +10,12 @@ export interface CaseContent {
   projectUrl: string;
   projectLinkLabel: string;
   heroImage: string;
-  current: string;
-  ideal: string;
-  bridge: string;
-  requirements: { name: string; text: string }[];
-  implementation: string;
-  images: { src: string; alt: string }[];
+  before: { scenario: string; problem?: string; consequences?: string[] };
+  after: { summary: string; benefits: { title: string; text: string }[] };
+  bridge: { text: string; image: { src: string; alt: string } };
 }
 
-// Conteúdo editorial dos cases. Requisitos são objetivos do projeto, não resultados medidos.
+// Conteúdo editorial dos cases em Before → After → Bridge.
 export const CASES: CaseContent[] = [
   {
     slug: 'paulo-carvalho',
@@ -32,42 +29,21 @@ export const CASES: CaseContent[] = [
     projectUrl: 'https://www.pcpaulocarvalho.com.br/',
     projectLinkLabel: 'Ver projeto',
     heroImage: '/services-imgs/landing-page-hero-print.png',
-    current:
-      'O profissional já atuava nas redes sociais, mas não tinha presença no Google. Nas redes, era encontrado pela área de atuação, não necessariamente pelos serviços procurados.',
-    ideal:
-      'Ser encontrado por advogados e equipes de RH que buscam perícia técnica em documentos, serviços e respostas a dúvidas sobre a área de atuação na região de São Paulo.',
-    bridge:
-      'Uma presença digital própria, estruturada para apresentar o profissional, seus serviços e sua experiência aos públicos que ele atende.',
-    requirements: [
-      {
-        name: 'Serviços e intenção de busca',
-        text: 'Apresentar o profissional e estruturar páginas de serviços considerando pesquisas por região e área de atuação.',
-      },
-      {
-        name: 'Comunicação técnica e humana',
-        text: 'Falar com advogados e equipes de RH de forma direta, explicar a atuação e apresentar a experiência profissional.',
-      },
-      {
-        name: 'Identidade visual',
-        text: 'Transmitir organização, cordialidade, formalidade e autoridade por meio do design.',
-      },
-      {
-        name: 'Desempenho',
-        text: 'Buscar pelo menos 90 pontos em cada critério do PageSpeed Insights, como meta de projeto a verificar nas medições.',
-      },
-      {
-        name: 'Conteúdo para busca',
-        text: 'Combinar linguagem acessível com conteúdo voltado a serviços e dúvidas frequentes, sem prometer posições em buscadores.',
-      },
-    ],
-    implementation:
-      'O projeto reúne apresentação profissional, conteúdo sobre a atuação e caminhos de contato em uma presença digital própria. A estrutura foi pensada para aproximar os serviços das necessidades do público.',
-    images: [
-      {
-        src: '/services-imgs/landing-page-hero-print.png',
-        alt: 'Página inicial do site profissional de Paulo Carvalho',
-      },
-    ],
+    before: { scenario: 'O profissional já atuava nas redes sociais, mas não tinha presença no Google. Nas redes, era encontrado pela área de atuação, não necessariamente pelos serviços procurados.' },
+    after: {
+      summary: 'Ser encontrado por advogados e equipes de RH que buscam perícia técnica em documentos, serviços e respostas a dúvidas sobre a área de atuação na região de São Paulo.',
+      benefits: [
+        { title: 'Serviços e intenção de busca', text: 'Apresentar o profissional e estruturar páginas de serviços considerando pesquisas por região e área de atuação.' },
+        { title: 'Comunicação técnica e humana', text: 'Falar com advogados e equipes de RH de forma direta, explicar a atuação e apresentar a experiência profissional.' },
+        { title: 'Identidade visual', text: 'Transmitir organização, cordialidade, formalidade e autoridade por meio do design.' },
+        { title: 'Desempenho', text: 'Buscar pelo menos 90 pontos em cada critério do PageSpeed Insights, como meta de projeto a verificar nas medições.' },
+        { title: 'Conteúdo para busca', text: 'Combinar linguagem acessível com conteúdo voltado a serviços e dúvidas frequentes, sem prometer posições em buscadores.' },
+      ],
+    },
+    bridge: {
+      text: 'Uma presença digital própria, estruturada para apresentar o profissional, seus serviços e sua experiência aos públicos que ele atende. O projeto reúne apresentação profissional, conteúdo sobre a atuação e caminhos de contato em uma presença digital própria. A estrutura foi pensada para aproximar os serviços das necessidades do público.',
+      image: { src: '/services-imgs/landing-page-hero-print.png', alt: 'Página inicial do site profissional de Paulo Carvalho' },
+    },
   },
   {
     slug: 'caldeiraria-realiza',
@@ -81,31 +57,19 @@ export const CASES: CaseContent[] = [
     projectUrl: 'https://caldeirariarealiza.com.br/',
     projectLinkLabel: 'Ver projeto',
     heroImage: '/services-imgs/site-home-page-print.png',
-    current:
-      'O projeto parte da necessidade de apresentar a empresa e sua atuação em um espaço digital próprio.',
-    ideal:
-      'Oferecer aos visitantes um caminho claro para conhecer os serviços e entrar em contato.',
-    bridge: 'Um site comercial que organiza a apresentação da empresa e dos serviços.',
-    requirements: [
-      {
-        name: 'Apresentação da empresa',
-        text: 'Reunir informações sobre a atuação da Caldeiraria Realiza.',
-      },
-      { name: 'Serviços', text: 'Apresentar os serviços em páginas que facilitem a consulta.' },
-      { name: 'Contato', text: 'Deixar acessível o caminho para falar com a empresa.' },
-    ],
-    implementation:
-      'A solução organiza a apresentação institucional e os serviços em um site comercial, com canais de contato para os visitantes.',
-    images: [
-      {
-        src: '/services-imgs/site-home-page-print.png',
-        alt: 'Página inicial do site da Caldeiraria Realiza',
-      },
-      {
-        src: '/services-imgs/site-subpage-print.png',
-        alt: 'Página de serviço do site da Caldeiraria Realiza',
-      },
-    ],
+    before: { scenario: 'O projeto parte da necessidade de apresentar a empresa e sua atuação em um espaço digital próprio.' },
+    after: {
+      summary: 'Oferecer aos visitantes um caminho claro para conhecer os serviços e entrar em contato.',
+      benefits: [
+        { title: 'Apresentação da empresa', text: 'Reunir informações sobre a atuação da Caldeiraria Realiza.' },
+        { title: 'Serviços', text: 'Apresentar os serviços em páginas que facilitem a consulta.' },
+        { title: 'Contato', text: 'Deixar acessível o caminho para falar com a empresa.' },
+      ],
+    },
+    bridge: {
+      text: 'Um site comercial que organiza a apresentação da empresa e dos serviços. A solução organiza a apresentação institucional e os serviços em um site comercial, com canais de contato para os visitantes.',
+      image: { src: '/services-imgs/site-subpage-print.png', alt: 'Página de serviço do site da Caldeiraria Realiza' },
+    },
   },
   {
     slug: 'simtese',
@@ -119,24 +83,19 @@ export const CASES: CaseContent[] = [
     projectUrl: 'https://www.simtese.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
     heroImage: '/services-imgs/crm-home-print.png',
-    current:
-      'A operação precisava de uma forma de acompanhar clientes e agendamentos de acordo com seu processo de trabalho.',
-    ideal:
-      'Organizar o acompanhamento dos agendamentos e resultados em uma solução adequada à rotina da equipe.',
-    bridge: 'Um CRM desenvolvido para apoiar a gestão de clientes e agendamentos.',
-    requirements: [
-      { name: 'Clientes', text: 'Apoiar o acompanhamento de informações dos clientes.' },
-      { name: 'Agendamentos', text: 'Organizar o acompanhamento dos agendamentos.' },
-      { name: 'Resultados', text: 'Apoiar o acompanhamento dos resultados pela equipe.' },
-    ],
-    implementation:
-      'A solução foi desenvolvida para a gestão de clientes, com foco nos agendamentos e no acompanhamento de resultados.',
-    images: [
-      {
-        src: '/services-imgs/crm-dash-print.png',
-        alt: 'Formulário de agendamento do site da Símtese',
-      },
-    ],
+    before: { scenario: 'A operação precisava de uma forma de acompanhar clientes e agendamentos de acordo com seu processo de trabalho.' },
+    after: {
+      summary: 'Organizar o acompanhamento dos agendamentos e resultados em uma solução adequada à rotina da equipe.',
+      benefits: [
+        { title: 'Clientes', text: 'Apoiar o acompanhamento de informações dos clientes.' },
+        { title: 'Agendamentos', text: 'Organizar o acompanhamento dos agendamentos.' },
+        { title: 'Resultados', text: 'Apoiar o acompanhamento dos resultados pela equipe.' },
+      ],
+    },
+    bridge: {
+      text: 'Um CRM desenvolvido para apoiar a gestão de clientes e agendamentos. A solução foi desenvolvida para a gestão de clientes, com foco nos agendamentos e no acompanhamento de resultados.',
+      image: { src: '/services-imgs/crm-dash-print.png', alt: 'Formulário de agendamento do site da Símtese' },
+    },
   },
   {
     slug: 'lalouise',
@@ -150,23 +109,18 @@ export const CASES: CaseContent[] = [
     projectUrl: 'https://lalouiseconsultoria.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
     heroImage: '/services-imgs/erp-home-print.png',
-    current:
-      'O projeto parte da necessidade de acompanhar rotinas de controle operacional e rastreabilidade.',
-    ideal: 'Organizar essas rotinas em um sistema alinhado à operação da LaLouise.',
-    bridge: 'Um sistema de gestão que reúne os controles necessários para apoiar a operação.',
-    requirements: [
-      {
-        name: 'Controle operacional',
-        text: 'Apoiar o registro e o acompanhamento das rotinas da operação.',
-      },
-      {
-        name: 'Rastreabilidade',
-        text: 'Organizar informações relevantes para acompanhar os controles.',
-      },
-      { name: 'Consulta', text: 'Apresentar informações em telas acessíveis à equipe.' },
-    ],
-    implementation:
-      'O sistema reúne recursos de controle operacional e rastreabilidade em uma solução de gestão desenvolvida para a LaLouise.',
-    images: [],
+    before: { scenario: 'O projeto parte da necessidade de acompanhar rotinas de controle operacional e rastreabilidade.' },
+    after: {
+      summary: 'Organizar essas rotinas em um sistema alinhado à operação da LaLouise.',
+      benefits: [
+        { title: 'Controle operacional', text: 'Apoiar o registro e o acompanhamento das rotinas da operação.' },
+        { title: 'Rastreabilidade', text: 'Organizar informações relevantes para acompanhar os controles.' },
+        { title: 'Consulta', text: 'Apresentar informações em telas acessíveis à equipe.' },
+      ],
+    },
+    bridge: {
+      text: 'Um sistema de gestão que reúne os controles necessários para apoiar a operação. O sistema reúne recursos de controle operacional e rastreabilidade em uma solução de gestão desenvolvida para a LaLouise.',
+      image: { src: '/services-imgs/erp-labels-print.png', alt: 'Tela de etiquetas do sistema da LaLouise' },
+    },
   },
 ];

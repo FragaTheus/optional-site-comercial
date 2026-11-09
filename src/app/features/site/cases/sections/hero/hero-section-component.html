@@ -1,21 +1,15 @@
-<section class="surface-dark relative isolate overflow-hidden">
-  <img [src]="caseStudy().heroImage" alt="" width="1840" height="963" class="absolute inset-0 -z-30 size-full object-cover object-top" />
-  <div aria-hidden="true" class="absolute inset-0 -z-20 bg-linear-to-r from-carbon via-transparent to-carbon"></div>
-  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-carbon/75"></div>
-  <div class="site-container site-grid min-h-112 content-end gap-y-gutter">
-    <app-breadcrumb
-      class="lg:col-span-12"
-      [ancestors]="[{ label: 'Início', routerLink: '/' }, { label: 'Cases' }]"
-      [currentLabel]="caseStudy().project"
-    />
-    <div class="lg:col-span-9">
-      <p class="eyebrow">Case Optional</p>
-      <h1 appReveal="lines" class="mt-gutter"><strong>{{ caseStudy().project }}</strong></h1>
-      <p appReveal class="mt-gutter max-w-2xl text-white">{{ caseStudy().intro }}</p>
-      <div appReveal class="mt-gutter flex flex-wrap gap-gutter">
-        <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary">{{ caseStudy().projectLinkLabel }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
-        <a [routerLink]="[]" fragment="problema" class="btn btn-secondary">Entender solução</a>
-      </div>
-    </div>
+<app-page-hero titleId="case-hero-title" [image]="caseStudy().heroImage" [imageAlt]="'Tela do projeto ' + caseStudy().project" [landscape]="true">
+  <app-breadcrumb
+    [ancestors]="[{ label: 'Início', routerLink: '/' }, { label: 'Cases' }]"
+    [currentLabel]="caseStudy().project"
+  />
+  <div>
+    <p class="eyebrow">Case Optional</p>
+    <h1 id="case-hero-title" appReveal="lines" class="mt-4 lg:text-6xl"><strong>{{ caseStudy().project }}</strong></h1>
   </div>
-</section>
+  <p appReveal class="max-w-xl">{{ caseStudy().intro }}</p>
+  <div appReveal class="flex flex-wrap gap-gutter">
+    <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary">{{ caseStudy().projectLinkLabel }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+    <a [routerLink]="[]" fragment="solucao" class="btn btn-secondary">Entender solução</a>
+  </div>
+</app-page-hero>
