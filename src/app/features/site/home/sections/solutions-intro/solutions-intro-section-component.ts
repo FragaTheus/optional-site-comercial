@@ -9,12 +9,8 @@ const SOLUTION_CONTENT = {
     image: 'site-abstract.png',
   },
   automacoes: {
-    text: 'Tarefas repetitivas consomem tempo e geram retrabalho. Desenvolvemos automações que executam tarefas e etapas de fluxos, para a equipe se dedicar ao que exige sua participação.',
+    text: 'Tarefas repetitivas e ferramentas desconectadas consomem tempo e geram retrabalho. Desenvolvemos automações que executam tarefas e conectam os sistemas que a empresa já usa, para a equipe se dedicar ao que exige sua participação.',
     image: 'automation.png',
-  },
-  integracoes: {
-    text: 'Ferramentas desconectadas obrigam a equipe a digitar a mesma informação mais de uma vez. Conectamos os sistemas que a empresa já usa para que compartilhem dados entre si.',
-    image: 'integration.png',
   },
   sistemas: {
     text: 'Processos específicos raramente cabem em sistemas prontos. Desenvolvemos softwares próprios para organizar, controlar e acompanhar as atividades da sua operação.',

@@ -9,6 +9,7 @@ export const SITE_ROUTES: Routes = [
     data: { slug },
     loadComponent: () => import('./services/service-page-component').then(m => m.ServicePageComponent),
   })),
+  { path: 'servicos/integracoes', redirectTo: 'servicos/automacoes', pathMatch: 'full' },
   ...CASES.map(({ slug }) => ({
     path: `cases/${slug}`,
     data: { slug },

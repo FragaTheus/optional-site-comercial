@@ -27,7 +27,7 @@ export class HomePageComponent {
   constructor() {
     inject(Seo).set(
       'Optional — Software e infraestrutura digital sob medida para empresas',
-      'A Optional desenvolve sites e landing pages, automações de processos, integrações entre sistemas e sistemas personalizados sob medida para a realidade de cada empresa.',
+      'A Optional desenvolve sites e landing pages, automações e integrações entre ferramentas e sistemas personalizados sob medida para a realidade de cada empresa.',
       '/',
       [
         {

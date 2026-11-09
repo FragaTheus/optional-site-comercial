@@ -15,6 +15,8 @@ export interface ServiceContent {
   intro: string;
   /** Imagem do hero e da solução quando não há case com imagem própria. */
   image: string;
+  /** Exibe o simulador de horas no lugar da imagem do hero. */
+  simulator?: boolean;
   challenges: { title: Heading; intro: string; items: Item[]; sources?: { label: string; href: string }[] };
   solution: { title: Heading; text: string; caseSlug?: string };
   process: { text: string; steps: Item[] };
@@ -70,80 +72,42 @@ export const SERVICES: ServiceContent[] = [
   },
   {
     slug: 'automacoes',
-    label: 'Automação de processos',
-    keyword: 'automação de processos empresariais',
-    title: 'Automação de processos para empresas | Optional',
-    description: 'Automação de processos sob medida: tarefas repetitivas e etapas de fluxos operacionais executadas automaticamente, para a equipe focar no que exige a sua atenção.',
-    h1: { lead: 'Automatize tarefas repetitivas e', key: 'libere a sua equipe.' },
-    intro: 'Desenvolvemos automações que executam sozinhas as tarefas e as etapas repetitivas da sua rotina, para que a equipe dedique o tempo ao que exige atenção e decisão.',
+    label: 'Automações',
+    keyword: 'automação de processos e integração de sistemas',
+    title: 'Automações e Integrações para Empresas | Optional',
+    description: 'Automatize tarefas e conecte as ferramentas da sua empresa para reduzir trabalho manual, retrabalho e tempo gasto transferindo informações.',
+    h1: { lead: 'O tempo da sua equipe vale mais que', key: 'tarefas repetitivas.' },
+    intro: 'Conectamos suas ferramentas e automatizamos atividades rotineiras, liberando tempo para trabalhos que exigem atenção e decisões humanas.',
     image: '/solutions/automation.png',
+    simulator: true,
     challenges: {
       title: { lead: 'Onde o trabalho manual', key: 'mais se repete' },
-      intro: 'Rotinas que consomem tempo da equipe e abrem espaço para erros quando dependem de execução manual.',
+      intro: 'Rotinas que consomem tempo da equipe e abrem espaço para erros quando dependem de execução manual e de ferramentas que não se conhecem.',
       items: [
         { name: 'Tarefas repetidas todos os dias', text: 'Atividades que seguem sempre as mesmas regras ocupam a equipe com trabalho que poderia ser executado sozinho.' },
         { name: 'Retrabalho para corrigir erros', text: 'Cálculos e preenchimentos feitos à mão estão sujeitos a falhas, e cada correção toma ainda mais tempo.' },
-        { name: 'Etapas que esperam alguém lembrar', text: 'Quando uma etapa depende de uma pessoa para começar, o fluxo fica parado até que alguém perceba.' },
-        { name: 'Cada pessoa faz de um jeito', text: 'Sem regras aplicadas automaticamente, a mesma atividade ganha resultados diferentes conforme quem a executa.' },
+        { name: 'Dados copiados à mão', text: 'Levar informações de uma ferramenta para outra toma tempo, gera cadastros repetidos e permite erros de digitação.' },
+        { name: 'Ferramentas subaproveitadas', text: 'Sistemas bons ficam limitados quando não conseguem receber ou enviar informações aos demais, e cada área trabalha com dados diferentes.' },
       ],
     },
     solution: {
-      title: { lead: 'Atividades executadas', key: 'por regras claras' },
-      text: 'Antes de automatizar, mapeamos o processo e simplificamos o que for preciso, porque automatizar um fluxo confuso só acelera a confusão. Depois, definimos as regras e desenvolvemos a automação das tarefas escolhidas. Em um e-commerce, automatizamos o cadastro e o tratamento das informações de produtos; na LaLouise, o cálculo da validade e a emissão das etiquetas.',
+      title: { lead: 'Tarefas automáticas e ferramentas', key: 'que trabalham juntas' },
+      text: 'Antes de automatizar, mapeamos o processo e simplificamos o que for preciso, porque automatizar um fluxo confuso só acelera a confusão. Depois, definimos as regras, desenvolvemos a automação das tarefas escolhidas e conectamos as ferramentas para que as informações circulem sem digitação. Em um e-commerce, automatizamos o cadastro e o tratamento das informações de produtos; na LaLouise, o cálculo da validade e a emissão das etiquetas.',
       caseSlug: 'automacao-ecommerce',
     },
     process: {
-      text: 'Primeiro entendemos o processo; só depois automatizamos, começando por uma tarefa.',
+      text: 'Primeiro entendemos o processo e as ferramentas em uso; só depois automatizamos e conectamos, começando por uma tarefa.',
       steps: [
-        { name: 'Diagnóstico', text: 'Mapeamos o processo e indicamos o que vale automatizar e o que vale revisar antes.' },
-        { name: 'Escopo e proposta', text: 'Definimos as tarefas, as regras de execução, o prazo e o investimento, por escrito e antes do desenvolvimento.' },
-        { name: 'Desenvolvimento e entrega', text: 'Começamos por uma tarefa, validamos no uso real com a equipe e entregamos com o suporte combinado.' },
+        { name: 'Diagnóstico', text: 'Mapeamos o processo, listamos as ferramentas em uso e indicamos o que vale automatizar, conectar ou revisar antes.' },
+        { name: 'Escopo e proposta', text: 'Verificamos o que cada ferramenta permite conectar e definimos tarefas, regras, prazo e investimento, por escrito e antes do desenvolvimento.' },
+        { name: 'Desenvolvimento e entrega', text: 'Começamos por uma tarefa, validamos no uso real com a equipe e entregamos com o suporte combinado, já que sistemas externos podem mudar.' },
       ],
     },
     cta: {
       headline: { lead: 'Qual tarefa a equipe', key: 'repete com frequência?' },
-      text: 'Liste as rotinas que mais consomem tempo. Avaliamos o que pode ser automatizado e o que vale revisar antes.',
+      text: 'Liste as rotinas que mais consomem tempo e as ferramentas que precisam conversar. Avaliamos o que pode ser automatizado ou conectado.',
       label: 'Analisar processo',
-      message: 'Olá! Vim pela página de automação de processos e gostaria de analisar uma rotina da minha empresa.',
-    },
-  },
-  {
-    slug: 'integracoes',
-    label: 'Integração de sistemas',
-    keyword: 'integração de sistemas empresariais',
-    title: 'Integração de sistemas para empresas | Optional',
-    description: 'Integração de sistemas sob medida: conectamos as ferramentas que a sua empresa já usa para que compartilhem informações, sem cadastros duplicados e sem copiar dados à mão.',
-    h1: { lead: 'Conecte suas ferramentas e', key: 'compartilhe informações.' },
-    intro: 'Conectamos os sistemas e as ferramentas que a sua empresa já usa para que compartilhem informações entre si, sem cadastros repetidos e sem copiar dados de um lugar para outro.',
-    image: '/solutions/integration.png',
-    challenges: {
-      title: { lead: 'Quando as ferramentas', key: 'não se conhecem' },
-      intro: 'Cada ferramenta guarda uma parte da informação, e a equipe vira a ponte entre elas.',
-      items: [
-        { name: 'O mesmo cadastro em vários lugares', text: 'Clientes e produtos precisam ser digitados em cada sistema, e as versões deixam de coincidir.' },
-        { name: 'Dados copiados à mão', text: 'Levar informações de uma ferramenta para outra toma tempo e permite erros de digitação.' },
-        { name: 'Informação desatualizada', text: 'Quando uma mudança não chega aos outros sistemas, cada área trabalha com dados diferentes.' },
-        { name: 'Ferramentas subaproveitadas', text: 'Sistemas bons ficam limitados quando não conseguem receber ou enviar informações aos demais.' },
-      ],
-    },
-    solution: {
-      title: { lead: 'Ferramentas que', key: 'trabalham juntas' },
-      text: 'Identificamos quais informações precisam circular, de onde saem e para onde vão, e conectamos as ferramentas para que isso aconteça sem digitação. Integrar não é automatizar toda a operação: a integração faz as informações circularem, e as automações executam tarefas a partir delas, quando fizerem sentido. No projeto de e-commerce, conectamos as ferramentas usadas no cadastro de produtos.',
-      caseSlug: 'automacao-ecommerce',
-    },
-    process: {
-      text: 'Começamos pelo que as ferramentas já oferecem e pelas informações que mais se repetem.',
-      steps: [
-        { name: 'Diagnóstico', text: 'Listamos as ferramentas em uso e as informações que hoje são digitadas ou copiadas mais de uma vez.' },
-        { name: 'Viabilidade e proposta', text: 'Verificamos o que cada ferramenta permite conectar e definimos escopo, prazo e investimento por escrito.' },
-        { name: 'Desenvolvimento e entrega', text: 'Conectamos as ferramentas, conferimos as informações no uso real e combinamos o acompanhamento, já que sistemas externos podem mudar.' },
-      ],
-    },
-    cta: {
-      headline: { lead: 'Suas ferramentas', key: 'conversam entre si?' },
-      text: 'Conte quais sistemas a equipe usa e quais informações precisa digitar de novo. Avaliamos o que pode ser conectado.',
-      label: 'Conectar ferramentas',
-      message: 'Olá! Vim pela página de integração de sistemas e gostaria de conectar as ferramentas da minha empresa.',
+      message: 'Olá! Vim pela página de automações e gostaria de analisar uma rotina ou conectar ferramentas da minha empresa.',
     },
   },
   {

@@ -8,6 +8,7 @@ export const serverRoutes: ServerRoute[] = [
     path: `servicos/${slug}`,
     renderMode: RenderMode.Prerender as const,
   })),
+  { path: 'servicos/integracoes', renderMode: RenderMode.Client },
   ...CASES.map(({ slug }) => ({
     path: `cases/${slug}`,
     renderMode: RenderMode.Prerender as const,

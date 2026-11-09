@@ -16,14 +16,13 @@ describe('SolutionsIntroSectionComponent', () => {
     const cards = [...root.querySelectorAll<HTMLElement>('li')];
     const solutions = [
       { label: 'Experiência e qualificação comercial', href: '/servicos/sites' },
-      { label: 'Automação de processos', href: '/servicos/automacoes' },
-      { label: 'Integração de sistemas', href: '/servicos/integracoes' },
+      { label: 'Automações', href: '/servicos/automacoes' },
       { label: 'Sistemas personalizados', href: '/servicos/sistemas' },
     ];
 
-    expect(triggers).toHaveLength(4);
-    expect(panels).toHaveLength(4);
-    expect(cards).toHaveLength(4);
+    expect(triggers).toHaveLength(3);
+    expect(panels).toHaveLength(3);
+    expect(cards).toHaveLength(3);
 
     const expectSelection = (selected: number) => {
       solutions.forEach((solution, index) => {
@@ -58,8 +57,7 @@ describe('SolutionsIntroSectionComponent', () => {
 
     triggers[1].click();
     triggers[2].click();
-    triggers[3].click();
     await fixture.whenStable();
-    expectSelection(3);
+    expectSelection(2);
   });
 });

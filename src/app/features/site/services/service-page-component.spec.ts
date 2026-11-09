@@ -8,7 +8,7 @@ describe('ServicePageComponent', () => {
   it('uses four routes and includes campaign landing pages in the sites page', () => {
     const sites = SERVICES.find(service => service.slug === 'sites')!;
 
-    expect(SERVICE_LINKS).toHaveLength(4);
+    expect(SERVICE_LINKS).toHaveLength(3);
     expect(SERVICE_LINKS.map(service => service.slug)).not.toContain('landing-pages');
     expect(sites.title).toContain('landing pages');
     expect(sites.description).toContain('landing pages');

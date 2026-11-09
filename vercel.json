@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/servicos/integracoes", "destination": "/servicos/automacoes", "permanent": true }
+  ]
+}

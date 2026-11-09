@@ -13,7 +13,7 @@ describe('serverRoutes', () => {
   it('prerenders the registered pages and returns a real 404 for unknown paths', () => {
     const prerendered = serverRoutes.filter((route) => route.renderMode === RenderMode.Prerender);
 
-    expect(prerendered).toHaveLength(10);
+    expect(prerendered).toHaveLength(9);
     expect(prerendered.map((route) => route.path)).not.toContain('servicos/landing-pages');
     expect(serverRoutes.find((route) => route.path === '**')).toEqual({
       path: '**',

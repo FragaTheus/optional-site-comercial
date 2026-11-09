@@ -16,7 +16,7 @@ describe('HomePageComponent', () => {
     const order = [...el.children].map((c) => c.tagName.toLowerCase());
     expect(order.slice(0, 5)).toEqual(['app-hero-section', 'app-objections-section', 'app-cases-intro-section', 'app-solutions-intro-section', 'app-about-section']);
     const solutions = [...el.querySelectorAll('#atuacao [id^="solution-panel-"] a')];
-    expect(solutions).toHaveLength(4);
+    expect(solutions).toHaveLength(3);
     const caseLinks = [...el.querySelectorAll('#projetos details a')];
     expect(caseLinks.map((link) => link.getAttribute('href'))).toEqual([
       '/cases/caldeiraria-realiza',

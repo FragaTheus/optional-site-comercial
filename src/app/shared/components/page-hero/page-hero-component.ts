@@ -7,7 +7,7 @@ import { Component, input } from '@angular/core';
 })
 export class PageHeroComponent {
   readonly titleId = input.required<string>();
-  readonly image = input.required<string>();
+  readonly image = input('');
   readonly imageAlt = input('');
   readonly landscape = input(false);
 }

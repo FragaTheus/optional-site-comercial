@@ -3,6 +3,7 @@
     <div class="flex min-w-0 flex-col items-start gap-gutter lg:col-span-6">
       <ng-content />
     </div>
+    @if (image()) {
     <img
       [src]="image()"
       [alt]="imageAlt()"
@@ -13,5 +14,8 @@
       class="size-full rounded-xs object-cover lg:col-span-6"
       [class]="landscape() ? 'aspect-1840/963 object-top' : 'aspect-square'"
     />
+    } @else {
+      <ng-content select="[aside]" />
+    }
   </div>
 </section>

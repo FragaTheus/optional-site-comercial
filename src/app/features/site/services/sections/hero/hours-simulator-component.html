@@ -1,0 +1,20 @@
+<form class="card card-tertiary flex flex-col gap-gutter" aria-labelledby="sim-title" (submit)="$event.preventDefault()">
+  <p id="sim-title" class="font-display text-2xl font-bold text-carbon">Quanto tempo vai em uma tarefa manual?</p>
+  @for (field of fields; track field.id) {
+    <div class="flex flex-col gap-2">
+      <label [for]="field.id" class="eyebrow">{{ field.label }}</label>
+      <input
+        [id]="field.id"
+        type="number"
+        min="0"
+        inputmode="numeric"
+        [value]="field.value()"
+        (input)="update(field.value, $any($event.target))"
+        class="w-full rounded-xs border border-carbon/30 bg-white px-4 py-3 text-carbon"
+      />
+    </div>
+  }
+  <p class="eyebrow">Horas anuais estimadas</p>
+  <output aria-live="polite" class="font-display text-6xl leading-none text-carbon">{{ hours() | number: '1.0-1' }} h</output>
+  <small>Cenário hipotético, calculado com os valores informados. Não representa resultado garantido.</small>
+</form>

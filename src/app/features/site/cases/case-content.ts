@@ -192,7 +192,7 @@ export const CASES: CaseContent[] = [
     slug: 'automacao-ecommerce',
     project: 'Automação de e-commerce',
     service: 'automacoes',
-    secondary: ['integracoes'],
+    secondary: [],
     title: 'Automação de e-commerce: cadastro de produtos | Optional',
     description:
       'Como a Optional automatizou o cadastro e o tratamento de informações de produtos de um e-commerce, conectando as ferramentas utilizadas na operação.',
