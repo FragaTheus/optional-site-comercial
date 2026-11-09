@@ -2,4 +2,8 @@
 <app-case-before-section [caseStudy]="caseStudy" />
 <app-case-after-section [caseStudy]="caseStudy" />
 <app-case-bridge-section [caseStudy]="caseStudy" />
-<app-case-cta-section [caseStudy]="caseStudy" />
+<app-cta-section
+  [heading]="caseStudy.cta"
+  [text]="caseStudy.cta.text"
+  [cta]="{ label: 'Apresentar projeto', wppMessage: caseStudy.cta.message }"
+/>

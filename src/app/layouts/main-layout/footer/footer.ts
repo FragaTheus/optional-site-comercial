@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from '../../../shared/components/logo/logo-component';
 import { SiteNavigationComponent } from '../../../shared/components/site-navigation/site-navigation-component';
-import { Reveal } from '../../../shared/directives/reveal';
 
 // Rodapé institucional: assinatura, navegação e direitos.
 @Component({
   selector: 'app-footer',
-  imports: [LogoComponent, SiteNavigationComponent, Reveal],
+  imports: [LogoComponent, SiteNavigationComponent],
   templateUrl: './footer.html',
   host: { class: 'block' },
 })

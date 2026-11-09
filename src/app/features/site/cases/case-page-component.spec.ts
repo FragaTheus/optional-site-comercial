@@ -35,6 +35,11 @@ describe('CasePageComponent', () => {
     for (const slug of [item.service, ...item.secondary]) expect(el.querySelector(`app-case-bridge-section a[href="/servicos/${slug}"]`)).not.toBeNull();
     expect(el.querySelector('#contato a')?.getAttribute('href')).toContain('wa.me/');
     expect(el.querySelector('#contato h2')?.textContent).toContain(item.cta.key);
+    expect(el.querySelectorAll('#contato')).toHaveLength(1);
+    expect(el.lastElementChild?.tagName.toLowerCase()).toBe('app-cta-section');
+    expect(el.querySelector('#contato p')?.textContent).toBe(item.cta.text);
+    expect(el.querySelector('#contato a')?.textContent).toContain('Apresentar projeto');
+    expect(new URL(el.querySelector<HTMLAnchorElement>('#contato a')!.href).searchParams.get('text')).toBe(item.cta.message);
     expect(el.querySelectorAll('app-case-before-section li')).toHaveLength(item.before.consequences.length);
     expect(TestBed.inject(Title).getTitle()).toBe(item.title);
   });

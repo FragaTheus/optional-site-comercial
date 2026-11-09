@@ -1,0 +1,11 @@
+<section id="contato" aria-labelledby="contato-title" class="surface-dark text-center">
+  <div class="site-container flex flex-col items-center justify-center">
+    <h2 id="contato-title" appReveal="lines">
+      {{ heading().lead }} <strong>{{ heading().key }}</strong>
+    </h2>
+    <p appReveal class="mt-gutter max-w-xl">{{ text() }}</p>
+    <div appReveal class="mt-gutter flex w-full justify-center">
+      <app-btn-cta [cta]="cta()" />
+    </div>
+  </div>
+</section>

@@ -2,7 +2,7 @@ import { Component, DestroyRef, ElementRef, afterNextRender, inject } from '@ang
 import { Gsap } from '../../../core/gsap';
 import { Seo } from '../../../core/seo';
 import { SITE_URL } from '../../../core/site.config';
-import { ClosingSectionComponent } from './sections/closing/closing-section-component';
+import { CtaSectionComponent } from '../../../shared/components/cta-section/cta-section-component';
 import { HeroSectionComponent } from './sections/hero/hero-section-component';
 import { SolutionsIntroSectionComponent } from './sections/solutions-intro/solutions-intro-section-component';
 import { CasesIntroSectionComponent } from './sections/cases-intro/cases-intro-section-component';
@@ -18,7 +18,7 @@ import { AboutSectionComponent } from './sections/about/about-section-component'
     CasesIntroSectionComponent,
     SolutionsIntroSectionComponent,
     AboutSectionComponent,
-    ClosingSectionComponent,
+    CtaSectionComponent,
   ],
   templateUrl: './home-page-component.html',
 })

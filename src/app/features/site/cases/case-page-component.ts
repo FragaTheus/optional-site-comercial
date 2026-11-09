@@ -6,7 +6,7 @@ import { HeroSectionComponent } from './sections/hero/hero-section-component';
 import { BeforeSectionComponent } from './sections/before/before-section-component';
 import { AfterSectionComponent } from './sections/after/after-section-component';
 import { BridgeSectionComponent } from './sections/bridge/bridge-section-component';
-import { CtaSectionComponent } from './sections/cta/cta-section-component';
+import { CtaSectionComponent } from '../../../shared/components/cta-section/cta-section-component';
 
 // Compõe as seções de um case e configura seus metadados comerciais.
 @Component({

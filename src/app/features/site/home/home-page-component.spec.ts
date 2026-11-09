@@ -28,5 +28,11 @@ describe('HomePageComponent', () => {
     expect(el.querySelectorAll('app-objections-section li')).toHaveLength(3);
     expect(el.querySelector('app-services-section, app-showcase-section')).toBeNull();
     expect(el.querySelector('#evolucao, #faq')).toBeNull();
+    expect(el.lastElementChild?.tagName.toLowerCase()).toBe('app-cta-section');
+    expect(el.querySelectorAll('#contato')).toHaveLength(1);
+    expect(el.querySelector('#contato h2')?.textContent).toContain('operação.');
+    expect(el.querySelector('#contato p')?.textContent).toContain('Explique como a empresa funciona hoje.');
+    expect(el.querySelector('#contato a')?.textContent).toContain('Apresentar projeto');
+    expect(new URL(el.querySelector<HTMLAnchorElement>('#contato a')!.href).searchParams.get('text')).toBe('Olá! Vim pelo final da homepage e gostaria de apresentar meu projeto.');
   });
 });

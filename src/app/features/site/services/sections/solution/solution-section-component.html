@@ -1,39 +1,51 @@
 <section aria-labelledby="service-solution-title">
-  <div class="site-container site-grid gap-y-gutter lg:grid-rows-2">
-    <header class="flex flex-col gap-gutter lg:col-span-6 lg:row-start-1">
-      <p class="eyebrow">{{ service().label }}</p>
-      <h2 id="service-solution-title" appReveal="lines">
+  <div class="site-container site-grid gap-y-gutter px-0">
+    <header class="flex flex-col gap-gutter lg:col-span-6 px-gutter">
+      <h2 id="service-solution-title" appReveal="lines" class="max-w-7xl">
         {{ service().solution.title.lead }} <strong>{{ service().solution.title.key }}</strong>
       </h2>
     </header>
 
     @if (service().solution.evidence; as evidence) {
-      <aside class="flex flex-col gap-gutter lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1">
-        <ul data-stagger=":scope > li" class="flex flex-col gap-gutter">
+      <aside class="flex flex-col gap-gutter lg:col-span-full">
+        <ul
+          data-stagger=":scope > li"
+          class="flex gap-gutter overflow-x-auto px-gutter scrollbar-none"
+        >
           @for (item of evidence; track item.href) {
-            <li class="card card-tertiary flex flex-col gap-3">
-              <h3><strong>{{ item.benefit }}</strong></h3>
+            <li class="card card-tertiary flex flex-col gap-gutter min-w-3xs">
+              <h3>
+                <strong>{{ item.benefit }}</strong>
+              </h3>
               <p class="eyebrow">{{ item.company }}</p>
               <small>{{ item.text }}</small>
-              <a [href]="item.href" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4"><small>{{ item.linkLabel }}</small></a>
+              <a
+                [href]="item.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline underline-offset-4"
+                ><small>{{ item.linkLabel }}</small></a
+              >
             </li>
           }
         </ul>
-        <p class="text-sm text-carbon/70"><small>{{ service().solution.note }}</small></p>
+        <p class="text-sm text-carbon/70">
+          <small>{{ service().solution.note }}</small>
+        </p>
       </aside>
     } @else {
-    <img
-      [src]="image().src"
-      [alt]="image().alt"
-      width="1840"
-      height="963"
-      loading="lazy"
-      decoding="async"
-      class="aspect-video size-full rounded-xs object-cover lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1 lg:aspect-auto"
-    />
+      <img
+        [src]="image().src"
+        [alt]="image().alt"
+        width="1840"
+        height="963"
+        loading="lazy"
+        decoding="async"
+        class="aspect-video rounded-xs object-cover lg:col-span-6 lg:row-span-2 px-gutter"
+      />
     }
 
-    <footer class="flex flex-col items-start gap-gutter lg:col-span-6 lg:row-start-2 lg:self-end">
+    <footer class="flex flex-col gap-gutter lg:col-span-6 lg:row-start-2 px-gutter">
       <p appReveal class="max-w-xl">{{ service().solution.text }}</p>
       @if (project(); as project) {
         <a [routerLink]="['/cases', project.slug]" class="btn btn-secondary">

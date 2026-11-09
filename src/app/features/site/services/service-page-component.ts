@@ -5,7 +5,7 @@ import { Seo } from '../../../core/seo';
 import { SITE_URL } from '../../../core/site.config';
 import { SERVICES, ServiceContent } from './service-content';
 import { ChallengesSectionComponent } from './sections/challenges/challenges-section-component';
-import { CtaSectionComponent } from './sections/cta/cta-section-component';
+import { CtaSectionComponent } from '../../../shared/components/cta-section/cta-section-component';
 import { HeroSectionComponent } from './sections/hero/hero-section-component';
 import { ProcessSectionComponent } from './sections/process/process-section-component';
 import { SolutionSectionComponent } from './sections/solution/solution-section-component';

@@ -32,7 +32,7 @@ A homepage é o único hub (não há `/servicos` nem `/cases`). A homepage apres
 
 ### Páginas satélites
 
-`features/site/services/`: um único `service-page-component` (rota `servicos/:slug`, uma rota estática por serviço gerada de `SERVICE_LINKS`, para o prerender descobrir cada URL) escolhe o conteúdo em `service-content.ts` pelo `slug` em `route.data` e compõe as seções em `sections/` (hero, challenges, solution, process, cta; modelo StoryBrand). Novo serviço = nova entrada em `SERVICE_LINKS` e `SERVICES`. Estratégia de conteúdo: `docs/copyright.md`.
+`features/site/services/`: um único `service-page-component` (rota `servicos/:slug`, uma rota estática por serviço gerada de `SERVICE_LINKS`, para o prerender descobrir cada URL) escolhe o conteúdo em `service-content.ts` pelo `slug` em `route.data` e compõe as seções em `sections/` (hero, challenges, solution, process) e o CTA compartilhado (modelo StoryBrand). Novo serviço = nova entrada em `SERVICE_LINKS` e `SERVICES`. Estratégia de conteúdo: `docs/copyright.md`.
 
 ### Cases
 
@@ -47,6 +47,8 @@ Rota `/concept/:slug`, layout independente, identidade visual própria possível
 Componente de layout compartilhado que envolve as rotas institucionais com `RouterOutlet` e child routes. Contém `<header>` (navegação institucional) e `<footer>` (informações institucionais e navegação complementar). O componente compartilhado de menu/drawer renderiza seu próprio botão e `<dialog>` nativo, gerenciando abertura, fechamento por Esc/backdrop e acessibilidade, sem estado ou handlers no layout. Páginas **não** declaram header/footer individualmente. `/concept/:slug` fica fora do MainLayout.
 
 ## Componentes compartilhados
+
+`shared/components/cta-section` encerra homepage, serviços e cases como última seção antes do footer do MainLayout. Recebe título (`lead` e `key`), texto e botão (`ICta`), reutiliza `Reveal` e `BtnCtaComponent` e expõe uma única âncora `#contato` por página. Os conteúdos continuam definidos por página; a seção About permanece independente.
 
 Só componentes com estado/comportamento (drawer, accordion interativo, formulários, navegação). `site-navigation` é compartilhado pelo drawer e rodapé e usa `SERVICE_LINKS` e `CASES` como fontes dos links; ao selecionar um link normalmente, avisa o drawer para fechá-lo. Elementos puramente visuais são classes em `@layer components` (ver `FRONTEND_STANDARDS.md`).
 

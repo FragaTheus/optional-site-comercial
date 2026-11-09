@@ -74,11 +74,11 @@ Regras da homepage:
 
 Modelo editorial: StoryBrand (SB7), com o cliente como protagonista e a Optional como guia. O 4Ps fica reservado para futuras landing pages de campanha. Os sete elementos se distribuem em quatro seções e um CTA, sem uma seção por elemento (implementado em `features/site/services/`, uma seção por componente):
 
-1. Hero, personagem + sucesso: H1 alinhado ao serviço, introdução objetiva, CTA e imagem (`sections/hero`)
+1. Hero, personagem + sucesso: H1 alinhado ao serviço, introdução objetiva, CTA e imagem (`sections/hero`). O CTA secundário “Conhecer os desafios” leva a `#service-challenges` na página do serviço exibido.
 2. Desafios, problema + evitar o fracasso: obstáculos reconhecíveis e suas consequências (`challenges`)
 3. Solução e experiência, guia + sucesso: o que é o serviço e, quando existir, o case real correspondente (`solution`, bento)
 4. Como trabalhamos, plano: diagnóstico, escopo e proposta, desenvolvimento e entrega (`process`)
-5. CTA final, chamada para ação (`cta`, expõe `#contato`)
+5. CTA final, chamada para ação (`shared/components/cta-section`, expõe `#contato`). Homepage, serviços e cases usam a mesma seção, com título, texto e mensagem de contato próprios de cada página.
 
 Regras: conteúdo original por página; sem keyword stuffing; sem texto genérico para "encher"; listas quando facilitam a leitura; um único H1, H2 por seção, H3 por item; links internos contextuais com âncora descritiva e só quando fizerem sentido; benefícios sempre "plausíveis" e condicionados ao processo ("reduz retrabalho", nunca "triplica vendas"); nenhuma garantia de posição no Google nem de conversão.
 
