@@ -4,7 +4,7 @@ Documento normativo e **fonte de verdade de toda a comunicação comercial** da 
 
 ## 1. Princípios
 
-A Optional desenvolve **software e infraestrutura digital sob medida** para empresas (CRM, ERP e sistemas de gestão, automações e integrações, sites comerciais e landing pages como formatos de uma mesma frente de presença digital). Não é agência de marketing, nem currículo individual.
+A Optional desenvolve **software e infraestrutura digital sob medida** para empresas (sites comerciais e landing pages, automação de processos, integração de sistemas e sistemas personalizados; CRM e ERP são aplicações possíveis de sistemas personalizados, não frentes independentes). Não é agência de marketing, nem currículo individual.
 
 **Tom de voz:** premium, minimalista, direto, provocativo, profissional, confiante, objetivo, orientado a problemas reais. Pode ser incisivo ao nomear o problema; nunca sensacionalista nem condescendente.
 
@@ -90,14 +90,14 @@ Nenhum volume de busca, dificuldade ou posição é conhecido: as palavras-chave
 
 | Slug | Palavra-chave candidata | Intenção | Termos relacionados | Público | CTA |
 |---|---|---|---|---|---|
-| `/servicos/crm` | desenvolvimento de CRM personalizado | Comercial: contratar desenvolvimento | CRM sob medida, CRM personalizado, sistema de gestão de clientes, gestão de relacionamento | Empresas com processo comercial próprio, equipe comercial em crescimento | Apresentar projeto |
-| `/servicos/erp` | desenvolvimento de ERP personalizado / sistema de gestão sob medida | Comercial | ERP sob medida, sistema de gestão personalizado, controle operacional, rastreabilidade | Empresas com operação própria e controles em planilhas | Apresentar projeto |
-| `/servicos/automacoes` | automação de processos empresariais | Comercial e informacional | integração de sistemas, automação de tarefas repetitivas, integração entre ferramentas | Empresas com retrabalho entre ferramentas | Apresentar projeto |
+| `/servicos/sistemas` | desenvolvimento de sistemas personalizados | Comercial: contratar desenvolvimento | sistema sob medida, software personalizado, controle de processos, rastreabilidade (CRM e ERP como aplicações) | Empresas com processo próprio e controles em planilhas | Apresentar necessidade |
+| `/servicos/integracoes` | integração de sistemas empresariais | Comercial e informacional | integração entre ferramentas, sistemas que compartilham dados, evitar cadastro duplicado | Empresas com várias ferramentas desconectadas | Conectar ferramentas |
+| `/servicos/automacoes` | automação de processos empresariais | Comercial e informacional | automação de tarefas repetitivas, automatizar fluxos operacionais | Empresas com retrabalho manual | Apresentar projeto |
 | `/servicos/sites` | desenvolvimento de sites e landing pages | Comercial | site institucional, site comercial, criação de site para empresas, landing page para campanhas, página de conversão | Empresas de serviços, B2B, profissionais e empresas com ofertas de campanha | Apresentar projeto |
 
-Dúvidas relevantes, proposta de valor, conteúdo e links internos de cada página estão em `src/app/features/site/services/service-content.ts` (fonte única do conteúdo das satélites). A página `/servicos/sites` reúne a presença institucional/comercial e páginas de campanha; landing pages são abordadas como formato de conteúdo, não como frente ou destino independente. Links complementares: CRM↔automações/sites, ERP↔automações, sites↔CRM/automações.
+Dúvidas relevantes, proposta de valor, conteúdo e links internos de cada página estão em `src/app/features/site/services/service-content.ts` (fonte única do conteúdo das satélites). A página `/servicos/sites` reúne a presença institucional/comercial e páginas de campanha; landing pages são abordadas como formato de conteúdo, não como frente ou destino independente. Links complementares: automações↔integrações (propostas distintas: automação executa tarefas por regras; integração faz sistemas compartilharem informações), sistemas↔automações.
 
-URLs: `/servicos/<slug>` (`crm`, `erp`, `automacoes`, `sites`). Slugs ficam em `SERVICE_LINKS` (`core/site.config.ts`), que alimenta rotas, footer e links. A rota antiga `/servicos/landing-pages` foi removida sem alias ou redirecionamento, por decisão explícita do projeto; novas alterações de URLs devem manter o redirecionamento 301 como regra geral.
+URLs: `/servicos/<slug>` (`sites`, `automacoes`, `integracoes`, `sistemas`). Slugs ficam em `SERVICE_LINKS` (`core/site.config.ts`), que alimenta rotas, footer e links. As rotas antigas `/servicos/landing-pages`, `/servicos/crm` e `/servicos/erp` foram removidas sem alias ou redirecionamento, por decisão explícita do projeto (site ainda não público); novas alterações de URLs devem manter o redirecionamento 301 como regra geral.
 
 ## 6. Checklist de revisão de copy
 
@@ -112,8 +112,9 @@ URLs: `/servicos/<slug>` (`crm`, `erp`, `automacoes`, `sites`). Slugs ficam em `
 
 | Projeto | Entrega validada | Serviço |
 |---|---|---|
-| Símtese | CRM para gestão de agendamentos e acompanhamento de resultados | CRM |
-| LaLouise | Sistema de controle operacional com rastreabilidade | ERP / gestão |
+| Símtese | Sistema personalizado de atendimento e fluxo de exames ocupacionais (organiza informações e automatiza etapas); não é CRM convencional nem ERP | Sistemas personalizados (+ automação) |
+| LaLouise | Sistema de controle de qualidade, validades e rastreabilidade de alimentos para restaurantes; não é ERP completo nem só etiquetas | Sistemas personalizados (+ automação) |
+| Automação de e-commerce | Automação de cadastro e tratamento de informações de produtos, com integração entre ferramentas (sem métricas) | Automação (+ integração) |
 | Caldeiraria Realiza | Site comercial | Sites |
 | Paulo Carvalho | Site profissional | Sites |
 | Profissão do Século | Landing page | Landing pages |

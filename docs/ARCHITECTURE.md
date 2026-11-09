@@ -24,7 +24,7 @@ src/app/
 
 Páginas nunca ficam em um único arquivo: cada página é um componente de página (`<nome>-page-component.ts/.html`) que apenas compõe seções, define SEO e orquestra animações; cada seção fica em um componente próprio, **em uma pasta própria** dentro de `sections/` (`sections/<nome>/<nome>-section-component.ts/.html`), com seus dados e imports. Exemplo: `features/site/home/home-page-component.*` + `features/site/home/sections/hero/hero-section-component.*`.
 
-Homepage, páginas satélites para quatro frentes comerciais (sites e landing pages na mesma página, CRM, automações, ERP/gestão), projetos e cases, conteúdo comercial, SEO, metadados, CTAs. Páginas indexáveis e otimizadas.
+Homepage, páginas satélites para quatro frentes comerciais (experiência e qualificação comercial com sites e landing pages na mesma página, automação de processos, integração de sistemas e sistemas personalizados), projetos e cases, conteúdo comercial, SEO, metadados, CTAs. Páginas indexáveis e otimizadas.
 
 ### Hubs
 

@@ -184,8 +184,8 @@ export const CASES: CaseContent[] = [
     cta: {
       lead: 'Sua operação ainda depende de',
       key: 'controles manuais?',
-      text: 'Conte qual rotina consome mais tempo da equipe. Vamos avaliar como um sistema de gestão sob medida pode organizá-la.',
-      message: 'Olá! Vim pelo case LaLouise e gostaria de conversar sobre um sistema de gestão para a minha operação.',
+      text: 'Conte qual rotina consome mais tempo da equipe. Vamos avaliar como um sistema sob medida pode organizá-la.',
+      message: 'Olá! Vim pelo case LaLouise e gostaria de conversar sobre um sistema personalizado para a minha operação.',
     },
   },
   {

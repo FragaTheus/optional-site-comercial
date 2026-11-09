@@ -17,7 +17,7 @@ Direto, confiante, incisivo, profissional, específico, orientado a problemas re
 
 - Fabricar prova social, números, depoimentos ou resultados.
 - Prometer aumento de vendas/faturamento sem evidência.
-- Descrever projetos de referência (Símtese, LaLouise, Caldeiraria Realiza, Paulo Carvalho, Profissão do Século) além do que foi validado: Símtese = CRM/gestão de agendamentos e resultados; LaLouise = controle operacional e rastreabilidade; Caldeiraria Realiza = site comercial; Paulo Carvalho = site profissional; Profissão do Século = landing page. Só usar com validação e sem publicar marcas/dados confidenciais sem autorização.
+- Descrever projetos de referência (Símtese, LaLouise, Caldeiraria Realiza, Paulo Carvalho, Profissão do Século) além do que foi validado: Símtese = sistema personalizado de atendimento e exames ocupacionais; LaLouise = sistema personalizado de qualidade, validades e rastreabilidade; automação de e-commerce = automação com integração; Caldeiraria Realiza = site comercial; Paulo Carvalho = site profissional; Profissão do Século = landing page. Só usar com validação e sem publicar marcas/dados confidenciais sem autorização.
 - Escrever headlines em caixa normal (o CSS aplica uppercase); identificar 1–3 palavras-chave de cada heading e envolvê-las em `<strong>`.
 - Uppercase manual em textos corridos e botões.
 
@@ -28,9 +28,9 @@ Direto, confiante, incisivo, profissional, específico, orientado a problemas re
 
 ## Posicionamento por serviço
 
-- **CRM:** organização de clientes, histórico, relacionamento, processos comerciais.
-- **ERP/gestão:** controle operacional, gestão, rastreabilidade, organização empresarial.
-- **Automações:** menos tarefas manuais, integração de ferramentas, produtividade operacional.
+- **Sistemas personalizados:** software próprio para organizar e controlar processos específicos; CRM/ERP só como aplicações possíveis.
+- **Automação de processos:** execução automática de tarefas, menos repetição, produtividade operacional.
+- **Integração de sistemas:** ferramentas que compartilham informações, menos cadastros duplicados (não é sinônimo de automação).
 - **Sites comerciais e landing pages:** uma presença digital que apresenta a empresa, responde à busca e também pode concentrar ofertas de campanha com mensuração.
 
 ## Direção (não repetir automaticamente)

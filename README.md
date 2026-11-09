@@ -14,14 +14,14 @@ Posicionar a Optional como autoridade, apresentar serviços, servir de portfóli
 Comercial e tecnológico, soluções sob medida para a realidade de cada empresa. Não é agência de marketing, nem currículo individual. Sem promessas de vendas/faturamento sem evidência; sem resultados, números ou depoimentos inventados.
 
 ## 4. Frentes comerciais
-Qualificação comercial (sites e landing pages); gestão de relacionamento (CRM); automações de processo; organização operacional (ERP e sistemas de gestão).
+Experiência e qualificação comercial (sites e landing pages); automação de processos; integração de sistemas; sistemas personalizados (CRM e ERP são possíveis aplicações, não frentes independentes).
 
 ## 5. Objetivos do website
 Plataforma institucional; apresentação comercial; portfólio; canal de aquisição; apoio à prospecção; repositório de conceitos.
-Referências (sujeitas a validação, sem dados confidenciais): Símtese (CRM/agendamentos), LaLouise (controle operacional/rastreabilidade), Caldeiraria Realiza (site comercial), Paulo Carvalho (site profissional), Profissão do Século (landing page).
+Referências (sujeitas a validação, sem dados confidenciais): Símtese (sistema personalizado de atendimento e exames ocupacionais), LaLouise (sistema personalizado de qualidade, validades e rastreabilidade), automação de e-commerce (automação + integração), Caldeiraria Realiza (site comercial), Paulo Carvalho (site profissional), Profissão do Século (landing page).
 
 ## 6. Features principais
-- `features/site`: homepage (único hub), páginas satélites `/servicos/{crm,erp,automacoes,sites}` e cases em `/cases/:slug`. A página de sites também aborda landing pages. O conteúdo dos cases deve ser revisado antes da publicação.
+- `features/site`: homepage (único hub), páginas satélites `/servicos/{sites,automacoes,integracoes,sistemas}` e cases em `/cases/:slug`. A página de sites também aborda landing pages. O conteúdo dos cases deve ser revisado antes da publicação.
 - `features/concepts`: `/concept/:slug`, noindex, fora do sitemap. *(não implementado)*
 
 ## 7. Arquitetura Angular
