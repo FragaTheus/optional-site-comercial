@@ -2,6 +2,8 @@ import { ServiceSlug } from '../../../core/site.config';
 
 export interface Heading { lead: string; key: string }
 export interface Item { name: string; text: string }
+/** Estudo externo (não é case da Optional) que sustenta a solução. */
+export interface Evidence { benefit: string; company: string; text: string; href: string; linkLabel: string }
 
 // Conteúdo de uma página de serviço, organizado em StoryBrand: hero (personagem + sucesso), desafios (problema + fracasso a evitar), solução (guia + sucesso), plano e chamada para ação. A estrutura é a mesma; o texto é de cada frente.
 export interface ServiceContent {
@@ -18,8 +20,8 @@ export interface ServiceContent {
   /** Exibe o simulador de horas no lugar da imagem do hero. */
   simulator?: boolean;
   challenges: { title: Heading; intro: string; items: Item[]; sources?: { label: string; href: string }[] };
-  solution: { title: Heading; text: string; caseSlug?: string };
-  process: { text: string; steps: Item[] };
+  solution: { title: Heading; text: string; caseSlug?: string; evidence?: Evidence[]; note?: string };
+  process: { text: string; steps: (Item & { link?: { label: string; slug: ServiceSlug } })[] };
   cta: { headline: Heading; text: string; label: string; message: string };
 }
 
@@ -148,6 +150,52 @@ export const SERVICES: ServiceContent[] = [
       text: 'Conte como a operação funciona hoje. Indicamos o que faz sentido construir e por onde começar.',
       label: 'Apresentar necessidade',
       message: 'Olá! Vim pela página de sistemas personalizados e gostaria de apresentar a necessidade da minha empresa.',
+    },
+  },
+  {
+    slug: 'terceirizacao-de-fluxos',
+    label: 'Terceirização de fluxos',
+    keyword: 'terceirização de processos operacionais',
+    title: 'Terceirização de Fluxos Operacionais | Optional',
+    description: 'Conheça a terceirização de fluxos da Optional. Avaliamos processos operacionais, definimos entregas e assumimos sua execução conforme o escopo contratado.',
+    h1: { lead: 'Você contrata o resultado.', key: 'A execução fica com a gente.' },
+    intro: 'Assumimos processos operacionais definidos, combinando tecnologia e acompanhamento para entregar o trabalho acordado, sem que sua equipe precise administrar cada etapa.',
+    image: '/solutions/integration.png',
+    challenges: {
+      title: { lead: 'Quanto da sua operação depende da', key: 'atenção da sua equipe?' },
+      intro: 'Manter processos internamente exige mais do que executar tarefas. É preciso dedicar pessoas, ferramentas e acompanhamento para garantir que cada entrega aconteça.',
+      items: [
+        { name: 'Tempo longe do negócio', text: 'Administrar processos operacionais ocupa profissionais que poderiam dedicar mais atenção aos clientes e às atividades principais da empresa.' },
+        { name: 'Estrutura para manter o processo', text: 'Determinadas rotinas exigem profissionais especializados, ferramentas, treinamento e manutenção para continuar funcionando.' },
+        { name: 'Dificuldade para acompanhar a demanda', text: 'Quando o volume de trabalho aumenta, a empresa precisa ampliar sua capacidade de execução sem comprometer os prazos.' },
+        { name: 'Responsabilidade por cada entrega', text: 'Executar um processo também significa acompanhar etapas, conferir resultados e resolver imprevistos para que tudo seja concluído corretamente.' },
+      ],
+    },
+    solution: {
+      title: { lead: 'Mais atenção ao negócio.', key: 'Menos processos para administrar.' },
+      text: 'Definimos com sua empresa o que precisa ser entregue, assumimos a execução das etapas acordadas e acompanhamos os resultados, mantendo você informado sobre o andamento e as situações que exigem atenção.',
+      evidence: [
+        { benefit: 'Mais tempo para atividades estratégicas.', company: 'Vick Accounting & Tax Service', text: 'Ao transferir a administração de folhas de pagamento para a ADP, o escritório conseguiu dedicar mais capacidade à consultoria e ao atendimento de clientes maiores.', href: 'https://www.adp.com/resources/what-others-say/testimonials/h/how-vick-accounting-vick-accounting.aspx', linkLabel: 'Ler estudo da ADP' },
+        { benefit: 'Menos estrutura operacional própria.', company: 'nyc Business Mentors and Chartered Accountants', text: 'Com a terceirização da folha de pagamento, o escritório evitou manter especialistas e softwares próprios para executar diretamente essa operação.', href: 'https://qxaccounting.com/uk/case-study/payroll-outsourcing-solution-helps-accountancy-client-improve-payroll-profitability/', linkLabel: 'Ler estudo da QX Accounting' },
+        { benefit: 'Menos de 30 minutos para conferir a folha.', company: 'Cliente da Baker Tilly — setor de petróleo e gás', text: 'Após terceirizar e modernizar processos de RH e folha de pagamento, a empresa passou a realizar a conferência quinzenal em menos de 30 minutos, em vez de horas.', href: 'https://www.bakertilly.com/insights/integrated-hr-and-payroll-fuel-growth', linkLabel: 'Ler estudo da Baker Tilly' },
+      ],
+      note: 'Resultados relatados em estudos de caso externos. Os benefícios variam conforme cada processo.',
+    },
+    process: {
+      text: 'Entendemos seu processo, definimos as entregas e organizamos a execução para que sua empresa receba os resultados sem precisar administrar cada etapa.',
+      steps: [
+        { name: 'Conhecemos sua operação', text: 'Entendemos como o processo funciona, quais atividades ele envolve e o resultado que sua empresa precisa receber.' },
+        { name: 'Avaliamos a viabilidade', text: 'Analisamos quais processos podemos assumir e quando é mais vantajoso manter a execução na sua empresa com o apoio de automações ou integrações.', link: { label: 'Conhecer Automações', slug: 'automacoes' } },
+        { name: 'Definimos as entregas', text: 'Estabelecemos o escopo do serviço, os critérios de qualidade, os prazos e as responsabilidades de cada parte.' },
+        { name: 'Preparamos e testamos', text: 'Configuramos a operação, desenvolvemos as automações necessárias e validamos o processo antes de iniciar as entregas.' },
+        { name: 'Executamos e acompanhamos', text: 'Assumimos as atividades acordadas, acompanhamos a execução, tratamos as exceções previstas e entregamos os resultados para sua empresa.' },
+      ],
+    },
+    cta: {
+      headline: { lead: 'Acha que algum processo da sua empresa', key: 'poderia ser terceirizado?' },
+      text: 'Conte como ele funciona. Vamos conversar sobre a viabilidade de assumir sua execução ou encontrar uma alternativa mais adequada para sua empresa.',
+      label: 'Vamos conversar',
+      message: 'Olá! Vim pela página de terceirização de fluxos e gostaria de descrever um processo da minha empresa para avaliar se vocês podem assumir a execução.',
     },
   },
 ];

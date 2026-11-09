@@ -16,6 +16,10 @@ const SOLUTION_CONTENT = {
     text: 'Processos específicos raramente cabem em sistemas prontos. Desenvolvemos softwares próprios para organizar, controlar e acompanhar as atividades da sua operação.',
     image: 'systems.png',
   },
+  'terceirizacao-de-fluxos': {
+    text: 'Manter processos internamente ocupa pessoas e estrutura. Avaliamos processos operacionais definidos e assumimos a execução das etapas acordadas, para você receber o trabalho concluído.',
+    image: 'integration.png',
+  },
 } as const;
 
 const SOLUTIONS = SERVICE_LINKS.map(({ slug, front }) => ({

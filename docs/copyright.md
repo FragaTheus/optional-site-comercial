@@ -4,7 +4,7 @@ Documento normativo e **fonte de verdade de toda a comunicação comercial** da 
 
 ## 1. Princípios
 
-A Optional desenvolve **software e infraestrutura digital sob medida** para empresas (sites comerciais e landing pages, automação de processos, integração de sistemas e sistemas personalizados; CRM e ERP são aplicações possíveis de sistemas personalizados, não frentes independentes). Não é agência de marketing, nem currículo individual.
+A Optional desenvolve **software e infraestrutura digital sob medida** para empresas (sites comerciais e landing pages, automações (com integração entre ferramentas), sistemas personalizados e terceirização de fluxos; CRM e ERP são aplicações possíveis de sistemas personalizados, não frentes independentes). Não é agência de marketing, nem currículo individual.
 
 **Tom de voz:** premium, minimalista, direto, provocativo, profissional, confiante, objetivo, orientado a problemas reais. Pode ser incisivo ao nomear o problema; nunca sensacionalista nem condescendente.
 
@@ -91,13 +91,13 @@ Nenhum volume de busca, dificuldade ou posição é conhecido: as palavras-chave
 | Slug | Palavra-chave candidata | Intenção | Termos relacionados | Público | CTA |
 |---|---|---|---|---|---|
 | `/servicos/sistemas` | desenvolvimento de sistemas personalizados | Comercial: contratar desenvolvimento | sistema sob medida, software personalizado, controle de processos, rastreabilidade (CRM e ERP como aplicações) | Empresas com processo próprio e controles em planilhas | Apresentar necessidade |
-| `/servicos/integracoes` | integração de sistemas empresariais | Comercial e informacional | integração entre ferramentas, sistemas que compartilham dados, evitar cadastro duplicado | Empresas com várias ferramentas desconectadas | Conectar ferramentas |
-| `/servicos/automacoes` | automação de processos empresariais | Comercial e informacional | automação de tarefas repetitivas, automatizar fluxos operacionais | Empresas com retrabalho manual | Apresentar projeto |
+| `/servicos/automacoes` | automação e integração de sistemas | Comercial e informacional | automação de tarefas repetitivas, integração entre ferramentas, evitar cadastro duplicado | Empresas com retrabalho manual e ferramentas desconectadas | Analisar processo |
+| `/servicos/terceirizacao-de-fluxos` | terceirização de processos operacionais | Comercial e informacional | terceirizar processos operacionais, execução de fluxos | Empresas que querem receber a entrega, não operar a ferramenta | Vamos conversar |
 | `/servicos/sites` | desenvolvimento de sites e landing pages | Comercial | site institucional, site comercial, criação de site para empresas, landing page para campanhas, página de conversão | Empresas de serviços, B2B, profissionais e empresas com ofertas de campanha | Apresentar projeto |
 
 Dúvidas relevantes, proposta de valor, conteúdo e links internos de cada página estão em `src/app/features/site/services/service-content.ts` (fonte única do conteúdo das satélites). A página `/servicos/sites` reúne a presença institucional/comercial e páginas de campanha; landing pages são abordadas como formato de conteúdo, não como frente ou destino independente. Links complementares: automações↔integrações (propostas distintas: automação executa tarefas por regras; integração faz sistemas compartilharem informações), sistemas↔automações.
 
-URLs: `/servicos/<slug>` (`sites`, `automacoes`, `integracoes`, `sistemas`). Slugs ficam em `SERVICE_LINKS` (`core/site.config.ts`), que alimenta rotas, footer e links. As rotas antigas `/servicos/landing-pages`, `/servicos/crm` e `/servicos/erp` foram removidas sem alias ou redirecionamento, por decisão explícita do projeto (site ainda não público); novas alterações de URLs devem manter o redirecionamento 301 como regra geral.
+URLs: `/servicos/<slug>` (`sites`, `automacoes`, `sistemas`, `terceirizacao-de-fluxos`). Slugs ficam em `SERVICE_LINKS` (`core/site.config.ts`), que alimenta rotas, footer e links. As rotas antigas `/servicos/landing-pages`, `/servicos/crm` e `/servicos/erp` foram removidas sem alias ou redirecionamento, por decisão explícita do projeto (site ainda não público); `/servicos/integracoes` redireciona 301 para `/servicos/automacoes` (`vercel.json` e rota Angular); novas alterações de URLs devem manter o redirecionamento 301 como regra geral.
 
 ## 6. Checklist de revisão de copy
 

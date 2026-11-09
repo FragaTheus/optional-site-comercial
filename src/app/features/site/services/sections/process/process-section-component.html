@@ -12,6 +12,9 @@
           <span class="eyebrow">Etapa {{ $index + 1 }}</span>
           <h3 class="mt-gutter"><strong>{{ step.name }}</strong></h3>
           <p class="mt-gutter max-w-prose">{{ step.text }}</p>
+          @if (step.link; as link) {
+            <a [routerLink]="['/servicos', link.slug]" class="mt-gutter inline-flex items-center gap-2 underline underline-offset-4">{{ link.label }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+          }
         </li>
       }
     </ol>

@@ -18,11 +18,12 @@ describe('SolutionsIntroSectionComponent', () => {
       { label: 'Experiência e qualificação comercial', href: '/servicos/sites' },
       { label: 'Automações', href: '/servicos/automacoes' },
       { label: 'Sistemas personalizados', href: '/servicos/sistemas' },
+      { label: 'Terceirização de fluxos', href: '/servicos/terceirizacao-de-fluxos' },
     ];
 
-    expect(triggers).toHaveLength(3);
-    expect(panels).toHaveLength(3);
-    expect(cards).toHaveLength(3);
+    expect(triggers).toHaveLength(4);
+    expect(panels).toHaveLength(4);
+    expect(cards).toHaveLength(4);
 
     const expectSelection = (selected: number) => {
       solutions.forEach((solution, index) => {
@@ -57,7 +58,8 @@ describe('SolutionsIntroSectionComponent', () => {
 
     triggers[1].click();
     triggers[2].click();
+    triggers[3].click();
     await fixture.whenStable();
-    expectSelection(2);
+    expectSelection(3);
   });
 });

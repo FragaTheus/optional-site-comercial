@@ -7,6 +7,21 @@
       </h2>
     </header>
 
+    @if (service().solution.evidence; as evidence) {
+      <aside class="flex flex-col gap-gutter lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1">
+        <ul data-stagger=":scope > li" class="flex flex-col gap-gutter">
+          @for (item of evidence; track item.href) {
+            <li class="card card-tertiary flex flex-col gap-3">
+              <h3><strong>{{ item.benefit }}</strong></h3>
+              <p class="eyebrow">{{ item.company }}</p>
+              <small>{{ item.text }}</small>
+              <a [href]="item.href" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4"><small>{{ item.linkLabel }}</small></a>
+            </li>
+          }
+        </ul>
+        <p class="text-sm text-carbon/70"><small>{{ service().solution.note }}</small></p>
+      </aside>
+    } @else {
     <img
       [src]="image().src"
       [alt]="image().alt"
@@ -16,6 +31,7 @@
       decoding="async"
       class="aspect-video size-full rounded-xs object-cover lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1 lg:aspect-auto"
     />
+    }
 
     <footer class="flex flex-col items-start gap-gutter lg:col-span-6 lg:row-start-2 lg:self-end">
       <p appReveal class="max-w-xl">{{ service().solution.text }}</p>

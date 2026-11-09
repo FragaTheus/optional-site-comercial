@@ -9,6 +9,7 @@ export const SERVICE_LINKS = [
   { slug: 'sites', label: 'Sites e landing pages', front: 'Experiência e qualificação comercial' },
   { slug: 'automacoes', label: 'Automações', front: 'Automações' },
   { slug: 'sistemas', label: 'Sistemas personalizados', front: 'Sistemas personalizados' },
+  { slug: 'terceirizacao-de-fluxos', label: 'Terceirização de fluxos', front: 'Terceirização de fluxos' },
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_LINKS)[number]['slug'];
