@@ -1,6 +1,11 @@
 <section aria-labelledby="service-solution-title">
   <div class="site-container site-grid gap-y-gutter px-0">
-    <header class="flex flex-col gap-gutter lg:col-span-6 px-gutter">
+    <header
+      [class]="
+        'flex flex-col gap-gutter px-gutter ' +
+        (service().solution.evidence ? 'lg:col-span-full' : 'lg:col-span-6')
+      "
+    >
       <h2 id="service-solution-title" appReveal="lines" class="max-w-7xl">
         {{ service().solution.title.lead }} <strong>{{ service().solution.title.key }}</strong>
       </h2>
@@ -13,7 +18,7 @@
           class="flex gap-gutter overflow-x-auto px-gutter scrollbar-none"
         >
           @for (item of evidence; track item.href) {
-            <li class="card card-tertiary flex flex-col gap-gutter min-w-3xs">
+            <li class="card card-tertiary flex flex-col justify-between gap-gutter min-w-3xs">
               <h3>
                 <strong>{{ item.benefit }}</strong>
               </h3>
@@ -23,7 +28,7 @@
                 [href]="item.href"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline underline-offset-4"
+                class="underline underline-offset-4 px-0"
                 ><small>{{ item.linkLabel }}</small></a
               >
             </li>

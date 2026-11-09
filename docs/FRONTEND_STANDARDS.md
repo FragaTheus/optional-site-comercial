@@ -28,7 +28,7 @@ Fonte única em `@theme`, com nomes semânticos: `--color-carbon: #111315`, `--c
 
 ## 4. Escala tipográfica fluida
 
-Sobrescrever `--text-*` em `@theme`, mantendo os nomes `text-xs` … `text-9xl`. Sem segunda escala paralela. A escala fluida original é reduzida em 10%, sem ficar abaixo dos mínimos existentes. Definir também `--text-*--line-height` coerente. Utilities `text-*` não são redefinidas em `@layer base`; use `@theme`.
+Sobrescrever `--text-*` em `@theme`, mantendo os nomes `text-xs` … `text-9xl`. Sem segunda escala paralela. A escala fluida compacta mantém fator `0.9`; os tamanhos de heading (`lg` a `8xl`) usam fator `0.8`. Os mínimos existentes definidos em `max()` não devem ser reduzidos. Definir também `--text-*--line-height` coerente. Utilities `text-*` não são redefinidas em `@layer base`; use `@theme`.
 
 Valores nominais de referência do Tailwind: xs 0.75rem, sm 0.875rem, base 1rem, lg 1.125rem, xl 1.25rem, 2xl 1.5rem, 3xl 1.875rem, 4xl 2.25rem, 5xl 3rem, 6xl 3.75rem, 7xl 4.5rem, 8xl 6rem, 9xl 8rem.
 
@@ -37,8 +37,8 @@ Exemplo conceitual (completar todos os tamanhos com coerência e validar visualm
 ```css
 @theme {
   --text-base: max(0.9375rem, clamp(0.9375rem, 0.9rem + 0.2vw, 1rem) * 0.9);
-  --text-xl: max(1rem, clamp(1rem, 0.92rem + 0.4vw, 1.25rem) * 0.9);
-  --text-4xl: max(1.1875rem, clamp(1.1875rem, 0.8875rem + 1.5vw, 2.25rem) * 0.9);
+  --text-xl: max(1rem, clamp(1rem, 0.92rem + 0.4vw, 1.25rem) * 0.8);
+  --text-4xl: max(1.1875rem, clamp(1.1875rem, 0.8875rem + 1.5vw, 2.25rem) * 0.8);
 }
 ```
 
@@ -48,6 +48,7 @@ Sem quebras manuais de linha responsivas (`<br>` com `hidden md:block`) no lugar
 
 - Heading: `font-display` (Bricolage Grotesque), `uppercase`, `text-slate`; h1/h2 `font-extrabold`, h3 `font-bold`, h4–h6 `font-semibold`. Palavras-chave dentro de `<strong>` ficam em carbon (regra em `@layer base`; em `.surface-dark` e `.card-secondary` ficam white). Heading sem `<strong>` aparece todo em slate: sempre destacar as palavras-chave.
 - Body em carbon com opacidade (cinza de alto contraste derivado da paleta), entrelinha generosa.
+- Elementos `<small>` usam `text-sm` para preservar a legibilidade.
 - Não usar slate em texto pequeno sem contraste suficiente.
 - Os estilos base não impedem customização pontual por utilities.
 
