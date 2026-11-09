@@ -4,16 +4,15 @@
       <ng-content />
     </div>
     @if (image()) {
-    <img
-      [src]="image()"
-      [alt]="imageAlt()"
-      [attr.width]="landscape() ? 1840 : 1254"
-      [attr.height]="landscape() ? 963 : 1254"
-      fetchpriority="high"
-      decoding="async"
-      class="size-full rounded-xs object-cover lg:col-span-6"
-      [class]="landscape() ? 'aspect-1840/963 object-top' : 'aspect-square'"
-    />
+      <img
+        [src]="image()"
+        [alt]="imageAlt()"
+        [attr.width]="landscape() ? 1840 : 1254"
+        [attr.height]="landscape() ? 963 : 1254"
+        fetchpriority="high"
+        decoding="async"
+        class="size-full rounded-xs object-cover lg:col-span-6 aspect-video max-w-xl justify-self-end shadow-xl"
+      />
     } @else {
       <ng-content select="[aside]" />
     }
