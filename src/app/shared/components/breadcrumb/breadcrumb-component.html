@@ -1,11 +1,11 @@
 <nav aria-label="Trilha de navegação">
-  <ol class="flex flex-wrap items-center gap-gutter">
+  <ol class="flex flex-wrap items-center gap-4">
     @for (ancestor of ancestors(); track ancestor.label) {
       <li>
         @if (ancestor.routerLink) {
           <a
             [routerLink]="ancestor.routerLink"
-            class="w-auto max-w-none underline underline-offset-4 hover:decoration-signal"
+            class="w-auto px-0! max-w-none underline underline-offset-4 hover:decoration-signal"
             >{{ ancestor.label }}</a
           >
         } @else {

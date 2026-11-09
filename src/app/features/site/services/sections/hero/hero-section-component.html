@@ -1,5 +1,8 @@
 <app-page-hero titleId="service-hero-title" [image]="service().simulator ? '' : service().image">
-  <app-breadcrumb [ancestors]="[{ label: 'Início', routerLink: '/' }]" [currentLabel]="service().label" />
+  <app-breadcrumb
+    [ancestors]="[{ label: 'Início', routerLink: '/' }]"
+    [currentLabel]="service().label"
+  />
   <h1 id="service-hero-title" appReveal="lines" class="lg:text-6xl">
     {{ service().h1.lead }} <strong>{{ service().h1.key }}</strong>
   </h1>
