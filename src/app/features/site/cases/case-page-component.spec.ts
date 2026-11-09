@@ -34,6 +34,8 @@ describe('CasePageComponent', () => {
     expect(el.querySelector('app-case-hero-section a[target="_blank"]')?.getAttribute('href')).toBe(item.projectUrl);
     expect(el.querySelector(`a[href="/servicos/${item.service}"]`)).not.toBeNull();
     expect(el.querySelector('#contato a')?.getAttribute('href')).toContain('wa.me/');
+    expect(el.querySelector('#contato h2')?.textContent).toContain(item.cta.key);
+    expect(el.querySelectorAll('app-case-before-section li')).toHaveLength(item.before.consequences.length);
     expect(TestBed.inject(Title).getTitle()).toBe(item.title);
   });
 });
