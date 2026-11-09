@@ -15,7 +15,7 @@ export interface ServiceContent {
   intro: string;
   /** Imagem do hero e da solução quando não há case com imagem própria. */
   image: string;
-  challenges: { title: Heading; intro: string; items: Item[] };
+  challenges: { title: Heading; intro: string; items: Item[]; sources?: { label: string; href: string }[] };
   solution: { title: Heading; text: string; caseSlug?: string };
   process: { text: string; steps: Item[] };
   cta: { headline: Heading; text: string; label: string; message: string };
@@ -24,40 +24,47 @@ export interface ServiceContent {
 export const SERVICES: ServiceContent[] = [
   {
     slug: 'sites',
-    label: 'Sites comerciais',
+    label: 'Sites e Landing Pages',
     keyword: 'desenvolvimento de sites e landing pages',
     title: 'Sites e landing pages sob medida | Optional',
     description: 'Sites comerciais e landing pages sob medida: conteúdo claro, SEO técnico e contato facilitado para apresentar seus serviços e receber contatos mais qualificados.',
-    h1: { lead: 'Sites e landing pages que', key: 'explicam o seu serviço' },
-    intro: 'Apresente o que a empresa faz, esclareça as dúvidas de quem pesquisa e facilite o contato de quem realmente precisa do seu serviço. Desenvolvemos sites comerciais e páginas de campanha sob medida.',
+    h1: { lead: 'Melhore a experiência do usuário e', key: 'qualifique potenciais clientes.' },
+    intro: 'Criamos experiências que ajudam seu público a encontrar o que procura, compreender suas soluções e entrar em contato mais preparado.',
     image: '/solutions/site-abstract.png',
     challenges: {
-      title: { lead: 'Quando o site', key: 'não qualifica o contato' },
-      intro: 'Sinais de que a presença digital ainda não esclarece o que a empresa oferece.',
+      title: { lead: 'O que os visitantes pensam', key: 'sobre os sites das empresas?' },
+      intro: 'Pesquisas da Nielsen Norman Group e de Stanford apontam problemas de conteúdo, navegação e credibilidade que prejudicam a experiência e a percepção dos sites empresariais.',
       items: [
-        { name: 'Dúvidas que se repetem', text: 'Perguntas básicas sobre serviços e região chegam por mensagem porque o site não as responde, e a equipe perde tempo com elas.' },
-        { name: 'Contatos sem aderência', text: 'Sem uma apresentação clara do que a empresa faz, chegam pedidos que não fazem parte da oferta.' },
-        { name: 'Serviços difíceis de encontrar', text: 'Sem páginas organizadas por serviço e região, quem pesquisa não encontra a empresa pelo que ela oferece.' },
-        { name: 'Campanhas sem página própria', text: 'Uma oferta específica apontada para a página inicial dispersa o visitante e dificulta saber o que funcionou.' },
+        { name: 'Conteúdo genérico', text: 'Textos vagos e repetitivos não esclarecem as dúvidas de quem procura uma solução.' },
+        { name: 'Serviços pouco claros', text: 'Descrições incompletas dificultam compreender a oferta e avaliar se ela atende à necessidade.' },
+        { name: 'Navegação confusa', text: 'Informações dispersas e caminhos pouco intuitivos dificultam encontrar o que importa.' },
+        { name: 'Uma imagem que não representa a empresa', text: 'Um site desatualizado pode transmitir menos confiança do que a qualidade real dos serviços merece.' },
+      ],
+      sources: [
+        { label: 'Nielsen Norman Group — About Us Information on Websites (2019)', href: 'https://www.nngroup.com/articles/about-us-information-on-websites/' },
+        { label: 'Stanford — Guidelines for Web Credibility', href: 'https://credibility.stanford.edu/guidelines/' },
       ],
     },
     solution: {
-      title: { lead: 'Uma presença digital que', key: 'apresenta e qualifica' },
-      text: 'Estruturamos o conteúdo pelas dúvidas e buscas do seu público, com SEO técnico, boa leitura em qualquer tela e caminhos claros de contato, incluindo páginas de campanha quando necessário. Para a Caldeiraria Realiza, implementamos um site comercial para que a empresa fosse encontrada pelo nicho, pelos serviços e pela região de atuação.',
+      title: { lead: 'Seus diferenciais', key: 'precisam ser percebidos.' },
+      text: 'Transformamos o que torna sua empresa única em uma experiência que comunica seu valor, esclarece dúvidas e ajuda seu público a tomar decisões.',
       caseSlug: 'caldeiraria-realiza',
     },
     process: {
-      text: 'Do primeiro contato à publicação, você acompanha as decisões sobre conteúdo, estrutura e contato.',
+      text: 'Da compreensão do seu negócio à melhoria contínua, cuidamos de cada etapa para que seu site acompanhe os objetivos da sua empresa.',
       steps: [
-        { name: 'Diagnóstico', text: 'Entendemos a empresa, o público, as buscas relevantes e o que o visitante precisa saber antes de entrar em contato.' },
-        { name: 'Escopo e proposta', text: 'Definimos páginas, conteúdo, mensuração, prazo e investimento, tudo combinado por escrito antes de o desenvolvimento começar.' },
-        { name: 'Desenvolvimento e entrega', text: 'Desenvolvemos, revisamos com você antes de publicar e acertamos suporte e evolução conforme o combinado.' },
+        { name: 'Conhecemos seu negócio', text: 'Entendemos sua empresa, seus serviços e os problemas que ela resolve.' },
+        { name: 'Entendemos seu público', text: 'Identificamos quem procura seus serviços, suas necessidades e o que influencia suas decisões.' },
+        { name: 'Planejamos a experiência', text: 'Criamos os textos e o visual do site para valorizar sua empresa e facilitar a navegação.' },
+        { name: 'Desenvolvemos e publicamos', text: 'Construímos, colocamos o site no ar e cuidamos do seu funcionamento.' },
+        { name: 'Acompanhamos e melhoramos', text: 'Durante o primeiro ano, analisamos os dados e fazemos melhorias conforme o que foi combinado.' },
+        { name: 'Atualizamos a cada ano', text: 'Planejamos novas versões para manter o site alinhado à evolução da sua empresa.' },
       ],
     },
     cta: {
-      headline: { lead: 'Vamos estruturar a sua', key: 'presença digital?' },
-      text: 'Conte como os clientes chegam até a empresa e o que precisam encontrar. Indicamos a estrutura mais adequada e apresentamos uma proposta.',
-      label: 'Solicitar proposta',
+      headline: { lead: 'A próxima experiência', key: 'com sua empresa começa aqui.' },
+      text: 'Vamos desenvolver uma jornada digital que facilite a descoberta dos seus serviços e prepare seu público para entrar em contato.',
+      label: 'Apresentar meu projeto',
       message: 'Olá! Vim pela página de sites e landing pages e gostaria de solicitar uma proposta.',
     },
   },

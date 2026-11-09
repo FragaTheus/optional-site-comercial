@@ -22,5 +22,18 @@
         </li>
       }
     </ul>
+
+    @if (service().challenges.sources; as sources) {
+      <footer class="flex flex-col gap-2 lg:col-span-full">
+        <p class="eyebrow">Fontes</p>
+        <ul class="flex flex-col gap-1">
+          @for (source of sources; track source.href) {
+            <li>
+              <small><a [href]="source.href" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4">{{ source.label }}</a></small>
+            </li>
+          }
+        </ul>
+      </footer>
+    }
   </div>
 </section>
