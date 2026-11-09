@@ -3,12 +3,12 @@ import { RouterLink } from '@angular/router';
 import { Reveal } from '../../../../../shared/directives/reveal';
 import { CaseContent } from '../../case-content';
 
-// Explica os requisitos e a implementação, com espaço para imagens do projeto.
+// Explica a solução entregue sobre uma imagem do projeto escurecida por gradientes carbon.
 @Component({
-  selector: 'app-case-solution-section',
+  selector: 'app-case-bridge-section',
   imports: [Reveal, RouterLink],
-  templateUrl: './solution-section-component.html',
+  templateUrl: './bridge-section-component.html',
 })
-export class SolutionSectionComponent {
+export class BridgeSectionComponent {
   readonly caseStudy = input.required<CaseContent>();
 }

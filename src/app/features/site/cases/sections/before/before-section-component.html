@@ -1,0 +1,17 @@
+<section aria-labelledby="case-before-title">
+  <div class="site-container site-grid gap-y-gutter">
+    <header appReveal class="card card-primary self-start lg:col-span-6">
+      <p class="eyebrow">Antes</p>
+      <h2 id="case-before-title" class="mt-4">O <strong>desafio.</strong></h2>
+    </header>
+    <div appReveal class="flex flex-col gap-gutter lg:col-span-6 lg:row-span-2">
+      <p class="text-xl text-carbon">{{ caseStudy().before.scenario }}</p>
+      <p>{{ caseStudy().before.problem }}</p>
+      <ul class="border-t border-carbon/15">
+        @for (consequence of caseStudy().before.consequences; track consequence) {
+          <li class="border-b border-carbon/15 py-4">{{ consequence }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

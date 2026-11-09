@@ -1,0 +1,15 @@
+<section aria-labelledby="case-after-title">
+  <div class="site-container site-grid grid-flow-dense gap-y-gutter">
+    <header appReveal class="card self-start lg:col-span-6">
+      <p class="eyebrow">Depois</p>
+      <h2 id="case-after-title" class="mt-4">A <strong>transformação.</strong></h2>
+      <p class="mt-gutter">{{ caseStudy().after.summary }}</p>
+    </header>
+    @for (benefit of caseStudy().after.benefits; track benefit.title; let i = $index) {
+      <article appReveal class="card lg:col-span-6 lg:odd:last:col-span-12" [class]="variants[i % variants.length]">
+        <h3><strong>{{ benefit.title }}</strong></h3>
+        <p class="mt-gutter">{{ benefit.text }}</p>
+      </article>
+    }
+  </div>
+</section>

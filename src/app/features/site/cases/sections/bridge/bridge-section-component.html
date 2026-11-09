@@ -1,0 +1,11 @@
+<section id="solucao" aria-labelledby="case-bridge-title" class="surface-dark relative isolate overflow-hidden">
+  <img [src]="caseStudy().bridge.image.src" [alt]="caseStudy().bridge.image.alt" width="1840" height="963" loading="lazy" decoding="async" class="absolute inset-0 -z-30 size-full object-cover object-center" />
+  <div aria-hidden="true" class="absolute inset-0 -z-20 bg-linear-to-r from-carbon via-carbon/80 to-carbon"></div>
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-linear-to-b from-carbon via-transparent to-carbon"></div>
+  <div class="site-container flex min-h-128 flex-col items-center justify-center text-center">
+    <p class="eyebrow">Como fizemos</p>
+    <h2 id="case-bridge-title" appReveal="lines" class="mt-4 max-w-3xl">A <strong>solução.</strong></h2>
+    <p appReveal class="mt-gutter max-w-2xl text-white">{{ caseStudy().bridge.text }}</p>
+    <a appReveal [routerLink]="['/servicos', caseStudy().service]" class="btn btn-tertiary mt-gutter">Conhecer o serviço<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+  </div>
+</section>

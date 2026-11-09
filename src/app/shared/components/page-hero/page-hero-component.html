@@ -1,0 +1,17 @@
+<section [attr.aria-labelledby]="titleId()">
+  <div class="site-container site-grid items-center gap-y-gutter">
+    <div class="flex min-w-0 flex-col items-start gap-gutter lg:col-span-6">
+      <ng-content />
+    </div>
+    <img
+      [src]="image()"
+      [alt]="imageAlt()"
+      [attr.width]="landscape() ? 1840 : 1254"
+      [attr.height]="landscape() ? 963 : 1254"
+      fetchpriority="high"
+      decoding="async"
+      class="size-full rounded-xs object-cover lg:col-span-6"
+      [class]="landscape() ? 'aspect-1840/963 object-top' : 'aspect-square'"
+    />
+  </div>
+</section>

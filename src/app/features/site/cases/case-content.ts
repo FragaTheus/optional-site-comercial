@@ -10,15 +10,13 @@ export interface CaseContent {
   projectUrl: string;
   projectLinkLabel: string;
   heroImage: string;
-  current: string;
-  ideal: string;
-  bridge: string;
-  requirements: { name: string; text: string }[];
-  implementation: string;
-  images: { src: string; alt: string }[];
+  before: { scenario: string; problem: string; consequences: string[] };
+  after: { summary: string; benefits: { title: string; text: string }[] };
+  bridge: { text: string; image: { src: string; alt: string } };
+  cta: { lead: string; key: string; text: string; message: string };
 }
 
-// Conteúdo editorial dos cases. Requisitos são objetivos do projeto, não resultados medidos.
+// Conteúdo editorial dos cases em Before → After → Bridge. Só descreve o que a solução entrega, sem métricas não verificadas.
 export const CASES: CaseContent[] = [
   {
     slug: 'paulo-carvalho',
@@ -26,48 +24,40 @@ export const CASES: CaseContent[] = [
     service: 'sites',
     title: 'Paulo Carvalho: presença digital profissional | Optional',
     description:
-      'Conheça o projeto de presença digital de Paulo Carvalho e os requisitos de conteúdo, busca e experiência que orientaram a solução.',
+      'Como a Optional criou a presença digital de Paulo Carvalho, perito técnico, para apresentar seus serviços a advogados e equipes de RH.',
     intro:
-      'Uma presença digital para apresentar a atuação do perito técnico e conectar seus serviços a quem precisa deles.',
+      'Um site próprio para apresentar a atuação do perito técnico e conectar seus serviços a quem precisa deles.',
     projectUrl: 'https://www.pcpaulocarvalho.com.br/',
     projectLinkLabel: 'Ver projeto',
     heroImage: '/services-imgs/landing-page-hero-print.png',
-    current:
-      'O profissional já atuava nas redes sociais, mas não tinha presença no Google. Nas redes, era encontrado pela área de atuação, não necessariamente pelos serviços procurados.',
-    ideal:
-      'Ser encontrado por advogados e equipes de RH que buscam perícia técnica em documentos, serviços e respostas a dúvidas sobre a área de atuação na região de São Paulo.',
-    bridge:
-      'Uma presença digital própria, estruturada para apresentar o profissional, seus serviços e sua experiência aos públicos que ele atende.',
-    requirements: [
-      {
-        name: 'Serviços e intenção de busca',
-        text: 'Apresentar o profissional e estruturar páginas de serviços considerando pesquisas por região e área de atuação.',
-      },
-      {
-        name: 'Comunicação técnica e humana',
-        text: 'Falar com advogados e equipes de RH de forma direta, explicar a atuação e apresentar a experiência profissional.',
-      },
-      {
-        name: 'Identidade visual',
-        text: 'Transmitir organização, cordialidade, formalidade e autoridade por meio do design.',
-      },
-      {
-        name: 'Desempenho',
-        text: 'Buscar pelo menos 90 pontos em cada critério do PageSpeed Insights, como meta de projeto a verificar nas medições.',
-      },
-      {
-        name: 'Conteúdo para busca',
-        text: 'Combinar linguagem acessível com conteúdo voltado a serviços e dúvidas frequentes, sem prometer posições em buscadores.',
-      },
-    ],
-    implementation:
-      'O projeto reúne apresentação profissional, conteúdo sobre a atuação e caminhos de contato em uma presença digital própria. A estrutura foi pensada para aproximar os serviços das necessidades do público.',
-    images: [
-      {
-        src: '/services-imgs/landing-page-hero-print.png',
-        alt: 'Página inicial do site profissional de Paulo Carvalho',
-      },
-    ],
+    before: {
+      scenario:
+        'O profissional já atuava nas redes sociais, mas não tinha presença no Google. Era encontrado pela área de atuação, não pelos serviços que as pessoas procuravam.',
+      problem:
+        'Advogados e equipes de RH que buscam perícia técnica em documentos na região de São Paulo não tinham um endereço próprio onde conhecer os serviços.',
+      consequences: [
+        'Serviços pouco visíveis para quem pesquisava por eles.',
+        'Apresentação profissional dependente de perfis em redes sociais.',
+      ],
+    },
+    after: {
+      summary: 'Os serviços e a experiência do perito passaram a ter um endereço próprio, pensado para quem busca perícia técnica.',
+      benefits: [
+        { title: 'Serviços em páginas próprias', text: 'Cada serviço é apresentado considerando como o público pesquisa por região e área de atuação.' },
+        { title: 'Dúvidas respondidas', text: 'Conteúdo em linguagem acessível responde às perguntas frequentes de quem contrata uma perícia.' },
+        { title: 'Identidade profissional', text: 'O visual transmite organização, cordialidade e formalidade, condizentes com a atuação.' },
+      ],
+    },
+    bridge: {
+      text: 'Desenvolvemos um site que reúne a apresentação do profissional, páginas de serviços estruturadas para a busca e caminhos de contato. O conteúdo fala diretamente com advogados e equipes de RH, e o design foi construído para transmitir autoridade sem perder a proximidade.',
+      image: { src: '/services-imgs/landing-page-hero-print.png', alt: 'Página inicial do site profissional de Paulo Carvalho' },
+    },
+    cta: {
+      lead: 'Precisa apresentar seus serviços',
+      key: 'online?',
+      text: 'Conte o que você faz e para quem. Vamos desenhar uma presença digital que apresente sua atuação com clareza.',
+      message: 'Olá! Vim pelo case Paulo Carvalho e gostaria de conversar sobre um site para a minha atuação.',
+    },
   },
   {
     slug: 'caldeiraria-realiza',
@@ -75,98 +65,121 @@ export const CASES: CaseContent[] = [
     service: 'sites',
     title: 'Caldeiraria Realiza: site comercial | Optional',
     description:
-      'Conheça o site comercial da Caldeiraria Realiza e a proposta de apresentar seus serviços em uma presença digital própria.',
+      'Como a Optional desenvolveu o site comercial da Caldeiraria Realiza para apresentar serviços e facilitar a descoberta em buscas específicas.',
     intro:
-      'Implementamos um site comercial para que a Realiza pudesse ser encontrada pelo nicho, serviços oferecidos e região de atuação, além de melhorar a experiência e qualificar potenciais clientes.',
+      'Um site comercial para a Realiza ser encontrada pelo nicho, pelos serviços oferecidos e pela região de atuação.',
     projectUrl: 'https://caldeirariarealiza.com.br/',
     projectLinkLabel: 'Ver projeto',
     heroImage: '/services-imgs/site-home-page-print.png',
-    current:
-      'O projeto parte da necessidade de apresentar a empresa e sua atuação em um espaço digital próprio.',
-    ideal:
-      'Oferecer aos visitantes um caminho claro para conhecer os serviços e entrar em contato.',
-    bridge: 'Um site comercial que organiza a apresentação da empresa e dos serviços.',
-    requirements: [
-      {
-        name: 'Apresentação da empresa',
-        text: 'Reunir informações sobre a atuação da Caldeiraria Realiza.',
-      },
-      { name: 'Serviços', text: 'Apresentar os serviços em páginas que facilitem a consulta.' },
-      { name: 'Contato', text: 'Deixar acessível o caminho para falar com a empresa.' },
-    ],
-    implementation:
-      'A solução organiza a apresentação institucional e os serviços em um site comercial, com canais de contato para os visitantes.',
-    images: [
-      {
-        src: '/services-imgs/site-home-page-print.png',
-        alt: 'Página inicial do site da Caldeiraria Realiza',
-      },
-      {
-        src: '/services-imgs/site-subpage-print.png',
-        alt: 'Página de serviço do site da Caldeiraria Realiza',
-      },
-    ],
+    before: {
+      scenario:
+        'A empresa dependia de canais como redes sociais para se apresentar e receber contatos.',
+      problem:
+        'Sem um site comercial, era difícil aparecer em buscas por serviços específicos e explicar com clareza o que a caldeiraria executa.',
+      consequences: [
+        'Serviços apresentados de forma dispersa.',
+        'Contatos chegavam com pouco contexto sobre o que o cliente precisava.',
+      ],
+    },
+    after: {
+      summary: 'A empresa passou a apresentar seus serviços em um site próprio, preparado para ser encontrado por termos relevantes.',
+      benefits: [
+        { title: 'Serviços organizados', text: 'Cada serviço tem uma página própria, mais fácil de consultar e de compartilhar.' },
+        { title: 'Descoberta por busca', text: 'O conteúdo e a estrutura do site foram preparados para que a empresa seja encontrada por termos ligados aos seus serviços.' },
+        { title: 'Contatos mais contextualizados', text: 'O visitante conhece o serviço antes de falar com a empresa, o que qualifica o primeiro contato.' },
+      ],
+    },
+    bridge: {
+      text: 'Desenvolvemos um site comercial que organiza a apresentação da empresa e de seus serviços, com conteúdo direcionado a cada atividade e recursos de SEO. Os canais de contato ficam acessíveis em todas as páginas.',
+      image: { src: '/services-imgs/site-subpage-print.png', alt: 'Página de serviço do site da Caldeiraria Realiza' },
+    },
+    cta: {
+      lead: 'Sua empresa precisa ser',
+      key: 'encontrada?',
+      text: 'Conte quais serviços você oferece e onde atua. Vamos estruturar um site comercial que apresente sua empresa com clareza.',
+      message: 'Olá! Vim pelo case Caldeiraria Realiza e gostaria de conversar sobre um site comercial para a minha empresa.',
+    },
   },
   {
     slug: 'simtese',
     project: 'Símtese',
     service: 'crm',
-    title: 'Símtese: CRM e agendamentos | Optional',
+    title: 'Símtese: pré-cadastro e atendimento | Optional',
     description:
-      'Conheça a solução de CRM e gestão de agendamentos desenvolvida para a operação da Símtese.',
+      'Como a Optional substituiu o pré-cadastro por e-mail da Símtese por um sistema com validação de dados e padronização de exames.',
     intro:
-      'Substituímos o pré-cadastro por e-mail por um sistema com validação de dados e padronização de exames, antecipando inconsistências, reduzindo retrabalho e aumentando a eficiência no atendimento.',
+      'Substituímos o pré-cadastro por e-mail por um sistema com validação de dados e padronização de exames, antecipando inconsistências e reduzindo retrabalho no atendimento.',
     projectUrl: 'https://www.simtese.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
     heroImage: '/services-imgs/crm-home-print.png',
-    current:
-      'A operação precisava de uma forma de acompanhar clientes e agendamentos de acordo com seu processo de trabalho.',
-    ideal:
-      'Organizar o acompanhamento dos agendamentos e resultados em uma solução adequada à rotina da equipe.',
-    bridge: 'Um CRM desenvolvido para apoiar a gestão de clientes e agendamentos.',
-    requirements: [
-      { name: 'Clientes', text: 'Apoiar o acompanhamento de informações dos clientes.' },
-      { name: 'Agendamentos', text: 'Organizar o acompanhamento dos agendamentos.' },
-      { name: 'Resultados', text: 'Apoiar o acompanhamento dos resultados pela equipe.' },
-    ],
-    implementation:
-      'A solução foi desenvolvida para a gestão de clientes, com foco nos agendamentos e no acompanhamento de resultados.',
-    images: [
-      {
-        src: '/services-imgs/crm-dash-print.png',
-        alt: 'Formulário de agendamento do site da Símtese',
-      },
-    ],
+    before: {
+      scenario:
+        'O pré-cadastro dos atendimentos de medicina do trabalho era feito por formulários enviados por e-mail.',
+      problem:
+        'A equipe conferia as informações manualmente, e erros ou dados faltantes só apareciam depois que o formulário já tinha sido recebido.',
+      consequences: [
+        'Inconsistências identificadas tardiamente.',
+        'Retrabalho para corrigir e confirmar informações.',
+      ],
+    },
+    after: {
+      summary: 'O pré-cadastro passou a acontecer em um fluxo organizado, com dados conferidos antes de chegarem à equipe.',
+      benefits: [
+        { title: 'Dados validados antecipadamente', text: 'Inconsistências são identificadas durante o preenchimento, e não na conferência posterior.' },
+        { title: 'Exames padronizados', text: 'Os exames seguem uma lista única, evitando variações de nome e descrição entre solicitações.' },
+        { title: 'Processo mais organizado', text: 'As informações chegam em um único fluxo, substituindo a troca de formulários por e-mail.' },
+      ],
+    },
+    bridge: {
+      text: 'Desenvolvemos um sistema com formulário de pré-cadastro em etapas (funcionário, empresa e agendamento), validação dos dados informados e padronização dos exames. A equipe recebe as informações já organizadas, com menos conferência manual.',
+      image: { src: '/services-imgs/crm-dash-print.png', alt: 'Formulário de pré-cadastro em etapas do sistema da Símtese' },
+    },
+    cta: {
+      lead: 'Seu atendimento ainda depende de',
+      key: 'formulários e e-mails?',
+      text: 'Conte como o processo funciona hoje. Vamos entender onde um sistema sob medida pode organizar a rotina da sua equipe.',
+      message: 'Olá! Vim pelo case Símtese e gostaria de conversar sobre um sistema para organizar o atendimento da minha empresa.',
+    },
   },
   {
     slug: 'lalouise',
     project: 'LaLouise',
     service: 'erp',
-    title: 'LaLouise: sistema de gestão | Optional',
+    title: 'LaLouise: validades e rastreabilidade | Optional',
     description:
-      'Conheça o sistema de gestão para controle operacional e rastreabilidade desenvolvido para a LaLouise.',
+      'Como a Optional desenvolveu para a LaLouise um sistema de validade automática e etiquetas para rastrear alimentos.',
     intro:
-      'Substituímos a etiquetagem manual por um sistema de validade automática, reduzindo tarefas repetitivas e facilitando a rastreabilidade dos alimentos que hoje, opera em mais de 9 restaurantes orientais.',
+      'Substituímos a etiquetagem manual por um sistema de validade automática, reduzindo tarefas repetitivas e facilitando a rastreabilidade dos alimentos.',
     projectUrl: 'https://lalouiseconsultoria.com.br/',
     projectLinkLabel: 'Visitar site do cliente',
     heroImage: '/services-imgs/erp-home-print.png',
-    current:
-      'O projeto parte da necessidade de acompanhar rotinas de controle operacional e rastreabilidade.',
-    ideal: 'Organizar essas rotinas em um sistema alinhado à operação da LaLouise.',
-    bridge: 'Um sistema de gestão que reúne os controles necessários para apoiar a operação.',
-    requirements: [
-      {
-        name: 'Controle operacional',
-        text: 'Apoiar o registro e o acompanhamento das rotinas da operação.',
-      },
-      {
-        name: 'Rastreabilidade',
-        text: 'Organizar informações relevantes para acompanhar os controles.',
-      },
-      { name: 'Consulta', text: 'Apresentar informações em telas acessíveis à equipe.' },
-    ],
-    implementation:
-      'O sistema reúne recursos de controle operacional e rastreabilidade em uma solução de gestão desenvolvida para a LaLouise.',
-    images: [],
+    before: {
+      scenario:
+        'O controle de validade dos alimentos dependia de etiquetas preenchidas manualmente.',
+      problem:
+        'A equipe repetia, a cada produto, o cálculo da validade e o preenchimento da etiqueta, sem um registro centralizado dos lotes.',
+      consequences: [
+        'Tempo gasto em tarefas repetitivas.',
+        'Dificuldade para saber quais alimentos estavam próximos do vencimento.',
+      ],
+    },
+    after: {
+      summary: 'Parte do controle de validades passou a ser automática, com registros padronizados dos alimentos.',
+      benefits: [
+        { title: 'Menos atividades manuais', text: 'A validade é calculada pelo sistema, e a equipe deixa de refazer o cálculo a cada etiqueta.' },
+        { title: 'Etiquetas padronizadas', text: 'Todos os alimentos são identificados com o mesmo formato de informação.' },
+        { title: 'Rastreabilidade dos lotes', text: 'Produto, lote, validade e status ficam consultáveis em uma lista única.' },
+      ],
+    },
+    bridge: {
+      text: 'Desenvolvemos um sistema que calcula a validade de cada produto, emite as etiquetas e mantém a lista de lotes com produto, validade e status (ativo ou vencido). A equipe consulta o que está dentro do prazo sem depender de anotações.',
+      image: { src: '/services-imgs/erp-labels-print.png', alt: 'Lista de lotes do sistema da LaLouise com produto, validade e status' },
+    },
+    cta: {
+      lead: 'Sua operação ainda depende de',
+      key: 'controles manuais?',
+      text: 'Conte qual rotina consome mais tempo da equipe. Vamos avaliar como um sistema de gestão sob medida pode organizá-la.',
+      message: 'Olá! Vim pelo case LaLouise e gostaria de conversar sobre um sistema de gestão para a minha operação.',
+    },
   },
 ];
