@@ -91,7 +91,7 @@
     @apply text-lg font-semibold;
   }
   p {
-    @apply text-base;
+    @apply text-base max-w-xl;
   }
   small {
     @apply text-sm;

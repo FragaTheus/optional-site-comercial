@@ -1,13 +1,14 @@
-<section aria-labelledby="case-before-title">
+<section aria-labelledby="case-before-title" class="bg-white">
   <div class="site-container site-grid gap-y-gutter">
-    <header appReveal class="card card-primary self-start lg:col-span-6">
+    <header appReveal class="mary self-start lg:col-span-6">
       <p class="eyebrow">Antes</p>
       <h2 id="case-before-title" class="mt-4">O <strong>desafio.</strong></h2>
+      <p class="text-carbon mt-gutter max-w-xl">{{ caseStudy().before.scenario }}</p>
     </header>
+
     <div appReveal class="flex flex-col gap-gutter lg:col-span-6 lg:row-span-2">
-      <p class="text-xl text-carbon">{{ caseStudy().before.scenario }}</p>
       <p>{{ caseStudy().before.problem }}</p>
-      <ul class="border-t border-carbon/15">
+      <ul class="card card-tertiary">
         @for (consequence of caseStudy().before.consequences; track consequence) {
           <li class="border-b border-carbon/15 py-4">{{ consequence }}</li>
         }

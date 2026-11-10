@@ -1,16 +1,25 @@
-<app-page-hero titleId="case-hero-title" [image]="caseStudy().heroImage" [imageAlt]="'Tela do projeto ' + caseStudy().project" [landscape]="true">
+<app-page-hero
+  titleId="case-hero-title"
+  [image]="caseStudy().heroImage"
+  [imageAlt]="'Tela do projeto ' + caseStudy().project"
+  [landscape]="true"
+>
   <app-breadcrumb
     [ancestors]="[{ label: 'Início', routerLink: '/' }, { label: 'Cases' }]"
     [currentLabel]="caseStudy().project"
   />
   <div>
     <p class="eyebrow">Case Optional</p>
-    <h1 id="case-hero-title" appReveal="lines" class="mt-4 lg:text-6xl"><strong>{{ caseStudy().project }}</strong></h1>
+    <h1 id="case-hero-title" appReveal="lines" class="mt-4 lg:text-6xl">
+      <strong>{{ caseStudy().project }}</strong>
+    </h1>
   </div>
   <p appReveal class="max-w-xl">{{ caseStudy().intro }}</p>
-  <div appReveal class="flex flex-wrap gap-gutter">
+  <div appReveal class="flex flex-wrap gap-2">
     @if (caseStudy().projectUrl) {
-      <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary">{{ caseStudy().projectLinkLabel }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i></a>
+      <a [href]="caseStudy().projectUrl" target="_blank" rel="noopener" class="btn btn-primary"
+        >{{ caseStudy().projectLinkLabel }}<i class="pi pi-arrow-up-right" aria-hidden="true"></i
+      ></a>
     }
     <a [routerLink]="[]" fragment="solucao" class="btn btn-secondary">Entender solução</a>
   </div>
