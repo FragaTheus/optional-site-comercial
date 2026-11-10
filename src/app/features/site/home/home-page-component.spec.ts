@@ -1,6 +1,9 @@
+import { DOCUMENT } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { Meta, Title } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { HomePageComponent } from './home-page-component';
+import { SITE_URL } from '../../../core/site.config';
 
 describe('HomePageComponent', () => {
   it('renders the editorial narrative with real internal links', async () => {
@@ -8,6 +11,15 @@ describe('HomePageComponent', () => {
     const fixture = TestBed.createComponent(HomePageComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
+    expect(TestBed.inject(Title).getTitle()).toBe('Optional | Software e infraestrutura digital sob medida');
+    const description = TestBed.inject(Meta).getTag('name="description"')!.content;
+    expect(description.length).toBeGreaterThanOrEqual(140);
+    expect(description.length).toBeLessThanOrEqual(160);
+    expect(description).toContain('terceirização de fluxos');
+    const document = TestBed.inject(DOCUMENT);
+    expect(document.head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(SITE_URL + '/');
+    const graph = JSON.parse(document.head.querySelector('script[type="application/ld+json"]')!.textContent!)['@graph'];
+    expect(graph).toContainEqual(expect.objectContaining({ '@type': 'WebSite', name: 'Optional', url: SITE_URL + '/' }));
     expect(el.querySelector('h1')?.textContent).toContain('Infraestrutura');
     expect(el.querySelector('#atuacao a[href="#sobre"]')).not.toBeNull();
     expect(el.querySelector('#projetos a[href="#atuacao"]')).not.toBeNull();

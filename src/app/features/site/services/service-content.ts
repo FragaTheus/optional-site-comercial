@@ -53,12 +53,12 @@ export const SERVICES: ServiceContent[] = [
     slug: 'sites',
     label: 'Sites e Landing Pages',
     keyword: 'desenvolvimento de sites e landing pages',
-    title: 'Sites e landing pages sob medida | Optional',
+    title: 'Desenvolvimento de sites e landing pages | Optional',
     description:
-      'Sites comerciais e landing pages sob medida: conteúdo claro, SEO técnico e contato facilitado para apresentar seus serviços e receber contatos mais qualificados.',
-    h1: { lead: 'Melhore a experiência do usuário e', key: 'qualifique potenciais clientes.' },
+      'Desenvolvimento de sites comerciais e landing pages para empresas. Conteúdo claro, navegação e SEO técnico para apresentar serviços e facilitar o contato.',
+    h1: { lead: 'Desenvolvimento de', key: 'sites e landing pages.' },
     intro:
-      'Criamos experiências que ajudam seu público a encontrar o que procura, compreender suas soluções e entrar em contato mais preparado.',
+      'Criamos sites comerciais e landing pages que apresentam seus serviços, esclarecem dúvidas e ajudam seu público a entrar em contato mais preparado.',
     image: '/solutions/site-abstract.png',
     challenges: {
       title: { lead: 'O que os visitantes pensam', key: 'sobre os sites das empresas?' },
@@ -139,10 +139,10 @@ export const SERVICES: ServiceContent[] = [
     slug: 'automacoes',
     label: 'Automações',
     keyword: 'automação de processos e integração de sistemas',
-    title: 'Automações e Integrações para Empresas | Optional',
+    title: 'Automação de processos e integração de sistemas | Optional',
     description:
-      'Automatize tarefas e conecte as ferramentas da sua empresa para reduzir trabalho manual, retrabalho e tempo gasto transferindo informações.',
-    h1: { lead: 'O tempo da sua equipe vale mais que', key: 'tarefas repetitivas.' },
+      'Automação de processos e integração de sistemas para empresas. Automatize tarefas repetitivas, conecte ferramentas e reduza a transferência manual de dados.',
+    h1: { lead: 'Automação de processos e', key: 'integração de sistemas.' },
     intro:
       'Conectamos suas ferramentas e automatizamos atividades rotineiras, liberando tempo para trabalhos que exigem atenção e decisões humanas.',
     image: '/solutions/automation.png',
@@ -204,10 +204,10 @@ export const SERVICES: ServiceContent[] = [
     slug: 'sistemas',
     label: 'Sistemas personalizados',
     keyword: 'desenvolvimento de sistemas personalizados',
-    title: 'Sistemas personalizados sob medida | Optional',
+    title: 'Desenvolvimento de sistemas personalizados | Optional',
     description:
-      'Desenvolvimento de sistemas personalizados: um software próprio para organizar e controlar os processos específicos da sua empresa, com informações centralizadas e rastreáveis.',
-    h1: { lead: 'Um sistema feito para', key: 'organizar a sua operação.' },
+      'Desenvolvimento de sistemas personalizados para empresas. Software sob medida para organizar processos, centralizar informações e acompanhar cada atividade.',
+    h1: { lead: 'Desenvolvimento de', key: 'sistemas personalizados.' },
     intro:
       'Desenvolvemos softwares próprios que acompanham as particularidades da sua operação, centralizam as informações e permitem controlar cada atividade.',
     image: '/solutions/systems.png',
@@ -271,10 +271,10 @@ export const SERVICES: ServiceContent[] = [
     slug: 'terceirizacao-de-fluxos',
     label: 'Terceirização de fluxos',
     keyword: 'terceirização de processos operacionais',
-    title: 'Terceirização de Fluxos Operacionais | Optional',
+    title: 'Terceirização de processos operacionais | Optional',
     description:
-      'Conheça a terceirização de fluxos da Optional. Avaliamos processos operacionais, definimos entregas e assumimos sua execução conforme o escopo contratado.',
-    h1: { lead: 'Você contrata o resultado.', key: 'A execução fica com a gente.' },
+      'Terceirização de processos operacionais para empresas. Definimos entregas e assumimos a execução dos fluxos, com tecnologia e acompanhamento conforme o escopo.',
+    h1: { lead: 'Terceirização de', key: 'processos operacionais.' },
     intro:
       'Assumimos processos operacionais definidos, combinando tecnologia e acompanhamento para entregar o trabalho acordado, sem que sua equipe precise administrar cada etapa.',
     image: '/solutions/integration.png',

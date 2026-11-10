@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, provideRouter } from '@angular/router';
 import { CONTACT_URL, PROMOTION_LINK } from '../../../core/site.config';
 import { SITE_ROUTES } from '../site.routes';
@@ -19,6 +19,9 @@ describe('PromotionPageComponent', () => {
     const fixture = TestBed.createComponent(PromotionPageComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
+    expect(TestBed.inject(Title).getTitle()).toBe(item.seo.title);
+    expect(TestBed.inject(Meta).getTag('name="description"')?.content).toBe(item.seo.description);
+    expect(TestBed.inject(Meta).getTag('name="twitter:title"')?.content).toBe(item.seo.title);
     expect(el.querySelectorAll('h1')).toHaveLength(1);
     expect(el.querySelector('h1')?.textContent).toContain(item.hero.heading.key);
     expect(el.querySelector('h1 + p')?.textContent).toContain('R$ 280');

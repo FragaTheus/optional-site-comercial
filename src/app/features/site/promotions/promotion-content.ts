@@ -29,7 +29,7 @@ export interface PromotionContent {
   cta: { label: string; small: string; message: string };
   hero: { eyebrow: string; heading: PromotionHeading; offer: { lead: string; price: string }; condition: string };
   consequences: { heading: PromotionHeading; summary: string; items: string[] };
-  solution: { heading: PromotionHeading; image: { src: string; alt: string }; benefits: string[] };
+  solution: { heading: PromotionHeading; video: { src: string }; benefits: string[] };
   transformation: { heading: PromotionHeading; secondary: { label: string; href: string } };
   offer: {
     heading: PromotionHeading;
@@ -53,9 +53,9 @@ export const PROMOTIONS: PromotionContent[] = [
     expiresAt: '2026-11-30T23:59:59-03:00',
     expiredNotice: 'Esta campanha foi encerrada. Fale com a Optional para conhecer as condições atuais.',
     seo: {
-      title: 'Black Friday Optional: site comercial a partir de R$ 280',
+      title: 'Black Friday: site para MEI a partir de R$ 280 | Optional',
       description:
-        'Site comercial de uma página para MEIs prestadores de serviços, a partir de R$ 280. Pagamento único e pós-pago, sem mensalidade da Optional e entrega inicial em 1 dia útil.',
+        'Site comercial de uma página para MEIs prestadores de serviços, a partir de R$ 280 na Black Friday. Pagamento único e pós-pago, sem mensalidade da Optional.',
     },
     cta: {
       label: 'Solicitar meu conceito',
@@ -80,7 +80,7 @@ export const PROMOTIONS: PromotionContent[] = [
     },
     solution: {
       heading: { lead: 'Seu site explica', key: 'seus serviços', tail: 'antes de você atender.' },
-      image: { src: '/home-img/optional_abstrato_03_planos.png', alt: '' },
+      video: { src: '/promotions/lp-black-friday.mp4' },
       benefits: [
         'Mostre quais serviços você oferece e onde atende.',
         'Esclareça dúvidas sobre pagamentos e funcionamento.',

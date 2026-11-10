@@ -86,16 +86,18 @@ Regras: conteúdo original por página; sem keyword stuffing; sem texto genéric
 
 ## 5. Estratégia SEO por página (hipóteses a validar)
 
-Nenhum volume de busca, dificuldade ou posição é conhecido: as palavras-chave abaixo são **hipóteses fundamentadas** e devem ser validadas em ferramenta de pesquisa (Search Console, Planejador de Palavras-chave) antes de qualquer ajuste. Não registrar números sem fonte.
+Nenhum volume de busca, dificuldade ou posição é conhecido: as palavras-chave abaixo são **hipóteses fundamentadas** pelo conteúdo e pelo serviço oferecido, não por métricas de pesquisa. Títulos, descrições e H1 usam esses termos de forma natural; validar em ferramenta de pesquisa (Search Console, Planejador de Palavras-chave) para orientar ajustes posteriores. Não registrar números sem fonte.
 
 | Slug | Palavra-chave candidata | Intenção | Termos relacionados | Público | CTA |
 |---|---|---|---|---|---|
 | `/servicos/sistemas` | desenvolvimento de sistemas personalizados | Comercial: contratar desenvolvimento | sistema sob medida, software personalizado, controle de processos, rastreabilidade (CRM e ERP como aplicações) | Empresas com processo próprio e controles em planilhas | Apresentar necessidade |
-| `/servicos/automacoes` | automação e integração de sistemas | Comercial e informacional | automação de tarefas repetitivas, integração entre ferramentas, evitar cadastro duplicado | Empresas com retrabalho manual e ferramentas desconectadas | Analisar processo |
+| `/servicos/automacoes` | automação de processos e integração de sistemas | Comercial e informacional | automação de tarefas repetitivas, integração entre ferramentas, evitar cadastro duplicado | Empresas com retrabalho manual e ferramentas desconectadas | Analisar processo |
 | `/servicos/terceirizacao-de-fluxos` | terceirização de processos operacionais | Comercial e informacional | terceirizar processos operacionais, execução de fluxos | Empresas que querem receber a entrega, não operar a ferramenta | Vamos conversar |
 | `/servicos/sites` | desenvolvimento de sites e landing pages | Comercial | site institucional, site comercial, criação de site para empresas, landing page para campanhas, página de conversão | Empresas de serviços, B2B, profissionais e empresas com ofertas de campanha | Apresentar projeto |
 
 Dúvidas relevantes, proposta de valor, conteúdo e links internos de cada página estão em `src/app/features/site/services/service-content.ts` (fonte única do conteúdo das satélites). A página `/servicos/sites` reúne a presença institucional/comercial e páginas de campanha; landing pages são abordadas como formato de conteúdo, não como frente ou destino independente. Links complementares: automações↔integrações (propostas distintas: automação executa tarefas por regras; integração faz sistemas compartilharem informações), sistemas↔automações.
+
+A homepage combina marca e posicionamento em software e infraestrutura digital sob medida. Os títulos dos cases identificam a solução entregue e o projeto, sem disputar a mesma intenção das páginas de serviços. A campanha Black Friday destaca site para MEI e o preço inicial publicado, mantendo as condições no conteúdo da página.
 
 URLs: `/servicos/<slug>` (`sites`, `automacoes`, `sistemas`, `terceirizacao-de-fluxos`). Slugs ficam em `SERVICE_LINKS` (`core/site.config.ts`), que alimenta rotas, footer e links. As rotas antigas `/servicos/landing-pages`, `/servicos/crm` e `/servicos/erp` foram removidas sem alias ou redirecionamento, por decisão explícita do projeto (site ainda não público); `/servicos/integracoes` redireciona 301 para `/servicos/automacoes` (`vercel.json` e rota Angular); novas alterações de URLs devem manter o redirecionamento 301 como regra geral.
 

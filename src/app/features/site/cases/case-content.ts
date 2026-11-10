@@ -25,9 +25,9 @@ export const CASES: CaseContent[] = [
     project: 'Paulo Carvalho',
     service: 'sites',
     secondary: [],
-    title: 'Paulo Carvalho: presença digital profissional | Optional',
+    title: 'Site profissional: case Paulo Carvalho | Optional',
     description:
-      'Como a Optional criou a presença digital de Paulo Carvalho, perito técnico, para apresentar seus serviços a advogados e equipes de RH.',
+      'Conheça o site profissional desenvolvido pela Optional para Paulo Carvalho, perito técnico, com páginas de serviços, conteúdo para busca e caminhos de contato.',
     intro:
       'Um site próprio para apresentar a atuação do perito técnico e conectar seus serviços a quem precisa deles.',
     projectUrl: 'https://www.pcpaulocarvalho.com.br/',
@@ -67,9 +67,9 @@ export const CASES: CaseContent[] = [
     project: 'Caldeiraria Realiza',
     service: 'sites',
     secondary: [],
-    title: 'Caldeiraria Realiza: site comercial | Optional',
+    title: 'Site comercial: case Caldeiraria Realiza | Optional',
     description:
-      'Como a Optional desenvolveu o site comercial da Caldeiraria Realiza para apresentar serviços e facilitar a descoberta em buscas específicas.',
+      'Conheça o site comercial da Caldeiraria Realiza, desenvolvido pela Optional com páginas de serviços, conteúdo orientado à busca e canais de contato acessíveis.',
     intro:
       'Um site comercial para a Realiza ser encontrada pelo nicho, pelos serviços oferecidos e pela região de atuação.',
     projectUrl: 'https://caldeirariarealiza.com.br/',
@@ -109,9 +109,9 @@ export const CASES: CaseContent[] = [
     project: 'Símtese',
     service: 'sistemas',
     secondary: ['automacoes'],
-    title: 'Símtese: pré-cadastro e atendimento | Optional',
+    title: 'Sistema de exames ocupacionais: case Símtese | Optional',
     description:
-      'Como a Optional substituiu o pré-cadastro por e-mail da Símtese por um sistema com validação de dados e padronização de exames.',
+      'Conheça o sistema personalizado da Símtese para pré-cadastro e atendimento de exames ocupacionais, com validação de dados e padronização das informações.',
     intro:
       'Substituímos o pré-cadastro por e-mail por um sistema com validação de dados e padronização de exames, antecipando inconsistências e reduzindo retrabalho no atendimento.',
     projectUrl: 'https://www.simtese.com.br/',
@@ -151,9 +151,9 @@ export const CASES: CaseContent[] = [
     project: 'LaLouise',
     service: 'sistemas',
     secondary: ['automacoes'],
-    title: 'LaLouise: validades e rastreabilidade | Optional',
+    title: 'Sistema de validade de alimentos: LaLouise | Optional',
     description:
-      'Como a Optional desenvolveu para a LaLouise um sistema de validade automática e etiquetas para rastrear alimentos.',
+      'Conheça o sistema personalizado da LaLouise para controle de validade e rastreabilidade de alimentos, com cálculo automático, etiquetas e consulta de lotes.',
     intro:
       'Substituímos a etiquetagem manual por um sistema de validade automática, reduzindo tarefas repetitivas e facilitando a rastreabilidade dos alimentos.',
     projectUrl: 'https://lalouiseconsultoria.com.br/',
@@ -193,9 +193,9 @@ export const CASES: CaseContent[] = [
     project: 'Automação de e-commerce',
     service: 'automacoes',
     secondary: [],
-    title: 'Automação de e-commerce: cadastro de produtos | Optional',
+    title: 'Automação de cadastro de produtos: e-commerce | Optional',
     description:
-      'Como a Optional automatizou o cadastro e o tratamento de informações de produtos de um e-commerce, conectando as ferramentas utilizadas na operação.',
+      'Conheça o projeto de automação de cadastro de produtos em e-commerce da Optional, com tratamento de informações e integração entre as ferramentas da operação.',
     intro:
       'Automatizamos tarefas de cadastro e tratamento das informações de produtos, conectando as ferramentas da operação para reduzir o trabalho manual.',
     heroImage: '/solutions/automation.png',

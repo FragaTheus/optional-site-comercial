@@ -2,7 +2,7 @@ import { DOCUMENT, Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SITE_URL } from './site.config';
 
-// Centraliza title, description, Open Graph, canonical e dados estruturados (JSON-LD) das páginas comerciais.
+// Centraliza metadados de busca e compartilhamento, canonical e JSON-LD das páginas comerciais.
 @Injectable({ providedIn: 'root' })
 export class Seo {
   // Atributos
@@ -19,10 +19,18 @@ export class Seo {
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:site_name', content: 'Optional' });
     this.meta.updateTag({ property: 'og:locale', content: 'pt_BR' });
+    this.meta.updateTag({ name: 'twitter:card', content: options.image ? 'summary_large_image' : 'summary' });
+    this.meta.updateTag({ name: 'twitter:title', content: title });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
     if (options.noindex) this.meta.updateTag({ name: 'robots', content: 'noindex,follow' });
     else this.meta.removeTag('name="robots"');
-    if (options.image) this.meta.updateTag({ property: 'og:image', content: SITE_URL + options.image });
-    else this.meta.removeTag('property="og:image"');
+    if (options.image) {
+      this.meta.updateTag({ property: 'og:image', content: SITE_URL + options.image });
+      this.meta.updateTag({ name: 'twitter:image', content: SITE_URL + options.image });
+    } else {
+      this.meta.removeTag('property="og:image"');
+      this.meta.removeTag('name="twitter:image"');
+    }
     this.head('script[type="application/ld+json"]', 'script', el => {
       el.setAttribute('type', 'application/ld+json');
       el.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });

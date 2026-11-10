@@ -22,13 +22,13 @@ export class ServicePageComponent {
 
   // Construtores
   constructor() {
-    const { slug, title, description, label } = this.service;
+    const { slug, title, description, label, keyword, image } = this.service;
     const path = `/servicos/${slug}`;
     const provider = { '@type': 'Organization', name: 'Optional', ...(SITE_URL && { url: SITE_URL }) };
     inject(Seo).set(title, description, path, [
-      { '@type': 'Service', name: label, description, provider, ...(SITE_URL && { url: SITE_URL + path }) },
+      { '@type': 'Service', name: label, serviceType: keyword, description, provider, ...(SITE_URL && { url: SITE_URL + path }) },
       ...(SITE_URL ? [{ '@type': 'BreadcrumbList', itemListElement: [{ name: 'Início', url: SITE_URL + '/' }, { name: label, url: SITE_URL + path }].map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, item: item.url })) }] : []),
-    ]);
+    ], { image });
     const host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
     const gsap = inject(Gsap);
     const destroyRef = inject(DestroyRef);

@@ -1,6 +1,8 @@
+import { DOCUMENT } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, provideRouter } from '@angular/router';
-import { SERVICE_LINKS } from '../../../core/site.config';
+import { SERVICE_LINKS, SITE_URL } from '../../../core/site.config';
 import { ServicePageComponent } from './service-page-component';
 import { SERVICES } from './service-content';
 
@@ -29,6 +31,15 @@ describe('ServicePageComponent', () => {
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelectorAll('h1').length).toBe(1);
+    expect(el.querySelector('h1')?.textContent?.trim().replace(/\s+/g, ' ')).toBe(`${service.h1.lead} ${service.h1.key}`);
+    expect(TestBed.inject(Title).getTitle()).toBe(service.title);
+    expect(TestBed.inject(Meta).getTag('name="description"')?.content).toBe(service.description);
+    expect(TestBed.inject(Meta).getTag('property="og:image"')?.content).toBe(SITE_URL + service.image);
+    const document = TestBed.inject(DOCUMENT);
+    expect(document.head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(`${SITE_URL}/servicos/${service.slug}`);
+    const graph = JSON.parse(document.head.querySelector('script[type="application/ld+json"]')!.textContent!)['@graph'];
+    expect(graph).toContainEqual(expect.objectContaining({ '@type': 'Service', serviceType: service.keyword }));
+    expect(graph).toContainEqual(expect.objectContaining({ '@type': 'BreadcrumbList' }));
     expect(el.querySelector('app-breadcrumb [aria-current="page"]')?.textContent).toContain(service.label);
     expect(el.querySelectorAll('h2').length).toBe(4);
     expect(el.querySelector('#contato')).not.toBeNull();
@@ -67,7 +78,7 @@ describe('ServicePageComponent', () => {
     const fixture = TestBed.createComponent(ServicePageComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
-    expect(el.querySelector('h1')?.textContent).toContain('Você contrata o resultado. A execução fica com a gente.');
+    expect(el.querySelector('h1')?.textContent).toContain('Terceirização de processos operacionais.');
     expect(el.querySelectorAll('[aria-labelledby="service-challenges-title"] ul > li').length).toBe(4);
     const external = [...el.querySelectorAll<HTMLAnchorElement>('aside a')];
     expect(external).toHaveLength(3);

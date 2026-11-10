@@ -60,7 +60,7 @@ Rotas institucionais como filhas do MainLayout; features carregadas com lazy loa
 
 Páginas comerciais exigem: `title` e meta description próprios, canonical, Open Graph, HTML semântico, conteúdo indexável, links internos, sitemap e metadados específicos (via `Title`/`Meta` do Angular, definidos por rota).
 
-**Renderização:** Angular SSR com prerendering das rotas estáticas (HTML da homepage já sai com conteúdo). Ao criar `concepts`, definir `RenderMode` adequado e `noindex`. `public/sitemap.xml` lista as páginas indexáveis; `Seo.set` define title, description, Open Graph, canonical e JSON-LD. **Pendência:** domínio definitivo.
+**Renderização:** Angular SSR com prerendering das rotas estáticas (HTML da homepage já sai com conteúdo). Ao criar `concepts`, definir `RenderMode` adequado e `noindex`. `public/sitemap.xml` lista as páginas indexáveis; `Seo.set` define title, description, Open Graph, Twitter Cards, canonical e JSON-LD. Serviços usam `Service` e `BreadcrumbList`; cases, `CreativeWork` e `BreadcrumbList`; a homepage, `Organization` e `WebSite`. Serviços e cases reutilizam suas imagens existentes no compartilhamento. Metadados sociais e dados estruturados são substituídos ou removidos ao navegar para evitar conteúdo da página anterior. **Pendência:** domínio definitivo.
 
 Concepts: noindex, fora do sitemap, sem exposição de dados confidenciais.
 

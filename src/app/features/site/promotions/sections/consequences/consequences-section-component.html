@@ -1,17 +1,23 @@
 <section aria-labelledby="promotion-consequences-title" id="promocao-consequencias">
   <div class="site-container site-grid gap-y-gutter">
-    <header class="card flex flex-col gap-gutter border border-carbon/15 lg:sticky lg:top-gutter lg:col-span-5 lg:self-start">
+    <header class="flex flex-col gap-gutter lg:col-span-5">
       <h2 id="promotion-consequences-title" appReveal="lines">
-        {{ promotion().consequences.heading.lead }} <strong>{{ promotion().consequences.heading.key }}</strong>
+        {{ promotion().consequences.heading.lead }}
+        <strong>{{ promotion().consequences.heading.key }}</strong>
       </h2>
-      <p>{{ promotion().consequences.summary }}</p>
     </header>
 
     <ul class="grid grid-cols-1 gap-gutter sm:grid-cols-2 lg:col-span-7">
       @for (item of promotion().consequences.items; track item; let i = $index) {
-        <li appReveal="" class="card flex flex-col justify-between gap-gutter" [class]="['card-primary sm:col-span-2', 'card-secondary', 'surface-dark'][i]">
+        <li
+          appReveal
+          class="card flex flex-col justify-between gap-gutter"
+          [class]="['card-primary sm:col-span-2', 'card-tertiary', 'surface-dark'][i]"
+        >
           <p class="eyebrow">0{{ i + 1 }}</p>
-          <h3 class="text-4xl"><strong>{{ item }}</strong></h3>
+          <h3 class="text-4xl">
+            <strong>{{ item }}</strong>
+          </h3>
         </li>
       }
     </ul>

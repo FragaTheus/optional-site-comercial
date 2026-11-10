@@ -1,14 +1,19 @@
 <section aria-labelledby="promotion-solution-title" id="promocao-solucao">
-  <div class="site-container site-grid items-center gap-y-gutter">
-    <img
-      [src]="promotion().solution.image.src"
-      [alt]="promotion().solution.image.alt"
-      loading="lazy"
-      class="aspect-square w-full rounded-xs object-cover lg:col-span-6"
-    />
+  <div class="site-container site-grid gap-gutter">
+    <video
+      [src]="promotion().solution.video.src"
+      class="aspect-video w-full rounded-xl shadow-xl object-cover lg:col-span-6 max-w-2xl"
+      aria-hidden="true"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
     <div class="flex flex-col gap-gutter lg:col-span-6">
       <h2 id="promotion-solution-title" appReveal="lines">
-        {{ promotion().solution.heading.lead }} <strong>{{ promotion().solution.heading.key }}</strong> {{ promotion().solution.heading.tail }}
+        {{ promotion().solution.heading.lead }}
+        <strong>{{ promotion().solution.heading.key }}</strong>
+        {{ promotion().solution.heading.tail }}
       </h2>
       <ul>
         @for (benefit of promotion().solution.benefits; track benefit) {

@@ -1,6 +1,8 @@
+import { DOCUMENT } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute, provideRouter } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
+import { SITE_URL } from '../../../core/site.config';
 import { SITE_ROUTES } from '../site.routes';
 import { CASES } from './case-content';
 import { CasePageComponent } from './case-page-component';
@@ -42,5 +44,13 @@ describe('CasePageComponent', () => {
     expect(new URL(el.querySelector<HTMLAnchorElement>('#contato a')!.href).searchParams.get('text')).toBe(item.cta.message);
     expect(el.querySelectorAll('app-case-before-section li')).toHaveLength(item.before.consequences.length);
     expect(TestBed.inject(Title).getTitle()).toBe(item.title);
+    expect(TestBed.inject(Meta).getTag('name="description"')?.content).toBe(item.description);
+    expect(TestBed.inject(Meta).getTag('property="og:image"')?.content).toBe(SITE_URL + item.heroImage);
+    const document = TestBed.inject(DOCUMENT);
+    const url = `${SITE_URL}/cases/${item.slug}`;
+    expect(document.head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(url);
+    const graph = JSON.parse(document.head.querySelector('script[type="application/ld+json"]')!.textContent!)['@graph'];
+    expect(graph).toContainEqual(expect.objectContaining({ '@type': 'CreativeWork', url, name: item.title }));
+    expect(graph).toContainEqual(expect.objectContaining({ '@type': 'BreadcrumbList' }));
   });
 });
