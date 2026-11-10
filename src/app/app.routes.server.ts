@@ -1,6 +1,7 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 import { SERVICE_LINKS } from './core/site.config';
 import { CASES } from './features/site/cases/case-content';
+import { PROMOTIONS } from './features/site/promotions/promotion-content';
 
 export const serverRoutes: ServerRoute[] = [
   { path: '', renderMode: RenderMode.Prerender },
@@ -11,6 +12,10 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'servicos/integracoes', renderMode: RenderMode.Client },
   ...CASES.map(({ slug }) => ({
     path: `cases/${slug}`,
+    renderMode: RenderMode.Prerender as const,
+  })),
+  ...PROMOTIONS.map(({ slug }) => ({
+    path: `promocoes/${slug}`,
     renderMode: RenderMode.Prerender as const,
   })),
   { path: '**', renderMode: RenderMode.Server, status: 404 },

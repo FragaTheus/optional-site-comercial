@@ -29,4 +29,6 @@
       }
     </ul>
   </details>
+
+  <a [routerLink]="promotion.path" (click)="selectLink($event)" class="flex min-h-12 max-w-none justify-start border-t border-paper/15 px-0 text-signal hover:text-white">{{ promotion.label }}</a>
 </nav>

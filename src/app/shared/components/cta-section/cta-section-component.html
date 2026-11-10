@@ -3,9 +3,19 @@
     <h2 id="contato-title" appReveal="lines">
       {{ heading().lead }} <strong>{{ heading().key }}</strong>
     </h2>
-    <p appReveal class="mt-gutter max-w-xl">{{ text() }}</p>
-    <div appReveal class="mt-gutter flex w-full justify-center">
-      <app-btn-cta [cta]="cta()" />
+    @if (text()) {
+      <p appReveal class="mt-gutter max-w-xl">{{ text() }}</p>
+    }
+    <div appReveal class="mt-gutter flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:items-start">
+      <div class="flex w-full max-w-sm flex-col items-center gap-2">
+        <app-btn-cta [cta]="cta()" />
+        @if (small()) {
+          <small>{{ small() }}</small>
+        }
+      </div>
+      @if (secondary(); as link) {
+        <a [href]="link.href" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">{{ link.label }}</a>
+      }
     </div>
   </div>
 </section>

@@ -21,4 +21,24 @@ describe('CtaSectionComponent', () => {
     expect(link.target).toBe('_blank');
     expect(link.rel).toBe('noopener');
   });
+
+  it('keeps the optional small and secondary link out unless supplied, and renders them when set', async () => {
+    await TestBed.configureTestingModule({ imports: [CtaSectionComponent] }).compileComponents();
+    const fixture = TestBed.createComponent(CtaSectionComponent);
+    fixture.componentRef.setInput('heading', { lead: 'Lead', key: 'key.' });
+    fixture.componentRef.setInput('cta', { label: 'Conversar', wppMessage: 'Olá!' });
+    await fixture.whenStable();
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelectorAll('a')).toHaveLength(1);
+    expect(el.querySelector('small')).toBeNull();
+    expect(el.querySelector('p')).toBeNull();
+    fixture.componentRef.setInput('small', 'Sem compromisso');
+    fixture.componentRef.setInput('secondary', { label: 'Conhecer', href: '/' });
+    await fixture.whenStable();
+    expect(el.querySelector('small')?.textContent).toBe('Sem compromisso');
+    const link = el.querySelectorAll('a')[1];
+    expect(link.getAttribute('href')).toBe('/');
+    expect(link.target).toBe('_blank');
+    expect(link.rel).toBe('noopener noreferrer');
+  });
 });

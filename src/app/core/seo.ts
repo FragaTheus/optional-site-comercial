@@ -11,7 +11,7 @@ export class Seo {
   private readonly document = inject(DOCUMENT);
 
   // Métodos
-  set(title: string, description: string, path = '/', graph: object[] = []): void {
+  set(title: string, description: string, path = '/', graph: object[] = [], options: { noindex?: boolean; image?: string } = {}): void {
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ property: 'og:title', content: title });
@@ -19,6 +19,10 @@ export class Seo {
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:site_name', content: 'Optional' });
     this.meta.updateTag({ property: 'og:locale', content: 'pt_BR' });
+    if (options.noindex) this.meta.updateTag({ name: 'robots', content: 'noindex,follow' });
+    else this.meta.removeTag('name="robots"');
+    if (options.image) this.meta.updateTag({ property: 'og:image', content: SITE_URL + options.image });
+    else this.meta.removeTag('property="og:image"');
     this.head('script[type="application/ld+json"]', 'script', el => {
       el.setAttribute('type', 'application/ld+json');
       el.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });

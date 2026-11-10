@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { SERVICE_LINKS } from '../../../core/site.config';
+import { PROMOTION_LINK, SERVICE_LINKS } from '../../../core/site.config';
 import { CASES } from '../../../features/site/cases/case-content';
 import { SiteNavigationComponent } from './site-navigation-component';
 
@@ -16,6 +16,7 @@ describe('SiteNavigationComponent', () => {
     const details = nav.querySelectorAll('details');
     expect(nav.getAttribute('aria-label')).toBe('Navegação');
     expect(nav.querySelector('a[href="/"]')?.textContent).toContain('Home');
+    expect(nav.querySelector(`a[href="${PROMOTION_LINK.path}"]`)?.textContent).toContain('Black Friday');
     expect(details).toHaveLength(2);
     expect(details[0].querySelector('summary')?.textContent).toContain('Serviços');
     expect(details[1].querySelector('summary')?.textContent).toContain('Cases');

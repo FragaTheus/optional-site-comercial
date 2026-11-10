@@ -1,0 +1,11 @@
+<app-promotion-hero-section [promotion]="promotion" [expired]="expired" />
+<app-promotion-consequences-section [promotion]="promotion" />
+<app-promotion-solution-section [promotion]="promotion" />
+<app-cta-section
+  [heading]="promotion.transformation.heading"
+  [cta]="{ label: promotion.cta.label, wppMessage: promotion.cta.message }"
+  [small]="promotion.cta.small"
+  [secondary]="promotion.transformation.secondary"
+/>
+<app-promotion-offer-section [promotion]="promotion" />
+<app-promotion-faq-section [promotion]="promotion" />

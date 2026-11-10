@@ -17,3 +17,6 @@ export const SERVICE_LINKS = [
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_LINKS)[number]['slug'];
+
+/** Link de navegação da campanha vigente (footer e drawer). Para trocar nome ou destino, edite aqui. */
+export const PROMOTION_LINK = { label: 'Black Friday', path: '/promocoes/black-friday' } as const;
