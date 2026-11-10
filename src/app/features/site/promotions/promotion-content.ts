@@ -36,6 +36,7 @@ export interface PromotionContent {
     plans: PromotionPlan[];
     includedTitle: string;
     included: string[];
+    termsButton: string;
     termsTitle: string;
     terms: PromotionTerm[];
     journeyTitle: string;
@@ -55,7 +56,7 @@ export const PROMOTIONS: PromotionContent[] = [
     seo: {
       title: 'Black Friday: site para MEI a partir de R$ 280 | Optional',
       description:
-        'Site comercial de uma página para MEIs prestadores de serviços, a partir de R$ 280 na Black Friday. Pagamento único e pós-pago, sem mensalidade da Optional.',
+        'Site comercial de uma página para MEIs prestadores de serviços, a partir de R$ 280 na Black Friday. Pagamento único, sem mensalidade e com domínio incluso.',
     },
     cta: {
       label: 'Solicitar meu conceito',
@@ -66,7 +67,7 @@ export const PROMOTIONS: PromotionContent[] = [
       eyebrow: 'Black Friday Optional',
       heading: { lead: 'Pare de perder tempo com contatos que nem sabem o que', key: 'você oferece.' },
       offer: { lead: 'Sites comerciais a partir de', price: 'R$ 280' },
-      condition: 'Pagamento único. Sem mensalidade da Optional.',
+      condition: 'Pagamento único. Sem mensalidade',
     },
     consequences: {
       heading: { lead: 'Seu trabalho para quando', key: 'você responde o básico.' },
@@ -99,6 +100,7 @@ export const PROMOTIONS: PromotionContent[] = [
         { name: 'Completo', price: 'R$ 400', description: 'Site comercial de uma página com 8 seções.' },
       ],
       includedTitle: 'Incluso em todos os pacotes',
+      termsButton: 'Ver prazos e condições',
       included: [
         'Site comercial de uma única página.',
         'Copywriting do conteúdo comercial.',
@@ -107,6 +109,7 @@ export const PROMOTIONS: PromotionContent[] = [
         'SEO técnico básico, com palavras-chave ligadas à intenção de busca.',
         'Configurações pertinentes para descoberta no Google.',
         'Publicação do projeto.',
+        'Domínio ".br" incluso, sem custo adicional.',
         'Projeto seu após o pagamento, conforme as condições de entrega e as licenças aplicáveis.',
       ],
       termsTitle: 'Prazos e condições',
@@ -132,9 +135,9 @@ export const PROMOTIONS: PromotionContent[] = [
           small: 'O prazo de revisão não altera o momento do pagamento. Fechada a proposta, as condições contratuais já se aplicam.',
         },
         {
-          title: 'Domínio e infraestrutura',
-          text: 'Domínio ".br" com custo de referência de R$ 40 por ano, contratado separadamente do pacote.',
-          small: 'Os reajustes são definidos pelo registrador responsável, não pela Optional. Hospedagem e outros fornecedores, se houver, são informados separadamente.',
+          title: 'Domínio incluso',
+          text: 'O domínio ".br" já está incluso no pacote, sem custo adicional.',
+          small: 'Serviços de terceiros não previstos no pacote, se houver, são informados antes da contratação.',
         },
         {
           title: 'Atualização anual',
@@ -163,7 +166,7 @@ export const PROMOTIONS: PromotionContent[] = [
     faq: {
       heading: { lead: 'Dúvidas sobre', key: 'seu site', tail: 'e a contratação.' },
       items: [
-        { question: 'Vou precisar pagar mensalidade?', answer: 'Não. O desenvolvimento é contratado por um pagamento único, sem mensalidade obrigatória com a Optional. Domínio e eventuais custos de infraestrutura são separados.' },
+        { question: 'Vou precisar pagar mensalidade?', answer: 'Não. O desenvolvimento é contratado por um pagamento único, sem mensalidade, e o domínio ".br" já está incluso no pacote.' },
         { question: 'Em quanto tempo meu site fica pronto?', answer: 'A entrega inicial acontece em até 1 dia útil após o fechamento da proposta, considerando que as informações necessárias estejam disponíveis.' },
         { question: 'Posso pedir alterações depois da entrega?', answer: 'Sim. Você terá 48 horas após a entrega inicial para analisar o site e solicitar ajustes dentro do escopo contratado.' },
         { question: 'Quando o projeto estará totalmente alinhado?', answer: 'Se tudo ocorrer conforme o esperado, a previsão é concluir a entrega e os ajustes em aproximadamente 3 dias úteis.' },
@@ -171,7 +174,7 @@ export const PROMOTIONS: PromotionContent[] = [
         { question: 'O site será meu?', answer: 'Sim. Após o pagamento, o projeto entregue pertence a você, conforme os termos de entrega e as licenças aplicáveis.' },
         { question: 'Meu site poderá evoluir junto com minha empresa?', answer: 'Sim. O site poderá receber novas informações, seções e funcionalidades conforme o negócio evoluir. Ampliações fora do escopo original poderão exigir novo orçamento.' },
         { question: 'A Optional continuará atualizando meu site?', answer: 'A Optional oferece uma atualização anual do projeto, conforme as condições e o escopo previstos na contratação.' },
-        { question: 'Quanto custa manter o site no ar?', answer: 'O domínio ".br" tem custo de referência de R$ 40 anuais, sujeito a reajustes do registrador. Eventuais custos de hospedagem e serviços adicionais devem ser informados separadamente.' },
+        { question: 'O domínio é cobrado à parte?', answer: 'Não. O domínio ".br" já está incluso no pacote, sem custo adicional. Serviços de terceiros não previstos, se houver, são informados antes da contratação.' },
         { question: 'Meu site aparecerá no Google?', answer: 'O site será publicado com boas práticas de SEO e preparado para indexação. A posição nos resultados e o tempo de indexação dependem do Google.' },
       ],
     },
