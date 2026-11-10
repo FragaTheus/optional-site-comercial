@@ -10,7 +10,9 @@
       <p>{{ caseStudy().before.problem }}</p>
       <ul class="card card-tertiary">
         @for (consequence of caseStudy().before.consequences; track consequence) {
-          <li class="border-b border-carbon/15 py-4">{{ consequence }}</li>
+          <li class="py-3 inline-flex gap-2">
+            <i class="pi pi-dot text-signal pt-1"></i> {{ consequence }}
+          </li>
         }
       </ul>
     </div>

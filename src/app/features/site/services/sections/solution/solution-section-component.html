@@ -39,15 +39,17 @@
         </p>
       </aside>
     } @else {
-      <img
-        [src]="image().src"
-        [alt]="image().alt"
-        width="1840"
-        height="963"
-        loading="lazy"
-        decoding="async"
-        class="aspect-video rounded-xs object-cover lg:col-span-6 lg:row-span-2 px-gutter"
-      />
+      <div class="lg:col-span-6 lg:row-span-2 w-full lg:max-w-2xl justify-self-end px-gutter">
+        <img
+          [src]="image().src"
+          [alt]="image().alt"
+          width="1840"
+          height="963"
+          loading="lazy"
+          decoding="async"
+          class="media-card"
+        />
+      </div>
     }
 
     <footer class="flex flex-col gap-gutter lg:col-span-6 lg:row-start-2 px-gutter">
