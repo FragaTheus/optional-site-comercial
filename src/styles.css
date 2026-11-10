@@ -151,7 +151,7 @@
   }
 
   .card {
-    @apply p-gutter;
+    @apply p-gutter border border-carbon/15;
   }
   .card-primary {
     @apply bg-white text-carbon/75;
@@ -170,7 +170,7 @@
 
   /* Card com imagem de fundo: imagem (object-cover) → gradiente horizontal → reforço de contraste sob o texto */
   .media-card {
-    @apply relative isolate flex items-end overflow-hidden rounded-xs;
+    @apply relative isolate flex items-end overflow-hidden rounded-xl shadow-xl;
   }
   .media-card-img {
     @apply absolute inset-0 -z-30 size-full object-cover;
