@@ -1,0 +1,21 @@
+<section aria-labelledby="promotion-hero-title" id="promocao-hero">
+  <div class="site-container site-grid gap-y-gutter py-24 lg:py-32">
+    <div class="flex flex-col gap-gutter lg:col-span-12">
+      <p class="eyebrow">{{ promotion().hero.eyebrow }}</p>
+      @if (expired()) {
+        <p role="status" class="font-semibold text-carbon">{{ promotion().expiredNotice }}</p>
+      }
+      <h1 id="promotion-hero-title" appReveal="lines" class="max-w-6xl">
+        {{ promotion().hero.heading.lead }} <strong>{{ promotion().hero.heading.key }}</strong>
+      </h1>
+      <p class="font-display text-4xl font-bold text-carbon">
+        {{ promotion().hero.offer.lead }} <strong class="text-signal">{{ promotion().hero.offer.price }}.</strong>
+      </p>
+      <p>{{ promotion().hero.condition }}</p>
+      <div class="flex flex-col gap-2">
+        <app-btn-cta [cta]="{ label: promotion().cta.label, wppMessage: promotion().cta.message }" />
+        <small>{{ promotion().cta.small }}</small>
+      </div>
+    </div>
+  </div>
+</section>

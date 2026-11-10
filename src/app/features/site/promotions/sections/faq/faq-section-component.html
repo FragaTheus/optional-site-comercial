@@ -1,0 +1,32 @@
+<section aria-labelledby="promotion-faq-title" id="promocao-faq">
+  <div class="site-container site-grid gap-y-gutter">
+    <h2 id="promotion-faq-title" appReveal="lines" class="max-w-6xl lg:col-span-12">
+      {{ promotion().faq.heading.lead }} <strong>{{ promotion().faq.heading.key }}</strong> {{ promotion().faq.heading.tail }}
+    </h2>
+    <ul class="flex flex-col lg:col-span-12">
+      @for (item of promotion().faq.items; track item.question; let i = $index) {
+        <li class="border-t border-carbon/15 last:border-b">
+          <details name="promotion-faq" class="group py-gutter">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-gutter [&::-webkit-details-marker]:hidden">
+              <h3 class="text-2xl"><strong>{{ i < 9 ? '0' : '' }}{{ i + 1 }}. {{ item.question }}</strong></h3>
+              <span aria-hidden="true" class="group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-gutter max-w-prose">{{ item.answer }}</p>
+          </details>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="promotion-closing-title" id="promocao-conversao">
+  <div class="site-container flex flex-col items-center gap-gutter py-24 text-center">
+    <h2 id="promotion-closing-title" appReveal="lines" class="max-w-5xl">
+      {{ promotion().closing.heading.lead }} <strong>{{ promotion().closing.heading.key }}</strong>
+    </h2>
+    <div class="flex w-full flex-col items-center gap-2">
+      <app-btn-cta [cta]="{ label: promotion().cta.label, wppMessage: promotion().cta.message }" />
+      <small>{{ promotion().cta.small }}</small>
+    </div>
+  </div>
+</section>

@@ -10,6 +10,9 @@ import { Reveal } from '../../directives/reveal';
 })
 export class CtaSectionComponent {
   readonly heading = input.required<{ lead: string; key: string }>();
-  readonly text = input.required<string>();
+  readonly text = input<string>();
   readonly cta = input.required<ICta>();
+  /** Opcionais: nota sob o botão principal e segundo link (abre em nova aba). */
+  readonly small = input<string>();
+  readonly secondary = input<{ label: string; href: string }>();
 }

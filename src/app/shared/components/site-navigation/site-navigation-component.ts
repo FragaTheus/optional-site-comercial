@@ -1,6 +1,6 @@
 import { Component, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SERVICE_LINKS } from '../../../core/site.config';
+import { PROMOTION_LINK, SERVICE_LINKS } from '../../../core/site.config';
 import { CASES } from '../../../features/site/cases/case-content';
 
 // Compartilha a navegação institucional entre o drawer e o rodapé.
@@ -13,6 +13,7 @@ import { CASES } from '../../../features/site/cases/case-content';
 export class SiteNavigationComponent {
   protected readonly services = SERVICE_LINKS;
   protected readonly cases = CASES;
+  protected readonly promotion = PROMOTION_LINK;
   readonly linkSelected = output<void>();
 
   protected selectLink(event: MouseEvent): void {
